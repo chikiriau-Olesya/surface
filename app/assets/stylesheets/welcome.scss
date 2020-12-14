@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic');
+
+$font: 'PT Sans', sans-serif;
+$textBlockHeight: 40px;
+$paragraphSize: 20px;
+$h1Size: 46px;
+
+/*
+body {
+  margin: 0 auto;
+  padding: 0 10%;
+  font-family: $font;
+}
+
+h1, h3, h2 {
+  font-weight: 700;
+}
+
+h1, h3, h2, p {
+  padding: 0 5%;
+}
+
+h1 {
+  font-size: $h1Size;
+  margin-top: $textBlockHeight + 20px;
+}
+
+h1 + p {
+  margin-top: $textBlockHeight - 20px;
+  color: grey;
+  font-size: $paragraphSize + 4px;
+  line-height: 28px;
+}
+*/
+
+// .textblock {
+//   margin: $textBlockHeight 0 $textBlockHeight;
+// }
+
+.textblock {
+  margin: $textBlockHeight 0 $textBlockHeight;
+
+  & h3 {
+    padding-top: 12px;
+    font-size: $h1Size - 14px;
+  }
+
+  & p {
+     font-size: 20px;
+     line-height: 30px;
+     padding-top: 8px;
+  }
+}
+
+
+blockquote {
+  text-decoration: none;
+  position: relative;
+  font-style: italic;
+  color: grey;
+  position: relative;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    height: 100%;
+    width: 2px;
+    background-color: #000;
+  }
+}

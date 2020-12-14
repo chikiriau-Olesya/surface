@@ -1,0 +1,52 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap');
+
+body {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.user-name {
+  font-size: 14px;
+  padding-left: 40px;
+  position: relative;
+  margin-bottom: 32px;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    border-radius: 50%;
+  }
+}
+
+.title-post {
+  color: #554DD8;
+  font-size: 34px;
+  font-weight: 600;
+  text-transform: lowercase;
+  margin-bottom: 16px;
+
+}
+
+.post-body {
+  background-color: #F9F9F9;
+  width: 50%;
+  padding: 20px 30px;
+  border-radius: 10px;
+  margin-bottom: 48px;
+}
+
+.comments-section {
+  font-size: 24px;
+}
+
+.add-comment {
+  margin-top: 64px;
+  color: grey;
+}

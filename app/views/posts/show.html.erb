@@ -1,0 +1,64 @@
+<p class="user-name">
+  <strong>Имя:</strong>
+  <%= @post.name %>
+</p>
+
+<%# <%= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
+<!-- <br>
+<%# <%= link_to(image_tag(@post.image.small_thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %> %> --> %>
+<br>
+<%= image_tag(@post.image.url, alt: 'Image') if @post.image? %>
+
+<h3 class="title-post">
+  <strong>Заголовок:</strong>
+  <%= @post.title %>
+</h3>
+
+<p>
+  <strong>Category:</strong>
+  <%= @post.category.name %>
+</p>
+
+<p>
+	<strong>Author:</strong>
+	<%= @post.author %>
+</p>
+
+<p class="post-body">
+  <strong>Пост:</strong>
+  <%= @post.content.html_safe %>
+</p>
+
+<p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+<p><%= @post.favorites.count %> <%= (@post.favorites.count) == 1 ? 'favourite' : 'favourites'%></p>
+
+<% if user_signed_in? %>
+  <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
+  <% if pre_like %>
+    <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+  <% else %>
+    <%= button_to 'Like', post_likes_path(@post), method: :post %>
+  <% end %>
+
+  <% pre_favorite = @post.favorites.find { |favorite| favorite.user_id == current_user.id} %>
+  <% if pre_favorite %>
+      <%= button_to 'Remove from Favorite', post_favorite_path(@post, pre_favorite), method: :delete %>
+  <% else %>
+      <%= button_to 'Add to Favorite', post_favorites_path(@post), method: :post %>
+  <% end %>
+<% end %>
+
+<h2 class="comments-section">Комментарии</h2>
+<%= render @post.comments %>
+
+<h2 class="add-comment">Добавьте комнентарий:</h2>
+<% if user_signed_in? %>
+  <%= render "comments/form" %>
+<% else %>
+  <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
+<% end %>
+
+<% if user_signed_in? %>
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<% end %>
+<%= link_to 'Back', posts_path %>
