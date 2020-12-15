@@ -15951,3 +15951,305 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 255ms (Views: 75.5ms | ActiveRecord: 4.3ms | Allocations: 45656)
 
 
+Started GET "/posts" for ::1 at 2020-12-15 14:49:58 +0300
+  [1m[35m (7.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:3
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:20
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 3]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 3]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/posts/index.html.erb:29
+  Rendered posts/index.html.erb within layouts/application (Duration: 150.0ms | Allocations: 35827)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+Completed 200 OK in 1013ms (Views: 781.4ms | ActiveRecord: 6.1ms | Allocations: 81326)
+
+
+Started GET "/posts?category=category" for ::1 at 2020-12-15 15:38:27 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"category"}
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "category"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:3
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 1]]
+  ↳ app/views/posts/index.html.erb:20
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/posts/index.html.erb:29
+  Rendered posts/index.html.erb within layouts/application (Duration: 244.2ms | Allocations: 5300)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+Completed 200 OK in 451ms (Views: 395.4ms | ActiveRecord: 3.7ms | Allocations: 11625)
+
+
+Started GET "/categories/new" for ::1 at 2020-12-15 15:38:32 +0300
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 423.2ms | Allocations: 5390)
+  Rendered categories/new.html.erb within layouts/application (Duration: 516.8ms | Allocations: 5729)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+Completed 200 OK in 540ms (Views: 536.5ms | ActiveRecord: 1.2ms | Allocations: 11999)
+
+
+Started GET "/posts?category=NewOnes" for ::1 at 2020-12-15 15:38:39 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"NewOnes"}
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "NewOnes"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:3
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/posts/index.html.erb:20
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 3]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 3]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  ↳ app/views/posts/index.html.erb:29
+  Rendered posts/index.html.erb within layouts/application (Duration: 36.6ms | Allocations: 12800)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+Completed 200 OK in 77ms (Views: 71.3ms | ActiveRecord: 2.3ms | Allocations: 18920)
+
+
+Started GET "/posts/1/edit" for ::1 at 2020-12-15 15:38:45 +0300
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:74:in `set_post'
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.3ms | Allocations: 953)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-12-15 15:38:45 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.6ms | Allocations: 593)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 31.4ms | Allocations: 2169)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+Completed 200 OK in 84ms (Views: 44.3ms | ActiveRecord: 1.3ms | Allocations: 15127)
+
+
+Started GET "/categories/new" for ::1 at 2020-12-15 15:56:57 +0300
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 15.4ms | Allocations: 918)
+  Rendered categories/new.html.erb within layouts/application (Duration: 17.6ms | Allocations: 1002)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+Completed 200 OK in 80ms (Views: 70.3ms | ActiveRecord: 0.6ms | Allocations: 6550)
+
+
+Started POST "/categories" for ::1 at 2020-12-15 16:01:17 +0300
+Processing by CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"jKmfkIQ3KAPs+4jQUBiSPu/Xe65F7MWuy7QmdaQoOpYbx0VkVPJEvikli0WwCVqf0H+Gf2ELUobJOl3QW3fNmg==", "category"=>{"name"=>"Интересное о серфинге", "description"=>"", "display_in_navbar"=>"1"}, "commit"=>"Create Category"}
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:30:in `block in create'
+  [1m[36mCategory Create (3.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Интересное о серфинге"], ["description", ""], ["created_at", "2020-12-15 13:01:17.452525"], ["updated_at", "2020-12-15 13:01:17.452525"]]
+  ↳ app/controllers/categories_controller.rb:30:in `block in create'
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/categories/4
+Completed 302 Found in 54ms (ActiveRecord: 5.9ms | Allocations: 2936)
+
+
+Started GET "/categories/4" for ::1 at 2020-12-15 16:01:17 +0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:67:in `set_category'
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 88.3ms | Allocations: 279)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+Completed 200 OK in 118ms (Views: 112.0ms | ActiveRecord: 0.4ms | Allocations: 6609)
+
+
+Started GET "/categories/4/edit" for ::1 at 2020-12-15 16:03:18 +0300
+Processing by CategoriesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:67:in `set_category'
+  Rendering categories/edit.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 4.0ms | Allocations: 984)
+  Rendered categories/edit.html.erb within layouts/application (Duration: 15.0ms | Allocations: 1571)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+Completed 200 OK in 51ms (Views: 40.2ms | ActiveRecord: 0.7ms | Allocations: 7782)
+
+
+Started PATCH "/categories/4" for ::1 at 2020-12-15 16:03:28 +0300
+Processing by CategoriesController#update as HTML
+  Parameters: {"authenticity_token"=>"D1YIqb/bzCC33LyEJc9xaIJWtTzwqN58I38SukAJ16eYR9SZ5/1IV1RvlNs0vGSR2IPJZRaTI0CoKNXUafl44g==", "category"=>{"name"=>"Интересное о серфинге", "description"=>"рассказ о жизни моря", "display_in_navbar"=>"1"}, "commit"=>"Update Category", "id"=>"4"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:67:in `set_category'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:44:in `block in update'
+  [1m[36mCategory Update (1.9ms)[0m  [1m[33mUPDATE "categories" SET "description" = ?, "updated_at" = ? WHERE "categories"."id" = ?[0m  [["description", "рассказ о жизни моря"], ["updated_at", "2020-12-15 13:03:28.470158"], ["id", 4]]
+  ↳ app/controllers/categories_controller.rb:44:in `block in update'
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:44:in `block in update'
+Redirected to http://localhost:3000/categories/4
+Completed 302 Found in 16ms (ActiveRecord: 3.7ms | Allocations: 3401)
+
+
+Started GET "/categories/4" for ::1 at 2020-12-15 16:03:28 +0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:67:in `set_category'
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 87)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+Completed 200 OK in 132ms (Views: 115.6ms | ActiveRecord: 0.5ms | Allocations: 11880)
+
+
+Started GET "/posts?category=%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D0%BE%D0%B5+%D0%BE+%D1%81%D0%B5%D1%80%D1%84%D0%B8%D0%BD%D0%B3%D0%B5" for ::1 at 2020-12-15 16:03:31 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"Интересное о серфинге"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Интересное о серфинге"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:3
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/posts/index.html.erb:20
+  Rendered posts/index.html.erb within layouts/application (Duration: 15.9ms | Allocations: 1539)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+Completed 200 OK in 38ms (Views: 33.1ms | ActiveRecord: 1.0ms | Allocations: 7737)
+
+
+Started GET "/posts?category=%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D0%BE%D0%B5+%D0%BE+%D1%81%D0%B5%D1%80%D1%84%D0%B8%D0%BD%D0%B3%D0%B5" for ::1 at 2020-12-15 16:03:34 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"Интересное о серфинге"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Интересное о серфинге"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:3
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/posts/index.html.erb:20
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1490)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+Completed 200 OK in 18ms (Views: 14.5ms | ActiveRecord: 0.9ms | Allocations: 7670)
+
+
+Started GET "/posts?category=%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D0%BD%D0%BE%D0%B5+%D0%BE+%D1%81%D0%B5%D1%80%D1%84%D0%B8%D0%BD%D0%B3%D0%B5" for ::1 at 2020-12-15 16:03:40 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"Интересное о серфинге"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Интересное о серфинге"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:10:in `index'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:3
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/posts/index.html.erb:20
+  Rendered posts/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 1490)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+Completed 200 OK in 38ms (Views: 35.5ms | ActiveRecord: 0.5ms | Allocations: 7632)
+
+
