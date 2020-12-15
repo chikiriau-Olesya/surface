@@ -18,8 +18,13 @@ Rails.application.routes.draw do
 
   get 'promo', to: 'promo#index'
   get 'about', to: 'about#index'
+  get 'landing', to: 'landingo#index'
+  get 'styleguide', to: 'styleguide#index'
 
-  root 'promo#index'
+  # get 'landing/index'
+  # get 'styleguide/index'
+
+  root 'landing#index'
 
   get 'users', to: 'users#index'
   get 'users/:id' => 'users#show'
