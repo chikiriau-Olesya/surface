@@ -360,3 +360,204 @@
     <%= image_tag("tw-insta-post.png", :class => "double-horizontal") %>
   </div>
 </section>
+
+
+<section class="grid">
+  <div class="grid__meaning">
+    <h3>Смыслы</h3>
+    <p>Поверхность океана и волны, образующиеся на ней. Мотив волны будет в дальнейшем проявляться в сетке. </p>
+    <p>Динамический знак “U” внутри логотипа несет в себе метафоры доски, которую держит в руках серфер, направляющийся к океану. Миссия Surface — довести человека именно до такого состояния.</p>
+
+    <div class="grid__meaning__wave">
+      <%= image_tag("sinus.png", :class => "double-horizontal") %>
+      <%= image_tag("grid-sinus.svg", :class => "double-horizontal") %>
+    </div>
+  </div>
+  <div class="grid__construct">
+    <div class="grid__construct__stage">
+      <h3>1</h3>
+      <%= image_tag("grid-step-1.svg", :class => "double-horizontal") %>
+      <p>Создайте центральнуюнаправляющую колонок для формата 16:9 (1600:900)
+      с 8px микромодулем</p>
+    </div>
+    <div class="grid__construct__stage">
+      <h3>2</h3>
+      <%= image_tag("grid-step-2.svg", :class => "double-horizontal") %>
+      <p>Создайте 3 колонки, равные соотношению 9:5:3 с межколонником, равному 4,5 от самой крупной колонки. Для формата 1600:900 – 144px 80px 48px и межколонниклом в 32px</p>
+    </div>
+    <div class="grid__construct__stage">
+      <h3>3</h3>
+      <%= image_tag("grid-step-3.svg", :class => "double-horizontal") %>
+      <p>Располагайте колонки в обратном порядке, чтобы создать подобие волны</p>
+    </div>
+    <div class="grid__construct__stage">
+      <h3>4</h3>
+      <%= image_tag("grid-step-4.svg", :class => "double-horizontal") %>
+      <p>Заполните пространство </p>
+    </div>
+    <div class="grid__construct__stage">
+      <h3>5</h3>
+      <%= image_tag("grid-step-5.svg", :class => "double-horizontal") %>
+      <p>Ширину оставшихся полей считайте за margin</p>
+    </div>
+    <div class="grid__construct__stage">
+      <h3>6</h3>
+      <%= image_tag("grid-step-6.svg", :class => "double-horizontal") %>
+      <p>Горизонтальные колонки начинать с top от полей margin</p>
+    </div>
+    <div class="grid__construct__stage">
+      <h3>Итог</h3>
+      <%= image_tag("grid-final.svg", :class => "double-horizontal") %>
+      <p>Полученная сетка</p>
+    </div>
+    <div class="grid__construct__stage">
+      <h3>Формат</h3>
+      <div class="final-formats">
+        <div class="final-format">
+          <p>2/3 сетки </p>
+          <%= image_tag("grid-final-insta.svg", :class => "23grid") %>
+        </div>
+        <div class="final-format">
+          <p>вуртикальный</p>
+          <%= image_tag("grid-final-poster.svg", :class => "verticalgrid") %>
+        </div>
+        <div class="final-format">
+          <p>мобильный</p>
+          <%= image_tag("grid-final-mob.svg", :class => "mobilegrid") %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid__photo">
+    <div class="grid__photo__example">
+      <%= image_tag("grid-photo.svg", :class => "photo-grid_1") %>
+      <p>Изображения занимают 5 боковых колонок</p>
+    </div>
+    <div class="grid__photo__block">
+      <div class="grid__photo__example">
+        <%= image_tag("grid-photo-2.svg", :class => "photo-grid_1") %>
+        <p>Текстовый блок может залезать на центральную колонку не больше 2 букв</p>
+      </div>
+      <div class="grid__photo__example">
+        <%= image_tag("grid-photo-3.svg", :class => "photo-grid_1") %>
+        <p>Текстовый блок начинается с центральной колонки</p>
+      </div>
+      <div class="grid__photo__example">
+        <%= image_tag("grid-photo-4.svg", :class => "photo-grid_1") %>
+      </div>
+      <div class="grid__photo__example">
+        <%= image_tag("grid-photo-5.svg", :class => "photo-grid_1") %>
+      </div>
+    </div>
+    <%= image_tag("grid-works.gif", :class => "photo-grid_gif") %>
+  </div>
+
+  <div class="grid__text-brake">
+    <h3>Разбивка текста</h3>
+    <p>Заголовочный текст разбивается на 3 строки. В блоке из трех строк каждая из них размещается по принципу очередности нечетная-четная-нечетная. </p>
+    <p>В строку помещаются все слова, что помещаются в строку, слова центрируются по свободной направляющей.</p>
+    <%= image_tag("grid-in-poster.png", :class => "grid-in-poster") %>
+    <%= image_tag("grid-in-bc.png", :class => "grid-in-bc") %>
+
+    <h3>Примечания</h3>
+    <p>В случае, если слово заходит на межколонник и соседня колонка не задета, следующее слово необходимо ставить через колонку</p>
+    <%= image_tag("there-here.png", :class => "grid-in-bc") %>
+
+
+    <div class="grid__text-brake__examples">
+      <h3>Примеры применения</h3>
+      <div class="examples">
+        <%= image_tag("sea-poster.png", :class => "grid-in-bc") %>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="phots">
+  <h2>Фото и сюжеты</h2>
+  <div class="photo__rule">
+    <h3>Принципы выбора</h3>
+    <p>Фотографии для инстаграма и баннеров подбираются с учетом чередования теплых и холодных оттенков, опять же потому, что серфинг в России — во многом про контрасты.
+    </p>
+    <%= image_tag("color-palette.svg", :class => "color-palette") %>
+    <h3>Сюжеты</h3>
+    <p>Лица серферов в свободном пространстве </p>
+    <div class="photo__rule__topic">
+      <%= image_tag("face-1.png", :class => "grid-in-bc") %>
+      <%= image_tag("face-2.png", :class => "grid-in-bc") %>
+      <%= image_tag("face-3.png", :class => "grid-in-bc") %>
+      <%= image_tag("face-4.png", :class => "grid-in-bc") %>
+      <%= image_tag("face-5.png", :class => "grid-in-bc") %>
+      <%= image_tag("face-5.png", :class => "grid-in-bc") %>
+    </div>
+    <p>Сюжеты со спотов и лайнапов</p>
+    <div class="photo__rule__topic">
+      <%= image_tag("sea-poster.png", :class => "grid-in-bc") %>
+    </div>
+  </div>
+</section>
+
+
+<section class="graphic">
+  <h2>Графика</h2>
+  <div class="graphic__metaphor">
+    <h3>Метафора</h3>
+    <p>Концентрируясь на необычности характера сёрфинга в России, айдентика не привязывается к архетипным рисованым образом. Переосмысляя идейное ядро культуры сёрфинга, мы создаём его уникальный образ, выраженный в активной типографике.</p>
+    <div class="graphic__metaphor__pics">
+      <%= image_tag("logo-b.svg", :class => "grid-in-bc") %>
+      <%= image_tag("broken-logo.svg", :class => "grid-in-bc") %>
+    </div>
+    <div class="graphic__metaphor__photos">
+      <%= image_tag("graphic-photo.png", :class => "grid-in-bc") %>
+      <%= image_tag("graphic-photo-brkn.png", :class => "grid-in-bc") %>
+      <%= image_tag("man-photo-brkn.png", :class => "grid-in-bc") %>
+    </div>
+  </div>
+  <div class="graphic__mechanic">
+    <h2>Механика построения</h2>
+    <ol>
+      <li>Логотип разбирается на части в хаотичном порядке: мотив случайности. Метафора — размытие волной гальки на берегу</li>
+      <li>Горизонтальный формат делится на пять колонок, широкая — в центре. Это одна секция масштабированной сетки</li>
+      <li>Затем изображение дробится на части по этим колонкам, каждая из которых смещается вверх или вниз</li>
+    </ol>
+  </div>
+  <%= image_tag("waves-photo-brkn.png", :class => "grid-in-bc") %>
+
+  <div class="graphic__usage">
+    <div class="graphic__usage__block">
+      <h4>Мерч</h4>
+      <p>Специфические носители (фестивальные футболки, воск), лимитированные коллекции (доски)</p>
+    </div>
+    <div class="graphic__usage__block">
+      <h4>Медиа</h4>
+      <p>Обложки соцсетей (YT, Fb, twitter),  специальные предложения, коллабы с брендами (общая рекламная кампания)</p>
+    </div>
+    <div class="graphic__usage__block">
+      <h4>Реклама</h4>
+      <p>Крупные банеры и постеры, масштаб 1/3 общего пространтсва</p>
+    </div>
+  </div>
+  <div class="graphic__examples">
+    <%= image_tag("square-logo-brkn.png", :class => "grid-in-bc") %>
+    <%= image_tag("tw-post-1.png", :class => "grid-in-bc") %>
+    <%= image_tag("tw-post-2.png", :class => "grid-in-bc") %>
+    <%= image_tag("yt-bgrd.png", :class => "grid-in-bc") %>
+  </div>
+  <div class="graphic__media">
+    <h3>Соц сети</h3>
+    <div class="graphic__media__example">
+      <h4>Инстаграм</h4>
+    </div>
+    <div class="graphic__media__example">
+      <h4>Facebook</h4>
+    </div>
+    <div class="graphic__media__example">
+      <h4>Youtube</h4>
+    </div>
+    <div class="graphic__media__example">
+      <h4>Печать и носители</h4>
+    </div>
+  </div>
+</section>
