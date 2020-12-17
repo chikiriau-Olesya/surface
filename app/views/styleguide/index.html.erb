@@ -1,0 +1,362 @@
+<!-- <p>Find me in app/views/styleguide/index.html.erb</p> -->
+<div class="links">
+  <a href="blog" class="link_to">
+    <%= link_to "Blog", posts_path %>
+  </a>
+</div>
+
+
+<section class="menu">
+  <ul>
+    <li> <a href="#about-brand">О бренде</a></li>
+    <li> <a href="#logo">Лого</a></li>
+    <li> <a href="#color">Цвета</a></li>
+    <li> <a href="#typo">Типографика</a></li>
+    <li> <a href="#grid">Сетка</a></li>
+    <li> <a href="#comp">Композиция</a></li>
+    <li> <a href="#photo">Фото</a></li>
+    <li> <a href="#graph">Графика</a></li>
+    <li> <a href="#voice">Tone of voice</a></li>
+    <li> <a href="#merch">Мерч</a></li>
+  </ul>
+</section>
+
+<section class="head-section">
+
+    <div class="head-section__top">
+      <div class="top-left">
+        <%= image_tag("logo-sign-w-2.svg", :class => "logo") %>
+        <h3>Стайлгайд</h3>
+      </div>
+      <div class="top-right">
+        <p>surface.com</p>
+      </div>
+    </div>
+
+    <div class="head-section__main-pic">
+      <%= image_tag("logo-brkn-w.svg", :class => "logo_black") %>
+    </div>
+
+    <!-- <div class="menu">
+      <ul>
+        <li>О бренде</li>
+        <li>Лого</li>
+        <li>Цвета</li>
+        <li>Типографика</li>
+        <li>Сетка</li>
+        <li>Композиция</li>
+        <li>Фото</li>
+        <li>Графика</li>
+        <li>Tone of voice</li>
+        <li>Мерч</li>
+      </ul>
+    </div> -->
+
+</section>
+
+
+
+
+<section class="about-brand" id="about-brand">
+  <div class="about-brand__meaning">
+    <h2>Брендинг</h2>
+    <p>В логотипе сочетаются характер волн и душа сёрфинга. Восходящая динамика буквы «u» отсылает к наклонённой доске, которую несёт серфер, это сила волн, захватывающая дух, это стремительно развивающееся комьюнити, которое смело смотрит в будущее</p>
+
+    <h3>Смыслы</h3>
+    <p>Поверхность океана и волны, образующиеся
+    на ней. Мотив волны будет в дальнейшем проявляться в сетке. </p>
+  </div>
+
+  <div class="about-brand__identity">
+    <h2>Айдентика</h2>
+    <p>Волна есть первопричина сёрфинга, комьюнити объединённых едиными ценностями людей и особого душевного настроя. В основе айдентики лежит жизнь волн, их поведение и свободная динамика, рассчитанная из синусоидной системы их образования. По этим созданным природой правилам живут все графические элементы, выражая глубинную философию сёрфинга. Контрастные элементы и динамичная разбивка элементов отсылает к неоднозначной и противоречивой русской душе/природе, в которой особым образом сливается смелость и строгость, лиричность и гармония.</p>
+  </div>
+</section>
+
+
+<section class="logo" id="logo">
+
+  <div class="logo__form">
+    <div class="logo__form__meaning">
+      <h2>Лого</h2>
+      <p>В логотипе сочетаются характер волн и душа сёрфинга. Восходящая динамика буквы «u» отсылает к наклонённой доске, которую несёт серфер, это сила волн, захватывающая дух, это стремительно развивающееся комьюнити, которое смело смотрит в будущее</p>
+      <%= image_tag("logo-b.svg", :class => "logo_black") %>
+
+      <h3>Смыслы</h3>
+      <p>Поверхность океана и волны, образующиеся
+      на ней. Мотив волны будет в дальнейшем проявляться в сетке. </p>
+      <%= image_tag("logo-wave.svg", :class => "logo_black") %>
+      <p>Динамический знак “U” внутри логотипа несет
+      в себе метафору доски, которую держит в руках серфер, направляющийся к океану. Миссия Surface — довести человека именно до такого состояния.</p>
+      <%= image_tag("logo-board.svg", :class => "logo_black") %>
+    </div>
+
+    <h3>Принципы</h3>
+    <div class="logo__form__principles">
+      <div class="rect"></div>
+
+      <div class="logo__form__principle">
+        <div class="pr_left">
+          <h4>Открытость</h4>
+          <p>Подобно мировой серф-культуре, Surface открыт новому.</p>
+        </div>
+        <div class="pr_right">
+          <h5>Открытая апертура</h5>
+        </div>
+      </div>
+
+      <div class="rect"></div>
+
+      <div class="logo__form__principle">
+        <div class="pr_left">
+          <h4>Сдержанность</h4>
+          <p>Природа России разнообразная, но не кричащая. Мы ценим ее особенности и транслируем их в бренде.</p>
+        </div>
+        <div class="pr_right">
+          <h5>Монохромность</h5>
+        </div>
+      </div>
+
+      <div class="rect"></div>
+
+      <div class="logo__form__principle">
+        <div class="pr_left">
+          <h4>Динамичность</h4>
+          <p>Surface не стоит на месте, апостоянно движется в направлении к океану.</p>
+        </div>
+        <div class="pr_right">
+          <h5>Диагональный наклон</h5>
+        </div>
+      </div>
+    </div>
+
+    <div class="logo__form__build">
+      <div class="logo__form__build__top">
+        <h3>Построение
+        и механика</h3>
+      </div>
+      <p>Логотип строится в соответствии с динамикой волны: пики каждой из них (самые широкие колонки в сетке) совпадают с самыми динамичными моментами в верхней части (наклон U, выступ f и переход от с к е).</p>
+      <div class="logo__form__build__pics">
+        <%= image_tag("logo-outline.svg", :class => "logo_black") %>
+        <%= image_tag("logo-field.svg", :class => "logo_black") %>
+        <%= image_tag("logo-bgrd-w.svg", :class => "logo_black") %>
+        <%= image_tag("logo-bgrd-blue.svg", :class => "logo_black") %>
+      </div>
+      <%= image_tag("logo-w.svg", :class => "logo_black") %>
+
+    </div>
+
+    <div class="logo__form__use">
+        <h3>Использование</h3>
+        <p>Логотип всегда занимает 2 первые колонки в сетке. В частных случаях работы с фото слевой стороны логтип занимает самую широкую колнку. Минимальный размер логотипа — 18 рх. Используется на всех ыозможных форматах. Знак располагается на носителях мерча или веб-форматах, которые не вмещают целый логотип (например, фото профиля в соц сетях).</p>
+        <div class="logo__form__use__pics">
+          <%= image_tag("logo-b.svg", :class => "logo_black") %>
+          <%= image_tag("logo-b.svg", :class => "logo_black") %>
+          <%= image_tag("logo-b.svg", :class => "logo_black") %>
+        </div>
+      <div class="logo__form__use__elements">
+         <h3>Элементы</h3>
+         <p>Знак “U” вписан в круг, равный по высоте первой букве логотипа. Охранное поле состовляет половину высоты текста с каждой стороны. В случаях использования вместе с другим логотипом, слева добавляется еще 1/4 высоты.</p>
+
+         <div class="sign-field">
+           <%= image_tag("logo-sign-field-big.svg", :class => "logo_black") %>
+           <%= image_tag("logo-sign-field.svg", :class => "logo_black") %>
+         </div>
+         <p>Стандартное использование знака</p>
+         <div class="sign-field">
+           <%= image_tag("logo-sign-b.svg", :class => "logo_black") %>
+           <%= image_tag("logo-sign-blue.svg", :class => "logo_black") %>
+           <%= image_tag("logo-sign-w.svg", :class => "logo_black") %>
+         </div>
+         <p>Сезонное и частное использование знака в вебе</p>
+         <div class="sign-field">
+           <%= image_tag("logo-sign-water.svg", :class => "logo_black") %>
+           <%= image_tag("logo-sign-palm.svg", :class => "logo_black") %>
+         </div>
+         <h3>Партнеры</h3>
+         <div class="sign-field">
+           <%= image_tag("qsilver-logo.svg", :class => "logo_black") %>
+           <%= image_tag("qsilver-logo-field.svg", :class => "logo_black") %>
+         </div>
+      </div>
+    </div>
+    <div class="logo__form__locations">
+      <h3>Расположение</h3>
+
+      <div class="logo__form__locations__loc">
+        <%= image_tag("logo-poster.png", :class => "logo_black") %>
+        <%= image_tag("logo-bc.png", :class => "logo_black") %>
+      </div>
+      <p>логотип располагается в верхнем левом углу</p>
+
+      <div class="logo__form__locations__loc">
+        <%= image_tag("logo-tw-post.png", :class => "logo_black") %>
+      </div>
+      <p>при расположении фотографий или графического материала слева, лого также располагается слева, вверху части текстового блока</p>
+
+      <div class="logo__form__locations__loc">
+        <%= image_tag("insta-posts.png", :class => "logo_black") %>
+      </div>
+      <p>в квадратных форматах логотип располагается в нижнем правом углу</p>
+
+      <div class="logo__form__locations__loc">
+        <%= image_tag("insta-posts-real.png", :class => "logo_black") %>
+      </div>
+      <p>цвет лого зависит от фона и должен быть контрастным (темный на светлом / светлый на темном)</p>
+
+      <h3>Ограничения</h3>
+      <div class="logo__form__location__restrict">
+
+        <div class="restrict">
+          <%= image_tag("logo-def-press.png", :class => "logo_black") %>
+          <p>деформировать по ширине или высоте</p>
+        </div>
+        <div class="restrict">
+          <%= image_tag("logo-diag.svg", :class => "logo_black") %>
+          <p>переворачивать лого под каким-либо углом</p>
+        </div>
+        <div class="restrict">
+          <%= image_tag("logo-mask.png", :class => "logo_black") %>
+          <p>использование в качестве контейнера для фото и других паттернов</p>
+        </div>
+        <div class="restrict">
+          <%= image_tag("logo-color.png", :class => "logo_black") %>
+          <p>употреблять в другом цвете</p>
+        </div>
+        <div class="restrict">
+          <%= image_tag("logo-graph.png", :class => "logo_black") %>
+          <p>добавлять доп. графику</p>
+        </div>
+        <div class="restrict">
+          <%= image_tag("logo-wrong-post.png", :class => "logo_black") %>
+          <p>выравнивать по правому краю относительно фотографии</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="color" id="color">
+  <h2>Цвета</h2>
+  <div class="color__choice">
+    <h3>Выбор цвета</h3>
+    <p>В основе монохромного сочетания лежит идея о контрастах, которых много в российском серфинге, как и в целом в культуре и природе.
+    </p>
+    <h3>Основные</h3>
+    <div class="color__choice__main">
+      <div class="main-color-rect">
+         <p>sea foam</p>
+         <div class="rect_white"></div>
+         <p>#FFFFFF</p>
+      </div>
+      <div class="main-color-rect">
+        <p>black sand</p>
+        <div class="rect_black"></div>
+        <p>#101010</p>
+      </div>
+    </div>
+
+    <h3>Дополнительные</h3>
+    <div class="color__choice__sub">
+      <div class="sub-color-rect">
+         <p>sunset ocean waves</p>
+         <div class="rect_blue"></div>
+         <p>#2763BD</p>
+      </div>
+      <div class="sub-color-rect">
+        <p>adventure spirit</p>
+        <div class="rect_green"></div>
+        <p>#A7D22C</p>
+      </div>
+    </div>
+    <h3>Соотношение</h3>
+    <div class="amount__color">
+      <%= image_tag("color-pic.svg", :class => "color-pic") %>
+      <ul>
+        <li>70%</li>
+        <li>14%</li>
+        <li>13%</li>
+        <li>3%</li>
+      </ul>
+    </div>
+  </div>
+  <div class="color__couples">
+    <h3>Цветовые пары</h3>
+    <div class="color__couples__comb">
+      <%= image_tag("color-w-b.png", :class => "color-comb") %>
+      <%= image_tag("color-b-w.png", :class => "color-comb") %>
+      <%= image_tag("color-w-blue.png", :class => "color-comb") %>
+      <%= image_tag("color-blue-w.png", :class => "color-comb") %>
+      <%= image_tag("color-w-g.png", :class => "color-comb") %>
+      <%= image_tag("color-g-b.png", :class => "color-comb") %>
+      <%= image_tag("color-blue-g.png", :class => "color-comb") %>
+      <%= image_tag("color-b-g.png", :class => "color-comb") %>
+    </div>
+    <h3>Ограничения</h3>
+    <div class="color__couples__restrict">
+      <%= image_tag("color-wrong-1.png", :class => "color-comb") %>
+      <%= image_tag("color-wrong-2.png", :class => "color-comb") %>
+      <%= image_tag("color-wrong-3.png", :class => "color-comb") %>
+      <%= image_tag("color-wrong-4.png", :class => "color-comb") %>
+    </div>
+  </div>
+</section>
+
+<section class="typo" id="typo">
+  <h2>Типографика</h2>
+  <div class="typo__font__choice">
+   <div class="line"></div>
+   <h3>Выбор шрифтов</h3>
+   <div class="typo__font__choice__text">
+     <div class="garns">
+       <%= image_tag("garn-ponzu.svg", :class => "color-comb") %>
+       <%= image_tag("garn-raleway.svg", :class => "color-comb") %>
+     </div>
+     <div class="explanation">
+       <p>В основе лежит идея о контрастах, которых много в российском серфинге. </p>
+       <p>В наборном тексте мы используем гротеск
+        с открытой апертурой, в заголовках сочетаем его с Ponzu, который воплощает идею
+        о волне в плавных высококонтрастных формах. Дополнительный шрифт используется в качестве заменителядля части букв.</p>
+       <p>Правило: замена происходит для букв, в чьей конструкции есть овал, в одном слове каждой строки. </p>
+     </div>
+   </div>
+  </div>
+
+  <div class="line"></div>
+  <h3>Наклон</h3>
+  <div class="typo__slant">
+   <%= image_tag("poster-slant.png", :class => "color-comb") %>
+    <p>Вытекает из логотипа. Как и наклонная четная гласная буква ю в заголовках наклоняется одна гласная.
+
+    Идея в том, чтобы повторить мотив накатывания волн на берег. Мы упорядочиваем эту систему и строим на основе нее заголовки и крупные текстовые блоки. При этом сетка, по которой смещаются строки, строится по принципу волнообразования.</p>
+  </div>
+
+  <div class="line"></div>
+  <h3>Размер</h3>
+  <div class="typo__size">
+    <div class="typo__size__line">
+      <%= image_tag("big-text.svg", :class => "text-size") %>
+      <p>Header x size</p>
+    </div>
+    <div class="typo__size__line">
+      <h3>Regular</h3>
+      <p>Subhead 1/2x size</p>
+    </div>
+    <div class="typo__size__line">
+      <h3>Regular</h3>
+      <p>Body 3x size</p>
+    </div>
+    <div class="typo__size__line">
+      <h3>Regular</h3>
+      <p>Descriptor 8x size</p>
+    </div>
+  </div>
+
+  <div class="line"></div>
+  <h3>В формате</h3>
+  <div class="typo__format">
+    <%= image_tag("poster-template.png", :class => "vertical") %>
+    <%= image_tag("tw-insta-post.png", :class => "double-horizontal") %>
+  </div>
+</section>
