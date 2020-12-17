@@ -30,4 +30,6 @@ Rails.application.routes.draw do
   get 'users/:id' => 'users#show'
   delete 'users/:id', to: 'users#destroy'
   get 'users/:id/following', :to => "users#following", :as => :following
+
+  get 'admin', to: 'admin#index'
 end
