@@ -35554,3 +35554,159 @@ Processing by StyleguideController#index as HTML
 Completed 200 OK in 116ms (Views: 114.8ms | ActiveRecord: 0.4ms | Allocations: 106602)
 
 
+Started GET "/styleguide" for ::1 at 2020-12-19 19:06:59 +0300
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StyleguideController#index as HTML
+  Rendering styleguide/index.html.erb within layouts/application
+  Rendered styleguide/index.html.erb within layouts/application (Duration: 3070.6ms | Allocations: 146172)
+Completed 500 Internal Server Error in 3120ms (ActiveRecord: 0.0ms | Allocations: 149264)
+
+
+  
+ActionView::Template::Error (Error: Invalid CSS after "}": expected "}", was ""
+        on line 761:2 of app/assets/stylesheets/styleguide.scss
+>> }
+
+   -^
+):
+  
+app/assets/stylesheets/styleguide.scss:761
+Started GET "/styleguide" for ::1 at 2020-12-19 19:07:30 +0300
+Processing by StyleguideController#index as HTML
+  Rendering styleguide/index.html.erb within layouts/application
+  Rendered styleguide/index.html.erb within layouts/application (Duration: 2311.3ms | Allocations: 191251)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 2828ms (Views: 2771.8ms | ActiveRecord: 53.1ms | Allocations: 226191)
+
+
+Started GET "/" for ::1 at 2020-12-19 19:07:51 +0300
+Processing by LandingController#index as HTML
+  Rendering landing/index.html.erb within layouts/application
+  Rendered landing/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 180)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 240ms (Views: 228.0ms | ActiveRecord: 2.7ms | Allocations: 8206)
+
+
+Started GET "/styleguide" for ::1 at 2020-12-19 19:07:58 +0300
+Processing by StyleguideController#index as HTML
+  Rendering styleguide/index.html.erb within layouts/application
+  Rendered styleguide/index.html.erb within layouts/application (Duration: 1646.6ms | Allocations: 99590)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 1706ms (Views: 1699.1ms | ActiveRecord: 1.0ms | Allocations: 106577)
+
+
+Started GET "/posts" for ::1 at 2020-12-19 19:09:29 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (4.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:3
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:20
+  [1m[36mCategory Load (3.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 3]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 3]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 6]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 6]]
+  ↳ app/views/posts/index.html.erb:28
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 6]]
+  ↳ app/views/posts/index.html.erb:29
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 6]]
+  ↳ app/views/posts/index.html.erb:29
+  Rendered posts/index.html.erb within layouts/application (Duration: 337.9ms | Allocations: 30987)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 568ms (Views: 377.5ms | ActiveRecord: 27.0ms | Allocations: 45981)
+
+
+Started GET "/" for ::1 at 2020-12-19 19:09:52 +0300
+Processing by LandingController#index as HTML
+  Rendering landing/index.html.erb within layouts/application
+  Rendered landing/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 63)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 93ms (Views: 87.5ms | ActiveRecord: 1.0ms | Allocations: 7318)
+
+
+Started GET "/styleguide" for ::1 at 2020-12-19 19:09:55 +0300
+Processing by StyleguideController#index as HTML
+  Rendering styleguide/index.html.erb within layouts/application
+  Rendered styleguide/index.html.erb within layouts/application (Duration: 1481.3ms | Allocations: 99580)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:22
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:25
+Completed 200 OK in 1564ms (Views: 1560.5ms | ActiveRecord: 1.1ms | Allocations: 106593)
+
+
+Started GET "/styleguide" for ::1 at 2020-12-19 19:12:44 +0300
+Processing by StyleguideController#index as HTML
+  Rendering styleguide/index.html.erb within layouts/application
+  Rendered styleguide/index.html.erb within layouts/application (Duration: 767.5ms | Allocations: 103015)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:24
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 854ms (Views: 850.1ms | ActiveRecord: 1.1ms | Allocations: 111447)
+
+

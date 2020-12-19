@@ -744,18 +744,15 @@ h2{
 }
 
 
-@media (max-width: 320px){
+@media (max-width: 375px){
 
 .head-section{
   .head-section__top{
-    padding: 3vw;
     .top-left{
-      h3{
-        padding-left: 1vw;
-      }
       img{
         max-width: 30vw;
       }
     }
   }
+}
 }
