@@ -4,10 +4,14 @@
     <title>Surface.surf</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'landing', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag Ckeditor.cdn_url %>
+
+     <!-- <link rel="shortcut icon" href="favicon.png" type="image/png"> -->
   </head>
 
 
@@ -18,7 +22,7 @@
      <p class="alert"><%= alert %></p>
   <% end %>
 
-  <div class="top_menu">
+  <!-- <div class="top_menu">
     <% Category.where(display_in_navbar: true).each do |cat| %>
     <%= link_to cat.name, posts_path(category: cat.name) %> |
     <% end %>|
@@ -31,9 +35,7 @@
       <% if user_signed_in? && current_user.isadmin == true%>
         <%= link_to "Settings", admin_path %>
       <% end %>
-
-
-  </div>
+  </div>  -->
 
     <%= yield %>
   </body>

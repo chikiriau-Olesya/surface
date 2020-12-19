@@ -1,4 +1,369 @@
-<h1>Landing#index</h1>
-<p>Find me in app/views/landing/index.html.erb</p>
-<%= link_to "Blog", posts_path %>
-<%= link_to "Styleguide", styleguide_path %>
+.<div class="landing-wrapper">
+  <!-- firts screen -->
+  <section class="section hero">
+    <div class="hero__blocks">
+      <!-- block with short description and btn -->
+      <div class="hero__blocks__about">
+        <div class="menu__logo">
+          <%= image_tag "landing_img/logotype-black.svg", :class => "logo" %>
+        </div>
+        <div class="hero__blocks__about__text">
+          <p>
+          Полезная информация, серфшколы, комьюнити
+          и&nbsp;тренировки у&nbsp;вас под&nbsp;рукой
+          </p>
+        </div>
+        <div class="btn">
+            <%= link_to "стать серфером", posts_path %>
+        </div>
+
+      </div>
+      <!-- block with h1 tittle and picture -->
+      <div class="hero__blocks__main">
+        <div class="hero__blocks__main__top">
+          <h1 class="section-hero__block__text__title">
+            <span>П<span class="letter">о</span>грузись</span>
+            <span>в&nbsp;мир</span>
+            <span>с<span class="letter">е</span>рфинга</span>
+            <span>прямо</span>
+            <span>сейч<span class="letter">а</span>с</span>
+          </h1>
+        </div>
+        <div class="hero__block__top__text__adaptive">
+          <div class="hero__blocks__about__text">
+            <p>
+            Полезная информация, серфшколы, комьюнити
+            и&nbsp;тренировки у&nbsp;вас под&nbsp;рукой
+            </p>
+          </div>
+          <div class="btn">
+              <%= link_to "стать серфером", posts_path %>
+          </div>
+        </div>
+        <div class="hero__blocks__main__bottom">
+          <div class="hero__blocks__main__bottom__word">
+            <div class="hero__blocks__main__bottom__leters">
+              <%= image_tag "landing_img/su.svg"%>
+            </div>
+            <div class="hero__blocks__main__bottom__leters">
+              <%= image_tag "landing_img/r.svg"%>
+            </div>
+            <div class="hero__blocks__main__bottom__leters">
+              <%= image_tag "landing_img/f.svg"%>
+            </div>
+            <div class="hero__blocks__main__bottom__leters">
+              <%= image_tag "landing_img/c.svg"%>
+            </div>
+            <div class="hero__blocks__main__bottom__leters">
+              <%= image_tag "landing_img/e.svg"%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about">
+    <div class="about__text">
+      <p>
+        Surface&nbsp;&mdash; русскоязычный медиа-сервис
+        о&nbsp;сёрфинге. Поможет вам разобраться во&nbsp;всех тонкостях философии волн и&nbsp;досок,
+        приобщиться к&nbsp;культуре и&nbsp;подготовить тело
+        к&nbsp;тренировкам в&nbsp;реальных условиях
+      </p>
+    </div>
+  </section>
+
+  <section class="section features">
+    <div class="features__arrow">
+      <span>потяни влево</span>
+      <%= image_tag "landing_img/small-arrow.svg"%>
+    </div>
+    <div class="features__blocks">
+      <div class="features__block__item">
+        <h2 class="features__block__item__title">
+          <span>Откр<span class="letter">о</span>йте</span>
+          <span>н<span class="letter">о</span>вые</span>
+          <span>гр<span class="letter">а</span>ни</span>
+          <span>ж<span class="letter">и</span>зни</span>
+        </h2>
+        <p class="paragraph">Изучайте&nbsp;то, что интересно именно вам. Тратьте свое время на&nbsp;эмоции, новый опыт, а&nbsp;не&nbsp;на&nbsp;долгий поиск</p>
+      </div>
+
+      <div class="features__block__item">
+        <%= image_tag "landing_img/features_1.png"%>
+        <h4>Истории людей</h4>
+        <div class="features__block__item__desc">
+          <p class="paragraph">Узнаете о&nbsp;серфинге от&nbsp;первого лица, ближе познакомитесь с&nbsp;культурой</p>
+          <a href="#" class="features__block__item__arrow">
+            <svg width="16" height="25" viewBox="0 0 16 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 23L13.5862 12.5L2 2" stroke="white" stroke-width="3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="features__block__item">
+        <%= image_tag "landing_img/features_2.png"%>
+        <h4>Теория</h4>
+        <div class="features__block__item__desc">
+          <p class="paragraph">Настольная книга серф-терминов, базовых правил и&nbsp;эффективных домашних тренировок</p>
+          <a href="#" class="features__block__item__arrow">
+            <svg width="16" height="25" viewBox="0 0 16 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 23L13.5862 12.5L2 2" stroke="white" stroke-width="3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="features__block__item">
+        <%= image_tag "landing_img/features_3.png"%>
+        <h4>Комьюнити</h4>
+        <div class="features__block__item__desc">
+          <p class="paragraph">Познаете культуру серфинга и&nbsp;почувствуете себя частью большой семьи</p>
+          <a href="#" class="features__block__item__arrow">
+            <svg width="16" height="25" viewBox="0 0 16 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 23L13.5862 12.5L2 2" stroke="white" stroke-width="3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pages school">
+    <div class="pages__wrapper">
+      <div class="pages__text">
+        <h3>Находите подходящие именно вам серфшколы</h3>
+        <p class="paragraph">На&nbsp;одной карте собраны споты по&nbsp;всей России. Сапсерфинг, вейкбординг, классика и&nbsp;даже искусственные волны&nbsp;&mdash; выбирайте
+          по&nbsp;своим интересам
+        </p>
+        <div class="btn">
+            <%= link_to "стать серфером", posts_path %>
+        </div>
+      </div>
+      <div class="pages__pic">
+        <%= image_tag "landing_img/school.png"%>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pages sport">
+    <div class="pages__wrapper">
+      <div class="pages__pic">
+        <%= image_tag "landing_img/sport.png"%>
+      </div>
+      <div class="pages__text">
+        <h3>Тренируйтесь
+          и&nbsp;оставайтесь в&nbsp;форме</h3>
+          <p class="paragraph">Разминки для новичков, функциональные тренировки, йога и&nbsp;фитнес&nbsp;&mdash; и&nbsp;все у&nbsp;вас дома
+          </p>
+          <div class="btn">
+              <%= link_to "стать серфером", posts_path %>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <section class="section city">
+  <div class="city__text">
+    <h3>Выбирайте свой город
+      и&nbsp;станьте частью комьюнити
+    </h3>
+    <p class="paragraph">Россия омывается 12&nbsp;морями и&nbsp;Тихим океаном, и&nbsp;наши волны вполне подходят даже для классического серфинга. Развивайте серфинг вместе с&nbsp;нами
+    </p>
+  </div>
+  <div class="city__lines">
+    <span class="city__lines__item"><span class="city__lines__item__blue">Камчатка,</span> Вл<span class="letter">а</span>дивосток, Курильские остр<span class="letter">о</span>ва, Камчатка, <span class="city__lines__item__green">Владивосток,</span> Кур<span class="letter">и</span>льские острова, <span class="city__lines__item__blue">Камчатка,</span> Вл<span class="letter">а</span>дивосток, Курильские остр<span class="letter">о</span>ва, <span class="city__lines__item__green">Камчатка,</span> Владивосток</span>
+  </div>
+  <div class="city__lines">
+    <span class="city__lines__item">Сахалин, <span class="city__lines__item__green">М<span class="letter">о</span>сква,</span> Санкт-П<span class="letter">е</span>тербург, Липецкая <span class="letter">о</span>бласть, <span class="city__lines__item__blue">Сахалин,</span> Москв<span class="letter">а</span>, Санкт-Петербург, Лип<span class="letter">е</span>цкая область,Сахалин, <span class="city__lines__item__blue">М<span class="letter">о</span>сква,</span> Санкт-П<span class="letter">е</span>тербург, Липецкая <span class="letter">о</span>бласть</span>
+  </div>
+  <div class="city__lines">
+    <span class="city__lines__item">Мурманск, Д<span class="letter">а</span>гестан, <span class="city__lines__item__blue">Магаданская обл<span class="letter">а</span>сть,</span>  Мурманск, Дагест<span class="letter">а</span>н, Магаданская <span class="letter">о</span>бласть, <span class="city__lines__item__green">Мурманск,</span> Дагестан, Маг<span class="letter">а</span>данская область, Мурманск, Д<span class="letter">а</span>гестан</span>
+  </div>
+  <div class="city__lines">
+    <span class="city__lines__item">
+      К<span class="letter">а</span>лининград, Крым, Сочи, <span class="city__lines__item__blue">Ан<span class="letter">а</span>па,</span> Калининград, Кр<span class="letter">ы</span>м, Сочи, <span class="city__lines__item__green">Анап<span class="letter">а</span>,</span> Калининград, Крым, С<span class="letter">о</span>чи, Анапа, Ан<span class="letter">а</span>па, Калининград, Кр<span class="letter">ы</span>м, Сочи, <span class="city__lines__item__green">Анапа,</span> С<span class="letter">о</span>чи, Калининград
+    </span>
+  </div>
+
+  </section>
+
+  <section class="section pages prof">
+  <div class="pages__wrapper">
+    <div class="pages__text">
+      <h3>Расскажите миру
+        о&nbsp;своем опыте и&nbsp;бизнесе</h3>
+        <p class="paragraph">У&nbsp;вас есть история, хотите создать мероприятие? Станьте автором публикаций на&nbsp;surface или расскажите нам о&nbsp;вашем бизнессе. Мы&nbsp;открыты новым лицам
+        </p>
+        <div class="btn">
+            <%= link_to "подробнее", posts_path %>
+        </div>
+      </div>
+      <div class="pages__pic">
+        <%= image_tag "landing_img/prof.png"%>
+      </div>
+    </div>
+  </section>
+
+  <section class="section pages tel">
+  <div class="pages__wrapper">
+    <div class="pages__pic">
+      <%= image_tag "landing_img/mob.png"%>
+    </div>
+    <div class="pages__text">
+      <h3>Теперь все любимые статьи и&nbsp;видео всегда под&nbsp;рукой</h3>
+      <p class="paragraph">
+        Сохраняйте понравившуюся информацию в&nbsp;закладках
+        и&nbsp;возращайтесь к&nbsp;ней в&nbsp;нужный момент
+      </p>
+      <div class="btn">
+          <%= link_to "стать серфером", posts_path %>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="section final">
+  <div class="final__text">
+    <div class="final__text__title">
+      <span>Осущ<span class="letter">е</span>ствите</span>
+      <span>д<span class="letter">а</span>внюю</span>
+      <span>м<span class="letter">е</span>чту</span>
+      <span>с&nbsp;Surface</span>
+    </div>
+    <div class="btn">
+        <%= link_to "стать серфером", posts_path %>
+    </div>
+  </div>
+  <div class="final__block">
+    <div class="final__block__anim">
+      <div class="final__block__anim__letters">
+        <%= image_tag "landing_img/su-blue.svg"%>
+      </div>
+      <div class="final__block__anim__letters">
+        <%= image_tag "landing_img/r-blue.svg"%>
+      </div>
+      <div class="final__block__anim__letters">
+        <%= image_tag "landing_img/f-blue.svg"%>
+      </div>
+      <div class="final__block__anim__letters">
+        <%= image_tag "landing_img/c-blue.svg"%>
+      </div>
+      <div class="final__block__anim__letters">
+        <%= image_tag "landing_img/e-blue.svg"%>
+      </div>
+    </div>
+    <div class="final__block__anim">
+      <div class="final__block__anim__letters">
+        <%= image_tag "landing_img/su-blue.svg"%>
+      </div>
+      <div class="final__block__anim__letters">
+        <%= image_tag "landing_img/r-blue.svg"%>
+      </div>
+      <div class="final__block__anim__letters">
+        <%= image_tag "landing_img/f-blue.svg"%>
+      </div>
+      <div class="final__block__anim__letters">
+        <%= image_tag "landing_img/c-blue.svg"%>
+      </div>
+      <div class="final__block__anim__letters">
+        <%= image_tag "landing_img/e-blue.svg"%>
+      </div>
+    </div>
+    <div class="final__block__anim">
+      <div class="final__block__anim__letters">
+        <%= image_tag "landing_img/su-blue.svg"%>
+      </div>
+      <div class="final__block__anim__letters">
+        <%= image_tag "landing_img/r-blue.svg"%>
+      </div>
+      <div class="final__block__anim__letters">
+        <%= image_tag "landing_img/f-blue.svg"%>
+      </div>
+      <div class="final__block__anim__letters">
+        <%= image_tag "landing_img/c-blue.svg"%>
+      </div>
+      <div class="final__block__anim__letters">
+        <%= image_tag "landing_img/e-blue.svg"%>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <footer class="landing__footer">
+  <div class="footer__blocks">
+    <div class="footer__block">
+      <h5>Соцсети</h5>
+      <ul>
+        <li>
+          <a href="#">Instagram</a>
+        </li>
+        <li>
+          <a href="#">Facebook</a>
+        </li>
+        <li>
+          <a href="#">Telegram</a>
+        </li>
+        <li>
+          <a href="#">Вконтакте</a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer__block">
+      <h5>Информация</h5>
+      <ul>
+        <li>
+          <a href="#">Блогерам</a>
+        </li>
+        <li>
+          <a href="#">Рекламодателям</a>
+        </li>
+        <li>
+          <a href="#">Помощь</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__line">
+    <div class="menu__logo">
+      <%= image_tag "landing_img/logotype-black.svg", :class => "logo" %>
+    </div>
+    <span>
+      © 2020 медиа-сервис о серфинге «Surface», 0+
+    </span>
+    <%= link_to "surface.surf", posts_path %>
+  </div>
+  </footer>
+
+  <div class="landing-header">
+    <div class="landing-header__rect" id="btnOpen">
+      <div class=""></div>
+      <div class=""></div>
+    </div>
+
+    <div class="landing-header__menu" id="menu">
+      <ul>
+        <li>
+          <a href="#">о платф<span class="letter">о</span>рме</a>
+        </li>
+        <li>
+          <a href="#">с<span class="letter">е</span>рфшколы</a>
+        </li>
+        <li>
+          <a href="#">тренир<span class="letter">о</span>вки</a>
+        </li>
+        <li>
+          <a href="#">к<span class="letter">о</span>мьюнити</a>
+        </li>
+        <li>
+          <a href="#">автор<span class="letter">а</span>м</a>
+        </li>
+        <li>
+          <a href="#">для в<span class="letter">а</span>с</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
