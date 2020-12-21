@@ -8,7 +8,7 @@ function toggleMenu() {
   btnOpen.classList.toggle('landing-header-active')
 }
 btnOpen.onclick = function() {
-    menu.style.transition = 'all .33s linear;'
+    menu.style.transition = 'all .0s linear'
     toggleMenu()
 }
 //add class for close menu for links in menu
