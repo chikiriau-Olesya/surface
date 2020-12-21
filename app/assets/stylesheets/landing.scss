@@ -7,6 +7,7 @@ $green: #A9D726;
 
 body * {
   transition: all .33s linear;
+  cursor: url(image-path('landing_img/cursor.svg')), auto;
 }
 //basic styles
 .paragraph {
@@ -54,138 +55,7 @@ body * {
   }
 }
 
-//burger menu
-// .landing-header {
-//     cursor: pointer;
-//     position: fixed;
-//     top: 0;
-//     right: 0;
-//     margin-right: 7vw;
-//     margin-top: 3.5vw;
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-//
-//     .landing-header__rect {
-//       z-index: 2;
-//         .menu-line {
-//           width: 32px;
-//           height: 2px;
-//           background-color: $green;
-//           margin-bottom: 5px;
-//           mix-blend-mode: difference;
-//
-//         &:hover {
-//           opacity: 0.9
-//         }
-//     }
-//
-//     .landing-header__rect-close {
-//       z-index: 2;
-//         .menu-line {
-//           width: 32px;
-//           height: 2px;
-//           background-color: $green;
-//           margin-bottom: 5px;
-//           mix-blend-mode: difference;
-//         }
-//
-//       &:hover {
-//         opacity: 0.9
-//       }
-//
-//       .menu-line:first-of-type {
-//         transform: rotate(45);
-//       }
-//       .menu-line:nth-of-type(2) {
-//         transform: rotate(-45);
-//       }
-//     }
-// }
-//
-//
-//     .landing-header__menu {
-//       // display: none;
-//       opacity: 0;
-//       position: fixed;
-//       left: 0;
-//       top: 0;
-//       width: 100%;
-//       background-color: $black;
-//
-//       ul {
-//         width: 86%;
-//         margin: 0 auto;
-//         padding-top: 10vw;
-//         padding-bottom: 30vw;
-//
-//         li {
-//           &:nth-of-type(2),
-//           &:nth-of-type(5) {
-//             margin-left: 6vw;
-//           }
-//           &:nth-of-type(3),
-//           &:nth-of-type(6) {
-//             margin-left: 11vw;
-//           }
-//         }
-//       }
-//       a {
-//         color: white;
-//         font-size: 72px;
-//         text-decoration: none;
-//       }
-//     }
-// }
-// .landing-header {
-//     cursor: pointer;
-//     position: fixed;
-//     top: 0;
-//     right: 0;
-//     margin-right: 7vw;
-//     margin-top: 3.5vw;
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
-// }
-//
-// .landing-header__rect {
-//   z-index: 2;
-//     .menu-line {
-//       width: 32px;
-//       height: 2px;
-//       background-color: $green;
-//       margin-bottom: 5px;
-//       mix-blend-mode: difference;
-//     }
-//     &:hover {
-//       opacity: 0.9
-//     }
-// }
-//
-//     .landing-header__rect-close {
-//       z-index: 2;
-//         .menu-line {
-//           width: 32px;
-//           height: 2px;
-//           background-color: $green;
-//           margin-bottom: 5px;
-//           mix-blend-mode: difference;
-//         }
-//
-//       &:hover {
-//         opacity: 0.9
-//       }
-//
-//       .menu-line:first-of-type {
-//         transform: rotate(45);
-//       }
-//       .menu-line:nth-of-type(2) {
-//         transform: rotate(-45);
-//       }
-//     }
-// }
-
+///burder menu
 .landing-header {
   cursor: pointer;
   position: fixed;
@@ -196,10 +66,17 @@ body * {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  .menu__logo {
+    width: 86%;
+    margin: 0 auto;
+    margin-top: 2.5vw;
+  }
 }
 
 
 .landing-header__rect {
+  cursor: pointer;
    z-index: 2;
    &:hover {
      opacity: 0.9
@@ -251,17 +128,24 @@ body * {
     }
   }
   a {
+    cursor: pointer;
     color: white;
     font-size: 72px;
     text-decoration: none;
   }
+
+  a:hover {
+    opacity: 0.9;
+    margin-left: 4vw;
+    transition: all .8s linear;
+  }
 }
 
 .landing-header .landing-header__menu {
-  opacity: 0;
+  display: none;
 }
 .landing-header-active .landing-header__menu {
-  opacity: 1;
+  display: block;
 }
 
 
@@ -608,6 +492,13 @@ body * {
     background-color: $black;
     color: white;
     margin-bottom: 0;
+
+    .pages__pic {
+      background-image: url(image-path('landing_img/prof.png'));
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
 }
 
 //SECTION ABOUT MOBILE VERSION
@@ -1101,6 +992,10 @@ body * {
   .landing-wrapper h3 {
     font-size: 24px;
     line-height: 100%;
+  }
+
+  .landing-header .menu__logo {
+    margin-top: 7.5vw;
   }
 
   .paragraph {
