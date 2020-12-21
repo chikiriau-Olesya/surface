@@ -1,6 +1,6 @@
 .<div class="landing-wrapper">
   <!-- firts screen -->
-  <section class="section hero">
+  <section class="section hero" id="hero">
     <div class="hero__blocks">
       <!-- block with short description and btn -->
       <div class="hero__blocks__about">
@@ -63,7 +63,7 @@
     </div>
   </section>
 
-  <section class="section about">
+  <section class="section about" id="about">
     <div class="about__text">
       <p>
         Surface&nbsp;&mdash; русскоязычный медиа-сервис
@@ -131,7 +131,7 @@
     </div>
   </section>
 
-  <section class="section pages school">
+  <section class="section pages school" id="school">
     <div class="pages__wrapper">
       <div class="pages__text">
         <h3>Находите подходящие именно вам серфшколы</h3>
@@ -148,7 +148,7 @@
     </div>
   </section>
 
-  <section class="section pages sport">
+  <section class="section pages sport" id="sport">
     <div class="pages__wrapper">
       <div class="pages__pic">
         <%= image_tag "landing_img/sport.png"%>
@@ -165,7 +165,7 @@
       </div>
   </section>
 
-  <section class="section city">
+  <section class="section city" id="city">
   <div class="city__text">
     <h3>Выбирайте свой город
       и&nbsp;станьте частью комьюнити
@@ -190,7 +190,7 @@
 
   </section>
 
-  <section class="section pages prof">
+  <section class="section pages prof" id="prof">
   <div class="pages__wrapper">
     <div class="pages__text">
       <h3>Расскажите миру
@@ -207,7 +207,7 @@
     </div>
   </section>
 
-  <section class="section pages tel">
+  <section class="section pages tel" id="tel">
   <div class="pages__wrapper">
     <div class="pages__pic">
       <%= image_tag "landing_img/mob.png"%>
@@ -338,32 +338,32 @@
   </footer>
 
   <div class="landing-header">
-    <div class="landing-header__rect" id="btnOpen">
-      <div class=""></div>
-      <div class=""></div>
+    <div class="landing-header__rect">
+      <div class="menu-line"></div>
+      <div class="menu-line"></div>
     </div>
-
-    <div class="landing-header__menu" id="menu">
+    <div class="landing-header__menu">
       <ul>
         <li>
-          <a href="#">о платф<span class="letter">о</span>рме</a>
+          <a href="#about" class="header__menu__links">о платф<span class="letter">о</span>рме</a>
         </li>
         <li>
-          <a href="#">с<span class="letter">е</span>рфшколы</a>
+          <a href="#school" class="header__menu__links">с<span class="letter">е</span>рфшколы</a>
         </li>
         <li>
-          <a href="#">тренир<span class="letter">о</span>вки</a>
+          <a href="#sport" class="header__menu__links">тренир<span class="letter">о</span>вки</a>
         </li>
         <li>
-          <a href="#">к<span class="letter">о</span>мьюнити</a>
+          <a href="#city" class="header__menu__links">к<span class="letter">о</span>мьюнити</a>
         </li>
         <li>
-          <a href="#">автор<span class="letter">а</span>м</a>
+          <a href="#prof" class="header__menu__links">автор<span class="letter">а</span>м</a>
         </li>
         <li>
-          <a href="#">для в<span class="letter">а</span>с</a>
+          <a href="#tel" class="header__menu__links">для в<span class="letter">а</span>с</a>
         </li>
       </ul>
     </div>
   </div>
 </div>
+  <%= javascript_pack_tag 'landing', 'data-turbolinks-track': 'reload' %>
