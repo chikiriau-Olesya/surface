@@ -24,6 +24,25 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  # Article
+  def newarticle
+    @post = Post.new
+    render 'newarticle'
+  end
+
+  # mediacontent
+  def newmedia
+    @post = Post.new
+    render 'newmedia'
+  end
+
+  # training
+  def newtraining
+    @post = Post.new
+    render 'newtraining'
+  end
+
+
   # GET /posts/1/edit
   def edit
   end

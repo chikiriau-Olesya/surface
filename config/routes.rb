@@ -9,11 +9,23 @@ Rails.application.routes.draw do
   #get 'about/index'
   #get 'promo/index'
   resources :posts do
+    collection do
+     get :newarticle
+     get :newmedia
+     get :newtraining
+   end
 	  resources :comments
     resources :likes
     resources :favorites
   end
   resources :subscribers
+
+  # resources :admins do
+  #   collection do
+  #    get :choosePost
+  #  end
+  # end
+
   get 'posts/index'
 
   get 'promo', to: 'promo#index'
@@ -32,4 +44,5 @@ Rails.application.routes.draw do
   get 'users/:id/following', :to => "users#following", :as => :following
 
   get 'admin', to: 'admin#index'
+  # get 'admin#index', to: 'choosePost#index'
 end

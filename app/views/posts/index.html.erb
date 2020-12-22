@@ -21,10 +21,10 @@
       <tr>
         <td><%= post.category.name %></td>
         <td><%= post.name %></td>
-        <%#= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
+        <!-- <#%= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %> -->
         <td><%= post.image %></td>
         <td><%= post.title %></td>
-        <td><%= post.content.html_safe %></td>
+        <td><#%= post.content.html_safe %></td>
         <td><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></td>
         <td><%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Commentes'%></td>
         <td><%= link_to '👀', post %></td>

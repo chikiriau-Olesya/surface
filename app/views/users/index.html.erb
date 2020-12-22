@@ -2,8 +2,8 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>Email</th>
       <th>Username</th>
+      <th>Email</th>
       <% if user_signed_in? && current_user.isadmin == true %>
         <th>Admin</th>
       <% end %>
@@ -14,8 +14,8 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.id %></td>
-        <td><%= link_to user.email, user %></td>
         <td><%= user.username %></td>
+        <td><%= link_to user.email, user %></td>
         <% if user_signed_in? && current_user.isadmin == true %>
           <td><%= user.isadmin %></td>
         <% end %>
