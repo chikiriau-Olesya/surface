@@ -213,7 +213,6 @@ body * {
 .hero__blocks__main__bottom {
   width: 100%;
   margin: 0 auto;
-  // padding: 5.8vw 0vw 11vw 10.65vw;
   padding: 8vw 0vw 9vw;
   background-image: url(image-path('landing_img/hero-bc.jpg'));
   background-size: cover;
@@ -414,6 +413,53 @@ body * {
     .btn a {
         background-color: white;
         color: $blue;
+    }
+
+    .pages__pic {
+      .hero__blocks__main__bottom__word {
+        display: flex;
+        align-items: baseline;
+        transform: translate(0vw, -2vw);
+        .hero__blocks__main__bottom__leters {
+           &:first-of-type {
+               // margin-left: 7vw;
+               margin-right: -2px;
+           }
+           &:nth-of-type(2){
+               margin-right: -3px;
+               animation: up ease-in-out 4s infinite;
+           }
+           &:nth-of-type(3) {
+               margin-right: -3px;
+               animation: up ease-in-out 4s infinite;
+               animation-delay: .4s;
+           }
+           &:nth-of-type(4){
+               margin-right: -3px;
+               animation: up ease-in-out 4s infinite;
+               animation-delay: .8s;
+           }
+
+           @keyframes up {
+               0% {
+                   transform: translateY(0);
+               }
+               50% {
+                   transform: translateY(2vw);
+               }
+               100% {
+                   transform: translateY(0);
+               }
+           }
+
+           img {
+               width: 4vw;
+           }
+         }
+        // img {
+        //   width: 4vw;
+        // }
+      }
     }
 }
 
@@ -854,6 +900,12 @@ body * {
       flex-direction: column-reverse;
     }
   }
+  .sport .pages__pic .hero__blocks__main__bottom__word {
+    transform: translate(28vw, -2vw);
+  }
+  .sport .pages__pic .hero__blocks__main__bottom__word .hero__blocks__main__bottom__leters img {
+    width: 6vw;
+  }
 
   //city
   .city {
@@ -1125,6 +1177,14 @@ body * {
         // margin-bottom: 24vw;
       }
     }
+  }
+
+  .sport .pages__pic .hero__blocks__main__bottom__word {
+    transform: translate(1vw, -2vw);
+  }
+  
+  .sport .pages__pic .hero__blocks__main__bottom__word .hero__blocks__main__bottom__leters img {
+    width: 10vw;
   }
 
   //city
