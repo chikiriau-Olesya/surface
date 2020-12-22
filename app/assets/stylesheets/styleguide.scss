@@ -543,6 +543,9 @@ body{
       display: flex;
       justify-content: space-between;
       padding-top: 3vw;
+      .grid__photo__example + .grid__photo__example{
+        margin-left: 0;
+      }
     }
     h3{
       padding-top: 6vw;
