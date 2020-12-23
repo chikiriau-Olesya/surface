@@ -305,6 +305,9 @@ body * {
 .features__blocks {
     display: flex;
     overflow-x: scroll;
+    margin-right: 3vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
 }
 
 .features__block__item {
@@ -312,6 +315,12 @@ body * {
     border-radius: 10px 10px 0px 0px;
     margin-right: 2.45vw;
     color: white;
+
+    &:nth-of-type(2):hover,
+    &:nth-of-type(3):hover,
+    &:nth-of-type(4):hover {
+      transform: scale(1.06);
+    }
 
     img {
         width: 30vw;
@@ -371,6 +380,69 @@ body * {
     }
 }
 
+//SECTION WITH DREAM TITLE
+.dream {
+  position: relative;
+  background-color: $black;
+  padding: 6vw 0vw;
+
+  .dream__type,
+  .dream__title {
+    width: 86%;
+    margin: 0 auto;
+  }
+
+  .dream__type {
+    display: flex;
+    justify-content: space-between;
+    span {
+      color: white;
+      font-size: 18px;
+    }
+  }
+
+  .dream__title {
+    margin-top: 4vw;
+    margin-bottom: 4vw;
+  }
+
+  .dream__title__line {
+    animation: wave 3s ease-in-out infinite;
+
+    &:nth-of-type(2) {
+      animation-delay: 0.5s;
+    }
+    &:nth-of-type(3) {
+      animation-delay: 1s;
+    }
+    &:nth-of-type(4) {
+      animation-delay: 0.5s;
+    }
+
+    @keyframes wave {
+      0% {
+        transform: translateX(-2vw);
+      }
+      50% {
+        transform: translatex(4vw,);
+      }
+      100% {
+        transform: translateX(-2vw);
+      }
+    }
+
+    p {
+      font-size: 13vw;
+      color: white;
+      font-weight: 500;
+      line-height: 80%;
+    }
+
+    img {
+      width: 80vw;
+    }
+  }
+}
 //SECTION SCHOOL
 .pages {
     margin-bottom: 7.45vw;
@@ -397,6 +469,10 @@ body * {
         margin-top: 16px;
         margin-bottom: 80px;
     }
+}
+
+.school {
+  padding-top: 10vw;
 }
 
 //SECTION SPORT
@@ -465,7 +541,7 @@ body * {
 
 //SECTION CITY
 .city {
-    margin-bottom: 5vw;
+    margin-bottom: 7vw;
     overflow-x: hidden;
 }
 .city__text {
@@ -532,12 +608,35 @@ body * {
 }
 
 //SECTIONS FOR PROFI
+// .prof {
+//     padding-top: 10vw;
+//     padding-bottom: 20vw;
+//     background-color: $black;
+//     color: white;
+//     margin-bottom: 0;
+//
+//     .pages__pic {
+//       background-image: url(image-path('landing_img/prof.png'));
+//       background-size: cover;
+//       background-position: center;
+//       background-repeat: no-repeat;
+//     }
+// }
 .prof {
-    padding-top: 10vw;
-    padding-bottom: 20vw;
     background-color: $black;
     color: white;
     margin-bottom: 0;
+
+    .pages__wrapper {
+      width: auto;
+    }
+
+    .pages__text {
+      padding-top: 14vw;
+      padding-bottom: 24vw;
+      width: 45%;
+      margin: 0 auto;
+    }
 
     .pages__pic {
       background-image: url(image-path('landing_img/prof.png'));
@@ -878,7 +977,21 @@ body * {
     width: 60vw;
   }
 
-  //pages
+  //dream section
+  .dream {
+    padding: 12vw 0vw;
+    .dream__title {
+      margin-top: 22vw;
+      margin-bottom: 22vw;
+      .dream__title__line {
+        p {
+          font-size: 15vw;
+        }
+      }
+    }
+  }
+
+  //pages school
   .pages {
     .pages__wrapper {
       flex-direction: column;
@@ -892,6 +1005,10 @@ body * {
       margin: 0 auto;
       margin-right: 0;
     }
+  }
+
+  .school {
+    padding-top: 3vw;
   }
 
   //sport pages
@@ -928,7 +1045,23 @@ body * {
   }
 
   //PROFI
+  .prof {
+    padding-top: 8vw;
+    padding-bottom: 0vw;
 
+    .pages__pic {
+      height: 64vw;
+      margin-top: 0;
+      width: 100%;
+    }
+
+    .pages__text {
+      padding-bottom: 17vw;
+      width: 70%;
+      margin: 0;
+      margin-left: 8vw;
+    }
+  }
 
 
   //tel pages
@@ -1141,6 +1274,22 @@ body * {
     }
   }
 
+  //dream
+  .dream {
+    padding: 28vw 0vw;
+    .dream__title {
+      margin-top: 32vw;
+      margin-bottom: 32vw;
+
+      .dream__title__line {
+        p {
+          font-size: 16vw;
+          line-height: 100%;
+        }
+      }
+    }
+  }
+
   //pages SCHOOL
   .pages {
     .pages__text {
@@ -1159,6 +1308,10 @@ body * {
     }
   }
 
+  .school {
+    padding-top: 10vw;
+  }
+
   .school .pages__wrapper {
     padding: 9vw 0vw 18vw;
   }
@@ -1172,17 +1325,12 @@ body * {
       width: 90%;
     }
 
-    .pages__text {
-      .btn {
-        // margin-bottom: 24vw;
-      }
-    }
   }
 
   .sport .pages__pic .hero__blocks__main__bottom__word {
     transform: translate(1vw, -2vw);
   }
-  
+
   .sport .pages__pic .hero__blocks__main__bottom__word .hero__blocks__main__bottom__leters img {
     width: 10vw;
   }
@@ -1213,7 +1361,16 @@ body * {
   //profi
   .prof {
     padding-top: 18vw;
-    padding-bottom: 32vw;
+    padding-bottom: 0vw;
+
+    .pages__pic {
+      height: 64vw;
+      margin-top: 0;
+    }
+
+    .pages__text {
+      padding-bottom: 17vw;
+    }
   }
 
 
