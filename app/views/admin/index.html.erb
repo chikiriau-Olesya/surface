@@ -1,14 +1,9 @@
 <h1>Панель администратора</h1>
 
-<div class="">
-  <%= link_to "Публикации", admin_path %>
-  <%= link_to "Люди", users_path %>
-  <%= link_to "Категории", categories_path %>
-</div>
+<%= render "sidemenu" %>
 
 <%= link_to 'Новая статья', newarticle_posts_path %>
 <%= link_to 'Создать медиаконтент', newmedia_posts_path %>
-<%= link_to 'Добавить тренировку', newtraining_posts_path %>
 <%= link_to 'Добавить тренировку', newtraining_posts_path %>
 
 <table>
@@ -19,6 +14,8 @@
       <th>Title</th>
       <!-- <th>Content</th> -->
       <th>Category</th>
+      <th>Date</th>
+      <th>Activity</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -32,7 +29,11 @@
         <td><%= post.name %></td>
         <td><%= post.title %></td>
         <td><%= post.category.name %></td>
-        <td><%#= post.content.html_safe %></td>
+        <td><span><%= post.created_at.mday %>.<%= post.created_at.month %>.<%= post.created_at.year %></span></td>
+
+        <!-- error with html_safe after I added media form -->
+        <!-- <td><%#= post.content.html_safe %></td> -->
+
         <td><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></td>
         <td><%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Commentes'%></td>
         <td><%= link_to '👀', post %></td>
