@@ -1,6 +1,14 @@
 @import "reset.css";
 @import "fonts.scss";
-
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap');
+ @font-face {
+     font-family: 'Ponzu';
+     /* src: url("../fonts/Ponzu-LightItalic.ttf") format("truetype"); */
+     src:font-url('Ponzu-LightItalic.ttf') format('truetype');
+     font-style: italic;
+     font-weight: normal;
+ }
+ 
 html {
   overflow-x: hidden;
 }

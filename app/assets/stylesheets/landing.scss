@@ -1,6 +1,7 @@
 // Place all the styles related to the Landing controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
 $blue: #2763BD;
 $black: #101010;
 $green: #A9D726;
@@ -12,14 +13,14 @@ body * {
 //basic styles
 .paragraph {
     font-weight: 400;
-    font-size: 21px;
+    font-size: 1.46vw;
     line-height: 125%;
 }
 
 .landing-wrapper h3 {
     font-weight: 500;
-    font-size: 42px;
-    line-height: 48px;
+    font-size: 2.9vw;
+    line-height: 115%;
 }
 
 /////special styles for letters in titles
@@ -130,7 +131,7 @@ body * {
   a {
     cursor: pointer;
     color: white;
-    font-size: 72px;
+    font-size: 5vw;
     text-decoration: none;
   }
 
@@ -174,8 +175,8 @@ body * {
   .hero__blocks__about__text{
     margin-top: 25vw;
     margin-bottom: 3vw;
-    font-size: 24px;
-    line-height: 28px;
+    font-size: 1.68vw;
+    line-height: 120%;
     font-weight: 400;
   }
 }
@@ -189,7 +190,7 @@ body * {
   background-color: $black;
   color: white;
   font-weight: 500;
-  font-size: 72px;
+  font-size: 5.02vw;
   line-height: 100%;
 
   span:nth-of-type(2) {
@@ -279,7 +280,7 @@ body * {
             width: 86%;
             padding: 20vw 0 20vw 0;
             font-weight: 500;
-            font-size: 48px;
+            font-size: 3.34vw;
             line-height: 125%;
         }
     }
@@ -328,7 +329,7 @@ body * {
 
     h4 {
         font-weight: 500;
-        font-size: 32px;
+        font-size: 2.23vw;
         padding: 2vw 4vw 0vw 2vw;
     }
 
@@ -338,7 +339,7 @@ body * {
 
         .paragraph {
             font-weight: 500;
-            font-size: 21px;
+            font-size: 1.46vw;
             line-height: 125%;
             padding: 1vw 4vw 2vw 2vw;
         }
@@ -397,7 +398,7 @@ body * {
     justify-content: space-between;
     span {
       color: white;
-      font-size: 18px;
+      font-size: 1.256vw;
     }
   }
 
@@ -608,20 +609,6 @@ body * {
 }
 
 //SECTIONS FOR PROFI
-// .prof {
-//     padding-top: 10vw;
-//     padding-bottom: 20vw;
-//     background-color: $black;
-//     color: white;
-//     margin-bottom: 0;
-//
-//     .pages__pic {
-//       background-image: url(image-path('landing_img/prof.png'));
-//       background-size: cover;
-//       background-position: center;
-//       background-repeat: no-repeat;
-//     }
-// }
 .prof {
     background-color: $black;
     color: white;
@@ -634,8 +621,8 @@ body * {
     .pages__text {
       padding-top: 14vw;
       padding-bottom: 24vw;
-      width: 45%;
-      margin: 0 auto;
+      width: 36%;
+      margin-left: 7vw;
     }
 
     .pages__pic {
@@ -679,10 +666,12 @@ body * {
 
 .final__text {
     font-weight: 500;
-    font-size: 84px;
+    font-size: 5.86vw;
     line-height: 100%;
 
     .final__text__title {
+      display: flex;
+      flex-direction: column;
         span:nth-of-type(2) {
             margin-left: 80px;
         }
@@ -752,8 +741,7 @@ body * {
 
     h5 {
         font-weight: 500;
-        font-size: 12px;
-        line-height: 14px;
+        font-size: 0.84vw;
         letter-spacing: 0.02em;
         text-transform: uppercase;
         color: $green;
@@ -763,8 +751,8 @@ body * {
     a {
         text-decoration: none;
         font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 1.1vw;
+        line-height: 152%;
         color: $black;
 
         &:hover {
@@ -780,7 +768,7 @@ body * {
 
     span {
         font-weight: 500;
-        font-size: 14px;
+        font-size: 0.98vw;
         line-height: 16px;
         color: #A0A0A0;
         margin-left: 2vw;
@@ -788,7 +776,7 @@ body * {
 
     a {
         font-weight: normal;
-        font-size: 16px;
+        font-size: 0.98vw;
         line-height: 19px;
         color: $black;
         text-decoration: none;
@@ -893,6 +881,13 @@ body * {
     }
   }
 
+  .landing-header__menu a {
+    font-size: 11vw;
+  }
+
+  .paragraph {
+    font-size: 24px;
+  }
 
   //main screen
   .hero__blocks__main {
@@ -959,13 +954,20 @@ body * {
   //features section
   .features__block__item {
     margin-right: 5.45vw;
+
+    h4 {
+      font-size: 32px;
+      padding: 4vw 4vw 0vw 3vw;
+    }
   }
   .features__block__item:first-of-type {
     padding: 4vw 7vw 4vw 4vw;
 
     .paragraph {
-    margin-top: 16vw;
+      margin-top: 11vw;
+      padding-bottom: 5vw;
     }
+
     h2 {
       font-weight: 500;
       font-size: 8vw;
@@ -975,6 +977,15 @@ body * {
   }
   .features__block__item img {
     width: 60vw;
+  }
+
+  .features__block__item .features__block__item__desc .paragraph {
+    font-size: 24px;
+    padding: 2vw 4vw 2vw 3vw;
+  }
+
+  .features__block__item .features__block__item__desc a {
+    padding-right: 3vw;
   }
 
   //dream section
@@ -987,6 +998,11 @@ body * {
         p {
           font-size: 15vw;
         }
+      }
+    }
+    .dream__type {
+      span {
+        font-size: 2.5vw;
       }
     }
   }
@@ -1031,11 +1047,11 @@ body * {
   .city__text {
     flex-direction: column;
     h3 {
-      width: 60%;
+      width: 70%;
     }
 
     .paragraph {
-    width: 60%;
+    width: 70%;
     margin-top: 2vw;
     }
   }
@@ -1135,7 +1151,7 @@ body * {
 
   //footer
   .landing__footer {
-    margin-top: 11vw;
+    margin-top: 14vw;
     margin-bottom: 4vw;
   }
 
@@ -1164,9 +1180,17 @@ body * {
         }
       }
     }
+  }
 
-    .footer__line {
-      padding: 5vw 0 2vw 0;
+  .footer__line {
+    padding: 4vw 0 2vw 0;
+
+    span {
+      font-size: 2vw;
+    }
+
+    a {
+        font-size: 2vw;
     }
   }
 }
@@ -1211,7 +1235,7 @@ body * {
   //first screen
   .hero__blocks__main__top {
     padding: 16vw 9vw 7vw;
-    font-size: 10vw;
+    font-size: 13vw;
     span:nth-of-type(2) {
        margin-left: 9vw;
     }
@@ -1236,14 +1260,14 @@ body * {
       margin-bottom: 5vw;
       width: 80%;
       p {
-        font-size: 18px;
+        font-size: 16px;
       }
     }
   }
 
   .hero__blocks__main__bottom {
     margin-top: 12vw;
-    padding: 56vw 0vw 24vw;
+    padding: 45vw 0vw 24vw;
   }
 
   //about
@@ -1260,6 +1284,7 @@ body * {
   }
   .features__block__item {
     margin-right: 7vw;
+
     &:first-of-type {
       padding: 10vw 13vw 7vw 10vw;
       margin-left: 5vw;
@@ -1269,9 +1294,17 @@ body * {
         width: 60vw;
       }
     }
-    img {
-     width: 80vw;
+    h4 {
+      padding: 11vw 4vw 0vw 6vw;
     }
+    img {
+     width: 88vw;
+    }
+  }
+
+  .features__block__item .features__block__item__desc .paragraph {
+    font-size: 18px;
+    padding: 2vw 4vw 2vw 6vw;
   }
 
   //dream
@@ -1286,6 +1319,12 @@ body * {
           font-size: 16vw;
           line-height: 100%;
         }
+      }
+    }
+
+    .dream__type {
+      span {
+        font-size: 4.5vw;
       }
     }
   }
@@ -1348,6 +1387,10 @@ body * {
     .paragraph {
       width: 90%;
     }
+
+    .paragraph {
+      margin-top: 16px;
+    }
   }
 
   .city__lines {
@@ -1370,9 +1413,14 @@ body * {
 
     .pages__text {
       padding-bottom: 17vw;
+      h3 {
+        width: 90%;
+      }
+      p {
+        width: 90%;
+      }
     }
   }
-
 
   //Tel
   .tel {
@@ -1420,7 +1468,27 @@ body * {
     span,
     a {
       margin-left: 0;
+      font-size: 3vw;
     }
+  }
+
+}
+
+@media (max-width: 320px) {
+  .paragraph {
+    font-size: 14px;
+  }
+  
+  .landing-header__menu a {
+    font-size: 40px;
+  }
+
+  .about .about__text p {
+    font-size: 18px;
+  }
+
+  .city__lines .city__lines__item {
+    font-size: 36px;
   }
 
 }
