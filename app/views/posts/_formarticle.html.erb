@@ -32,14 +32,16 @@
   	<%= form.text_field :author, placeholder: 'name'%>
   </div>
 
-  <div class="field">
-    <%= form.label :category_id %>
-    <%= form.select :category_id, Category.pluck(:name, :id) %>
-  </div>
 
   <div class="field">
     <%= form.label :content %>
     <%= form.cktext_area :content %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.select :category_id, Category.pluck(:name, :id) %>
+    <%= form.hidden_field :post_type_id, value: post.post_type.id %>
   </div>
 
   <div class="actions">

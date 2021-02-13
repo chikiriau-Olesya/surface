@@ -1,48 +1,28 @@
-@import "reset.css";
-@import "fonts.scss";
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap');
- @font-face {
-     font-family: 'Ponzu';
-     /* src: url("../fonts/Ponzu-LightItalic.ttf") format("truetype"); */
-     src:font-url('Ponzu-LightItalic.ttf') format('truetype');
-     font-style: italic;
-     font-weight: normal;
- }
- 
-html {
-  overflow-x: hidden;
-}
 body {
-  width: 100%;
-  margin: 0 auto;
-  overflow-x: hidden;
-  font-family: 'Raleway', sans-serif;
-  font-weight: 400;
-  position: relative;
-}
+  background-color: #fff;
+  color: #333;
+  margin: 33px; }
 
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px; }
 
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px; }
 
-// body, p, ol, ul, td {
-//   font-family: verdana, arial, helvetica, sans-serif;
-//   font-size: 13px;
-//   line-height: 18px; }
-//
-// pre {
-//   background-color: #eee;
-//   padding: 10px;
-//   font-size: 11px; }
-//
-// a {
-//   color: #000; }
-//
-// a:visited {
-//   color: #666; }
-//
-// a:hover {
-//   color: #fff;
-//   background-color: #000; }
-//
+a {
+  color: #000; }
+
+a:visited {
+  color: #666; }
+
+a:hover {
+  color: #fff;
+  background-color: #000; }
+
 th {
   padding-bottom: 5px; }
 

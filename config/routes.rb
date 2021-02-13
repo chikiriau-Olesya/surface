@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :post_types
   resources :follows
   resources :categories
   mount Ckeditor::Engine => '/ckeditor'
@@ -6,13 +7,13 @@ Rails.application.routes.draw do
   resources :users
   post 'users/:id/follow', to: "users#follow", as: "follow_user"
   post 'users/:id/unfollow', to: "users#unfollow", as: "unfollow_user"
+  
   #get 'about/index'
   #get 'promo/index'
   resources :posts do
     collection do
-     get :newarticle
-     get :newmedia
-     get :newtraining
+     get :newmagazine
+     get :newsport
    end
 	  resources :comments
     resources :likes

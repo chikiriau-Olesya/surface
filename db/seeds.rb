@@ -1,5 +1,21 @@
-Post.destroy_all
-puts "Destroyed everything you touch"
+# Post.destroy_all
+# puts "Destroyed everything you touch"
+
+# Create pages of pastTypes
+# post_types = [
+#   {
+#     name: "sport"
+#   },
+#   {
+#     name: "afisha"
+#   }
+#
+# ]
+#
+# post_types.each do |pt|
+#   r=PostType.create(pt)
+#   puts "Some magic just craete a #{ r.name } with id #{ r.id }!"
+# end
 
 # posts = [
 #   {

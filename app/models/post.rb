@@ -8,7 +8,8 @@ class Post < ApplicationRecord
 		has_many :favorites, dependent: :destroy
 
 		belongs_to :user
-		belongs_to :category
+		belongs_to :category, optional: true
+		belongs_to :post_type
 
 		mount_uploader :image, ImageUploader
 end

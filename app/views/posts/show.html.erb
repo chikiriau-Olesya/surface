@@ -14,10 +14,11 @@
   <%= @post.title %>
 </h3>
 
-<p>
-  <strong>Category:</strong>
-  <%= @post.category.name %>
-</p>
+<% if @post.category_id? %>
+  <span>
+    <%= @post.category.name %>
+  </span>
+<% end %>
 
 <p>
 	<strong>Author:</strong>

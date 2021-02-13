@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_07_154846) do
+ActiveRecord::Schema.define(version: 2021_02_04_080538) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 2020_12_07_154846) do
     t.boolean "display_in_navbar", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "post_type_id"
+    t.index ["post_type_id"], name: "index_categories_on_post_type_id"
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -66,6 +68,12 @@ ActiveRecord::Schema.define(version: 2020_12_07_154846) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "post_types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "name"
     t.string "title"
@@ -75,8 +83,10 @@ ActiveRecord::Schema.define(version: 2020_12_07_154846) do
     t.string "author"
     t.string "image"
     t.integer "user_id", null: false
-    t.integer "category_id", null: false
+    t.integer "category_id"
+    t.integer "post_type_id"
     t.index ["category_id"], name: "index_posts_on_category_id"
+    t.index ["post_type_id"], name: "index_posts_on_post_type_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -100,6 +110,7 @@ ActiveRecord::Schema.define(version: 2020_12_07_154846) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "categories", "post_types"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "favorites", "posts"
@@ -107,5 +118,6 @@ ActiveRecord::Schema.define(version: 2020_12_07_154846) do
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "posts", "categories"
+  add_foreign_key "posts", "post_types"
   add_foreign_key "posts", "users"
 end

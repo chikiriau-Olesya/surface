@@ -26,6 +26,11 @@
     <%= form.check_box :display_in_navbar %>
   </div>
 
+  <div class="field"> 
+    <%= form.label "Раздел" %> 
+    <%= form.select :post_type_id, PostType.pluck(:name, :id) %> 
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

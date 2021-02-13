@@ -22,25 +22,42 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @post.post_type = PostType.find_by_name("magazine")
+    # Прописивыам категории, которые отнисятся к разделу
+    @categories= ["Люди", "История", "Атмосфера", "Полезное"]
+    render 'newmagazine'
   end
 
-  # Article
-  def newarticle
+  # Magazine (раздел журнала с категориями внутри)
+  def newmagazine
     @post = Post.new
-    render 'newarticle'
+    @post.post_type = PostType.find_by_name("magazine")
+    @categories= ["Люди", "История", "Атмосфера", "Полезное"]
+    render 'newmagazine'
   end
 
-  # mediacontent
-  def newmedia
+  # School (карта школ)
+  def newschool
     @post = Post.new
-    render 'newmedia'
+    @post.post_type = PostType.find_by_name("school")
+    render 'newmagazine'
   end
 
-  # training
-  def newtraining
+  # Sport (раздел тренировок)
+  def newsport
     @post = Post.new
-    render 'newtraining'
+    @post.post_type = PostType.find_by_name("sport")
+    # @categories= ["", "Тренировка"]
+    render 'newsport'
   end
+
+  # Afisha (раздел афиши мероприятий)
+  def newafisha
+    @post = Post.new
+    @post.post_type = PostType.find_by_name("afisha")
+    render 'newmagazine'
+  end
+
 
 
   # GET /posts/1/edit
@@ -95,6 +112,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:name, :title, :author, :content, :image, :category_id)
+      params.require(:post).permit(:name, :title, :author, :content, :image, :category_id, :post_type_id)
     end
 end

@@ -10,6 +10,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>PostType</th>
       <th>Description</th>
       <th>Date</th>
       <th>Display in navbar</th>
@@ -21,6 +22,7 @@
     <% @categories.each do |category| %>
       <tr>
         <td><%= category.name %></td>
+        <td><%= category.post_type_id %></td>
         <td><%= category.description %></td>
         <td><span><%= category.created_at.mday %>.<%= category.created_at.month %>.<%= category.created_at.year %></span></td>
         <td><%= category.display_in_navbar %></td>
