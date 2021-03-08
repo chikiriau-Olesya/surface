@@ -2,7 +2,7 @@ class AdminController < ApplicationController
   def index
     @categories = Category.all
     @users = User.all
-    @comments = Comment.all
+    @coments = Coment.all
     @pt=PostType.all
     @user = current_user
 

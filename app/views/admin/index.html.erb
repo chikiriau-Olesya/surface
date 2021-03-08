@@ -40,7 +40,7 @@
         <!-- <td><%#= post.content.html_safe %></td> -->
 
         <td><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%></td>
-        <td><%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Commentes'%></td>
+        <td><#%= post.comments.count %> <#%= (post.comments.count) == 1 ? 'Comment' : 'Commentes'%></td>
         <td><%= link_to '👀', post %></td>
         <td><%= link_to '🛠', edit_post_path(post) %></td>
         <td><%= link_to '🗑', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,5 +1,5 @@
-# Post.destroy_all
-# puts "Destroyed everything you touch"
+Post.destroy_all
+puts "Destroyed everything you touch"
 
 # Create pages of pastTypes
 # post_types = [

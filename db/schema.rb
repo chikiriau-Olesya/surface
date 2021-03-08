@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_04_080538) do
+ActiveRecord::Schema.define(version: 2021_03_08_100823) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -32,16 +32,27 @@ ActiveRecord::Schema.define(version: 2021_02_04_080538) do
     t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
-  create_table "comments", force: :cascade do |t|
+  create_table "coments", force: :cascade do |t|
     t.string "commenter"
     t.text "body"
-    t.integer "post_id", null: false
+    t.integer "post_id"
+    t.integer "parent_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
-    t.index ["post_id"], name: "index_comments_on_post_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
+    t.index ["user_id"], name: "index_coments_on_user_id"
   end
+
+  # create_table "comments", force: :cascade do |t|
+  #   t.string "commenter"
+  #   t.text "body"
+  #   t.integer "post_id", null: false
+  #   t.datetime "created_at", precision: 6, null: false
+  #   t.datetime "updated_at", precision: 6, null: false
+  #   t.integer "user_id", null: false
+  #   t.index ["post_id"], name: "index_comments_on_post_id"
+  #   t.index ["user_id"], name: "index_comments_on_user_id"
+  # end
 
   create_table "favorites", force: :cascade do |t|
     t.integer "post_id", null: false
@@ -111,8 +122,9 @@ ActiveRecord::Schema.define(version: 2021_02_04_080538) do
   end
 
   add_foreign_key "categories", "post_types"
-  add_foreign_key "comments", "posts"
-  add_foreign_key "comments", "users"
+  add_foreign_key "coments", "users"
+  # add_foreign_key "comments", "posts"
+  # add_foreign_key "comments", "users"
   add_foreign_key "favorites", "posts"
   add_foreign_key "favorites", "users"
   add_foreign_key "likes", "posts"

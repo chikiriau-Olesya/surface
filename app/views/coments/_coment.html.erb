@@ -1,0 +1,18 @@
+<% unless coment.parent_id || !coment.persisted? %>
+  <div class="card">
+    <div class="card-body">
+      <p>
+        <b>Commenter:</b>
+        <%= User.find(coment.user_id).email %>
+      </p>
+      <%= coment.body %>
+    <%= link_to 'reply', new_post_coment_path(@post, parent_id: coment.id), remote: true, class: 'd-block' %>
+    </div>
+  </div>
+  <% if coment.replies.any? %>
+    <% coment.replies.each do |reply| %>
+      <%= render partial: 'coments/reply', locals: { reply: reply } %>
+    <% end %>
+  <% end %>
+  <div id="reply-form-<%= coment.id %>"></div>
+<% end %>

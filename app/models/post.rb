@@ -3,7 +3,7 @@ class Post < ApplicationRecord
 		validates :title, :presence => true,
 											:length => { :minimum => 5 }
 
-    has_many :comments, :dependent => :destroy
+    has_many :coments, :dependent => :destroy
 		has_many :likes, dependent: :destroy
 		has_many :favorites, dependent: :destroy
 
