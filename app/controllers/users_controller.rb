@@ -77,7 +77,7 @@ private
   end
 
   def user_params
-    params.require(:user).permit(:email, :username, :inst, :tg, :fb, :bio, :admin, :password)
+    params.require(:user).permit(:email, :username, :inst, :tg, :fb, :bio, :iaadmin, :password, :image)
   end
 
 end

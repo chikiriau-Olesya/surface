@@ -18,7 +18,11 @@
     </div> -->
     <div class="col-sm-9">
       <p class="username"><%=current_user.username %></p>
-      <a class="change-photo" href="">Change Profile Photo</a>
+      <div>
+        <%= image_tag(@user.image.url, alt: 'Image') if @user.image? %>
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+      </div>
     </div>
   </div>
   <!-- <div class="form-group row">
@@ -33,6 +37,7 @@
       <%= f.text_field :username, class: 'form-control' %>
     </div>
   </div>
+
   <div class="form-group row">
     <%= f.label :inst, class: 'col-sm-3 col-form-label' %>
     <div class="col-sm-9">
