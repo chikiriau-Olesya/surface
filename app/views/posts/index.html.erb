@@ -4,6 +4,8 @@
 	<%= link_to cat.name, posts_path(category: cat.name) %> <br>
 <% end %>
 
+<%= react_component 'M_CategoryList', { category: @category } %>
+
 <table>
   <thead>
     <tr>

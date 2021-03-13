@@ -6,7 +6,9 @@ class FavoritesController < ApplicationController
     if already_favorited?
       flash[:notice] = "You can't add to favorite more than once"
     else
-      @post.favorites.create(user_id: current_user.id)
+      @new_favorite = @post.favorites.create(user_id: current_user.id)
+      render json: @new_favorite
+      return
     end
     redirect_to post_path(@post)
   end
@@ -15,6 +17,8 @@ class FavoritesController < ApplicationController
       flash[:notice] = "Cannot unfavorite"
     else
       @favorite.destroy
+      render json: nil
+      return
     end
     redirect_to post_path(@post)
   end

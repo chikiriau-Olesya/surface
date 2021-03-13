@@ -1,0 +1,30 @@
+
+.category{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #101010;
+  background-color: #EEF2F6;
+  border-radius: 24px;
+  cursor: pointer;
+  border: none;
+  height: 35px;
+  width: 130px;
+}
+
+
+
+/* Category styles */
+.category--default{
+}
+.category--active{
+  background-color: #2763BD;
+  color: #fff;
+}
+.category--inPost{
+  background-color: #fff;
+}
+.category--inArticle{
+  background: transparent;
+  color: #9F9F9F;
+}
