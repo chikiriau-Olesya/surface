@@ -1,26 +1,30 @@
-  <br>
-  <%= image_tag(@post.image.url, alt: 'Image') if @post.image? %>
+<!-- <p class="user-name">
+  <strong>Имя:</strong>
+  <#%= @post.name %>
+</p> -->
 
-  <h3 class="title-post">
+<br>
+<%= image_tag(@post.image.url, alt: 'Image') if @post.image? %>
+
+<h3 class="title-post">
   <%= @post.title %>
-  </h3>
+</h3>
 
-  <% if @post.category_id? %>
-    <span>
-      <%= @post.category.name %>
-    </span>
-  <% end %>
+<% if @post.category_id? %>
+  <span>
+    <%= @post.category.name %>
+  </span>
+<% end %>
 
-  <p>
-  	<strong>Author:</strong>
-  	<%= @post.author %>
-  </p>
+<p>
+	<strong>Author:</strong>
+	<%= @post.user.username %>
+</p>
 
-  <p class="post-body">
-    <strong>Пост:</strong>
-    <#%= @post.content.html_safe %>
-  </p>
-
+<p class="post-body">
+  <strong>Пост:</strong>
+  <%= @post.content.html_safe %>
+</p>
 
   <div class="activity">
       <div class="liking">
@@ -32,7 +36,7 @@
       </div>
   </div>
 
-
+  
 
   <div class="commenting">
     <h2 class="comments-section">Комментарии</h2>

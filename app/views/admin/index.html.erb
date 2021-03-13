@@ -5,15 +5,23 @@
 <%= link_to 'Новая статья', newmagazine_posts_path %>
 <%= link_to 'Добавить тренировку', newsport_posts_path %> %>
 
+<h1>Posts</h1>
+<h2>All Categories</h2>
+<% Category.all.each do |cat| %>
+	<%= link_to cat.name, posts_path(category: cat.name) %> <br>
+<% end %>
+
+<%= react_component 'M_CategoryList', { category: @category } %>
+
 <table>
   <thead>
     <tr>
-      <th></th>
-      <th>Name</th>
-      <th>Title</th>
+			<th></th>
+			<th>Title</th>
+			<th>Author</th>
       <th>Category</th>
-      <th>Date</th>
-      <th>Activity</th>
+			<!-- delete later -->
+			<th>PostType</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,25 +30,39 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <%#= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
-        <td><%= post.image %></td>
-        <td><%= post.name %></td>
-        <td><%= post.title %></td>
-        <td>
-          <% if post.category_id? %>
-            <span>
-              <%= post.category.name %>
-            </span>
-          <% end %>
-        </td>
-        <td><span><%= post.created_at.mday %>.<%= post.created_at.month %>.<%= post.created_at.year %></span></td>
-
+				<td>
+					 <%= link_to(image_tag(post.image.thumb.url, alt: 'Image'), post.image.url, target: '_blank') if post.image? %>
+				</td>
+				 <td>
+					 <%= post.title %>
+				 </td>
+				 <td>
+					 <%= post.user.username %>
+				</td>
+				<!-- <td><#%= post.name %></td> -->
+				<td>
+				<% if post.category_id? %>
+					<span>
+					<%= post.category.name %>
+					</span>
+				<% end %>
+				</td>
+				<td><%= post.post_type.name %></td>
         <td><%= post.likes.count %> <%= (post.likes.count) == 1 ? '💙' : '💙'%></td>
         <td><%= post.coments.count %> <%= (post.coments.count) == 1 ? ' 💬' : ' 💬'%></td>
         <td><%= link_to '👀', post %></td>
-        <td><%= link_to '🛠', edit_post_path(post) %></td>
-        <td><%= link_to '🗑', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+				<!-- open view to delete and edit btn for admin in blog -->
+				<% if user_signed_in? && current_user.isadmin == true %>
+					<td><%= link_to '🛠', edit_post_path(post) %></td>
+					<td><%= link_to '🗑', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				<% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<br>
+
+<%#= link_to 'New Post', new_post_path %>
+<%#= link_to 'New Category', new_category_path %>
