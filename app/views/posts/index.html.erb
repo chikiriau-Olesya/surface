@@ -9,7 +9,7 @@
     <tr>
 			<th></th>
 			<th>Title</th>
-			<!-- <th>Name</th> -->
+			<th>Author</th>
       <th>Category</th>
 			<!-- delete later -->
 			<th>PostType</th>
@@ -27,6 +27,9 @@
 				 <td>
 					 <%= post.title %>
 				 </td>
+				 <td>
+					 <%= post.user.username %>
+				</td>
 				<!-- <td><#%= post.name %></td> -->
 				<td>
 				<% if post.category_id? %>

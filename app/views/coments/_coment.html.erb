@@ -3,7 +3,7 @@
     <div class="card-body">
       <p>
         <b>Commenter:</b>
-        <%= User.find(coment.user_id).email %>
+        <%= User.find(coment.user_id).username %>
       </p>
       <%= coment.body %>
     <%= link_to 'reply', new_post_coment_path(@post, parent_id: coment.id), remote: true, class: 'd-block' %>
