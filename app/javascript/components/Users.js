@@ -8,7 +8,7 @@ class Users extends React.Component {
         <h1>All Users</h1>
         <ul>
           {this.props.users.map(user => (
-            <li key={user.id}>{`${user.id} ${user.username} ${user.admin} ${user.email} ${user.inst} ${user.tg} ${user.fb} ${user.bio}`}</li>
+            <li key={user.id}>{`${user.id} ${user.username} ${user.isadmin} ${user.email} ${user.inst} ${user.tg} ${user.fb} ${user.bio}`}</li>
           ))}
         </ul>
       </div>
