@@ -2,7 +2,6 @@
 <%= image_tag(@user.image.url, alt: 'Image') if @user.image? %>
 <p>ID <%= @user.id %></p>
 <p>Username <%= @user.username %></p>
-<p>Email <%= @user.email %></p>
 <p>Bio <%= @user.bio %></p>
 <p>Insta <%= @user.inst %></p>
 <p>Telegram <%= @user.tg %></p>
@@ -16,6 +15,7 @@ Following <%= link_to @user.followees.count, following_path %>
 
 In favorites <%= @user.favorites.count %> <%= (@user.favorites.count) == 1 ? 'Post' : 'Posts'%>
 <% @posts.each do |post| %>
+  <br><%= link_to(image_tag(post.image.thumb.url, alt: 'Image'), post.image.url, target: '_blank') if post.image? %>
   <br><%= link_to post.title, post %>
   <br><%= post.content.html_safe%>
 <% end %>
