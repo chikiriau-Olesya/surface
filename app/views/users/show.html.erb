@@ -22,8 +22,8 @@ In favorites <%= @user.favorites.count %> <%= (@user.favorites.count) == 1 ? 'Po
 
 <div class="user-images">
   <h1>MY POSTS</h1>
-  <span><%=current_user.posts.count  %></span> posts
-  <% current_user.posts.each do |post|%>
+  <span><%=@user.posts.count  %></span> posts
+  <% @user.posts.each do |post|%>
       <%=link_to post_path(post) do %>
           <%= link_to post.title, post %>
           <%= link_to(image_tag(post.image.thumb.url, alt: 'Image'), post.image.url, target: '_blank') if post.image? %>
