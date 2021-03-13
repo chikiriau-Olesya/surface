@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :likes, dependent: :destroy
+  has_many :posts, dependent: :destroy
 
   has_many :favorites, dependent: :destroy
   has_many :favorited_posts, :through => :favorites, :source => :post
@@ -13,4 +14,6 @@ class User < ApplicationRecord
   has_many :followees, through: :followed_users
   has_many :following_users, foreign_key: :followee_id, class_name: 'Follow'
   has_many :followers, through: :following_users
+
+  mount_uploader :image, AvatarUploader
 end

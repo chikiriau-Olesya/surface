@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_08_100823) do
+ActiveRecord::Schema.define(version: 2021_03_13_115102) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -43,16 +43,16 @@ ActiveRecord::Schema.define(version: 2021_03_08_100823) do
     t.index ["user_id"], name: "index_coments_on_user_id"
   end
 
-  # create_table "comments", force: :cascade do |t|
-  #   t.string "commenter"
-  #   t.text "body"
-  #   t.integer "post_id", null: false
-  #   t.datetime "created_at", precision: 6, null: false
-  #   t.datetime "updated_at", precision: 6, null: false
-  #   t.integer "user_id", null: false
-  #   t.index ["post_id"], name: "index_comments_on_post_id"
-  #   t.index ["user_id"], name: "index_comments_on_user_id"
-  # end
+  create_table "comments", force: :cascade do |t|
+    t.string "commenter"
+    t.text "body"
+    t.integer "post_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "favorites", force: :cascade do |t|
     t.integer "post_id", null: false
@@ -117,14 +117,19 @@ ActiveRecord::Schema.define(version: 2021_03_08_100823) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "username"
     t.boolean "isadmin", default: false
+    t.string "inst"
+    t.string "tg"
+    t.string "fb"
+    t.text "bio"
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "categories", "post_types"
   add_foreign_key "coments", "users"
-  # add_foreign_key "comments", "posts"
-  # add_foreign_key "comments", "users"
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
   add_foreign_key "favorites", "posts"
   add_foreign_key "favorites", "users"
   add_foreign_key "likes", "posts"

@@ -1,18 +1,8 @@
-<div class="post-wrapper">
-  <p class="user-name">
-    <strong>Имя:</strong>
-    <%= @post.name %>
-  </p>
-
-  <%# <%= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
-  <!-- <br>
-  <%# <%= link_to(image_tag(@post.image.small_thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %> %> --> %>
   <br>
   <%= image_tag(@post.image.url, alt: 'Image') if @post.image? %>
 
   <h3 class="title-post">
-    <strong>Заголовок:</strong>
-    <%= @post.title %>
+  <%= @post.title %>
   </h3>
 
   <% if @post.category_id? %>
@@ -74,4 +64,3 @@
   <%= link_to 'Edit', edit_post_path(@post) %> |
   <% end %>
   <%= link_to 'Back', posts_path %>
-</div>

@@ -9,8 +9,9 @@
 <table>
   <thead>
     <tr>
+			<th></th>
 			<th>Title</th>
-			<th>Name</th>
+			<th>Author</th>
       <th>Category</th>
 			<!-- delete later -->
 			<th>PostType</th>
@@ -22,12 +23,16 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
+				<td>
+					 <%= link_to(image_tag(post.image.thumb.url, alt: 'Image'), post.image.url, target: '_blank') if post.image? %>
+				</td>
 				 <td>
-					 <!-- <#%= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %> -->
-					 <%= post.image %>
 					 <%= post.title %>
 				 </td>
-				<td><%= post.name %></td>
+				 <td>
+					 <%= post.user.username %>
+				</td>
+				<!-- <td><#%= post.name %></td> -->
 				<td>
 				<% if post.category_id? %>
 					<span>
@@ -35,7 +40,7 @@
 					</span>
 				<% end %>
 				</td>
-				<td><%= post.post_type %></td>
+				<td><%= post.post_type.name %></td>
         <td><%= post.likes.count %> <%= (post.likes.count) == 1 ? '💙' : '💙'%></td>
         <td><%= post.coments.count %> <%= (post.coments.count) == 1 ? ' 💬' : ' 💬'%></td>
         <td><%= link_to '👀', post %></td>

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :categories
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
-  resources :users
+  resources :users, only: [:show, :edit, :update]
   post 'users/:id/follow', to: "users#follow", as: "follow_user"
   post 'users/:id/unfollow', to: "users#unfollow", as: "unfollow_user"
 

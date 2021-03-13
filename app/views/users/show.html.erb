@@ -1,6 +1,11 @@
+<%= react_component 'A_Avatar', { user: @user } %>
+<%= image_tag(@user.image.url, alt: 'Image') if @user.image? %>
 <p>ID <%= @user.id %></p>
-<p>Email <%= @user.email %></p>
 <p>Username <%= @user.username %></p>
+<p>Bio <%= @user.bio %></p>
+<p>Insta <%= @user.inst %></p>
+<p>Telegram <%= @user.tg %></p>
+<p>Facebook <%= @user.fb %></p>
 <% if user_signed_in? && current_user.isadmin == true %>
   <p>Admin <%= @user.isadmin %></p>
 <% end %>
@@ -10,12 +15,24 @@ Following <%= link_to @user.followees.count, following_path %>
 
 In favorites <%= @user.favorites.count %> <%= (@user.favorites.count) == 1 ? 'Post' : 'Posts'%>
 <% @posts.each do |post| %>
+  <br><%= link_to(image_tag(post.image.thumb.url, alt: 'Image'), post.image.url, target: '_blank') if post.image? %>
   <br><%= link_to post.title, post %>
   <br><%= post.content.html_safe%>
 <% end %>
 
+<div class="user-images">
+  <h1>MY POSTS</h1>
+  <span><%=@user.posts.count  %></span> posts
+  <% @user.posts.each do |post|%>
+      <%=link_to post_path(post) do %>
+          <%= link_to post.title, post %>
+          <%= link_to(image_tag(post.image.thumb.url, alt: 'Image'), post.image.url, target: '_blank') if post.image? %>
+       <% end %>
+  <% end %>
+</div>
+
 <% if user_signed_in? && @user.id == current_user.id %>
-    <%= link_to 'Edit Profile', edit_user_registration_path %>
+    <%= link_to 'Edit Profile', edit_user_path(current_user) %>
 <% elsif user_signed_in? && current_user.followees.include?(@user) %>
     <h5><%= button_to "Unfollow", unfollow_user_path, method: "POST" %></h5>
 <% elsif user_signed_in? %>
