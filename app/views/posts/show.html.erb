@@ -1,79 +1,77 @@
-<p class="user-name">
-  <strong>Имя:</strong>
-  <%= @post.name %>
-</p>
+<div class="post-wrapper">
+  <p class="user-name">
+    <strong>Имя:</strong>
+    <%= @post.name %>
+  </p>
 
-<%# <%= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
-<!-- <br>
-<%# <%= link_to(image_tag(@post.image.small_thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %> %> --> %>
-<br>
-<%= image_tag(@post.image.url, alt: 'Image') if @post.image? %>
+  <%# <%= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
+  <!-- <br>
+  <%# <%= link_to(image_tag(@post.image.small_thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %> %> --> %>
+  <br>
+  <%= image_tag(@post.image.url, alt: 'Image') if @post.image? %>
 
-<h3 class="title-post">
-  <strong>Заголовок:</strong>
-  <%= @post.title %>
-</h3>
+  <h3 class="title-post">
+    <strong>Заголовок:</strong>
+    <%= @post.title %>
+  </h3>
 
-<% if @post.category_id? %>
-  <span>
-    <%= @post.category.name %>
-  </span>
-<% end %>
-
-<p>
-	<strong>Author:</strong>
-	<%= @post.author %>
-</p>
-
-<p class="post-body">
-  <strong>Пост:</strong>
-  <#%= @post.content.html_safe %>
-</p>
-
-<p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-<p><%= @post.favorites.count %> <%= (@post.favorites.count) == 1 ? 'favourite' : 'favourites'%></p>
-
-<% if user_signed_in? %>
-  <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
-  <% if pre_like %>
-    <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
-  <% else %>
-    <%= button_to 'Like', post_likes_path(@post), method: :post %>
+  <% if @post.category_id? %>
+    <span>
+      <%= @post.category.name %>
+    </span>
   <% end %>
 
-  <% pre_favorite = @post.favorites.find { |favorite| favorite.user_id == current_user.id} %>
-  <% if pre_favorite %>
-      <%= button_to 'Remove from Favorite', post_favorite_path(@post, pre_favorite), method: :delete %>
-  <% else %>
-      <%= button_to 'Add to Favorite', post_favorites_path(@post), method: :post %>
-  <% end %>
-<% end %>
+  <p>
+  	<strong>Author:</strong>
+  	<%= @post.author %>
+  </p>
 
-<h2 class="comments-section">Комментарии</h2>
+  <p class="post-body">
+    <strong>Пост:</strong>
+    <#%= @post.content.html_safe %>
+  </p>
 
-<%= render @post.coments %>
-<div class="card my-1">
-  <div class="card-body">
-    <p class="font-weight-bold">Comments</p>
-    <%= form_with(model: [@post, @post.coments.build]) do |f| %>
-      <div class="form-group">
-        <%= f.label 'New comment' %>
-        <%= f.text_area :body, class: 'form-control' %>
+
+  <div class="activity">
+      <div class="liking">
+        <%= react_component 'A_Likes', { post: @post, likes: @post.likes, current_user_id: current_user.id } %>
       </div>
-        <% if user_signed_in? %>
-          <%= f.submit 'Submit', class: 'btn btn-primary' %>
-        <% else %>
-        <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
-        <% end %>
-    <% end %>
+
+      <div class="favs">
+        <%= react_component 'A_Favorites', { post: @post, favorites: @post.favorites, current_user_id: current_user.id } %>
+      </div>
   </div>
+
+
+
+  <div class="commenting">
+    <h2 class="comments-section">Комментарии</h2>
+
+    <%= render @post.coments %>
+    <div class="card my-1">
+      <div class="card-body">
+        <p class="font-weight-bold">Comments</p>
+        <%= form_with(model: [@post, @post.coments.build]) do |f| %>
+          <div class="form-group">
+            <%= f.label 'New comment' %>
+            <%= f.text_area :body, class: 'form-control' %>
+          </div>
+            <% if user_signed_in? %>
+              <%= f.submit 'Submit', class: 'btn btn-primary' %>
+            <% else %>
+            <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
+            <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <% if user_signed_in? %>
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+  <% end %>
+  <%= link_to 'Back', posts_path %>
 </div>
-
-
-
-
-
-<% if user_signed_in? %>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<% end %>
-<%= link_to 'Back', posts_path %>

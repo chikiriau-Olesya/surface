@@ -1,0 +1,16 @@
+
+.like{
+  width: 30px;
+  height: 30px;
+}
+.like_button {
+  background-color: red;
+  background-image: url(image-path('images/like_clicked.svg'));
+
+}
+
+.like_button--checked {
+  background-color: gray;
+  background-image: url(image-path('images/like_unclicked.svg'));
+
+}

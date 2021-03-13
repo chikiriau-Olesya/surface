@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+
 class M_catview extends React.Component {
   render() {
     return (
@@ -17,3 +18,8 @@ class M_catview extends React.Component {
 }
 
 export default M_catview
+
+ReactDOM.render(
+    <M_catview />,
+  document.getElementById('root')
+);
