@@ -1,16 +1,12 @@
-<p class="user-name">
+<!-- <p class="user-name">
   <strong>Имя:</strong>
-  <%= @post.name %>
-</p>
+  <#%= @post.name %>
+</p> -->
 
-<%# <%= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
-<!-- <br>
-<%# <%= link_to(image_tag(@post.image.small_thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %> %> --> %>
 <br>
 <%= image_tag(@post.image.url, alt: 'Image') if @post.image? %>
 
 <h3 class="title-post">
-  <strong>Заголовок:</strong>
   <%= @post.title %>
 </h3>
 
@@ -27,7 +23,7 @@
 
 <p class="post-body">
   <strong>Пост:</strong>
-  <#%= @post.content.html_safe %>
+  <%= @post.content.html_safe %>
 </p>
 
 <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
