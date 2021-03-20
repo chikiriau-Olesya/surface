@@ -11,30 +11,45 @@
     </div>
   <% end %>
 
+  <div>
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+  <h2> Базовая информация </h2>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
-
   <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description %>
   </div>
 
+  <h2>Местоположение</h2>
+  <div class="field">
+    <%= form.label :city_id %>
+    <%= form.select :city_id, City.pluck(:name, :id) %>
+  </div>
   <div class="field">
     <%= form.label :longitude %>
     <%= form.text_field :longitude %>
   </div>
-
   <div class="field">
     <%= form.label :latitude %>
     <%= form.text_field :latitude %>
   </div>
 
-  <div class="field">
-    <%= form.label :city_id %>
-    <%= form.select :city_id, City.pluck(:name, :id) %>
-  </div>
+  <h2>Услуги</h2>
+
+  <h2>Средние значения по географии</h2>
+
+  <h2>Удобства</h2>
+
+  <h2>Фотогалерея</h2>
+
+  <h2>Контакты</h2>
+
 
   <div class="actions">
     <%= form.submit %>

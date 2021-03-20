@@ -4,6 +4,7 @@ class SchoolsController < ApplicationController
   # GET /schools
   # GET /schools.json
   def index
+    @cities = City.all
     if params.has_key?(:city)
       @city = City.find_by_name(params[:city])
       @schools = School.where(city: @city)
@@ -80,6 +81,6 @@ class SchoolsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def school_params
-      params.require(:school).permit(:name, :description, :longitude, :latitude, :city_id)
+      params.require(:school).permit(:name, :description, :longitude, :latitude, :city_id, :image)
     end
 end

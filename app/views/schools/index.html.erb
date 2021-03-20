@@ -5,11 +5,10 @@
 </div>
 
 <div class="">
-	<p>Мы нашли <%= @city.school.count %>
-		<%= (@city.school.count ) == 1 ? 'Школу' : 'Школ'%>
+	<p><%= @city.school.count %>
+		<%= (@city.school.count ) == 1 ? 'Школа' : 'Школ'%>
 	</p>
 </div>
-
 
 <h1>Schools</h1>
 
@@ -28,6 +27,9 @@
   <tbody>
     <% @schools.each do |school| %>
       <tr>
+				<td>
+					 <%= link_to(image_tag(school.image.thumb.url, alt: 'Image'), school.image.url, target: '_blank') if school.image? %>
+				</td>
         <td><%= school.name %></td>
         <td><%= school.description %></td>
         <td><%= school.longitude %></td>
