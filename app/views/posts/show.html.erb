@@ -26,44 +26,37 @@
   <%= @post.content.html_safe %>
 </p>
 
-  <div class="activity">
-      <div class="liking">
-        <%= react_component 'A_Likes', { post: @post, likes: @post.likes, current_user_id: current_user.id } %>
-      </div>
 
-      <div class="favs">
-        <%= react_component 'A_Favorites', { post: @post, favorites: @post.favorites, current_user_id: current_user.id } %>
-      </div>
-  </div>
+<p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+<p><%= @post.favorites.count %> <%= (@post.favorites.count) == 1 ? 'favourite' : 'favourites'%></p>
 
-  
+<% if user_signed_in? %>
+  <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
+  <% if pre_like %>
+    <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+  <% else %>
+    <%= button_to 'Like', post_likes_path(@post), method: :post %>
+  <% end %>
 
-  <div class="commenting">
-    <h2 class="comments-section">Комментарии</h2>
-
-    <%= render @post.coments %>
-    <div class="card my-1">
-      <div class="card-body">
-        <p class="font-weight-bold">Comments</p>
-        <%= form_with(model: [@post, @post.coments.build]) do |f| %>
-          <div class="form-group">
-            <%= f.label 'New comment' %>
-            <%= f.text_area :body, class: 'form-control' %>
-          </div>
-            <% if user_signed_in? %>
-              <%= f.submit 'Submit', class: 'btn btn-primary' %>
-            <% else %>
-            <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
-            <% end %>
-        <% end %>
-      </div>
-    </div>
-  </div>
+  <% pre_favorite = @post.favorites.find { |favorite| favorite.user_id == current_user.id} %>
+  <% if pre_favorite %>
+      <%= button_to 'Remove from Favorite', post_favorite_path(@post, pre_favorite), method: :delete %>
+  <% else %>
+      <%= button_to 'Add to Favorite', post_favorites_path(@post), method: :post %>
+  <% end %>
+<% end %>
 
 
+<h2 class="comments-section">Комментарии</h2>
 
+<%= render @post.coments %>
 
-
+<h2 class="add-comment">Добавьте комнентарий:</h2>
+<% if user_signed_in? %>
+  <%= render "coments/form" %>
+<% else %>
+  <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
+<% end %>
   <% if user_signed_in? %>
   <%= link_to 'Edit', edit_post_path(@post) %> |
   <% end %>

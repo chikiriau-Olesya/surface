@@ -1,12 +1,22 @@
 <% unless coment.parent_id || !coment.persisted? %>
   <div class="card">
     <div class="card-body">
-      <p>
-        <b>Commenter:</b>
+      <div>
+        <% if coment.user_id %>
+          <%= image_tag(coment.user.image.small_thumb.url, alt: 'Image') if coment.user.image? %>
+        <% end %>
         <%= User.find(coment.user_id).username %>
-      </p>
+      </div>
       <%= coment.body %>
     <%= link_to 'reply', new_post_coment_path(@post, parent_id: coment.id), remote: true, class: 'd-block' %>
+    <% if user_signed_in? && current_user.id == coment.user_id  %>
+      <p>
+      <%# <%= link_to 'Destroy Comment', [coment.post, coment],
+                 :confirm => 'Are you sure?',
+                 :method => :delete %> %>
+       <%= link_to 'Destroy', coment, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </p>
+    <% end %>
     </div>
   </div>
   <% if coment.replies.any? %>
