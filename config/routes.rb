@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :cities
+  resources :schools
   resources :coments
   resources :post_types
   resources :follows
@@ -34,6 +36,8 @@ Rails.application.routes.draw do
   get 'about', to: 'about#index'
   get 'landing', to: 'landingo#index'
   get 'styleguide', to: 'styleguide#index'
+  get 'schools', to: 'schools#index'
+  get 'cities', to: 'cities#index'
 
   # get 'landing/index'
   # get 'styleguide/index'

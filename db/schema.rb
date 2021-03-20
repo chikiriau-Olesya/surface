@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_13_115102) do
+ActiveRecord::Schema.define(version: 2021_03_20_105740) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 2021_03_13_115102) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "post_type_id"
     t.index ["post_type_id"], name: "index_categories_on_post_type_id"
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -101,6 +108,17 @@ ActiveRecord::Schema.define(version: 2021_03_13_115102) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "schools", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.decimal "longitude"
+    t.decimal "latitude"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "city_id", null: false
+    t.index ["city_id"], name: "index_schools_on_city_id"
+  end
+
   create_table "subscribers", force: :cascade do |t|
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
@@ -137,4 +155,5 @@ ActiveRecord::Schema.define(version: 2021_03_13_115102) do
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "post_types"
   add_foreign_key "posts", "users"
+  add_foreign_key "schools", "cities"
 end
