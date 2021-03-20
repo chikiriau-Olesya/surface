@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   #  end
   # end
 
+
   get 'posts/index'
 
   get 'promo', to: 'promo#index'
@@ -45,6 +46,8 @@ Rails.application.routes.draw do
   root 'landing#index'
 
   get "search", to: "search#search"
+  # get "searchPage", to: "searchPage#searchPage"
+  get "searchPage" => "search#searchPage", as: "searchPage"
 
   get 'users', to: 'users#index'
   get 'users/:id' => 'users#show'

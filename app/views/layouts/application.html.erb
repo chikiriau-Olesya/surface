@@ -22,19 +22,25 @@
   <% end %>
 
   <div class="top_menu">
-    <%= render 'search/form' %>
     <% Category.where(display_in_navbar: true).each do |cat| %>
-    <%= link_to cat.name, posts_path(category: cat.name) %> |
-    <% end %>|
-      <% if user_signed_in? %>
-        <%= link_to 'Account', current_user %> | <%= link_to 'Sign Out', destroy_user_session_path, method: :delete  %>
-      <% else %>
-        <%= link_to 'Sign In', new_user_session_path %> | <%= link_to 'Sign Up', new_user_registration_path %>
-      <% end %>
+    <%= link_to cat.name, posts_path(category: cat.name) %>
+    <% end %>
 
-      <% if user_signed_in? && current_user.isadmin == true%>
-        <%= link_to "Settings", admin_path %>
-      <% end %>
+
+    <%= link_to searchPage_path(@search) do %>
+      <%= image_tag("search_icon.svg", alt: 'Image')%>
+    <% end %>
+
+
+    <% if user_signed_in? %>
+      <%= link_to 'Account', current_user %> | <%= link_to 'Sign Out', destroy_user_session_path, method: :delete  %>
+    <% else %>
+      <%= link_to 'Sign In', new_user_session_path %> | <%= link_to 'Sign Up', new_user_registration_path %>
+    <% end %>
+
+    <% if user_signed_in? && current_user.isadmin == true%>
+      <%= link_to "Settings", admin_path %>
+    <% end %>
 
 
   </div>
