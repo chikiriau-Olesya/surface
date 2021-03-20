@@ -1,10 +1,7 @@
 <h1>Posts</h1>
 <h2>All Categories</h2>
-<% Category.all.each do |cat| %>
-	<%= link_to cat.name, posts_path(category: cat.name) %> <br>
-<% end %>
 
-<%= react_component 'M_CategoryList', { category: @category } %>
+<%= react_component 'M_CategoryMenu', { categories: @categories, category: @category } %>
 
 <table>
   <thead>
