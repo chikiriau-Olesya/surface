@@ -16,7 +16,7 @@
     <%= form.file_field :image %>
   </div>
 
-  <h2> Базовая информация </h2>
+  <h2>Базовая информация</h2>
   <div class="field">
     <%= form.label "Название школы" %>
     <%= form.text_field :name %>
@@ -41,6 +41,17 @@
   </div>
 
   <h2>Услуги</h2>
+  <div class="" style="display: flex;">
+    <div class="field">
+      <%= form.label "Название услуги" %>
+      <%= form.text_field :service, placeholder: "Например, индивидуальная тренировка" %>
+    </div>
+    <div class="field">
+      <%= form.label "Цена" %>
+      <%= form.text_field :price, placeholder: "Например, от 3600р" %>
+    </div>
+  </div>
+
 
   <h2>Средние значения по географии</h2>
 

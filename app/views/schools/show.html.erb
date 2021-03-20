@@ -3,29 +3,34 @@
 <%= image_tag(@school.image.url, alt: 'Image') if @school.image? %>
 
 <p>
-  <strong>Name:</strong>
   <%= @school.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
   <%= @school.description %>
 </p>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @school.longitude %>
-</p>
+<div class="">
+  <%= react_component 'M_MainMap' %>
+  <p>
+    <strong>Longitude:</strong>
+    <%= @school.longitude %>
+  </p>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @school.latitude %>
-</p>
+  <p>
+    <strong>Latitude:</strong>
+    <%= @school.latitude %>
+  </p>
+</div>
 
-<p>
-  <strong>City:</strong>
-  <%= @school.city.name %>
-</p>
+<div class="">
+  <h3>Примеры услуг</h3>
+  <p>
+    <%= @school.service %>
+    <%= @school.price %>
+  </p>
+</div>
+
 
 <div class="">
   <h3>Контакты</h3>
