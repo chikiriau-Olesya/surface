@@ -12,31 +12,31 @@
   <% end %>
 
   <div>
-    <%= form.label :image %>
+    <%= form.label "Выбрать обложку"%>
     <%= form.file_field :image %>
   </div>
 
   <h2> Базовая информация </h2>
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label "Название школы" %>
     <%= form.text_field :name %>
   </div>
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label "Краткое описание школы" %>
     <%= form.text_area :description %>
   </div>
 
   <h2>Местоположение</h2>
   <div class="field">
-    <%= form.label :city_id %>
+    <%= form.label "Город" %>
     <%= form.select :city_id, City.pluck(:name, :id) %>
   </div>
   <div class="field">
-    <%= form.label :longitude %>
+    <%= form.label "Долгота" %>
     <%= form.text_field :longitude %>
   </div>
   <div class="field">
-    <%= form.label :latitude %>
+    <%= form.label "Широта" %>
     <%= form.text_field :latitude %>
   </div>
 
@@ -49,6 +49,31 @@
   <h2>Фотогалерея</h2>
 
   <h2>Контакты</h2>
+  <div class="field">
+    <%= form.label "Почта" %>
+    <%= form.email_field :email %>
+  </div>
+  <div class="field">
+    <%= form.label "Телефон" %>
+    <%= form.telephone_field :tel %>
+  </div>
+  <div class="field">
+    <%= form.label "Инстаграм" %>
+    <%= form.text_field :inst %>
+  </div>
+  <div class="field">
+    <%= form.label "Телеграмм" %>
+    <%= form.text_field :tg %>
+  </div>
+  <div class="field">
+    <%= form.label "Facebook" %>
+    <%= form.text_field :fb %>
+  </div>
+  <div class="field">
+    <%= form.label "Сайт школы" %>
+    <%= form.text_field :website %>
+  </div>
+
 
 
   <div class="actions">
