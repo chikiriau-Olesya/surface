@@ -44,6 +44,8 @@ Rails.application.routes.draw do
 
   root 'landing#index'
 
+  get "search", to: "search#search"
+
   get 'users', to: 'users#index'
   get 'users/:id' => 'users#show'
   delete 'users/:id', to: 'users#destroy'
