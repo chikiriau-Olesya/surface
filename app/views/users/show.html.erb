@@ -1,6 +1,5 @@
 <%= react_component 'A_Avatar', { user: @user } %>
 <%= image_tag(@user.image.url, alt: 'Image') if @user.image? %>
-<p>ID <%= @user.id %></p>
 <p>Username <%= @user.username %></p>
 <p>Bio <%= @user.bio %></p>
 <p>Insta <%= @user.inst %></p>
