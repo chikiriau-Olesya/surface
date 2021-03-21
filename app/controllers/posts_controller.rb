@@ -59,6 +59,11 @@ class PostsController < ApplicationController
     render 'newmagazine'
   end
 
+  def hashtags
+    tag = Tag.find_by(name: params[:name])
+    @posts = tag.posts
+  end
+
 
 
   # GET /posts/1/edit
@@ -113,6 +118,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:name, :title, :author, :content, :image, :category_id, :post_type_id)
+      params.require(:post).permit(:name, :title, :author, :content, :image, :category_id, :post_type_id, :tag_id)
     end
 end
