@@ -27,6 +27,15 @@
 </p>
 
 
+<p class="">
+  <% if @post.tagline? %>
+    <strong>Tags:</strong>
+    <%= render_with_hashtags(@post.tagline) %>
+  <% end %>
+</p>
+
+
+
 <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 <p><%= @post.favorites.count %> <%= (@post.favorites.count) == 1 ? 'favourite' : 'favourites'%></p>
 

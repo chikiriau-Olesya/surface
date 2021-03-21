@@ -39,6 +39,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :tagline %>
+    <%= form.text_field :tagline %>
+  </div>
+
+  <div class="field">
     <%= form.label :category_id %>
     <%= form.select :category_id, Category.pluck(:name, :id) %>
     <%= form.hidden_field :post_type_id, value: post.post_type.id %>

@@ -37,7 +37,9 @@
 					</span>
 				<% end %>
 				</td>
-        <td><%= render_with_hashtags(post.content) %></td>
+        <% if post.tagline? %>
+          <td><%= render_with_hashtags(post.tagline) %></td>
+        <% end %>
 				<td><%= post.post_type.name %></td>
         <td><%= post.likes.count %> <%= (post.likes.count) == 1 ? '💙' : '💙'%></td>
         <td><%= post.coments.count %> <%= (post.coments.count) == 1 ? ' 💬' : ' 💬'%></td>
