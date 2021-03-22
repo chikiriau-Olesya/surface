@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_21_130727) do
+ActiveRecord::Schema.define(version: 2021_03_22_143343) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -133,6 +133,10 @@ ActiveRecord::Schema.define(version: 2021_03_21_130727) do
     t.string "tel"
     t.string "service"
     t.string "price"
+    t.string "season"
+    t.string "wind"
+    t.string "water"
+    t.string "wetsuit"
     t.index ["city_id"], name: "index_schools_on_city_id"
   end
 

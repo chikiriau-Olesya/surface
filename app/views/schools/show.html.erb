@@ -6,9 +6,9 @@
   <%= @school.name %>
 </p>
 
-<p>
-  <%= @school.description %>
-</p>
+<div>
+  <%= @school.description.html_safe %>
+</div>
 
 <div class="">
   <%= react_component 'M_MainMap' %>
@@ -25,10 +25,34 @@
 
 <div class="">
   <h3>Примеры услуг</h3>
-  <p>
-    <%= @school.service %>
+  <div>
+    <%= @school.service.html_safe %>
+  </div>
+
+  <h3>Минимальная стоимость тренировки</h3>
+  <div>
     <%= @school.price %>
-  </p>
+  </div>
+</div>
+
+<div class="">
+  <h3>Сведения о лучшем сезоне</h3>
+  <div>
+    <span>Сезон</span>
+    <%= @school.season %>
+  </div>
+  <div>
+    <span>Температура воздуха</span>
+    <%= @school.wind %>
+  </div>
+  <div>
+    <span>Температура воды летом</span>
+    <%= @school.water %>
+  </div>
+  <div>
+    <span>Толщина гидрика</span>
+    <%= @school.wetsuit %>
+  </div>
 </div>
 
 

@@ -29,7 +29,7 @@
 
 
 
-<table>
+<!-- <table>
   <thead>
     <tr>
       <th>Name</th>
@@ -42,23 +42,23 @@
   </thead>
 
   <tbody>
-    <% @schools.each do |school| %>
+    <#% @schools.each do |school| %>
       <tr>
 				<td>
-					 <%= link_to(image_tag(school.image.thumb.url, alt: 'Image'), school.image.url, target: '_blank') if school.image? %>
+					 <#%= link_to(image_tag(school.image.thumb.url, alt: 'Image'), school.image.url, target: '_blank') if school.image? %>
 				</td>
-        <td><%= school.name %></td>
-        <td><%= school.description %></td>
-        <td><%= school.longitude %></td>
-        <td><%= school.latitude %></td>
-        <td><%= school.city.name %></td>
-        <td><%= link_to 'Show', school %></td>
-        <td><%= link_to 'Edit', edit_school_path(school) %></td>
-        <td><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><#%= school.name %></td>
+        <td><#%= school.description %></td>
+        <td><#%= school.longitude %></td>
+        <td><#%= school.latitude %></td>
+        <td><#%= school.city.name %></td>
+        <td><#%= link_to 'Show', school %></td>
+        <td><#%= link_to 'Edit', edit_school_path(school) %></td>
+        <td><#%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+    <#% end %>
   </tbody>
-</table>
+</table> -->
 
 <br>
 

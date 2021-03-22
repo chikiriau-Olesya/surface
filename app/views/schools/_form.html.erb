@@ -41,19 +41,36 @@
   </div>
 
   <h2>Услуги</h2>
-  <div class="" style="display: flex;">
-    <div class="field">
-      <%= form.label "Название услуги" %>
-      <%= form.text_field :service, placeholder: "Например, индивидуальная тренировка" %>
-    </div>
-    <div class="field">
-      <%= form.label "Цена" %>
-      <%= form.text_field :price, placeholder: "Например, от 3600р" %>
-    </div>
+  <div class="field">
+    <%= form.label "Предлагаемые услуги" %>
+    <%= form.cktext_area :service, placeholder: "Индивидуальная тренировка, групповая" %>
+  </div>
+  <div class="field">
+    <%= form.label "Минимальная цена за услуги" %>
+    <%= form.text_field :price, placeholder: "от 3600р" %>
   </div>
 
 
-  <h2>Средние значения по географии</h2>
+  <h2>Сведения о лучшем сезоне</h2>
+  <div class="field">
+    <%= form.label "Когда лучше кататься" %>
+    <%= form.text_field :season %>
+  </div>
+  <div class="field">
+    <%= form.label "Температура воздуха" %>
+    <%= form.text_field :wind %>
+  </div>
+  <div class="field">
+    <%= form.label "Температура воды" %>
+    <%= form.text_field :water %>
+  </div>
+  <div class="field">
+    <%= form.label "Толщина гидрика" %>
+    <%= form.text_field :wetsuit %>
+  </div>
+
+
+
 
   <h2>Удобства</h2>
 
@@ -75,7 +92,7 @@
     <%= form.text_field :inst %>
   </div>
   <div class="field">
-    <%= form.label "Телеграмм" %>
+    <%= form.label "Телеграм" %>
     <%= form.text_field :tg %>
   </div>
   <div class="field">
