@@ -3,6 +3,7 @@
   <#%= @post.name %>
 </p> -->
 
+
 <br>
 <%= image_tag(@post.image.url, alt: 'Image') if @post.image? %>
 
@@ -34,6 +35,7 @@
   <% end %>
 </p>
 
+<%= react_component 'M_PostView', { post: @post } %>
 
 
 <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>

@@ -18,6 +18,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    # @tag.post_id = Tag.find(@post.tag_id)
   end
 
   # GET /posts/new
