@@ -71,12 +71,34 @@
 
 
 
-
   <h2>Удобства</h2>
+  <div class="field" style="display: flex;">
+    <%= form.check_box :room %>
+    <%= form.label "Раздевалки" %>
+  </div>
+  <div class="field" style="display: flex;">
+    <%= form.check_box :shower %>
+    <%= form.label "Душевая" %>
+  </div>
+  <div class="field" style="display: flex;">
+    <%= form.check_box :equip %>
+    <%= form.label "Оборудование" %>
+  </div>
+  <div class="field" style="display: flex;">
+    <%= form.check_box :cafe %>
+    <%= form.label "Кафе по близости" %>
+  </div>
+  <div class="field" style="display: flex;">
+    <%= form.check_box :shop %>
+    <%= form.label "Магазины рядом" %>
+  </div>
+  <div class="field" style="display: flex;">
+    <%= form.check_box :car %>
+    <%= form.label "Легко доехать" %>
+  </div>
+
 
   <h2>Фотогалерея</h2>
-
-
 
   <h2>Контакты</h2>
   <div class="field">

@@ -18,6 +18,36 @@
 				<%= link_to(image_tag(school.image.thumb.url, alt: 'Image'), school.image.url, target: '_blank') if school.image? %>
 		 </div>
 		 <div><%= school.name %></div>
+		 <div>
+			 <% if school.room == true %>
+				 <p>Раздевалки</p>
+			 <% end %>
+		 </div>
+		 <div>
+			 <% if school.shower == true %>
+				 <p>Душевая</p>
+			 <% end %>
+		 </div>
+		 <div>
+			 <% if school.equip == true %>
+				 <p>Оборудование</p>
+			 <% end %>
+		 </div>
+		 <div>
+			 <% if school.cafe == true %>
+				 <p>Кафе по близости</p>
+			 <% end %>
+		 </div>
+		 <div>
+			 <% if school.shop == true %>
+				 <p>Магазины рядом</p>
+			 <% end %>
+		 </div>
+		 <div>
+			 <% if school.car == true %>
+				 <p>Легко доехать</p>
+			 <% end %>
+		 </div>
 		 <div>Тренировки от <%= school.price %></div>
 		 <div><%= link_to 'Show', school %></div>
 		 <div><%= link_to 'Edit', edit_school_path(school) %></div>

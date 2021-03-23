@@ -28,11 +28,6 @@
   <div>
     <%= @school.service.html_safe %>
   </div>
-
-  <h3>Минимальная стоимость тренировки</h3>
-  <div>
-    <%= @school.price %>
-  </div>
 </div>
 
 <div class="">
@@ -54,6 +49,42 @@
     <%= @school.wetsuit %>
   </div>
 </div>
+
+<div class="">
+  <h3>Условия</h3>
+  <div>
+    <% if @school.room == true %>
+      <p>Раздевалки</p>
+    <% end %>
+  </div>
+  <div>
+    <% if @school.shower == true %>
+      <p>Душевая</p>
+    <% end %>
+  </div>
+  <div>
+    <% if @school.equip == true %>
+      <p>Оборудование</p>
+    <% end %>
+  </div>
+  <div>
+    <% if @school.cafe == true %>
+      <p>Кафе по близости</p>
+    <% end %>
+  </div>
+  <div>
+    <% if @school.shop == true %>
+      <p>Магазины рядом</p>
+    <% end %>
+  </div>
+  <div>
+    <% if @school.car == true %>
+      <p>Легко доехать</p>
+    <% end %>
+  </div>
+</div>
+
+
 
 
 <div class="">
