@@ -18,8 +18,3 @@ class M_catview extends React.Component {
 }
 
 export default M_catview
-
-ReactDOM.render(
-    <M_catview />,
-  document.getElementById('root')
-);

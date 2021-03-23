@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   end
   resources :subscribers
 
+
   # resources :admins do
   #   collection do
   #    get :choosePost

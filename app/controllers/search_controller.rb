@@ -27,4 +27,15 @@ class SearchController < ApplicationController
       }
     )
   end
+
+  # def index
+  #   @tags = Tag.all
+  #   @tag = Tag.find_by(name: params[:name])
+  # end
+
+  def hashtags
+    @tags = Tag.all
+    @tag = Tag.find_by(name: params[:name])
+    # @posts = tag.posts
+  end
 end

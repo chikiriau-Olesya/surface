@@ -5,7 +5,6 @@ import './input.css'
 const STYLES = [
   'input--default',
   'input--error',
-
 ]
 
 const SIZES = [

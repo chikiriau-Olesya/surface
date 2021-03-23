@@ -11,7 +11,9 @@ class M_Input extends React.Component {
       <div className='extendedInput'>
 
         <div className='inputBtn'>
-          <A_Input/>
+          <A_Input
+          inputStyle = 'input--error'
+          />
           <A_Button
           </A_Button>
         </div>
