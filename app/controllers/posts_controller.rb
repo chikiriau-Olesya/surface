@@ -19,6 +19,12 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     # @tag.post_id = Tag.find(@post.tag_id)
+    if params.has_key?(:category)
+      @category = Category.find_by_name(params[:category])
+      @posts = Post.where(category: @category)
+    else
+      @posts = Post.all
+    end
   end
 
   # GET /posts/new

@@ -18,6 +18,18 @@ class SchoolsController < ApplicationController
   # GET /schools/1
   # GET /schools/1.json
   def show
+    if params.has_key?(:category)
+      @category = Category.find_by_name(params[:category])
+      @posts = Post.where(category: @category)
+    else
+      @posts = Post.all
+    end
+    if params.has_key?(:city)
+      @city = City.find_by_name(params[:city])
+      @schools = School.where(city: @city)
+    else
+      @schools = School.all
+    end
   end
 
   # GET /schools/new
