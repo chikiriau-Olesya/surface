@@ -1,0 +1,25 @@
+.A_SchoolInfo {
+  margin-top: 24px;
+  span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #AAAAAA;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    margin-top: 4px;
+    img {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+    div {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 130%;
+      color: #424242;
+    }
+  }
+}

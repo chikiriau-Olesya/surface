@@ -1,0 +1,14 @@
+.M_SchoolInf {
+  background: #FFFFFF;
+  border-radius: 32px;
+  padding: 32px;
+  width: 50%;
+  margin-right: 32px;
+  .A_SchoolInf-block {
+    display: flex;
+    flex-wrap: wrap;
+    .A_SchoolInf-block-column:first-of-type{
+      margin-right: 56px;
+    }
+  }
+}

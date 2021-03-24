@@ -1,0 +1,10 @@
+.M_SchoolFacilities {
+  background: #FFFFFF;
+  border-radius: 32px;
+  padding: 32px;
+  width: 50%;
+  .M_SchoolFacilities-block {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= image_tag(@school.image.url, alt: 'Image') if @school.image? %>
+<%= image_tag(@school.image.schoolshow.url, alt: 'Image') if @school.image? %>
 
 <p>
   <%= @school.name %>
@@ -10,80 +10,23 @@
   <%= @school.description.html_safe %>
 </div>
 
-<div class="">
-  <%= react_component 'M_MainMap' %>
-  <p>
-    <strong>Longitude:</strong>
-    <%= @school.longitude %>
-  </p>
+<!-- <#%= react_component 'M_SchoolOffers', { school: @school} %>
 
-  <p>
-    <strong>Latitude:</strong>
-    <%= @school.latitude %>
-  </p>
-</div>
+<#%= react_component 'M_SchoolInnerMap', { school: @school} %>
 
-<div class="">
-  <h3>Примеры услуг</h3>
-  <div>
-    <%= @school.service.html_safe %>
-  </div>
-</div>
+<#%= react_component 'M_SchoolInf', { school: @school} %> -->
 
-<div class="">
-  <h3>Сведения о лучшем сезоне</h3>
-  <div>
-    <span>Сезон</span>
-    <%= @school.season %>
-  </div>
-  <div>
-    <span>Температура воздуха</span>
-    <%= @school.wind %>
-  </div>
-  <div>
-    <span>Температура воды летом</span>
-    <%= @school.water %>
-  </div>
-  <div>
-    <span>Толщина гидрика</span>
-    <%= @school.wetsuit %>
-  </div>
-</div>
+<%= react_component 'O_SchoolView', { school: @school} %>
 
+<!-- 
 <div class="">
   <h3>Условия</h3>
   <div>
-    <% if @school.room == true %>
+    <#% if @school.room == true %>
       <p>Раздевалки</p>
-    <% end %>
+    <#% end %>
   </div>
-  <div>
-    <% if @school.shower == true %>
-      <p>Душевая</p>
-    <% end %>
-  </div>
-  <div>
-    <% if @school.equip == true %>
-      <p>Оборудование</p>
-    <% end %>
-  </div>
-  <div>
-    <% if @school.cafe == true %>
-      <p>Кафе по близости</p>
-    <% end %>
-  </div>
-  <div>
-    <% if @school.shop == true %>
-      <p>Магазины рядом</p>
-    <% end %>
-  </div>
-  <div>
-    <% if @school.car == true %>
-      <p>Легко доехать</p>
-    <% end %>
-  </div>
-</div>
-
+</div> -->
 
 
 
