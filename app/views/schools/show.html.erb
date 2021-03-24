@@ -10,15 +10,10 @@
   <%= @school.description.html_safe %>
 </div>
 
-<!-- <#%= react_component 'M_SchoolOffers', { school: @school} %>
-
-<#%= react_component 'M_SchoolInnerMap', { school: @school} %>
-
-<#%= react_component 'M_SchoolInf', { school: @school} %> -->
 
 <%= react_component 'O_SchoolView', { school: @school} %>
 
-<!-- 
+<!--
 <div class="">
   <h3>Условия</h3>
   <div>
@@ -27,36 +22,6 @@
     <#% end %>
   </div>
 </div> -->
-
-
-
-<div class="">
-  <h3>Контакты</h3>
-  <p>
-    <strong>Email:</strong>
-    <%= @school.email %>
-  </p>
-  <p>
-    <strong>Tel:</strong>
-    <%= @school.tel %>
-  </p>
-  <p>
-    <strong>Website:</strong>
-    <%= @school.website %>
-  </p>
-  <p>
-    <strong>Inst:</strong>
-    <%= @school.inst %>
-  </p>
-  <p>
-    <strong>Telegarm:</strong>
-    <%= @school.tg %>
-  </p>
-  <p>
-    <strong>Facebook:</strong>
-    <%= @school.fb %>
-  </p>
-</div>
 
 <%= link_to 'Edit', edit_school_path(@school) %> |
 <%= link_to 'Back', schools_path %>
