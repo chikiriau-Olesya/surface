@@ -1,0 +1,52 @@
+.input{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  border-radius: 1.5vw;
+  background-color: #fff;
+  border: solid 1px #E8E8E8;
+  padding-left: 16px;
+  color: #9F9F9F;
+  height: 36px;
+}
+.input:focus{
+  border: solid 1px #ACC7EF;
+  border-radius: 2vw;
+}
+.input + img{
+  display: none;
+}
+
+
+/*Input sizes */
+.input--main{
+width: 316px;
+}
+.input--search{
+width: 896px;
+}
+.input--wide{
+width:432px;
+height: 164px;
+}
+.input--image{
+background-color: #E8E8E8;
+align-items: center;
+justify-content: center;
+padding: 13vw 8vw 7vw 16vw;
+border: none;
+size: 10vw;
+}
+.input--image + img{
+  display: block;
+  position: absolute;
+  margin-top: -15vw;
+  margin-left: 20vw;
+}
+
+.input-label{
+  padding-top: 1vw;
+  padding-left: 0.3vw;
+  font-family: "Raleway", helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}

@@ -1,0 +1,13 @@
+.activity{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1vw;
+  .like-com{
+    display: flex;
+    justify-content: space-around;
+  }
+  .activity_item{
+    display: flex;
+    padding-right: 2vw;
+  }
+}

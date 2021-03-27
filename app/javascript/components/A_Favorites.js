@@ -1,6 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Favs_Icon from "./Favs_Icon.js"
+import Saved from "images/saved.svg"
+import Unsaved from "images/unsaved.svg"
+
+const imageSave ={
+  fav: Saved,
+  unfav: Unsaved
+}
 
 class A_Favorites extends React.Component {
 
@@ -20,10 +26,6 @@ class A_Favorites extends React.Component {
       })
   }
 
-
-
-
-
   handleClick = () => {
 
 let requestOption = {method: ''}
@@ -39,7 +41,7 @@ if(this.state.pre_favorite) {
   });
 }
 
-let requestUrl = "/posts/"+this.props.post.id+"/likes";
+let requestUrl = "/posts/"+this.props.post.id+"/favorites";
 if(this.state.pre_favorite) requestUrl+="/"+this.state.pre_favorite.id;
 requestUrl+="?authenticity_token="+encodeURIComponent(this.state.token);
 
@@ -52,18 +54,17 @@ requestUrl+="?authenticity_token="+encodeURIComponent(this.state.token);
   });
 }
 
+addPic = () => this.state.pre_favorite ? imageSave.fav : imageSave.unfav
 
   render () {
-
-    let fav_button_class = "fav_button";
-    if (this.state.pre_favorite) {
-      fav_button_class +=  " fav_button--checked"
-    }
-
     return (
       <div className="fav">
-        <div className={fav_button_class} onClick={() => this.handleClick()}>
-          <Favs_Icon/>
+        <div onClick={
+          () => {
+            this.handleClick();
+          }
+      }>
+          <img src={this.addPic()}/>
         </div>
         <div>{this.state.favorites_count}</div>
       </div>

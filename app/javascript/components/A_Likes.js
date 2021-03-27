@@ -1,6 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Like_Icon from "./Like_Icon.js"
+import Likee from 'images/like_clicked.svg'
+import Unlikee from 'images/like_unclicked.svg'
+
+const imageLike ={
+  like: Likee,
+  unlike: Unlikee
+}
 
 class A_Likes extends React.Component {
 
@@ -8,11 +14,9 @@ class A_Likes extends React.Component {
       super(props);
       this.state={
         likes_count: this.props.likes.length,
-        pre_like: this.props.likes.find((element, index, array) => {return element.user_id ==this.props.current_user_id})
+        pre_like: this.props.likes.find((element, index, array) => {return element.user_id == this.props.current_user_id})
       }
 }
-
-
 
   componentDidMount(e) {
       this.setState({
@@ -20,12 +24,7 @@ class A_Likes extends React.Component {
       })
   }
 
-
-
-
-
   handleClick = () => {
-
 let requestOption = {method: ''}
 if(this.state.pre_like) {
   requestOption.method = 'DELETE';
@@ -53,18 +52,17 @@ requestUrl+="?authenticity_token="+encodeURIComponent(this.state.token);
 }
 
 
+addPic = () => this.state.pre_like ? imageLike.like : imageLike.unlike
+
   render () {
-
-    let like_button_class = "like_button";
-    if (this.state.pre_like) {
-      like_button_class +=  " like_button--checked"
-
-    }
-
     return (
       <div className="like">
-        <div className={like_button_class} onClick={() => this.handleClick()}>
-          <Like_Icon/>
+        <div onClick={
+          () => {
+            this.handleClick();
+          }
+          }>
+          <img src={this.addPic()}/>
         </div>
         <div>{this.state.likes_count}</div>
       </div>

@@ -1,3 +1,10 @@
+<%= react_component 'M_PostForm', {post: @post, categories: @categories} %>
+<br>
+<br>
+<br>
+<br>
+
+
 <%= form_with(model: post, local: true) do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
@@ -26,12 +33,6 @@
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
-
-  <!-- <div class="field">
-  	<#%= form.label :author %>
-  	<#%= form.text_field :author, placeholder: 'name'%>
-  </div> -->
-
 
   <div class="field">
     <%= form.label :content %>

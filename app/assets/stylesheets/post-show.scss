@@ -1,0 +1,23 @@
+.post-view-wrapper{
+}
+.post-top-block{
+  display: flex;
+  align-items: center;
+}
+.post-view-activity{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  .favs{
+    margin-left: 1vw;
+  }
+}
+.post-view-final{
+  padding: 2.5vw;
+  background-color: #101010;
+  color: #fff;
+  border-radius: 2vw;
+  max-width: 80vw;
+  margin-left: 156px;
+  margin-top: 3vw;
+}

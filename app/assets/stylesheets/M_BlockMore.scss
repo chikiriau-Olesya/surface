@@ -1,0 +1,17 @@
+.bottom-layer{
+  background-color: #A7D22B;
+  width: 100%;
+  border-radius: 2vw;
+}
+.top-layer{
+  background-color: #101010;
+  width: 100%;
+  border-radius: 2vw 6vw 6vw 2vw;
+  padding: 2vw;
+  .more-text{
+    margin-top: 1vw;
+  }
+  .more-btn{
+    margin-top: 2vw;
+  }
+}

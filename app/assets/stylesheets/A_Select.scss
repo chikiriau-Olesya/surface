@@ -1,0 +1,27 @@
+div.form-group {
+  margin-bottom: 40px;
+  label {
+    font-family: "RedRing", sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    color: var(--navy-blue);
+    margin-bottom: 16px;
+  }
+select {
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    height: 32px;
+    font-weight: 500;
+    color: #000;
+    border-radius: 32px;
+    border: 1px solid #c4c4c4;
+    padding: 0px 8px 0px 4px;
+    option {
+      font-family: "Raleway", sans-serif;
+      font-size: 16px;
+      font-weight: normal;
+      color: #000;
+    }
+  }
+}

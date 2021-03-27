@@ -1,40 +1,36 @@
 import React from "react"
 import PropTypes from "prop-types"
-import './input.css'
+import 'stylesheets/A_Input.scss'
+import Pic from "images/img-placeholder.svg"
 
 const STYLES = [
-  'input--default',
-  'input--error',
+  'input--main',
+  'input--search',
+  'input--wide',
+  'input--image'
 ]
-
-const SIZES = [
-  'input--main--standart',
-  'input--search--long',
-  'input--textarea--wide',
-]
-
-class A_Input extends React.Component {
-  render ({
+const A_Input = ({
   type,
+  value,
+  onChange,
   inputStyle,
-  inputSize
-}) {
+  inputSize,
+  textChild
+}) => {
 
-    const checkInputStyle = STYLES.includes(inputStyle)
-    ? inputStyle : STYLES[0]
+  const checkInputStyle = STYLES.includes(inputStyle)
+  ? inputStyle : STYLES[0]
 
-    const checkInputSize = SIZES.includes(inputSize)
-    ? inputSize : SIZES[0]
-
-    return (
-      <div>
-      <input className = {`input ${checkInputStyle} ${checkInputSize}`} type = {type}>
+  return(
+    <div>
+      <label className="input-label">{textChild}</label>
+      <input className = {`input ${checkInputStyle}`} type = {type} value={value} onChange={onChange}>
         {}
       </input>
+      <img src = {Pic}></img>
 
     </div>
-    );
-  }
+  )
 }
 
 export default A_Input

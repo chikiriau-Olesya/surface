@@ -1,0 +1,41 @@
+/* :root{
+  --h1: #2763BD;
+  --h2: #2763BD;
+  --h3: #2763BD;
+  --h4: #9F9F9F;
+  --h5: #424242;
+  --number: #9F9F9F;
+} */
+
+
+.textblock{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  color: #101010;
+}
+
+/* Heading sizes*/
+.text--body{
+font-size: 21px;
+font-weight: 400;
+line-height: 130%;
+}
+.text--descript{
+font-size: 16px;
+}
+.text--s-descript{
+font-size: 14px;
+}
+.text--subbody{
+font-size: 18px;
+}
+
+/* Heading styles*/
+.text--black{
+color: #101010;}
+.text--gray{
+color: #9F9F9F;}
+.text--red{
+color: #E60024;}
+.text--white{
+color: #fff;}

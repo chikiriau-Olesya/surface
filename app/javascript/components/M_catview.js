@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-class M_catview extends React.Component {
+class M_Catview extends React.Component {
   render() {
     return (
       <div>
@@ -17,4 +17,4 @@ class M_catview extends React.Component {
   }
 }
 
-export default M_catview
+export default M_Catview

@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-class M_catform extends React.Component {
+class M_Catform extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
@@ -25,7 +25,7 @@ class M_catform extends React.Component {
 
     render() {
       return (
-        <div>
+        <form>
           <label>Name</label>
           <input
             type="text"
@@ -58,9 +58,9 @@ class M_catform extends React.Component {
           />
 
           <input type="submit" value="Create category" />
-        </div>
+        </form>
       );
     }
   }
 
-export default M_catform
+export default M_Catform

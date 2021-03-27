@@ -6,6 +6,7 @@ import M_SchoolOffers from "./M_SchoolOffers.js"
 import M_SchoolFacilities from "./M_SchoolFacilities.js"
 import M_SchoolContacts from "./M_SchoolContacts.js"
 import A_SchoolGalery from "./A_SchoolGalery.js"
+import A_Btn from "./A_Btn.js"
 
 
 class O_SchoolView extends React.Component {
@@ -24,6 +25,12 @@ class O_SchoolView extends React.Component {
           <A_SchoolGalery/>
           <M_SchoolContacts school = {this.props.school}/>
         </div>
+        <A_Btn
+          type ='submit'
+          buttonStyle = 'btn--main'
+          buttonState = 'btn--primary'>
+          {"Редактировать"}
+      </A_Btn>
       </div>
     );
   }

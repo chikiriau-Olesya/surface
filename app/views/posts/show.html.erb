@@ -1,15 +1,30 @@
-<!-- <p class="user-name">
-  <strong>Имя:</strong>
-  <#%= @post.name %>
-</p> -->
 
+<div className="post-view-wrapper">
 
-<br>
-<%= image_tag(@post.image.url, alt: 'Image') if @post.image? %>
+  <div className="post-top-block">
+    <%= react_component 'A_Category', {category: @category} %>
+    <%= react_component 'A_PostDate', {post: @post} %>
+  </div>
 
-<h3 class="title-post">
-  <%= @post.title %>
-</h3>
+  <%= react_component 'M_PostView', {category: @category, post: @post} %>
+
+  <div class="post-view-final">
+    <% if user_signed_in? %>
+    <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
+
+   <div class="post-view-activity">
+    <div class="liking">
+      <%= react_component 'A_Likes', { post: @post, likes: @post.likes, current_user_id: current_user.id } %>
+    </div>
+
+    <div class="favs">
+      <%= react_component 'A_Favorites', { post: @post, favorites: @post.favorites, current_user_id: current_user.id } %>
+    </div>
+   </div>
+    <% end %>
+    <%= react_component 'M_PostFinal', {post: @post} %>
+  </div>
+
 
 <% if @post.category_id? %>
   <span>
@@ -17,45 +32,14 @@
   </span>
 <% end %>
 
-<p>
-	<strong>Author:</strong>
-	<%= @post.user.username %>
-</p>
 
-<p class="post-body">
-  <strong>Пост:</strong>
-  <%= @post.content.html_safe %>
-</p>
-
-
-<p class="">
-  <% if @post.tagline? %>
+<!-- <p class="">
+  <%# if @post.tagline? %>
     <strong>Tags:</strong>
-    <%= render_with_hashtags(@post.tagline) %>
-  <% end %>
-</p>
+    <%#= render_with_hashtags(@post.tagline) %>
+  <%# end %>
+</p> -->
 
-<%= react_component 'M_PostView', { post: @post } %>
-
-
-<p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
-<p><%= @post.favorites.count %> <%= (@post.favorites.count) == 1 ? 'favourite' : 'favourites'%></p>
-
-<% if user_signed_in? %>
-  <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
-  <% if pre_like %>
-    <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
-  <% else %>
-    <%= button_to 'Like', post_likes_path(@post), method: :post %>
-  <% end %>
-
-  <% pre_favorite = @post.favorites.find { |favorite| favorite.user_id == current_user.id} %>
-  <% if pre_favorite %>
-      <%= button_to 'Remove from Favorite', post_favorite_path(@post, pre_favorite), method: :delete %>
-  <% else %>
-      <%= button_to 'Add to Favorite', post_favorites_path(@post), method: :post %>
-  <% end %>
-<% end %>
 
 
 <h2 class="comments-section">Комментарии</h2>

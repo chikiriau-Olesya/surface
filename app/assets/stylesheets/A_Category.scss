@@ -1,0 +1,29 @@
+.catBtn{
+  padding: 1vw 3vw 1vw 3vw;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  margin-right: 1vw;
+  font-weight: 500;
+  border-radius: 3vw;
+  background-color: #EEF2F6;
+}
+.catBtn:hover{
+  color: #fff;
+  background-color: #101010;
+}
+.category--default{
+  color: #101010;
+  background-color: #EEF2F6;
+}
+.category--active{
+  color: #fff;
+  background-color: #101010;
+}
+.category--inPost{
+  color: #101010;
+  background-color: #fff;
+}
+.category--inArticle{
+  color: #101010;
+  background-color: #fff;
+}

@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
-import 'stylesheets/button.scss'
-// import Arrow from 'images/arrow-btn.svg'
+import 'stylesheets/A_Btn.scss'
+import Arrow from 'images/arrow-btn.svg'
 
 const STYLES = [
   'btn--main',

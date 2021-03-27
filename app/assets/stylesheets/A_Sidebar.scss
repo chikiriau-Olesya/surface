@@ -1,0 +1,37 @@
+.sidebar{
+  position: absolute;
+  background-color: #fff;
+  padding: 2vw;
+  margin-left: -2vw;
+  color: #000;
+  width: 18vw;
+  height: 50vw;
+  .sidebar-shools{
+    margin-top: 4vw;
+  }
+  li{
+    font-size: 18px;
+    padding-top: 1vw;
+  }
+  .media-links{
+    margin-top: 1vw;
+    a{
+      margin-right: 1vw;
+    }
+  }
+  .sidebar-additional{
+    margin-top: 6vw;
+    .sidebar-tech-links{
+      display: flex;
+    }
+    a{
+      font-size: 14px;
+      padding-right: 1vw;
+      color: #9F9F9F;
+      margin-top: 1vw;
+    }
+    a + p{
+      color: #9F9F9F;
+    }
+  }
+}
