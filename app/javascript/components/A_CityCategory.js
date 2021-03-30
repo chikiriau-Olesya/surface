@@ -3,10 +3,9 @@ import PropTypes from "prop-types"
 import 'stylesheets/A_CityCategory.scss'
 
 const STYLES = [
-  'category--default',
-  'category--active',
-  'category--inPost',
-  'category--inArticle'
+  'city--default',
+  'city--long',
+  'city--square',
 ]
 
 const SIZES = [

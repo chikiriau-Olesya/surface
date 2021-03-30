@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 // import './A_SchoolInfo.css'
 import A_SchoolInfo from './A_SchoolInfo.js'
+import A_H4 from "./A_H4.js"
 import Flag from 'images/flag.svg'
 import Wind from 'images/thermometer.svg'
 import Water from 'images/wavetemp.svg'
@@ -11,7 +12,9 @@ class M_SchoolInf extends React.Component {
   render () {
     return (
       <div className="M_SchoolInf">
-        <h4>Лучший сезон</h4>
+        <A_H4 className = 'heading--black'
+          content = "Лучший сезон">
+        </A_H4>
         <div className="A_SchoolInf-block">
           <div className="A_SchoolInf-block-column">
             <A_SchoolInfo lable = "Сезон" text = {this.props.school.season} img = {Flag}>

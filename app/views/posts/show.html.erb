@@ -67,7 +67,7 @@
 
   				<!-- open view to delete and edit btn for admin in blog -->
   				<% if user_signed_in? && current_user.isadmin == true %>
-  					<td><%= link_to '🛠', edit_post_path(post) %></td>
+  					<td><%= link_to '🛠', edit_post_path(@post) %></td>
   					<td><%= link_to '🗑', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   				<% end %>
         </tr>
@@ -75,6 +75,6 @@
     </tbody>
   </table>
   <% if user_signed_in? && current_user.isadmin == true %>
-    <td><%= link_to '🛠', edit_post_path(post) %></td>
-    <td><%= link_to '🗑', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to '🛠', edit_post_path(@post) %></td>
+    <td><%= link_to '🗑', @post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   <% end %>

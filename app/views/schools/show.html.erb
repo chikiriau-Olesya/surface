@@ -1,16 +1,5 @@
 <p id="notice"><%= notice %></p>
-
-<%= image_tag(@school.image.schoolshow.url, alt: 'Image') if @school.image? %>
-
-<p>
-  <%= @school.name %>
-</p>
-
-<div>
-  <%= @school.description.html_safe %>
-</div>
-
-
+<%#= image_tag(@school.image.schoolshow.url, alt: 'Image') if @school.image? %>
 <%= react_component 'O_SchoolView', { school: @school} %>
 
 <!--

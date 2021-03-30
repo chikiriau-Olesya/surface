@@ -6,6 +6,7 @@ import A_Category from "./A_Category.js"
 import A_H2 from "./A_H2.js"
 import A_PostDate from "./A_PostDate.js"
 import A_Textblock from './A_Textblock.js'
+import A_PicView from "./A_PicView.js"
 
 class M_PostView extends React.Component {
   render() {
@@ -26,9 +27,10 @@ class M_PostView extends React.Component {
 
       return (
         <div className="post-view">
-          <img
-          className="post-view-pic"
-          src={this.props.post.image.url}/>
+          <A_PicView
+          src = {this.props.post.image.url}>
+          </A_PicView>
+
           <div className="post-content">
             <div className="post-info">
               <A_Category

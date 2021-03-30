@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import A_SchoolFacility from './A_SchoolFacility.js'
+import A_H4 from "./A_H4.js"
 import Car from 'images/bus.svg'
 import Equip from 'images/paddleboarding.svg'
 import Cafe from 'images/restaurant.svg'
@@ -56,7 +57,9 @@ class M_SchoolFacilities extends React.Component {
 
     return (
       <div className="M_SchoolFacilities">
-        <h4>Условия школы</h4>
+        <A_H4 className = 'heading--black'
+          content = "Условия школы">
+        </A_H4>
         <div className="M_SchoolFacilities-block">
           {checkRoom}
           {checkShop}
