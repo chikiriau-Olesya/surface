@@ -1,13 +1,8 @@
 <div className="post-view-wrapper">
 
-  <div className="post-top-block">
-    <%= react_component 'A_Category', {category: @category} %>
-    <%= react_component 'A_PostDate', {post: @post} %>
-  </div>
+  <%= react_component 'O_PostView', {category: @category, post: @post, posts: @posts} %>
 
-  <%= react_component 'M_PostView', {category: @category, post: @post} %>
-
-  <div class="post-view-final">
+  <div class="">
     <% if user_signed_in? %>
     <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
 
@@ -21,27 +16,7 @@
     </div>
    </div>
     <% end %>
-    <%= react_component 'M_PostFinal', {post: @post} %>
   </div>
-
-
-<% if @post.category_id? %>
-  <span>
-    <%= @post.category.name %>
-  </span>
-<% end %>
-
-<span>
-  <%= @post.topic%>
-</span>
-
-
-<!-- <p class="">
-  <%# if @post.tagline? %>
-    <strong>Tags:</strong>
-    <%#= render_with_hashtags(@post.tagline) %>
-  <%# end %>
-</p> -->
 
 
 
@@ -60,10 +35,7 @@
   <% end %>
   <%= link_to 'Back', posts_path %>
 
-
-
-
-  <table>
+<table>
     <tbody>
       <% @posts.each do |post| %>
         <tr>
@@ -102,3 +74,7 @@
       <% end %>
     </tbody>
   </table>
+  <% if user_signed_in? && current_user.isadmin == true %>
+    <td><%= link_to '🛠', edit_post_path(post) %></td>
+    <td><%= link_to '🗑', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <% end %>

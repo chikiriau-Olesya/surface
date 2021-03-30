@@ -11,8 +11,8 @@ class O_Posts extends React.Component {
     return (
       <div className="post-preview">
         {this.props.posts.map(post => (
-          <div>
-            <a href={/posts/ +`${post.id}`} key={post.id} className="post-preview-item">
+          <div className="post-preview-item">
+            <a href={/posts/ +`${post.id}`} key={post.id} className="post-preview-block">
               <img className="post-preview-img" src={post.image.url}/>
 
               <A_Heading

@@ -20,8 +20,7 @@ class PostsController < ApplicationController
   def show
     # @tag.post_id = Tag.find(@post.tag_id)
     @categories = Category.all
-    @categories = Category.find(@post.category_id)
-
+    @category = Category.find(@post.category_id)
     if params.has_key?(:category)
       @category = Category.find_by_name(params[:category])
       @posts = Post.where(category: @category)

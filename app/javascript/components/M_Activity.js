@@ -4,6 +4,8 @@ import 'stylesheets/M_Activity.scss'
 import Act_Like from 'images/like_unclicked.svg'
 import Act_Comment from 'images/comment_outline.svg'
 import Act_Fav from 'images/unsaved.svg'
+import A_Likes from './A_Likes.js'
+
 
 class M_Activity extends React.Component {
   render () {
@@ -12,7 +14,6 @@ class M_Activity extends React.Component {
         <div className="like-com">
           <div className="activity_item">
             <img src={Act_Like}></img>
-            <p></p>
           </div>
 
           <div className="activity_item">

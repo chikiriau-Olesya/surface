@@ -1,18 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
-import A_Textblock from './A_Textblock.js'
+import 'stylesheets/A_Textblock.scss'
 
-
-class A_PostDate extends React.Component {
-  render() {
+const A_PostDate = ({
+date
+}) => {
     return (
-      <div className="post-date">
-        <p>
-         {this.props.created_at}
-        </p>
+      <div className="textblock text--descript">
+        {date}
       </div>
     );
-  }
 }
+
 
 export default A_PostDate

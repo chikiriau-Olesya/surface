@@ -29,9 +29,9 @@ const A_Textblock = ({
   ? textSize : SIZES[0]
 
   return(
-      <span className = {`textblock ${checkTextStyle} ${checkTextSize}`} type = {type}>
+      <p className = {`textblock ${checkTextStyle} ${checkTextSize}`} type = {type}>
         {children}
-      </span>
+      </p>
 
   )
 }

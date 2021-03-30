@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import Burger from 'images/burger.svg'
 import Cross from 'images/cross.svg'
 
-class ToggleBox extends React.Component {
+class M_ToggleBox extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -45,4 +45,4 @@ class ToggleBox extends React.Component {
 	}
 }
 
-export default ToggleBox
+export default  M_ToggleBox

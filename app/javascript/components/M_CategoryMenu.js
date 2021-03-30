@@ -6,10 +6,10 @@ class M_CategoryMenu extends React.Component {
   render() {
     return (
       <div className="all-cats">
-        <a href={`/posts`} className="catBtn">Все</a>
+        <a href={`/posts`} className="category">Все</a>
         {this.props.categories.map(category => (
           <div key={category.id}>
-              <a href={`/posts?category=${category.name}`} className="catBtn">
+              <a href={`/posts?category=${category.name}`} className="category">
               {`${category.name}`}
               </a>
           </div>

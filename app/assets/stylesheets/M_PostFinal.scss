@@ -1,8 +1,20 @@
 .post-final{
-  margin-top: 2vw;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
+  background: #101010;
+  border-radius: 16px;
 }
+
+.post-final-inner {
+  padding: 32px;
+}
+
+.post-final-inner-hashtag {
+  margin-bottom: 40px;
+}
+
 .media-share{
-  margin-top: 1vw;
   a{
     margin-right: 1vw;
   }
