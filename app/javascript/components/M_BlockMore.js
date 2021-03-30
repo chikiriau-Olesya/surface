@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import A_Heading from "./A_Heading.js"
+import A_H3 from "./A_H3.js"
 import A_Textblock from "./A_Textblock.js"
 import A_Btn from "./A_Btn.js"
 import 'stylesheets/M_BlockMore.scss'
@@ -14,12 +15,9 @@ class M_BlockMore extends React.Component {
       <div className="bottom-layer">
         <div className="top-layer">
           <div className="top-layer-text">
-            <A_Heading
-            className="more-title"
-            headingStyle = 'heading--white'
-            headingSize = 'heading--h3'>
-            {"Все о видах серфинга"}
-            </A_Heading>
+            <A_H3 className = 'heading--white'
+              content = "Все о видах серфинга">
+            </A_H3>
             <A_Textblock
             className="more-text"
             textStyle = 'text--white'

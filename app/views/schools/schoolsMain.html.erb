@@ -5,7 +5,7 @@
   <%= link_to city.name, schools_path(city: city.name) %>
 <% end %>
 
-<div class="">
+<div class="" style="display:flex;">
 	<% @schools.each do |school| %>
 	 <div class="">
 		 <div>
@@ -49,3 +49,5 @@
 	 </div>
 	<% end %>
 </div>
+
+<%= react_component 'M_BlockMore'%>

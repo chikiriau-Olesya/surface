@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import 'stylesheets/A_H1.scss'
+import 'stylesheets/A_Heading.scss'
 
 const A_H1 = ({
   content
