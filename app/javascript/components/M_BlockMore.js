@@ -13,18 +13,20 @@ class M_BlockMore extends React.Component {
     return (
       <div className="bottom-layer">
         <div className="top-layer">
-          <A_Heading
-          className="more-title"
-          headingStyle = 'heading--white'
-          headingSize = 'heading--h3'>
-          {"Все о видах серфинга"}
-          </A_Heading>
-          <A_Textblock
-          className="more-text"
-          textStyle = 'text--white'
-          textSize = 'text--subbody'>
-            {"Мы поможем вам разобраться в основных видах серфинга и найти подходящий для вас по духу и нагрузке тип серфинг "}
-          </A_Textblock>
+          <div className="top-layer-text">
+            <A_Heading
+            className="more-title"
+            headingStyle = 'heading--white'
+            headingSize = 'heading--h3'>
+            {"Все о видах серфинга"}
+            </A_Heading>
+            <A_Textblock
+            className="more-text"
+            textStyle = 'text--white'
+            textSize = 'text--descript'>
+              {"Мы поможем вам разобраться в основных видах серфинга и найти подходящий для вас по духу и нагрузке тип серфинг "}
+            </A_Textblock>
+          </div>
           <A_Btn
           className="more-btn"
           type ='text'

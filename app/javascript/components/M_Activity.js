@@ -7,20 +7,17 @@ import Act_Fav from 'images/unsaved.svg'
 
 class M_Activity extends React.Component {
   render () {
-
-    let commentNum = this.coments.count
-
     return (
       <div className="activity">
         <div className="like-com">
           <div className="activity_item">
             <img src={Act_Like}></img>
-            <p>{likeNum}</p>
+            <p></p>
           </div>
 
           <div className="activity_item">
             <img src={Act_Comment}></img>
-            <p>{commentNum}</p>
+            <p></p>
           </div>
         </div>
         <div className="activity_item">

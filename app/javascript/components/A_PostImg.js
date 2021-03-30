@@ -21,7 +21,7 @@ const checkImgStyle = STYLES.includes(imgStyle)
 
   return (
     <div className = {`img ${checkImgStyle}`}>
-      <img src={source}></img>
+      <img src={post.img.thumb.url}></img>
     </div>
 
   );

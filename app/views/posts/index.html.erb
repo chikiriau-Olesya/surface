@@ -1,20 +1,10 @@
 
 <%= react_component 'M_CategoryMenu', { categories: @categories, category: @category } %>
+<%= react_component 'O_Posts', { posts: @posts, post: @post } %>
+<%= react_component 'M_BlockMore'%>
 
 
 <table>
-  <thead>
-    <tr>
-			<th></th>
-			<th>Title</th>
-			<th>Author</th>
-      <th>Category</th>
-			<!-- delete later -->
-			<th>tags</th>
-      <th>PostType</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
 <%#= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
   <tbody>
@@ -26,9 +16,6 @@
 				 <td>
 					 <%= post.title %>
 				 </td>
-				 <td>
-					 <%= post.user.username %>
-				</td>
 				<td>
 				<% if post.category_id? %>
 					<span>

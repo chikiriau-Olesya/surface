@@ -10,11 +10,12 @@ import A_Heading from './A_Heading.js'
   constructor(props) {
     super(props);
     this.state = {
+      category_id: props.post.category_id ? props.post.category_id : '',
       title: props.post.title ? props.post.title : '',
       name: props.post.name ? props.post.name : '',
       content: props.post.content,
       image: props.post.image.url,
-      category: props.post.category,
+      categories: props.categories ? props.categories : [],
     };
     this.handleTitleChange = this.handleTitleChange.bind(this);
     this.handleNameChange = this.handleNameChange.bind(this);
@@ -39,7 +40,7 @@ import A_Heading from './A_Heading.js'
     this.setState({ image: e.target.value });
   }
   handleCategoryChange(e) {
-    this.setState({ category: e.target.value });
+    this.setState({ category_id: e.target.value });
   }
   handleSubmit(e) {
   alert('Публикация создана: ' + this.state );
@@ -47,7 +48,8 @@ import A_Heading from './A_Heading.js'
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className ="form-wrapper"
+      onSubmit={this.handleSubmit}>
         <A_Heading
         headingStyle = 'heading--black'
         headingSize = 'heading--h3'>
@@ -80,20 +82,23 @@ import A_Heading from './A_Heading.js'
           value={this.state.image}
           onChange={this.handleImageChange}
         />
+        <A_Input
+          textChild ={"Теги"}
+          inputStyle="input--main"
+          type = 'text'
+          name="post[title]"
+          value={this.state.title}
+          onChange={this.handleTitleChange}
+          />
 
-        <label>Категория</label>
-        <select
-          type="text"
+        <A_Select
+          title={"Категория"}
           name="post[category_id]"
           value={this.state.category}
-          onChange={this.handleCategoryChange}
-          >
-          <option value="4">Люди</option>
-          <option value="5">История</option>
-          <option value="6">Атмосфера</option>
-          <option value="7">Полезное</option>
-        </select>
-
+          placeholder={"Атмосфера"}
+          handleChange={this.handleCategoryChange}
+          options={this.state.categories}
+        />
 
         <A_Btn
         type ='submit'
@@ -101,7 +106,6 @@ import A_Heading from './A_Heading.js'
         buttonState = 'btn--primary'>
         {"Создать"}
         </A_Btn>
-        <input type="submit" value="Создать" />
       </form>
 
     );

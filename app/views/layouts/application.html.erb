@@ -14,7 +14,7 @@
 
 
   <body>
-  <%= react_component 'Tests' %>
+  <%#= react_component 'Tests' %>
   <% if notice %>
      <p class="notice"><%= notice %></p>
    <% elsif alert %>
@@ -47,5 +47,6 @@
   <%= react_component 'M_Header'%>
 
     <%= yield %>
+    <%= react_component 'O_Footer'%>
   </body>
 </html>

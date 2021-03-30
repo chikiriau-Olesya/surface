@@ -1,37 +1,42 @@
-<%= react_component 'A_Avatar', { user: @user } %>
-<%= react_component 'M_Profile', { user: @user} %>
+<%#= react_component 'A_Avatar', { user: @user } %>
+<div class="profile-wrapper">
+  <%= react_component 'M_Profile', { user: @user} %>
 
-<% if user_signed_in? && current_user.isadmin == true %>
-  <!-- <p>Admin <%#= @user.isadmin %></p> -->
-<% end %>
-Followers <%= @user.followers.count %>
-Following <%= link_to @user.followees.count, following_path %>
-<br>
+  <div class="profile-follows">
+    <p>Подписчики <%= @user.followers.count %></p>
+    <p>Подписки <%= @user.followees.count %></p>
+    <!-- <p>Подписки <%#= link_to @user.followees.count, following_path %></p> -->
+  </div>
 
-In favorites <%= @user.favorites.count %> <%= (@user.favorites.count) == 1 ? 'Post' : 'Posts'%>
-<% @posts.each do |post| %>
-  <br><%= link_to(image_tag(post.image.thumb.url, alt: 'Image'), post.image.url, target: '_blank') if post.image? %>
-  <br><%= link_to post.title, post %>
-  <br><%= post.content.html_safe%>
-<% end %>
+  <div class="profile-button">
+    <% if user_signed_in? && @user.id == current_user.id %>
+        <%= link_to 'Edit Profile', edit_user_path(current_user), class: ' btn btn--main' %>
+    <% elsif user_signed_in? && current_user.followees.include?(@user) %>
+        <%= button_to "Отписаться", unfollow_user_path, method: "POST", class: ' btn btn--main' %>
+    <% elsif user_signed_in? %>
+        <%= button_to "Подписаться", follow_user_path, method: "POST", class: 'btn btn--main' %>
+    <% end %>
+    <br>
+    <br>
+  </div>
 
-<div class="user-images">
-  <h1>MY POSTS</h1>
-  <span><%=@user.posts.count  %></span> posts
-  <% @user.posts.each do |post|%>
-      <%=link_to post_path(post) do %>
-          <%= link_to post.title, post %>
-          <%= link_to(image_tag(post.image.thumb.url, alt: 'Image'), post.image.url, target: '_blank') if post.image? %>
-       <% end %>
-  <% end %>
+  <div class="profile-posts">
+    Сохраненные публикации <%= @user.favorites.count %> <%= (@user.favorites.count) == 1 ? 'Post' : 'Posts'%>
+    <%# @posts.each do |post| %>
+      <br><%#= link_to(image_tag(post.image.thumb.url, alt: 'Image'), post.image.url, target: '_blank') if post.image? %>
+      <br><%#= link_to post.title, post %>
+    <%# end %>
+    <%= react_component 'O_Posts', { posts: @posts, post: @post } %>
+
+    <div class="user-posts">
+      <h1>Мои публикации</h1>
+      <span><%=@user.posts.count  %></span> публикации
+      <% @user.posts.each do |post|%>
+          <%=link_to post_path(post) do %>
+              <%= link_to post.title, post %>
+              <%= link_to(image_tag(post.image.thumb.url, alt: 'Image'), post.image.url, target: '_blank') if post.image? %>
+           <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
-
-<% if user_signed_in? && @user.id == current_user.id %>
-    <%= link_to 'Edit Profile', edit_user_path(current_user) %>
-<% elsif user_signed_in? && current_user.followees.include?(@user) %>
-    <h5><%= button_to "Unfollow", unfollow_user_path, method: "POST" %></h5>
-<% elsif user_signed_in? %>
-    <h5><%= button_to "Follow", follow_user_path, method: "POST"  %></h5>
-<% else %>
-<%# можно добавить кнопку для регистрации или что-нибудь ещё  %>
-<% end%>

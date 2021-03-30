@@ -11,6 +11,9 @@
     </div>
   <% end %>
 
+  <%= react_component 'O_SchoolForm', { school: @school} %>
+
+
   <div>
     <%= form.label "Выбрать обложку"%>
     <%= form.file_field :image %>

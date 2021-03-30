@@ -7,13 +7,15 @@ const STYLES = [
   'input--main',
   'input--search',
   'input--wide',
-  'input--image'
+  'input--image',
+  'input--image-user'
 ]
 const A_Input = ({
   type,
   value,
   onChange,
   inputStyle,
+  placeholder,
   inputSize,
   textChild
 }) => {
@@ -22,9 +24,9 @@ const A_Input = ({
   ? inputStyle : STYLES[0]
 
   return(
-    <div>
+    <div className="input-total">
       <label className="input-label">{textChild}</label>
-      <input className = {`input ${checkInputStyle}`} type = {type} value={value} onChange={onChange}>
+      <input className = {`input ${checkInputStyle}`} type = {type} value={value} onChange={onChange} placeholder={placeholder}>
         {}
       </input>
       <img src = {Pic}></img>

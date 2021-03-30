@@ -1,12 +1,21 @@
 .bottom-layer{
+  margin: 3vw;
   background-color: #A7D22B;
-  width: 100%;
-  border-radius: 2vw;
+  width: 94vw;
+  border-radius: 4vw;
 }
 .top-layer{
   background-color: #101010;
-  width: 100%;
-  border-radius: 2vw 6vw 6vw 2vw;
+  width: 88vw;
+  border-radius: 4vw 10vw 10vw 4vw;
+  .top-layer-text{
+  display: flex;
+  flex-direction: column;
+  span:nth-of-type(2){
+    max-width: 40vw;
+    margin: 2vw 0 3vw 0;
+  }
+  }
   padding: 2vw;
   .more-text{
     margin-top: 1vw;

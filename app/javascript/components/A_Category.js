@@ -13,7 +13,7 @@ const STYLES = [
 class A_Category extends React.Component {
   render () {
       let category = '';
-      if (this.props.category_id) {
+      if (this.props.category) {
         category = this.props.category.name
       }
       return (

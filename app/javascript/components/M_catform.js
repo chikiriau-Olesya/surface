@@ -25,7 +25,12 @@ class M_Catform extends React.Component {
 
     render() {
       return (
-        <form>
+        <form className ="form-wrapper">
+        <A_Heading
+        headingStyle = 'heading--black'
+        headingSize = 'heading--h3'>
+        {"Новая категория"}
+        </A_Heading>
           <label>Name</label>
           <input
             type="text"
@@ -35,6 +40,13 @@ class M_Catform extends React.Component {
           />
 
           <label>Description</label>
+          <A_Textarea
+            textChild ={"Контент"}
+            type = 'text'
+            name="post[content]"
+            value={this.state.content}
+            onChange={this.handleContentChange}
+            />
           <input
             type="text"
             name="category[description]"
@@ -48,16 +60,16 @@ class M_Catform extends React.Component {
             type="checkbox"
             name="category[display_in_navbar]"
           />
-
-          <label>postType</label>
-          <input
-            type="text"
-            name="category[post_type_id]"
+          <A_Input
+            textChild ={"Раздел"}
+            inputStyle="input--main"
+            type = 'text'
+            name="post[title]"
             value={this.state.post_type_id}
             onChange={this.handlePostTypeChange}
-          />
+            />
 
-          <input type="submit" value="Create category" />
+          <input type="submit" value="Создать категорию" />
         </form>
       );
     }
