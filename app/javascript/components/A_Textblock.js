@@ -10,9 +10,9 @@ const STYLES = [
 
 const SIZES = [
 'text--body',
+'text--subbody',
 'text--descript',
-'text--s-descript',
-'text--subbody'
+'text--s-descript'
 ]
 
 const A_Textblock = ({

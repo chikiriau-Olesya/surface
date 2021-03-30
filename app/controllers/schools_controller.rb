@@ -15,6 +15,24 @@ class SchoolsController < ApplicationController
     end
   end
 
+
+  def schoolsMain
+    @cities = City.all
+    if params.has_key?(:city)
+      @city = City.find_by_name(params[:city])
+      @schools = School.where(city: @city)
+    else
+      @schools = School.all
+    end
+  end
+
+  def schoolsCities
+    @cities = City.all
+    @city = City.find_by_name(params[:city])
+    @school = School.find_by_name(params[:school])
+    @schools = School.all
+  end
+
   # GET /schools/1
   # GET /schools/1.json
   def show

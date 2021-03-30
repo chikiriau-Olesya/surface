@@ -1,16 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
-import 'stylesheets/A_H2.scss'
+import 'stylesheets/A_H1.scss'
 
-const A_H2 = ({
+const A_H1 = ({
   content
 }) => {
   return(
-      <h2 className = "A_H2">
+      <h1 className = "A_H1">
         {content}
-      </h2>
+      </h1>
 
   )
 }
 
-export default A_H2
+export default A_H1

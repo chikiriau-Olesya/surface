@@ -43,6 +43,8 @@ Rails.application.routes.draw do
   get 'schools', to: 'schools#index'
   get 'cities', to: 'cities#index'
 
+  get "schoolsMain" => "schools#schoolsMain", as: "schoolsMain"
+  get "schoolsCities" => "schools#schoolsCities", as: "schoolsCities"
   # get 'landing/index'
   # get 'styleguide/index'
 
