@@ -12,29 +12,31 @@ class M_Header extends React.Component {
 
   render() {
     return (
-      <div className="header-ext">
-        <M_ToggleBox>
-          <A_Sidebar />
-        </M_ToggleBox>
-        <div className="header">
-          <div className="header--left">
-            <a href="/posts">
-            <img
-            className="logo"
-            src={Logo}/>
-            </a>
+      <header className="header-ext">
+        <div className="header-ext-inner">
+          <M_ToggleBox>
+            <A_Sidebar />
+          </M_ToggleBox>
+          <div className="header">
+            <div className="header--left">
+              <a href="/posts">
+              <img
+              className="logo"
+              src={Logo}/>
+              </a>
 
-            <a href="/posts">Пляж</a>
-            <a href="/schools">Школы</a>
+              <a href="/posts">Пляж</a>
+              <a href="/schools">Школы</a>
 
-          </div>
+            </div>
 
-          <div className="header--right">
-            <a className="header--right-search" href="/searchPage"><img src={Search}/></a>
-            <a className="header--right-profile" href="/users"><img src={Profile}/></a>
+            <div className="header--right">
+              <a className="header--right-search" href="/searchPage"><img src={Search}/></a>
+              <a className="header--right-profile" href="/users"><img src={Profile}/></a>
+            </div>
           </div>
         </div>
-      </div>
+      </header>
     );
   }
 }

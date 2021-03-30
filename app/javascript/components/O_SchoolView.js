@@ -9,6 +9,7 @@ import M_SchoolOffers from "./M_SchoolOffers.js"
 import M_SchoolFacilities from "./M_SchoolFacilities.js"
 import M_SchoolContacts from "./M_SchoolContacts.js"
 import M_SchoolDesc from "./M_SchoolDesc.js"
+import M_ShareSocials from "./M_ShareSocials.js"
 
 
 class O_SchoolView extends React.Component {
@@ -34,6 +35,10 @@ class O_SchoolView extends React.Component {
         <div className="O_SchoolView-block">
           <A_SchoolGalery/>
           <M_SchoolContacts school = {this.props.school}/>
+        </div>
+
+        <div className="">
+          <M_ShareSocials/>
         </div>
       </div>
     );

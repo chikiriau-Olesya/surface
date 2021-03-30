@@ -2,15 +2,20 @@
   // position: fixed;
   // top: 0;
 
-  display: flex;
   width: 100%;
   padding: 16px 0px;
-  align-items: center;
-  justify-content: space-between;
 
   background-color: #fff;
   color: #101010;
   border-radius: 0 0 24px 24px;
+}
+
+.header-ext-inner {
+  padding: 0 56px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header{
@@ -22,6 +27,7 @@
     font-family: "Raleway", helvetica, sans-serif;
     font-weight: 600;
     font-size: 16px;
+    margin-left: 24px;
     text-decoration: none;
     text-transform: uppercase;
   }
