@@ -49,6 +49,11 @@
     <%= form.hidden_field :post_type_id, value: post.post_type.id %>
   </div>
 
+  <div class="field">
+    <%= form.label :topic %>
+    <%= form.text_field :topic %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
