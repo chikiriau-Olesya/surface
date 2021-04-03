@@ -25,3 +25,68 @@
   </div>
 </div>
 <%= link_to 'Назад', @user %>
+
+
+
+<div class="user-edit-page">
+  <div class="actions">
+    <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
+      <a class="nav-link active" data-toggle="pill" href="#v-pills-home" role="tab" aria-selected="true">Профиль</a>
+      <%= link_to 'Настройки аккаунта', edit_user_registration_path %>
+      <a class="nav-link" data-toggle="pill">Политика конфиденциальности</a>
+    </div>
+  </div>
+
+  <div class="details tab-content">
+    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+      <h2>Редактировать профиль</h2>
+      <p>Эту информацию  можно увидеть в вашем профиле</p>
+      <%= form_with model: current_user, local: true, html: {class: "form-horizontal form-edit-user"} do |f| %>
+
+        <div>
+          <%= image_tag(@user.image.url, alt: 'Image') if @user.image? %>
+          <%= f.label :image %>
+          <%= f.file_field :image %>
+        </div>
+
+        <div class="">
+          <%= f.label "Имя пользователя"%>
+          <%= f.text_field :username%>
+        </div>
+        <div class="">
+          <%= f.label "Сведения о вашем профиле"%>
+          <div class="">
+            <%= f.text_area :bio, class: 'form-control' %>
+          </div>
+        </div>
+
+        <h3>Контакты</h3>
+        <p>Добавьте ссылку на любую соц. сеть, чтобы продолжить общение за пределами сервиса</p>
+        <div class="">
+          <%= f.label "Instagram"%>
+          <div class="col-sm-9">
+            <%= f.text_field :inst%>
+          </div>
+        </div>
+        <div class="">
+          <%= f.label "Telegarm"%>
+          <div class="col-sm-9">
+            <%= f.text_field :tg%>
+          </div>
+        </div>
+        <div class="">
+          <%= f.label "Facebook"%>
+          <div class="col-sm-9">
+            <%= f.text_field :fb%>
+          </div>
+        </div>
+
+        <div class="">
+          <%= f.submit "Submit", class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+<%= link_to 'Назад', @user %>

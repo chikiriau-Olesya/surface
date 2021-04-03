@@ -26,7 +26,7 @@ class M_Header extends React.Component {
               </a>
 
               <a href="/posts">Пляж</a>
-              <a href="/schools">Школы</a>
+              <a href="/schoolsMain">Школы</a>
 
             </div>
 

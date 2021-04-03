@@ -13,7 +13,7 @@ class M_Activity extends React.Component {
       <div className="activity">
         <div className="like-com">
           <div className="activity_item">
-            <img src={Act_Like}></img>
+          <A_Likes/>
           </div>
 
           <div className="activity_item">
