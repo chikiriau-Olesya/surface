@@ -69,7 +69,7 @@ class M_MainMap extends React.Component {
                       balloonContent: `
                       <p>Информация о метке №${id + 1}.</p>
                       <p>
-                        <a href="#${id}">Больше информации...</a>
+                        <a href="/schools/${id}">Больше информации...</a>
                       </p>
                   `,
                       clusterCaption: `Метка №${id + 1}`

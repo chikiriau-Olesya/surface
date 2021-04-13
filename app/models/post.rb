@@ -4,7 +4,7 @@ class Post < ApplicationRecord
 		include Elasticsearch::Model
 		include Elasticsearch::Model::Callbacks
 
-		validates :name, :presence => true
+		# validates :name, :presence => true
 		validates :title, :presence => true,
 											:length => { :minimum => 5 }
 
