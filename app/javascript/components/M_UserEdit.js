@@ -5,6 +5,7 @@ import A_Textarea from './A_Textarea.js'
 import A_Btn from './A_Btn.js'
 import A_Heading from './A_Heading.js'
 import A_Textblock from './A_Textblock.js'
+import M_SideProfileMenu from './M_SideProfileMenu.js'
 
   class M_UserEdit extends React.Component {
   constructor(props) {
@@ -51,87 +52,89 @@ import A_Textblock from './A_Textblock.js'
 
   render() {
     return (
-      <div className ="form-total">
-        <form className ="form-wrapper" onSubmit={this.handleSubmit}>
-        <div className="head-text">
-          <A_Heading
-          headingStyle = 'heading--black'
-          headingSize = 'heading--h3'>
-          {"Редактировать профиль"}
-          </A_Heading>
-          <A_Textblock
-          className="more-text"
-          textStyle = 'text--gray'
-          textSize = 'text--s-descript'>
-            {"Эту информацию  вы можете увидеть в вашем профиле"}
-          </A_Textblock>
-        </div>
-
-          <img src={this.props.user.image.small_thumb.url}/>
-          <A_Input
-              textChild ={"Изображение"}
-              inputStyle="input--image"
-              type="file"
-              name="user[image]"
-              value={this.state.image.url}
-              onChange={this.handleImageChange}
-            />
-          <A_Input
-            textChild ={"Имя пользователя"}
-            inputStyle="input--main"
-            type = 'text'
-            name="post[title]"
-            value={this.state.username}
-            onChange={this.handleUsernameChange}
-            />
-
-          <A_Textarea
-            textChild ={"Сведения о вашем профиле"}
-            type = 'text'
-            name="post[content]"
-            value={this.state.bio}
-            onChange={this.handleBioChange}
-            />
-
+      <div>
+        <div className ="form-total">
+          <form className ="form-wrapper" onSubmit={this.handleSubmit}>
           <div className="head-text">
             <A_Heading
             headingStyle = 'heading--black'
-            headingSize = 'heading--article-preview'>
-            {"Контакты"}
+            headingSize = 'heading--h3'>
+            {"Редактировать профиль"}
             </A_Heading>
-            <A_Textblock className="text"
+            <A_Textblock
             className="more-text"
             textStyle = 'text--gray'
             textSize = 'text--s-descript'>
-              {"Добавьте ссылку на любую соц. сеть, чтобы продолжить общение за пределами сервиса"}
+              {"Эту информацию  вы можете увидеть в вашем профиле"}
             </A_Textblock>
           </div>
 
+            <img src={this.props.user.image.small_thumb.url}/>
             <A_Input
-              textChild ={"Instagram"}
+                textChild ={"Изображение"}
+                inputStyle="input--image"
+                type="file"
+                name="user[image]"
+                value={this.state.image.url}
+                onChange={this.handleImageChange}
+              />
+            <A_Input
+              textChild ={"Имя пользователя"}
               inputStyle="input--main"
               type = 'text'
               name="post[title]"
-              value={this.state.instagram}
-              onChange={this.handleInstagramChange}
+              value={this.state.username}
+              onChange={this.handleUsernameChange}
               />
-            <A_Input
-              textChild ={"Facebook"}
-              inputStyle="input--main"
+
+            <A_Textarea
+              textChild ={"Сведения о вашем профиле"}
               type = 'text'
-              name="post[title]"
-              value={this.state.facebook}
-              onChange={this.handleFacebookChange}
+              name="post[content]"
+              value={this.state.bio}
+              onChange={this.handleBioChange}
               />
-            <A_Input
-              textChild ={"Telegram"}
-              inputStyle="input--main"
-              type = 'text'
-              name="post[title]"
-              value={this.state.telegram}
-              onChange={this.handleTelegramChange}
-              />
-        </form>
+
+            <div className="head-text">
+              <A_Heading
+              headingStyle = 'heading--black'
+              headingSize = 'heading--article-preview'>
+              {"Контакты"}
+              </A_Heading>
+              <A_Textblock className="text"
+              className="more-text"
+              textStyle = 'text--gray'
+              textSize = 'text--s-descript'>
+                {"Добавьте ссылку на любую соц. сеть, чтобы продолжить общение за пределами сервиса"}
+              </A_Textblock>
+            </div>
+
+              <A_Input
+                textChild ={"Instagram"}
+                inputStyle="input--main"
+                type = 'text'
+                name="post[title]"
+                value={this.state.instagram}
+                onChange={this.handleInstagramChange}
+                />
+              <A_Input
+                textChild ={"Facebook"}
+                inputStyle="input--main"
+                type = 'text'
+                name="post[title]"
+                value={this.state.facebook}
+                onChange={this.handleFacebookChange}
+                />
+              <A_Input
+                textChild ={"Telegram"}
+                inputStyle="input--main"
+                type = 'text'
+                name="post[title]"
+                value={this.state.telegram}
+                onChange={this.handleTelegramChange}
+                />
+          </form>
+        </div>
       </div>
 
     );

@@ -1,14 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
-import "stylesheets/M_Header.scss"
+import "stylesheets/O_Header.scss"
 import M_ToggleBox from "./M_ToggleBox.js";
+import M_UserMenu from "./M_UserMenu.js";
 import A_Sidebar from "./A_Sidebar.js";
 import Logo from "images/logo.svg"
 import Burger from "images/burger.svg"
 import Profile from "images/avatar.svg"
 import Search from "images/search_icon.svg"
 
-class M_Header extends React.Component {
+class O_Header extends React.Component {
 
   render() {
     return (
@@ -32,7 +33,8 @@ class M_Header extends React.Component {
 
             <div className="header--right">
               <a className="header--right-search" href="/searchPage"><img src={Search}/></a>
-              <a className="header--right-profile" href="/users"><img src={Profile}/></a>
+              
+              <M_UserMenu className="header--right-profile"/>
             </div>
           </div>
         </div>
@@ -41,4 +43,4 @@ class M_Header extends React.Component {
   }
 }
 
-export default M_Header
+export default O_Header

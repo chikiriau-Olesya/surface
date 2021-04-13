@@ -1,12 +1,26 @@
-.linking{
-  color: #2763BD;
+.link{
+  color: var(--color-sunset);
   font-family: "Raleway", sans-serif;
   font-weight: 500;
   text-decoration: none;
 }
-.linking:hover{
+.link:hover{
   text-decoration: underline;
 }
-.linking:visited{
-  color: #2763BD;
+
+
+.link--blue{
+  color: var(--color-sunset);
+}
+.link--blue:hover{
+  color: var(--color-light-sunset);
+}
+
+
+.link--black{
+  color: var(--color-black-sand);
+}
+.link--black:hover{
+  color: var(--color-light-grey);
+  text-decoration: none;
 }

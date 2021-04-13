@@ -28,4 +28,15 @@
     height: 360px;
     border-radius: 16px;
   }
+  .cat-play-line{
+    margin-top: 320px;
+    position: absolute;
+    justify-content: space-around;
+    padding: 0 24px 0 24px;
+    display: flex;
+  }
+  .post-headline{
+    display: flex;
+    justify-content: space-between;
+  }
 }

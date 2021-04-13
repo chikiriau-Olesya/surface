@@ -1,69 +1,46 @@
-<h1>Панель администратора</h1>
+<%#= render "sidemenu" %>
+<%= react_component 'M_AdminSidebar' %>
 
-<%= render "sidemenu" %>
+<%#= react_component 'M_CategoryMenu', { categories: @categories, category: @category } %>
+<%= react_component 'O_AdminPosts', { posts: @posts, post: @post, categories: @categories, category: @category } %>
 
-<%= link_to 'Новая статья', newmagazine_posts_path %>
+<%#= link_to 'Новая статья', newmagazine_posts_path %>
 
 
-<h1>Posts</h1>
-<h2>All Categories</h2>
-
-<%= react_component 'M_CategoryMenu', { categories: @categories, category: @category } %>
-
-<table>
-  <thead>
-    <tr>
-			<th></th>
-			<th>Title</th>
-			<th>Author</th>
-      <th>Category</th>
-			<!-- delete later -->
-			<th>PostType</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
+<!-- <table>
 <%#= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
   <tbody>
-    <% @posts.each do |post| %>
+    <%# @posts.each do |post| %>
       <tr>
 				<td>
-					 <%= link_to(image_tag(post.image.thumb.url, alt: 'Image'), post.image.url, target: '_blank') if post.image? %>
+					 <%#= link_to(image_tag(post.image.thumb.url, alt: 'Image'), post.image.url, target: '_blank') if post.image? %>
 				</td>
 				 <td>
-					 <%= post.title %>
+					 <%#= post.title %>
 				 </td>
 				 <td>
-					 <%= post.user.username %>
+					 <%#= post.user.username %>
 				</td>
 				<!-- <td><#%= post.name %></td> -->
 				<td>
-				<% if post.category_id? %>
+				<%# if post.category_id? %>
 					<span>
-					<%= post.category.name %>
+					<%#= post.category.name %>
 					</span>
-				<% end %>
+				<%# end %>
 				</td>
-        <td><%= render_with_hashtags(post.content) %></td>
-				<td><%= post.post_type.name %></td>
-        <td><%= post.likes.count %> <%= (post.likes.count) == 1 ? '💙' : '💙'%></td>
-        <td><%= post.coments.count %> <%= (post.coments.count) == 1 ? ' 💬' : ' 💬'%></td>
-        <td><%= link_to '👀', post %></td>
+        <td><%#= render_with_hashtags(post.content) %></td>
+				<td><%#= post.post_type.name %></td>
+        <td><%#= post.likes.count %> <%#= (post.likes.count) == 1 ? '💙' : '💙'%></td>
+        <td><%#= post.coments.count %> <%#= (post.coments.count) == 1 ? ' 💬' : ' 💬'%></td>
+        <td><%#= link_to '👀', post %></td>
 
 				<!-- open view to delete and edit btn for admin in blog -->
-				<% if user_signed_in? && current_user.isadmin == true %>
-					<td><%= link_to '🛠', edit_post_path(post) %></td>
-					<td><%= link_to '🗑', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-				<% end %>
+				<%# if user_signed_in? && current_user.isadmin == true %>
+					<td><%#= link_to '🛠', edit_post_path(post) %></td>
+					<td><%#= link_to '🗑', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				<%# end %>
       </tr>
-    <% end %>
+    <%# end %>
   </tbody>
-</table>
-
-
-
-
-<br>
-
-<%#= link_to 'New Post', new_post_path %>
-<%#= link_to 'New Category', new_category_path %>
+</table> -->

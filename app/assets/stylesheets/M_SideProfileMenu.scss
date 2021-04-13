@@ -1,0 +1,12 @@
+.profile-sidebar{
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-sea-foam)
+}
+
+.linking--black{
+  color: var(--color-light-grey);
+}
+.linking--black:hover{
+  color: var(--color-black-sand);
+}

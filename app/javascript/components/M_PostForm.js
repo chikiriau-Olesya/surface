@@ -48,7 +48,7 @@ import A_Heading from './A_Heading.js'
 
   render() {
     return (
-      <form className ="form-wrapper"
+      <form className ="form-wrapper" method="post" action='/posts/'
       onSubmit={this.handleSubmit}>
         <A_Heading
         headingStyle = 'heading--black'

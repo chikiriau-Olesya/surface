@@ -1,0 +1,26 @@
+.admin-user-wrapper{
+  // margin-left: 290px;
+  // margin-top: 120px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.admin-user{
+  background-color: var(--color-sea-foam);
+  padding: 20px;
+  width: 300px;
+  border-radius: 16px;
+  margin-left: 32px;
+  .admin-user-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  .admin-user-low{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+}

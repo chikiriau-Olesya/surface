@@ -1,0 +1,18 @@
+.admin-view{
+  display: flex;
+  .admin-content{
+    margin-left: 290px;
+    margin-top: 120px;
+  }
+  .admin-posts{
+    margin-top: 40px;
+  }
+  .admin-top-line{
+    display: flex;
+    justify-content: space-between;
+  }
+  .admin-second-line{
+    display: flex;
+    justify-content: flex-start;
+  }
+}

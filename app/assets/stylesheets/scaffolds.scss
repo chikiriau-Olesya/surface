@@ -1,6 +1,156 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap');
-
 @import "reset.css";
+
+@font-face{
+    font-family: "Raleway";
+    src: url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap");
+}
+
+
+:root{
+  //text colors
+  --color-text: #2C2D2E;
+  --color-text-secondary: #9F9F9F;
+
+  //main colors
+
+  //button standart
+  --color-sunset: #2763BD;
+
+  //button hover
+  --color-light-sunset: #437ACD;
+
+  //button pressed
+  --color-night: #1B4D97;
+
+ //button disabled
+  --color-disabled: #9F9F9F;
+
+
+
+  //accent color
+  --color-adventure-spirit: #A7D22C;
+
+  //error color
+  --color-error: #E60024;
+
+  //grey gradation
+  --color-background-page: #FAFAFA;
+  --color-winter-grey: #F4F4F4;
+  --color-system-grey: #E8E8E8;
+  --color-light-grey: #9F9F9F;
+  --color-grey: #424242;
+  --color-black-sand: #101010;
+  --color-sea-foam: #fff;
+
+  //shadows
+  --shadow-basic: 0 0 4px rgba(0, 0, 0, 0.1);
+  --shadow-exprmnt: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  //margins
+
+  //right amd left margin for beach pages
+  --margin-beach-pages: 64px;
+
+  //margins between post previews
+  --margin-post-vertical: 40px;
+  --margin-post-horizontal: 32px;
+
+  // top margins inside article (post-view)
+  --margin-paragraph: 32px;
+  --margin-paragraph-heading: 56px;
+  --margin-paragraph-img: 80px;
+  --margin-heading-img: 80px;
+  --margin-small-heading-img: 80px;
+  --margin-final-block: 96px;
+
+  //left margins inside article
+  --margin-article-cover: 64px;
+  --margin-textpart: 176px;
+  --margin-infoblock: 64px;
+  --margin-moreposts: 64px;
+
+  // top margins in comments section (post-view)
+  --margin-author-text: 16px;
+  --margin-text-field: 32px;
+  --margin-text-links: 16px;
+  --margin-comments: 48px;
+  --margin-comments-opinions: 64px;
+  --margin-answer-field: 24px
+
+
+  // left margins in comments section
+  --margin-answer-field
+
+}
+
+// h1{
+//   font-family: "Raleway", helvetica, sans-serif;
+//   font-size: 72px;
+//   line-height: 88px;
+//   font-weight: 600;
+// }
+//
+// h2{
+//   font-family: "Raleway", helvetica, sans-serif;
+//   font-size: 64px;
+//   line-height: 110%;
+//   font-weight: 600;
+// }
+//
+// h3{
+//   font-family: "Raleway", helvetica, sans-serif;
+//   font-size: 32px;
+//   line-height: 38px;
+//   font-weight: 600;
+// }
+// h4{
+//   font-family: "Raleway", helvetica, sans-serif;
+//   font-size: 24px;
+//   line-height: 130%;
+//   font-weight: 600;
+// }
+p .font-additional{
+  font-family: "Raleway", helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 600;
+}
+p .font-body{
+  font-family: "Raleway", helvetica, sans-serif;
+  font-size: 21px;
+  line-height: 130%;
+  font-weight: 500;
+}
+p .font-subbody{
+  font-family: "Raleway", helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+}
+p .font-descript{
+  font-family: "Raleway", helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 500;
+}
+p .font-system{
+  font-family: "Raleway", helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 500;
+}
+ul{
+  list-style: none;
+  li{
+    margin-top: 12px;
+    font-family: "Raleway", helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+}
+
 
 body {
   background-color: #fff;

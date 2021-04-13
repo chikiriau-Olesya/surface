@@ -1,13 +1,7 @@
-<%= react_component 'M_UserEdit', {user: @user} %>
+<%#= react_component 'M_SideProfileMenu' %>
+<%#= react_component 'M_UserEdit', {user: @user} %>
+<%= react_component 'O_ProfileEdit', {user: @user} %>
 
-<div class="user-edit-page">
-  <div class="actions">
-    <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
-      <a class="nav-link active" data-toggle="pill" href="#v-pills-home" role="tab" aria-selected="true">Профиль</a>
-      <%= link_to 'Настройки аккаунта', edit_user_registration_path %>
-      <a class="nav-link" data-toggle="pill">Политика конфиденциальности</a>
-    </div>
-  </div>
 
   <div class="details tab-content">
       <%= form_with model: current_user, local: true, html: {class: "form-horizontal form-edit-user"} do |f| %>
