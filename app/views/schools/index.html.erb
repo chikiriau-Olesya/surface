@@ -11,7 +11,7 @@
 </div>
 
 
-<div class="">
+<!-- <div class="">
 	<% @schools.each do |school| %>
 	 <div class="">
 		 <div>
@@ -54,7 +54,7 @@
 		 <div><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></div>
 	 </div>
 	<% end %>
-</div>
+</div> -->
 
 
 
@@ -92,7 +92,9 @@
 
 <br>
 
+
+
+<%= react_component 'O_Schools', { schools: @schools, school: @school } %>
+
 <%= link_to 'New City', new_city_path %>
 <%= link_to 'New School', new_school_path %>
-
-<%= react_component 'M_MainMap' %>

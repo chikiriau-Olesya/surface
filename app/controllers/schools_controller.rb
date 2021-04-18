@@ -18,6 +18,8 @@ class SchoolsController < ApplicationController
 
   def schoolsMain
     @cities = City.all
+    @school = School.find_by_name(params[:school])
+    @schools = School.all
     if params.has_key?(:city)
       @city = City.find_by_name(params[:city])
       @schools = School.where(city: @city)

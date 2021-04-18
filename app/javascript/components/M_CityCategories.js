@@ -15,10 +15,6 @@ class M_CityCategories extends React.Component {
         content = "Направления">
          </A_H3>
          <div className='city--list'>
-         <A_CityCategory
-         city = "Москва"
-         textpart = "Москва"
-         > </A_CityCategory>
            {this.props.cities.map(city => (
              <a href={`/schools?city=${city.name}`} className="city--square" key={city.id}>
                <div className="city--name">{`${city.name}`}</div>

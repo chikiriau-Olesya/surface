@@ -1,0 +1,19 @@
+.M_SchoolPreview {
+  background-color: white;
+  border-radius: 16px;
+  width: 50vw;
+
+  &:hover {
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.1));
+  }
+}
+
+.school_block_img {
+  width: 50vw;
+  height: 360px;
+  border-radius: 16px;
+}
+
+.school_block_text {
+  padding: 16px 24px;
+}
