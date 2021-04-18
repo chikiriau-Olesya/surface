@@ -19,6 +19,8 @@
 
 .link--black{
   color: var(--color-black-sand);
+  text-transform: none;
+  font-weight: 500;
 }
 .link--black:hover{
   color: var(--color-light-grey);

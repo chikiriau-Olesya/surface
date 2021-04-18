@@ -14,7 +14,6 @@ class M_UserMenu extends React.Component {
         this.state = {
             active: false,
         };
-
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -28,12 +27,12 @@ class M_UserMenu extends React.Component {
         return (
             <div className= "admin-actions-menu">
                 <img src={Profile} onClick={this.handleClick}/>
-                  <div>{this.state.active &&
-                    <div className="admin-actions">
-                      <A_Link linkStyle = 'link--black' address="/admin" name="Профиль" />
-                      <A_Link linkStyle = 'link--black' address = "/admin" name="Мастерская" />
-                      <A_Link linkStyle = 'link--black' address = "/admin" name="О сервисе" />
-                      <A_Link linkStyle = 'link--black' address = "/admin" name="Выйти" />
+                <div>{this.state.active &&
+                    <div className="admin-links">
+                      <A_Link className="admin-links-item" linkStyle = 'link--black' address="/admin" name="Профиль" />
+                      <A_Link className="admin-links-item" linkStyle = 'link--black' address = "/admin" name="Мастерская" />
+                      <A_Link className="admin-links-item" linkStyle = 'link--black' address = "/about" name="О сервисе" />
+                      <A_Link className="admin-links-item" linkStyle = 'link--black' address = "/admin" name="Выйти" />
                     </div>}
                 </div>
             </div>
