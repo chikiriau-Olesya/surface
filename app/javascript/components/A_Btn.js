@@ -6,7 +6,9 @@ import Arrow from 'images/arrow-btn.svg'
 const STYLES = [
   'btn--main',
   'btn--secondary',
-  'btn--icons'
+  'btn--admin--white',
+  'btn--icons',
+  'btn--admin--transp'
 ]
 
 const STATES = [

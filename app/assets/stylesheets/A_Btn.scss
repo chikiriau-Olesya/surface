@@ -32,6 +32,24 @@
     display: none;
   }
 }
+
+.btn--admin--white{
+  background-color: var(--color-sea-foam);
+  color: var(--color-black-sand);
+  font-weight: 500;
+  img{
+    display: none;
+  }
+}
+.btn--admin--transp{
+  background-color: transparent;
+  color: var(--color-sea-foam);
+  font-weight: 500;
+  img{
+    display: none;
+  }
+}
+
 .btn--icons{
   background-color: transparent;
   color: var(--sunset);

@@ -1,7 +1,5 @@
 <% if user_signed_in? && current_user.isadmin == true%>
-  <%#= render "admin/sidemenu" %>
-  <%#= link_to 'New Category', new_category_path %>
-  <%= react_component 'M_AdminSidebar' %>
+  <%= react_component 'M_AdminNavbar' %>
 <% end %>
 <%= react_component 'O_AdminUsers', { users: @users } %>
 

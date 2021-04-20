@@ -1,31 +1,32 @@
 <%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+  <%= react_component 'M_PostForm', {post: @post, categories: @categories} %>
+  <%# if post.errors.any? %>
+    <!-- <div id="error_explanation">
+      <h2><%#= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
       <ul>
-        <% post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
+        <%# post.errors.full_messages.each do |message| %>
+          <li><%#= message %></li>
+        <%# end %>
       </ul>
-    </div>
-  <% end %>
+    </div> -->
+  <%# end %>
 
   <!-- <div class="field">
     <#%= form.label :name %>
     <#%= form.text_field :name %>
   </div> -->
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+  <!-- <div class="field">
+    <%#= form.label :title %>
+    <%#= form.text_field :title %>
+  </div> -->
 
-  <div>
-  	<%= form.label :image %>
-    <%= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
-  	<%= form.file_field :image %>
-  </div>
+  <!-- <div>
+  	<%#= form.label :image %>
+    <%#= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
+  	<%#= form.file_field :image %>
+  </div> -->
 
   <!-- <div class="field">
     	<#%= form.label :author %>
@@ -33,28 +34,28 @@
     </div> -->
 
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.cktext_area :content %>
-  </div>
+  <!-- <div class="field">
+    <%#= form.label :content %>
+    <%#= form.cktext_area :content %>
+  </div> -->
 
-  <div class="field">
-    <%= form.label :tagline %>
-    <%= form.text_field :tagline %>
-  </div>
+  <!-- <div class="field">
+    <%#= form.label :tagline %>
+    <%#= form.text_field :tagline %>
+  </div> -->
 
-  <div class="field">
-    <%= form.label :category_id %>
-    <%= form.select :category_id, Category.pluck(:name, :id) %>
-    <%= form.hidden_field :post_type_id, value: post.post_type.id %>
-  </div>
+  <!-- <div class="field">
+    <%#= form.label :category_id %>
+    <%#= form.select :category_id, Category.pluck(:name, :id) %>
+    <%#= form.hidden_field :post_type_id, value: post.post_type.id %>
+  </div> -->
 
-  <div class="field">
-    <%= form.label :topic %>
-    <%= form.text_field :topic %>
-  </div>
+  <!-- <div class="field">
+    <%#= form.label :topic %>
+    <%#= form.text_field :topic %>
+  </div> -->
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <!-- <div class="actions">
+    <%#= form.submit %>
+  </div> -->
 <% end %>

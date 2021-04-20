@@ -74,6 +74,8 @@
       <% end %>
     </tbody>
   </table>
+  <td><%= link_to '🛠', edit_post_path(@post) %></td>
+  <td><%= link_to '🗑', @post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   <% if user_signed_in? && current_user.isadmin == true %>
     <td><%= link_to '🛠', edit_post_path(@post) %></td>
     <td><%= link_to '🗑', @post, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,57 +1,54 @@
-<%#= react_component 'M_PostForm', {post: @post, categories: @categories} %>
-<br>
-<br>
-<br>
-<br>
-
 
 <%= form_with(model: post, local: true) do |form| %>
-  <% if post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+  <%= react_component 'M_PostForm', {post: @post, categories: @categories} %>
+
+  
+  <%# if post.errors.any? %>
+    <!-- <div id="error_explanation">
+      <h2><%#= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
 
       <ul>
-        <% post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
+        <%# post.errors.full_messages.each do |message| %>
+          <li><%#= message %></li>
+        <%# end %>
       </ul>
-    </div>
-  <% end %>
+    </div> -->
+  <%# end %>
 
-  <div>
-  	<%= form.label :image %>
-    <%= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
-  	<%= form.file_field :image %>
-  </div>
+  <!-- <div>
+  	<%#= form.label :image %>
+    <%#= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
+  	<%#= form.file_field :image %>
+  </div> -->
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+  <!-- <div class="field">
+    <%#= form.label :title %>
+    <%#= form.text_field :title %>
+  </div> -->
 
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.cktext_area :content %>
-  </div>
+  <!-- <div class="field">
+    <%#= form.label :content %>
+    <%#= form.cktext_area :content %>
+  </div> -->
 
-  <div class="field">
-    <%= form.label :tag %>
-    <%= form.text_field :tagline %>
-  </div>
+  <!-- <div class="field">
+    <%#= form.label :tag %>
+    <%#= form.text_field :tagline %>
+  </div> -->
 
-  <div class="field">
-    <%= form.label :category_id %>
-    <%= form.select :category_id, Category.pluck(:name, :id) %>
-    <%= form.hidden_field :post_type_id, value: post.post_type.id %>
-  </div>
+  <!-- <div class="field">
+    <%#= form.label :category_id %>
+    <%#= form.select :category_id, Category.pluck(:name, :id) %>
+    <%#= form.hidden_field :post_type_id, value: post.post_type.id %>
+  </div> -->
 
-  <div class="field">
-    <%= form.label 'Тема для комментариев' %>
-    <%= form.text_field :topic, placeholder: 'Добавьте тему для обсуждения в комментариях' %>
-  </div>
+  <!-- <div class="field">
+    <%#= form.label 'Тема для комментариев' %>
+    <%#= form.text_field :topic, placeholder: 'Добавьте тему для обсуждения в комментариях' %>
+  </div> -->
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <!-- <div class="actions">
+    <%#= form.submit %>
+  </div> -->
 <% end %>

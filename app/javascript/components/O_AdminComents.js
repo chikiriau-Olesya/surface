@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
-import 'stylesheets/O_AdminCats.scss'
+
+import 'stylesheets/O_AdminPosts.scss'
 import A_Link from './A_Link.js'
 import A_Icon from './A_Icon.js'
 import O_Posts from './O_Posts.js'
@@ -9,40 +10,28 @@ import A_H3 from './A_H3.js'
 import A_Textblock from './A_Textblock.js'
 import M_AdminNavbar from './M_AdminNavbar.js'
 import M_FunctionList from './M_FunctionList.js'
-import M_AdminCat from './M_AdminCat.js'
+import M_AdminComent from './M_AdminComent.js'
 
-class O_AdminCats extends React.Component {
+class O_AdminComents extends React.Component {
   render () {
     return (
       <div className="admin-view">
-        <M_AdminNavbar/>
         <div className="admin-content">
           <div className="admin-top-line">
           <A_H3 className = 'heading--black'
-            content = "Категории">
+            content = "Комментарии">
           </A_H3>
-          <a href="/categories/new">
-          <A_Btn
-          buttonStyle = 'btn--main'
-          buttonState = 'btn--primary'>
-          {"Добавить категорию"}
-          </A_Btn>
-          </a>
           </div>
           <div className="admin-second-line">
             <A_Textblock
             textStyle = 'text--black'
             textSize = 'text--subbody'>
-              {"Категории медиа"}
+              {"Все комментарии"}
             </A_Textblock>
-            <A_Textblock
-            textStyle = 'text--black'
-            textSize = 'text--subbody'>
-              {"Города"}
-            </A_Textblock>
+
           </div>
-          <div className="admin-cats">
-          <M_AdminCat categories={this.props.categories}/>
+          <div className="admin-posts">
+          <M_AdminComent coments={this.props.coments}/>
           </div>
         </div>
       </div>
@@ -50,4 +39,4 @@ class O_AdminCats extends React.Component {
   }
 }
 
-export default O_AdminCats
+export default O_AdminComents

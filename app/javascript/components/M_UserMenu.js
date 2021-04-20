@@ -1,5 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
+
 import 'stylesheets/M_UserMenu.scss'
 import A_Link from './A_Link.js'
 import A_SmallList from './A_SmallList.js'
@@ -29,16 +30,15 @@ class M_UserMenu extends React.Component {
                 <img src={Profile} onClick={this.handleClick}/>
                 <div>{this.state.active &&
                     <div className="admin-links">
-                      <A_Link className="admin-links-item" linkStyle = 'link--black' address="/admin" name="Профиль" />
+                      <A_Link className="admin-links-item" linkStyle = 'link--black' address="/users/1" name="Профиль" />
                       <A_Link className="admin-links-item" linkStyle = 'link--black' address = "/admin" name="Мастерская" />
                       <A_Link className="admin-links-item" linkStyle = 'link--black' address = "/about" name="О сервисе" />
-                      <A_Link className="admin-links-item" linkStyle = 'link--black' address = "/admin" name="Выйти" />
+                      <A_Link className="admin-links-item" linkStyle = 'link--black' address = "/users/sign_in" name="Выйти"/>
                     </div>}
                 </div>
             </div>
         )
     }
 }
-
 
 export default M_UserMenu

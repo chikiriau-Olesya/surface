@@ -37,7 +37,10 @@ class O_Posts extends React.Component {
                 </A_Heading>
                 <M_FunctionList/>
               </div>
-            <M_Activity/>
+            <M_Activity
+            post = {this.props.post}
+            current_user_id={this.props.current_user_id}
+            likes = {this.props.likes}/>
 
           </div>
         ))}

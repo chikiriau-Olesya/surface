@@ -6,12 +6,17 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @categories = Category.all
-    if params.has_key?(:category)
-      @category = Category.find_by_name(params[:category])
-      @posts = Post.where(category: @category)
-    else
-      @posts = Post.all
+    # @categories = Category.all
+    # if params.has_key?(:category)
+    #   @category = Category.find_by_name(params[:category])
+    #   @posts = Post.where(category: @category)
+    # else
+    #   @posts = Post.all
+    # end
+
+    @posts = Post.where(nil)
+    filtering_params(params).each do |key, value|
+    @posts = @posts.public_send("filter_by_#{key}", value) if value.present?
     end
   end
 
@@ -34,7 +39,7 @@ class PostsController < ApplicationController
     @post = Post.new
     @post.post_type = PostType.find_by_name("magazine")
     # Прописивыам категории, которые отнисятся к разделу
-    @categories= ["Люди", "История", "Атмосфера", "Полезное"]
+    @categories= [{id:"1", name:"Люди"}, {id:"2", name:"История"}, {id:"3", name:"Атмосфера"}, {id:"4", name:"Полезное"}, {id:"5", name:"Шорт-ы"}]
     render 'newmagazine'
   end
 
@@ -42,31 +47,31 @@ class PostsController < ApplicationController
   def newmagazine
     @post = Post.new
     @post.post_type = PostType.find_by_name("magazine")
-    @categories= ["Люди", "История", "Атмосфера", "Полезное"]
+    @categories= [{id:"1", name:"Люди"}, {id:"2", name:"История"}, {id:"3", name:"Атмосфера"}, {id:"4", name:"Полезное"}, {id:"5", name:"Шорт-ы"}]
     render 'newmagazine'
   end
 
-  # School (карта школ)
-  def newschool
-    @post = Post.new
-    @post.post_type = PostType.find_by_name("school")
-    render 'newmagazine'
-  end
-
-  # Sport (раздел тренировок)
-  def newsport
-    @post = Post.new
-    @post.post_type = PostType.find_by_name("sport")
-    # @categories= ["", "Тренировка"]
-    render 'newsport'
-  end
-
-  # Afisha (раздел афиши мероприятий)
-  def newafisha
-    @post = Post.new
-    @post.post_type = PostType.find_by_name("afisha")
-    render 'newmagazine'
-  end
+  # # School (карта школ)
+  # def newschool
+  #   @post = Post.new
+  #   @post.post_type = PostType.find_by_name("school")
+  #   render 'newmagazine'
+  # end
+  #
+  # # Sport (раздел тренировок)
+  # def newsport
+  #   @post = Post.new
+  #   @post.post_type = PostType.find_by_name("sport")
+  #   # @categories= ["", "Тренировка"]
+  #   render 'newsport'
+  # end
+  #
+  # # Afisha (раздел афиши мероприятий)
+  # def newafisha
+  #   @post = Post.new
+  #   @post.post_type = PostType.find_by_name("afisha")
+  #   render 'newmagazine'
+  # end
 
   def hashtags
     tag = Tag.find_by(name: params[:name])
@@ -123,6 +128,10 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    def filtering_params(params)
+      params.slice(:user, :category, :starts_with)
     end
 
     # Only allow a list of trusted parameters through.

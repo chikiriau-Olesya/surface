@@ -1,4 +1,11 @@
-<%= react_component 'M_CategoryMenu', { categories: @categories, category: @category } %>
+<%= form_tag posts_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :starts_with, params[:starts_with] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<%#= react_component 'M_CategoryMenu', { categories: @categories, category: @category } %>
 <%= react_component 'O_Posts', { posts: @posts, post: @post, categories: @categories, category: @category } %>
 
 <br>

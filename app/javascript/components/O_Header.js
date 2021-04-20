@@ -33,8 +33,8 @@ class O_Header extends React.Component {
 
             <div className="header--right">
               <a className="header--right-search" href="/searchPage"><img src={Search}/></a>
-              
-              <M_UserMenu className="header--right-profile"/>
+
+              <M_UserMenu currentUser={this.props.current_user} className="header--right-profile"/>
             </div>
           </div>
         </div>

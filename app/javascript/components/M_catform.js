@@ -1,6 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
-class M_Catform extends React.Component {
+import A_Input from './A_Input.js'
+import A_Textarea from './A_Textarea.js'
+import A_Btn from './A_Btn.js'
+import A_Select from './A_Select.js'
+import A_Heading from './A_Heading.js'
+
+class M_CatForm extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
@@ -25,34 +31,28 @@ class M_Catform extends React.Component {
 
     render() {
       return (
-        <form className ="form-wrapper">
-        <A_Heading
-        headingStyle = 'heading--black'
-        headingSize = 'heading--h3'>
-        {"Новая категория"}
-        </A_Heading>
-          <label>Name</label>
-          <input
-            type="text"
-            name="category[name]"
+        <div className="form-wrapper">
+          <A_Heading
+          headingStyle = 'heading--black'
+          headingSize = 'heading--h3'>
+          {"Новая категория"}
+          </A_Heading>
+
+          <A_Input
+            textChild ={"Название категории"}
+            inputStyle="input--main"
+            type = 'text'
+            name="post[title]"
             value={this.state.name}
             onChange={this.handleNameChange}
           />
-
-          <label>Description</label>
-          <A_Textarea
-            textChild ={"Контент"}
+          <textarea
             type = 'text'
-            name="post[content]"
-            value={this.state.content}
-            onChange={this.handleContentChange}
-            />
-          <input
-            type="text"
             name="category[description]"
             value={this.state.description}
             onChange={this.handleDescriptionChange}
-          />
+            />
+
           <label>Display in Navbar?</label>
           <input
             defaultChecked={this.props.category.display_in_navbar ? this.props.category.display_in_navbar : false}
@@ -60,19 +60,15 @@ class M_Catform extends React.Component {
             type="checkbox"
             name="category[display_in_navbar]"
           />
-          <A_Input
-            textChild ={"Раздел"}
-            inputStyle="input--main"
-            type = 'text'
-            name="post[title]"
-            value={this.state.post_type_id}
-            onChange={this.handlePostTypeChange}
-            />
-
-          <input type="submit" value="Создать категорию" />
-        </form>
+          <A_Btn
+          type ='submit'
+          buttonStyle = 'btn--main'
+          buttonState = 'btn--primary'>
+          {"Создать категорию"}
+        </A_Btn>
+        </div>
       );
     }
   }
 
-export default M_Catform
+export default M_CatForm

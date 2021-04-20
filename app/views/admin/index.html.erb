@@ -1,5 +1,7 @@
-<%#= render "sidemenu" %>
-<%= react_component 'M_AdminSidebar' %>
+<% if user_signed_in? && current_user.isadmin == true%>
+  <%= react_component 'M_AdminNavbar' %>
+<% end %>
+<%= react_component 'M_AdminNavbar' %>
 
 <%#= react_component 'M_CategoryMenu', { categories: @categories, category: @category } %>
 <%= react_component 'O_AdminPosts', { posts: @posts, post: @post, categories: @categories, category: @category } %>
