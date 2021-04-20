@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { YMaps, Map, ObjectManager } from "react-yandex-maps";
+import { YMaps, Map, ObjectManager, ZoomControl, SearchControl } from "react-yandex-maps";
 
 import points from "./points.js";
 
@@ -8,7 +8,8 @@ import points from "./points.js";
 
 let mapState = {
   center: [55.751574, 37.573856],
-  zoom: 5
+  zoom: 12,
+  controls: []
 };
 
 let getIdFromHash = hash => {
@@ -45,7 +46,12 @@ class M_MainMap extends React.Component {
     return (
       <div>
         <YMaps query={{ mode: "debug" }}>
-          <Map defaultState={mapState}>
+          <Map defaultState={mapState}
+            width='60vw'
+            height='50vw'
+          >
+            <ZoomControl/>
+           <SearchControl/>
             <ObjectManager
               objects={{
                 openBalloonOnClick: true
