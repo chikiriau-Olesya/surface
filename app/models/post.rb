@@ -1,8 +1,8 @@
 		require 'elasticsearch/model'
 class Post < ApplicationRecord
 
-	scope :filter_by_user, -> (user) { where user: user }
-	scope :filter_by_category, -> (category) { where category: category }
+	# scope :filter_by_user, -> (user) { where user: user }
+	# scope :filter_by_category, -> (category) { where category: category }
 	scope :filter_by_starts_with, -> (title) { where("title like ?", "%#{title}%")}
 		searchkick
 		include Elasticsearch::Model
@@ -43,14 +43,14 @@ class Post < ApplicationRecord
 		# 	end
 		# end
 
-		# after_create do
-		# 	post = Post.find_by(id: self.id)
-		# 	hashtags = self.tagline.scan(/#\w+/)
-		# 	hashtags.uniq.map do |hashtag|
-		# 		tag = Tag.find_or_create_by(name: hashtag.downcase.delete('#'))
-		# 		post.tags << tag
-		# 	end
-		# end
+		after_create do
+			post = Post.find_by(id: self.id)
+			hashtags = self.tagline.scan(/#\w+/)
+			hashtags.uniq.map do |hashtag|
+				tag = Tag.find_or_create_by(name: hashtag.downcase.delete('#'))
+				post.tags << tag
+			end
+		end
 
 		before_update do
 			post = Post.find_by(id: self.id)

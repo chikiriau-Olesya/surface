@@ -12,7 +12,6 @@ class M_SchoolPreview extends React.Component {
     return (
       <div className="M_SchoolPreview">
         {this.props.schools.map(school => (
-
             <a href={/schools/ +`${school.id}`} key={school.id} className="school_block">
               <img className="school_block_img" src={school.image.url}/>
               <div className= "school_block_text">
@@ -21,7 +20,7 @@ class M_SchoolPreview extends React.Component {
                 headingSize = 'heading--article'>
                 {`${school.name}`}
                 </A_Heading>
-              
+                <M_SchoolFacilitiesList school = {this.props.school}/>
                 <A_SchoolPrice>
                 {`${school.price}`}
                 </A_SchoolPrice>

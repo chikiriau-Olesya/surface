@@ -6,18 +6,18 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    # @categories = Category.all
-    # if params.has_key?(:category)
-    #   @category = Category.find_by_name(params[:category])
-    #   @posts = Post.where(category: @category)
-    # else
-    #   @posts = Post.all
-    # end
-
-    @posts = Post.where(nil)
-    filtering_params(params).each do |key, value|
-    @posts = @posts.public_send("filter_by_#{key}", value) if value.present?
+    @categories = Category.all
+    if params.has_key?(:category)
+      @category = Category.find_by_name(params[:category])
+      @posts = Post.where(category: @category)
+    else
+      @posts = Post.all
     end
+
+    # @posts = Post.where(nil)
+    # filtering_params(params).each do |key, value|
+    # @posts = @posts.public_send("filter_by_#{key}", value) if value.present?
+    # end
   end
 
   # GET /posts/1
