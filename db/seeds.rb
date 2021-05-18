@@ -1,5 +1,5 @@
-Post.destroy_all
-puts "Destroyed everything you touch"
+# User.destroy_all
+# puts "Destroyed everything you touch"
 
 # Create pages of pastTypes
 # post_types = [
@@ -15,6 +15,22 @@ puts "Destroyed everything you touch"
 # post_types.each do |pt|
 #   r=PostType.create(pt)
 #   puts "Some magic just craete a #{ r.name } with id #{ r.id }!"
+# end
+
+
+# users = [
+#   {
+#     email: "shevoles@list.ru",
+#     username: "Olesya Shevchenko",
+#     isadmin: true,
+#     encrypted_password: "123456789"
+#   }
+#
+# ]
+#
+# users.each do |us|
+#   r=User.create(us)
+#   puts "Some magic just craete a #{ r.username } with id #{ r.id }!"
 # end
 
 # posts = [
