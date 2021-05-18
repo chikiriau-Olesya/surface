@@ -10,10 +10,14 @@
 	</p>
 </div>
 
-<h2>All Surf Type</h2>
+
+
+
 <% Surftype.all.each do |st| %>
-	<%= link_to st.name, schools_path(surftype: st.name) %> <br>
-<% end %>
+<%= link_to st.name, request.params.merge(surftype: st.id)  %> |
+<% end %>|
+
+
 
  <div class="">
 	<% @schools.each do |school| %>
@@ -22,6 +26,7 @@
 				<%= link_to(image_tag(school.image.thumb.url, alt: 'Image'), school.image.url, target: '_blank') if school.image? %>
 		 </div>
 		 <div><%= school.name %></div>
+		 <div><%= school.city_id %></div>
 		 <div>
 			 <%= school.surftype.name %>
 		 </div>
