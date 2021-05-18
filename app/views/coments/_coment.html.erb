@@ -6,15 +6,16 @@
           <%= image_tag(coment.user.image.small_thumb.url, alt: 'Image') if coment.user.image? %>
         <% end %>
         <%= User.find(coment.user_id).username %>
+        <%#= react_component 'M_CommentUserLine', {user: @user, coment: @coment} %>
       </div>
       <%= coment.body %>
-    <%= link_to 'reply', new_post_coment_path(@post, parent_id: coment.id), remote: true, class: 'd-block' %>
+    <%= link_to 'Ответить', new_post_coment_path(@post, parent_id: coment.id), remote: true, class: 'd-block' %>
     <% if user_signed_in? && current_user.id == coment.user_id  %>
       <p>
-      <%# <%= link_to 'Destroy Comment', [coment.post, coment],
+    <%#= link_to 'Destroy Comment', [coment.post, coment],
                  :confirm => 'Are you sure?',
-                 :method => :delete %> %>
-       <%= link_to 'Destroy', coment, method: :delete, data: { confirm: 'Are you sure?' } %>
+                 :method => :delete %>
+       <%= link_to 'Удалить', coment, method: :delete, data: { confirm: 'Вы уверены, что хотите удалить комментарий?' } %>
       </p>
     <% end %>
     </div>

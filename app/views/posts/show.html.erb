@@ -26,7 +26,8 @@
 
 <h2 class="add-comment">Добавьте комнентарий:</h2>
 <% if user_signed_in? %>
-  <%= render "coments/form" %>
+  <%#= render "coments/form" %>
+  <%#= react_component 'M_ComentForm', {user: @user, post: @post, post_id: @post.id} %>
 <% else %>
   <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
 <% end %>

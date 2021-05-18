@@ -4,31 +4,31 @@ import A_Input from './A_Input.js'
 import A_Textarea from './A_Textarea.js'
 import A_Btn from './A_Btn.js'
 import A_Select from './A_Select.js'
-import A_SelectCity from './A_SelectCity.js'
 import A_Heading from './A_Heading.js'
 
   class O_SchoolForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      image: props.school.image.url,
+      image: props.school.image ? props.school.image : '',
       name: props.school.name ? props.school.name : '',
-      description: props.school.description,
+      description: props.school.description ? props.school.description: '',
+      city_id: props.school.city_id ? props.school.city_id : '',
       cities: props.cities ? props.cities : [],
-      longitude: props.school.longitude,
-      latitude: props.school.latitude,
-      service: props.school.service,
-      price: props.school.price,
-      season: props.school.season,
-      wind: props.school.wind,
-      water: props.school.water,
-      wetsuit: props.school.wetsuit,
-      email: props.school.email,
-      tel: props.school.tel,
-      inst: props.school.inst,
-      tg: props.school.tg,
-      fb: props.school.fb,
-      website: props.school.website
+      longitude: props.school.longitude ? props.school.longitude : '',
+      latitude: props.school.latitude ? props.school.latitude : '',
+      service: props.school.service ? props.school.service : '',
+      price: props.school.price ? props.school.price : '',
+      season: props.school.season ? props.school.season : '',
+      wind: props.school.wind ? props.school.wind : '',
+      water: props.school.water ? props.school.water : '',
+      wetsuit: props.school.wetsuit ? props.school.wetsuit : '',
+      email: props.school.email ? props.school.email : '',
+      tel: props.school.tel ? props.school.tel : '',
+      inst: props.school.inst ? props.school.inst : '',
+      tg: props.school.tg ? props.school.tg : '',
+      fb: props.school.fb ? props.school.fb : '',
+      website: props.school.website ? props.school.website : ''
     };
     this.handleImageChange = this.handleImageChange.bind(this);
     this.handleNameChange = this.handleNameChange.bind(this);
@@ -48,10 +48,6 @@ import A_Heading from './A_Heading.js'
     this.handleTgChange = this.handleTgChange.bind(this);
     this.handleFbChange = this.handleFbChange.bind(this);
     this.handleWebsiteChange = this.handleWebsiteChange.bind(this);
-
-
-
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleImageChange(e) {
@@ -66,7 +62,7 @@ import A_Heading from './A_Heading.js'
     this.setState({ description: e.target.value });
   }
   handleCityChange(e) {
-    this.setState({ city: e.target.value });
+    this.setState({ city_id: e.target.value });
   }
   handleLongitudeChange(e) {
     this.setState({ longitude: e.target.value });
@@ -111,11 +107,6 @@ import A_Heading from './A_Heading.js'
     this.setState({ website: e.target.value });
   }
 
-
-  handleSubmit(e) {
-  alert('Публикация создана: ' + this.state );
-}
-
   render() {
     return (
       <div className ="form-total">
@@ -124,8 +115,7 @@ import A_Heading from './A_Heading.js'
         headingSize = 'heading--h3'>
         {"Новая школа"}
         </A_Heading>
-        <form
-        onSubmit={this.handleSubmit}>
+        <div>
         <section className ="form-wrapper">
           <A_Input
             textChild ={"Обложка школы"}
@@ -138,13 +128,14 @@ import A_Heading from './A_Heading.js'
             textChild ={"Название школы"}
             inputStyle="input--main"
             type = 'text'
+            name="school[name]"
             value={this.state.name}
             onChange={this.handleNameChange}
             />
 
-          <A_Textarea
-            textChild ={"Краткое описание школы"}
+          <textarea
             type = 'text'
+            name="school[description]"
             value={this.state.description}
             onChange={this.handleDescriptionChange}
             />
@@ -155,15 +146,19 @@ import A_Heading from './A_Heading.js'
           {"Местоположение"}
           </A_Heading>
 
-          <A_SelectCity
+          <A_Select
             type="text"
-            value={this.state.cities}
-            onChange={this.handleCityChange}
+            name="school[city_id]"
+            value={this.state.city}
+            placeholder={"Города"}
+            handleChange={this.handleCityChange}
+            options={this.state.cities}
           />
           <A_Input
             textChild ={"Долгота"}
             inputStyle="input--main"
             type="text"
+            name="school[longitude]"
             value={this.state.longitude}
             onChange={this.handleLongitudeChange}
           />
@@ -171,6 +166,7 @@ import A_Heading from './A_Heading.js'
             textChild ={"Широта"}
             inputStyle="input--main"
             type="text"
+            name="school[latitude]"
             value={this.state.latitude}
             onChange={this.handleLatitudeChange}
           />
@@ -182,9 +178,9 @@ import A_Heading from './A_Heading.js'
         headingSize = 'heading--article-preview'>
         {"Услуги"}
         </A_Heading>
-        <A_Textarea
-          textChild ={"Предлагаемые услуги"}
+        <textarea
           type = 'text'
+          name="school[service]"
           value={this.state.service}
           onChange={this.handleServiceChange}
           />
@@ -193,6 +189,7 @@ import A_Heading from './A_Heading.js'
             inputStyle="input--main"
             placeholder={"от 3600р."}
             type="text"
+            name="school[price]"
             value={this.state.price}
             onChange={this.handlePriceChange}
           />
@@ -206,6 +203,7 @@ import A_Heading from './A_Heading.js'
             textChild ={"Сезон"}
             inputStyle="input--main"
             type="text"
+            name="school[season]"
             value={this.state.season}
             onChange={this.handleSeasonChange}
           />
@@ -213,6 +211,7 @@ import A_Heading from './A_Heading.js'
             textChild ={"Температура воды по лучшему сезону"}
             inputStyle="input--main"
             type="text"
+            name="school[water]"
             value={this.state.water}
             onChange={this.handleWaterChange}
           />
@@ -220,6 +219,7 @@ import A_Heading from './A_Heading.js'
             textChild ={"Температура воздуха по лучшему сезону"}
             inputStyle="input--main"
             type="text"
+            name="school[wind]"
             value={this.state.wind}
             onChange={this.handleWindChange}
           />
@@ -227,6 +227,7 @@ import A_Heading from './A_Heading.js'
             textChild ={"Толщина гидрика для сезона"}
             inputStyle="input--main"
             type="text"
+            name="school[wetsuit]"
             value={this.state.wetsuit}
             onChange={this.handleWetsuitChange}
           />
@@ -237,8 +238,6 @@ import A_Heading from './A_Heading.js'
             headingSize = 'heading--article-preview'>
             {"Удобства"}
             </A_Heading>
-            <checkbox>
-            </checkbox>
           </div>
           <div className="school-conditions">
             <A_Heading
@@ -254,12 +253,13 @@ import A_Heading from './A_Heading.js'
         <A_Heading
         headingStyle = 'heading--black'
         headingSize = 'heading--article-preview'>
-        {"Конакты"}
+        {"Контакты школы"}
         </A_Heading>
         <A_Input
           textChild ={"Email"}
           inputStyle="input--main"
           type="text"
+          name="school[email]"
           value={this.state.email}
           onChange={this.handleEmailChange}
         />
@@ -267,6 +267,7 @@ import A_Heading from './A_Heading.js'
           textChild ={"Телефон"}
           inputStyle="input--main"
           type="text"
+          name="school[tel]"
           value={this.state.tel}
           onChange={this.handleTelChange}
         />
@@ -274,6 +275,7 @@ import A_Heading from './A_Heading.js'
           textChild ={"Instagram"}
           inputStyle="input--main"
           type="text"
+          name="school[inst]"
           value={this.state.inst}
           onChange={this.handleInstChange}
         />
@@ -281,6 +283,7 @@ import A_Heading from './A_Heading.js'
           textChild ={"Telegram"}
           inputStyle="input--main"
           type="text"
+          name="school[tg]"
           value={this.state.tg}
           onChange={this.handleTgChange}
         />
@@ -288,6 +291,7 @@ import A_Heading from './A_Heading.js'
           textChild ={"Facebook"}
           inputStyle="input--main"
           type="text"
+          name="school[fb]"
           value={this.state.fb}
           onChange={this.handleFbChange}
         />
@@ -295,20 +299,18 @@ import A_Heading from './A_Heading.js'
           textChild ={"Сайт школы"}
           inputStyle="input--main"
           type="text"
+          name="school[website]"
           value={this.state.website}
           onChange={this.handleWebsiteChange}
         />
         </section>
-
-
-
           <A_Btn
           type ='submit'
           buttonStyle = 'btn--main'
           buttonState = 'btn--primary'>
           {"Создать"}
           </A_Btn>
-        </form>
+        </div>
       </div>
     );
   }

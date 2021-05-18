@@ -7,6 +7,7 @@ import A_H2 from "./A_H2.js"
 import A_PostDate from "./A_PostDate.js"
 import A_Textblock from './A_Textblock.js'
 import A_PicView from "./A_PicView.js"
+import M_ComentForm from "./M_ComentForm.js"
 
 class M_PostView extends React.Component {
   render() {
@@ -54,8 +55,12 @@ class M_PostView extends React.Component {
               textSize = 'text--body'>
                 {`${this.props.post.content}`}
               </A_Textblock>
+
             </div>
           </div>
+          <M_ComentForm
+        post_id = {this.props.post.id}
+        user = {this.props.user}/>
        </div>
       );
     }

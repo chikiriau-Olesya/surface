@@ -10,9 +10,7 @@
       </ul>
     </div>
   <% end %>
-
-  <%= react_component 'O_SchoolForm', { school: @school} %>
-
+<%= react_component 'O_SchoolForm', { school: @school, cities: @cities} %>
 
   <div>
     <%= form.label "Выбрать обложку"%>
