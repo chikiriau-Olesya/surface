@@ -1,19 +1,19 @@
 <%= form_with(model: category, local: true) do |form| %>
   <%= react_component 'M_CatForm', {category: @category} %>
 
-  <!-- <div class="field"> 
-  <%#= form.label :name %>
-  <%#= form.text_field :name %>
+<div class="field"> 
+  <%= form.label :name %>
+  <%= form.text_field :name %>
   </div>
   <div class="field"> 
-  <%#= form.label :description %>
-  <%#= form.text_field :description %>
+  <%= form.label :description %>
+  <%= form.text_field :description %>
   </div>
   <div class="field"> 
-  <%#= form.label "Раздел" %> 
-  <%#= form.select :post_type_id, PostType.pluck(:name, :id) %> 
+  <%= form.label "Раздел" %> 
+  <%= form.select :post_type_id, PostType.pluck(:name, :id) %> 
   </div>
   <div class="actions">
-    <%#= form.submit %>
-  </div> -->
+    <%= form.submit %>
+  </div> 
 <% end %>
