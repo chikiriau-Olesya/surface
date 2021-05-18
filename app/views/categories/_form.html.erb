@@ -1,7 +1,7 @@
 <%= form_with(model: category, local: true) do |form| %>
   <%= react_component 'M_CatForm', {category: @category} %>
 
-  <div class="field"> 
+<div class="field"> 
   <%= form.label :name %>
   <%= form.text_field :name %>
   </div>
