@@ -13,7 +13,10 @@ class M_Activity extends React.Component {
       <div className="activity">
         <div className="like-com">
           <div className="activity_item">
-          <A_Likes/>
+          <A_Likes post = {this.props.post}
+          likes = {this.props.likes}
+          current_user_id = {this.props.current_user_id}
+          />
           </div>
 
           <div className="activity_item">
