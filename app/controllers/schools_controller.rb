@@ -13,6 +13,13 @@ class SchoolsController < ApplicationController
     else
       @schools = School.all
     end
+
+    if params.has_key?(:surftype)
+      @surftype = Surftype.find_by_name(params[:surftype])
+      @schools = School.where(surftype: @surftype)
+    else
+      @schools = School.all
+    end
   end
 
 
@@ -113,6 +120,6 @@ class SchoolsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def school_params
-      params.require(:school).permit(:name, :description, :longitude, :latitude, :city_id, :image, :inst, :tg, :fb, :website, :email, :tel, :service, :price, :season, :water, :wind, :wetsuit, :cafe, :shower, :room, :shop, :equip, :car)
+      params.require(:school).permit(:name, :description, :longitude, :latitude, :city_id, :image, :inst, :tg, :fb, :website, :email, :tel, :service, :price, :season, :water, :wind, :wetsuit, :cafe, :shower, :room, :shop, :equip, :car, :surftype_id)
     end
 end

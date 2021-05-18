@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @surftype.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @surftype.description %>
+</p>
+
+<%= link_to 'Edit', edit_surftype_path(@surftype) %> |
+<%= link_to 'Back', surftypes_path %>

@@ -1,4 +1,4 @@
-# User.destroy_all
+# School.destroy_all
 # puts "Destroyed everything you touch"
 
 # Create pages of pastTypes
