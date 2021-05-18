@@ -12,7 +12,7 @@ default: &default
 development:
   adapter: postgresql
   encoding: unicode
-  database: coroone_development
+  database: surface_development
   pool: 5
   username: admin
   password: 2468

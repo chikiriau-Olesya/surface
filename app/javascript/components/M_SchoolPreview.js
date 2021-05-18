@@ -20,7 +20,7 @@ class M_SchoolPreview extends React.Component {
                 headingSize = 'heading--article'>
                 {`${school.name}`}
                 </A_Heading>
-                <M_SchoolFacilitiesList school = {this.props.school}/>
+              
                 <A_SchoolPrice>
                 {`${school.price}`}
                 </A_SchoolPrice>
