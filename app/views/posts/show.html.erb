@@ -1,4 +1,5 @@
 <div className="post-view-wrapper">
+  <% set_meta_tags title: @post.title, description: @post.category.name %>
 
   <%= react_component 'O_PostView', {category: @category, post: @post, posts: @posts} %>
 

@@ -5,6 +5,11 @@
   </p>
 <%# end %>
 
+<% set_meta_tags title: 'Пляж', description: 'Журнал Surface'%>
+<% set_meta_tags og: {
+    title: ['Журнал Surface']
+}  %>
+
 <%= react_component 'M_CategoryMenu', { categories: @categories, category: @category } %>
 <%= react_component 'O_Posts', { posts: @posts, post: @post, categories: @categories, category: @category } %>
 

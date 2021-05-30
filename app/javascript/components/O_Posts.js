@@ -18,11 +18,11 @@ class O_Posts extends React.Component {
           <div className="post-preview-item">
             <a href={/posts/ +`${post.id}`} key={post.id} className="post-preview-block">
               <div className="cat-play-line">
-                <A_Category
-                className="cat-inPreview"
-                catStyle="category--inPost"
-                category = {this.props.category}
-                />
+                // <A_Category
+                // className="cat-inPreview"
+                // catStyle="category--inPost"
+                // category = {this.props.category}
+                // />
                 <A_PlayBtn
                 imageSrc= {Play}
                 />
@@ -37,10 +37,10 @@ class O_Posts extends React.Component {
                 </A_Heading>
                 <M_FunctionList/>
               </div>
-            <M_Activity
-            post = {this.props.post}
-            current_user_id={this.props.current_user_id}
-            likes = {this.props.likes}/>
+            // <M_Activity
+            // post = {this.props.post}
+            // current_user_id={this.props.current_user_id}
+            // likes = {this.props.likes}/>
 
           </div>
         ))}
