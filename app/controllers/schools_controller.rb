@@ -5,6 +5,7 @@ class SchoolsController < ApplicationController
   # GET /schools.json
   def index
     @cities = City.all
+    @surftypes = Surftype.all
     # if params.has_key?(:city)
     #   @city = City.find_by_name(params[:city])
     #   @schools = School.where(city: @city)

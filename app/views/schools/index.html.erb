@@ -18,7 +18,6 @@
 <% end %>|
 
 
-
  <div class="">
 	<% @schools.each do |school| %>
 	 <div class="">
@@ -105,7 +104,7 @@
 <br>
 
 
-
+<%= react_component 'M_SchoolSelectType', {surftypes: @surftypes, surftype: @surftype, school: @school, schools: @schools } %>
 <%= react_component 'O_Schools', { schools: @schools, school: @school } %>
 
 <%= link_to 'New City', new_city_path %>
