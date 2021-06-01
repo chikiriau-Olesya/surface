@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :surftypes
   resources :cities
   resources :schools
   resources :coments

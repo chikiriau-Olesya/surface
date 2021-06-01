@@ -26,6 +26,10 @@
     <%= form.label "Краткое описание школы" %>
     <%= form.text_area :description %>
   </div>
+  <div class="field">
+    <%= form.label :surftype_id %>
+    <%= form.select :surftype_id, Surftype.pluck(:name, :id) %>
+  </div>
 
   <h2>Местоположение</h2>
   <div class="field">

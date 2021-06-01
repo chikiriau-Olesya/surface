@@ -11,13 +11,24 @@
 </div>
 
 
-<!-- <div class="">
+
+
+<% Surftype.all.each do |st| %>
+<%= link_to st.name, request.params.merge(surftype: st.id)  %> |
+<% end %>|
+
+
+ <div class="">
 	<% @schools.each do |school| %>
 	 <div class="">
 		 <div>
 				<%= link_to(image_tag(school.image.thumb.url, alt: 'Image'), school.image.url, target: '_blank') if school.image? %>
 		 </div>
 		 <div><%= school.name %></div>
+		 <div><%= school.city_id %></div>
+		 <div>
+			 <%= school.surftype.name %>
+		 </div>
 		 <div>
 			 <% if school.room == true %>
 				 <p>Раздевалки</p>
@@ -54,7 +65,7 @@
 		 <div><%= link_to 'Destroy', school, method: :delete, data: { confirm: 'Are you sure?' } %></div>
 	 </div>
 	<% end %>
-</div> -->
+</div>
 
 
 
@@ -93,7 +104,7 @@
 <br>
 
 
-
+<%= react_component 'M_SchoolSelectType', {surftypes: @surftypes, surftype: @surftype, school: @school, schools: @schools } %>
 <%= react_component 'O_Schools', { schools: @schools, school: @school } %>
 
 <%= link_to 'New City', new_city_path %>

@@ -5,13 +5,31 @@ class SchoolsController < ApplicationController
   # GET /schools.json
   def index
     @cities = City.all
-    if params.has_key?(:city)
-      @city = City.find_by_name(params[:city])
-      @schools = School.where(city: @city)
-     #  schools = School.search(search_params.to_h.symbolize_keys)
-     # render json: schools
-    else
-      @schools = School.all
+    @surftypes = Surftype.all
+    # if params.has_key?(:city)
+    #   @city = City.find_by_name(params[:city])
+    #   @schools = School.where(city: @city)
+    #  #  schools = School.search(search_params.to_h.symbolize_keys)
+    #  # render json: schools
+    # else
+    #   @schools = School.all
+    # end
+
+    # if params.has_key?(:surftype)
+    #   @surftype = Surftype.find_by_name(params[:surftype])
+    #   @schools = School.where(surftype: @surftype)
+    # else
+    #   @schools = School.all
+    # end
+
+    # @schools = School.where(nil)
+    # @schools = @schools.filter_by_city(params[:city]) if params[:city].present?
+    # @schools = @schools.filter_by_surftype(params[:surftype]) if params[:surftype].present?
+
+
+    @schools = School.where(nil)
+    filtering_params(params).each do |key, value|
+      @schools = @schools.public_send("filter_by_#{key}", value) if value.present?
     end
   end
 
@@ -107,12 +125,16 @@ class SchoolsController < ApplicationController
       @school = School.find(params[:id])
     end
 
+    def filtering_params(params)
+      params.slice(:city, :surftype)
+    end
+
     def search_params
       params.permit(:min_lng, :max_lng, :min_lat, :max_lat)
     end
 
     # Only allow a list of trusted parameters through.
     def school_params
-      params.require(:school).permit(:name, :description, :longitude, :latitude, :city_id, :image, :inst, :tg, :fb, :website, :email, :tel, :service, :price, :season, :water, :wind, :wetsuit, :cafe, :shower, :room, :shop, :equip, :car)
+      params.require(:school).permit(:name, :description, :longitude, :latitude, :city_id, :image, :inst, :tg, :fb, :website, :email, :tel, :service, :price, :season, :water, :wind, :wetsuit, :cafe, :shower, :room, :shop, :equip, :car, :surftype_id)
     end
 end

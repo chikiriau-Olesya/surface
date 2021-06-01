@@ -27,6 +27,7 @@ gem 'ckeditor'
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 gem 'searchkick'
+gem 'meta-tags'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
