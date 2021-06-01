@@ -24,6 +24,7 @@ class A_Likes extends React.Component {
       })
   }
 
+
   handleClick = () => {
 let requestOption = {method: ''}
 if(this.state.pre_like) {
@@ -38,9 +39,16 @@ if(this.state.pre_like) {
   });
 }
 
-let requestUrl = "/posts/"+this.props.post.id+"/likes";
+let post_id = '';
+if (this.props.post) {
+  post_id = this.props.post.id
+}
+// let post_numb = <span>{post_id}</span>
+
+let requestUrl = "/posts/"+ post_id+"/likes";
 if(this.state.pre_like) requestUrl+="/"+this.state.pre_like.id;
 requestUrl+="?authenticity_token="+encodeURIComponent(this.state.token);
+
 
 
   fetch(requestUrl, requestOption).then((response) => {

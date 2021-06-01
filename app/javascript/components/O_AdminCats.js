@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import 'stylesheets/O_AdminCats.scss'
 import A_Link from './A_Link.js'
 import A_Icon from './A_Icon.js'
-import O_Posts from './O_Posts.js'
+import O_Posts_Preview from './O_Posts_Preview.js'
 import A_Btn from './A_Btn.js'
 import A_H3 from './A_H3.js'
 import A_Textblock from './A_Textblock.js'

@@ -13,8 +13,8 @@ class A_Favorites extends React.Component {
   constructor(props) {
       super(props);
       this.state={
-        favorites_count: this.props.favorites.length,
-        pre_favorite: this.props.favorites.find((element, index, array) => {return element.user_id ==this.props.current_user_id})
+        favorites_count: this.props.favorites ? this.props.favorites.length : 0,
+        pre_favorite: this.props.favorites ? this.props.favorites.find((element, index, array) => {return element.user_id == this.props.current_user_id}) : null
       }
 }
 
@@ -27,7 +27,6 @@ class A_Favorites extends React.Component {
   }
 
   handleClick = () => {
-
 let requestOption = {method: ''}
 if(this.state.pre_favorite) {
   requestOption.method = 'DELETE';
@@ -63,7 +62,7 @@ addPic = () => this.state.pre_favorite ? imageSave.fav : imageSave.unfav
           () => {
             this.handleClick();
           }
-      }>
+          }>
           <img src={this.addPic()}/>
         </div>
         <div>{this.state.favorites_count}</div>

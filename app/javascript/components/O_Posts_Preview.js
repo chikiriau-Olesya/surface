@@ -10,7 +10,7 @@ import Play from 'images/playBtn.svg'
 
 
 
-class O_Posts extends React.Component {
+class O_Posts_Preview extends React.Component {
   render() {
     return (
       <div className="post-preview">
@@ -38,10 +38,11 @@ class O_Posts extends React.Component {
                 <M_FunctionList/>
               </div>
             <M_Activity
-            post = {this.props.post}
-            current_user_id={this.props.current_user_id}
-            likes = {this.props.likes}/>
-
+              post = {this.props.post}
+              current_user_id={this.props.current_user_id}
+              likes = {this.props.likes}
+              favorites = {this.props.favorites}
+            />
           </div>
         ))}
       </div>
@@ -49,8 +50,8 @@ class O_Posts extends React.Component {
   }
 }
 
-O_Posts.propTypes = {
+O_Posts_Preview.propTypes = {
   posts: PropTypes.array
 };
 
-export default O_Posts
+export default O_Posts_Preview
