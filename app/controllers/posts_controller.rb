@@ -7,6 +7,10 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @categories = Category.all
+    @posts = Post.all.includes(:category,:likes, :favorites).map do
+      |post|
+      post.as_json(include: [:category, :image, :likes, :favorites])
+    end
     if params.has_key?(:category)
       @category = Category.find_by_name(params[:category])
       @posts = Post.where(category: @category)
@@ -39,7 +43,7 @@ class PostsController < ApplicationController
     @post = Post.new
     @post.post_type = PostType.find_by_name("magazine")
     # Прописивыам категории, которые отнисятся к разделу
-    @categories= [{id:"1", name:"Люди"}, {id:"2", name:"История"}, {id:"3", name:"Атмосфера"}, {id:"4", name:"Полезное"}, {id:"5", name:"Шорт-ы"}]
+    @categories= [{id:"1", name:"Люди"}, {id:"2", name:"История"}, {id:"3", name:"Атмосфера"}, {id:"4", name:"Полезное"}, {id:"5", name:"Путешествия"}, {id:"6", name:"Шорт-ы"}]
     render 'newmagazine'
   end
 
@@ -47,7 +51,7 @@ class PostsController < ApplicationController
   def newmagazine
     @post = Post.new
     @post.post_type = PostType.find_by_name("magazine")
-    @categories= [{id:"1", name:"Люди"}, {id:"2", name:"История"}, {id:"3", name:"Атмосфера"}, {id:"4", name:"Полезное"}, {id:"5", name:"Шорт-ы"}]
+    @categories= [{id:"1", name:"Люди"}, {id:"2", name:"История"}, {id:"3", name:"Атмосфера"}, {id:"4", name:"Полезное"}, {id:"5", name:"Путешествия"}, {id:"6", name:"Шорт-ы"}]
     render 'newmagazine'
   end
 

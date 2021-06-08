@@ -4,6 +4,7 @@ import 'stylesheets/M_PostView.scss'
 import A_Hashtag from "./A_Hashtag"
 import A_Category from "./A_Category.js"
 import A_H2 from "./A_H2.js"
+import A_H5 from "./A_H5.js"
 import A_PostDate from "./A_PostDate.js"
 import A_Textblock from './A_Textblock.js'
 import A_PicView from "./A_PicView.js"
@@ -23,7 +24,7 @@ class M_PostView extends React.Component {
       if (this.props.category) {
         category = this.props.category.name
       }
-      let textpart = <span>{category}</span>
+      
 
 
       return (
@@ -55,12 +56,13 @@ class M_PostView extends React.Component {
               textSize = 'text--body'>
                 {`${this.props.post.content}`}
               </A_Textblock>
+              <A_H5 className = 'heading--black'
+                content = {this.props.post.topic}>
+              </A_H5>
 
             </div>
           </div>
-          <M_ComentForm
-        post_id = {this.props.post.id}
-        user = {this.props.user}/>
+
        </div>
       );
     }

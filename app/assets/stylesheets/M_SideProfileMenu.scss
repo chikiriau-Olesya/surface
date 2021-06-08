@@ -1,7 +1,13 @@
 .profile-sidebar{
   display: flex;
   flex-direction: column;
-  background-color: var(--color-sea-foam)
+  background-color: var(--color-sea-foam);
+  padding: 0 24px 24px 24px;
+  border-radius: 32px;
+  a{
+    padding-top: 1.5vw;
+    max-width: 190px;
+  }
 }
 
 .linking--black{

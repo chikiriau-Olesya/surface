@@ -33,7 +33,7 @@ class M_UserMenu extends React.Component {
                       <A_Link className="admin-links-item" linkStyle = 'link--black' address="/users/1" name="Профиль" />
                       <A_Link className="admin-links-item" linkStyle = 'link--black' address = "/admin" name="Мастерская" />
                       <A_Link className="admin-links-item" linkStyle = 'link--black' address = "/about" name="О сервисе" />
-                      <A_Link className="admin-links-item" linkStyle = 'link--black' address = "/users/sign_in" name="Выйти"/>
+                      <A_Link className="admin-links-item" linkStyle = 'link--black' address = "/users/sign_out" name="Выйти"/>
                     </div>}
                 </div>
             </div>

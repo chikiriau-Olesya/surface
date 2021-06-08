@@ -1,11 +1,11 @@
 .form-total > span{
-  margin: 3vw; 
+  margin: 3vw;
   padding: 48px 116px 48px 116px;
 }
 .form-wrapper{
   background-color: #fff;
   border-radius: 32px;
-  margin: 3vw;
+  margin: 48px 48px 48px 304px;
   padding: 48px 116px 48px 116px;
   .head-text{
     display: flex;
@@ -16,6 +16,19 @@
     span:nth-of-type(2){
       max-width: 20vw;
       margin-top: 1vw;
+    }
+    p{
+      margin-top: 30px;
+      max-width: 400px;
+    }
+  }
+  .media-inputs{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    input{
+      max-width: 30vw;
+      margin: 5px 0 20px 0;
     }
   }
 }

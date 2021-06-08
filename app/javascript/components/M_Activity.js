@@ -18,12 +18,7 @@ class M_Activity extends React.Component {
           post = {this.props.post}
           likes = {this.props.likes}
           current_user_id = {this.props.current_user_id}
-          // post_id = {this.props.post.id}
-          // action={
-          // "/posts/"+ this.props.post_id+"/likes"+="/"+this.state.pre_like.id;
-          // "/posts/"+ this.props.post_id+"/likes"+="?authenticity_token="+encodeURIComponent(this.state.token)}
-          // method='post'
-
+          content = {this.props.content}
           />
           </div>
 
@@ -36,7 +31,9 @@ class M_Activity extends React.Component {
         <A_Favorites
           post = {this.props.post}
           favorites = {this.props.favorites}
-          current_user_id = {this.props.current_user_id}/>
+          current_user_id = {this.props.current_user_id}
+          content = {this.props.content}
+          />
         </div>
       </div>
     );

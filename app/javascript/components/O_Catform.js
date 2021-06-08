@@ -6,7 +6,7 @@ import A_Btn from './A_Btn.js'
 import A_Select from './A_Select.js'
 import A_Heading from './A_Heading.js'
 
-class M_CatForm extends React.Component {
+class O_Catform extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
@@ -42,7 +42,7 @@ class M_CatForm extends React.Component {
             textChild ={"Название категории"}
             inputStyle="input--main"
             type = 'text'
-            name="post[title]"
+            name="user[username]"
             value={this.state.name}
             onChange={this.handleNameChange}
           />
@@ -71,4 +71,4 @@ class M_CatForm extends React.Component {
     }
   }
 
-export default M_CatForm
+export default O_Catform

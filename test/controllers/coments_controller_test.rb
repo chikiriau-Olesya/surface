@@ -19,7 +19,6 @@ class ComentsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Coment.count') do
       post coments_url, params: { coment: { body: @coment.body, commenter: @coment.commenter, parent_id: @coment.parent_id, post_id: @coment.post_id } }
     end
-
     assert_redirected_to coment_url(Coment.last)
   end
 

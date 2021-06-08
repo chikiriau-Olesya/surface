@@ -2,18 +2,18 @@
 # puts "Destroyed everything you touch"
 
 # Create pages of pastTypes
-# post_types = [
+# surftypes = [
 #   {
-#     name: "sport"
+#     name: "классика"
 #   },
 #   {
-#     name: "afisha"
+#     name: "сап"
 #   }
 #
 # ]
 #
-# post_types.each do |pt|
-#   r=PostType.create(pt)
+# surftypes.each do |surftype|
+#   r = Surftypes.create(surftype)
 #   puts "Some magic just craete a #{ r.name } with id #{ r.id }!"
 # end
 

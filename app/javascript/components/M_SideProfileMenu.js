@@ -16,14 +16,8 @@ class M_SideProfileMenu extends React.Component {
           </A_Link>
           <A_Link className = 'linking--black'
             linkStyle="link--black"
-            address = "#"
+            address = "/edit"
             name = "Настройки аккаунта"
-            >
-          </A_Link>
-          <A_Link className = 'linking--black'
-            linkStyle="link--black"
-            address = "#"
-            name = "Уведомления"
             >
           </A_Link>
           <A_Link className = 'linking--black'
