@@ -7,7 +7,7 @@ class A_CommentAmount extends React.Component {
   render() {
 
       return (
-        <div className="post-topic">
+        <div className="comm-number">
         <A_H3 className = 'heading--black'
           content = "Голоса серферов">
         </A_H3>

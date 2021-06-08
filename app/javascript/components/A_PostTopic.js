@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import A_H5 from "./A_H5.js"
 
 
-class M_PostTopic extends React.Component {
+class A_PostTopic extends React.Component {
   render() {
 
       return (
@@ -16,4 +16,4 @@ class M_PostTopic extends React.Component {
     }
 }
 
-export default M_PostTopic
+export default A_PostTopic

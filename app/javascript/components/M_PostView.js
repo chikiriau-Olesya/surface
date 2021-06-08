@@ -24,7 +24,7 @@ class M_PostView extends React.Component {
       if (this.props.category) {
         category = this.props.category.name
       }
-      
+      let textpart = <span>{category}</span>
 
 
       return (
@@ -56,9 +56,6 @@ class M_PostView extends React.Component {
               textSize = 'text--body'>
                 {`${this.props.post.content}`}
               </A_Textblock>
-              <A_H5 className = 'heading--black'
-                content = {this.props.post.topic}>
-              </A_H5>
 
             </div>
           </div>

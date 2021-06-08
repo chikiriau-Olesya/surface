@@ -3,6 +3,10 @@
 
   <%= react_component 'O_PostView', {category: @category, post: @post, posts: @posts} %>
 
+  <%= react_component 'A_CommentAmount'%>
+  <%= react_component 'A_PostAuthor', {post: @post} %>
+  <%= react_component 'A_PostTopic', {post: @post} %>
+
   <div class="">
     <% if user_signed_in? %>
     <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
@@ -19,13 +23,6 @@
     <% end %>
   </div>
 
-
-
-<%= react_component 'A_CommentAmount' %>
-
-<%= react_component 'A_Avatar', {current_user_id: current_user.id, user: @user} %>
-<h5><%= @post.author %></h5>
-<h5><%= @post.topic %></h5>
 <%= render @post.coments %>
 
 <h2 class="add-comment">Ваш комментарий</h2>
