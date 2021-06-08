@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_18_124458) do
+ActiveRecord::Schema.define(version: 2021_06_08_104215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_124458) do
     t.boolean "display_in_navbar", default: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "post_type_id"
+    t.integer "post_type_id"
     t.index ["post_type_id"], name: "index_categories_on_post_type_id"
   end
 
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_124458) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -49,24 +50,24 @@ ActiveRecord::Schema.define(version: 2021_05_18_124458) do
     t.integer "parent_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.index ["user_id"], name: "index_coments_on_user_id"
   end
 
   create_table "comments", force: :cascade do |t|
     t.string "commenter"
     t.text "body"
-    t.bigint "post_id", null: false
+    t.integer "post_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
+    t.integer "user_id", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.bigint "post_id", null: false
-    t.bigint "user_id", null: false
+    t.integer "post_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_favorites_on_post_id"
@@ -81,8 +82,8 @@ ActiveRecord::Schema.define(version: 2021_05_18_124458) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.bigint "post_id", null: false
-    t.bigint "user_id", null: false
+    t.integer "post_id", null: false
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_likes_on_post_id"
@@ -103,9 +104,9 @@ ActiveRecord::Schema.define(version: 2021_05_18_124458) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "author"
     t.string "image"
-    t.bigint "user_id", null: false
-    t.bigint "category_id"
-    t.bigint "post_type_id"
+    t.integer "user_id", null: false
+    t.integer "category_id"
+    t.integer "post_type_id"
     t.text "tagline"
     t.string "topic"
     t.index ["category_id"], name: "index_posts_on_category_id"
@@ -114,8 +115,8 @@ ActiveRecord::Schema.define(version: 2021_05_18_124458) do
   end
 
   create_table "posts_tags", id: false, force: :cascade do |t|
-    t.bigint "post_id"
-    t.bigint "tag_id"
+    t.integer "post_id"
+    t.integer "tag_id"
     t.index ["post_id"], name: "index_posts_tags_on_post_id"
     t.index ["tag_id"], name: "index_posts_tags_on_tag_id"
   end
@@ -127,7 +128,7 @@ ActiveRecord::Schema.define(version: 2021_05_18_124458) do
     t.decimal "latitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "city_id", null: false
+    t.integer "city_id", null: false
     t.string "image"
     t.string "inst"
     t.string "tg"
