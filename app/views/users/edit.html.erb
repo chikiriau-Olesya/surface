@@ -1,87 +1,82 @@
-<%#= react_component 'M_SideProfileMenu' %>
-<%#= react_component 'M_UserEdit', {user: @user} %>
-<%= react_component 'O_ProfileEdit', {user: @user} %>
-
-
-  <div class="details tab-content">
-      <%= form_with model: current_user, local: true, html: {class: "form-horizontal form-edit-user"} do |f| %>
-
-        <div>
-          <%= image_tag(@user.image.url, alt: 'Image') if @user.image? %>
-          <%= f.label :image %>
-          <%= f.file_field :image %>
-        </div>
-
-        <div class="">
-          <%= f.submit "Сохранить", class: 'btn btn--main' %>
-        </div>
-      <% end %>
-  </div>
-</div>
-<%= link_to 'Назад', @user %>
-
-
-
 <div class="user-edit-page">
-  <div class="actions">
-    <div class="nav flex-column nav-pills" role="tablist" aria-orientation="vertical">
-      <a class="nav-link active" data-toggle="pill" href="#v-pills-home" role="tab" aria-selected="true">Профиль</a>
-      <%= link_to 'Настройки аккаунта', edit_user_registration_path %>
-      <a class="nav-link" data-toggle="pill">Политика конфиденциальности</a>
-    </div>
+  <div class="user-edit-sidebar">
+    <%= react_component 'M_SideProfileMenu', {user: @user} %>
+    <!-- <a class="nav-link active" data-toggle="pill" href="#v-pills-home" role="tab" aria-selected="true">Профиль</a>
+    <%#= link_to 'Настройки аккаунта', edit_user_registration_path %>
+    <a class="nav-link" data-toggle="pill">Политика конфиденциальности</a> -->
   </div>
 
-  <div class="details tab-content">
-    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+  <div class="user-edit-form">
+    <%= form_for @user, method: :put do |f|%>
+
+        <div class="user-edit-avatar">
+          <%= image_tag(@user.image.url, alt: 'Ваша фотография') if @user.image? %>
+          <div class="user-edit-upload-pic">
+            <%= f.label :image %>
+            <%= f.file_field :image %>
+          </div>
+        </div>
+
+        <%= react_component 'M_UserEdit', {user: @user} %>
+
+        <div class="user-edit-second-btn">
+          <%= f.submit "Сохранить", class: 'btn btn--main' %>
+          <%= link_to 'Назад', @user %>
+        </div>
+    <% end %>
+  <div>
+
+
+  <!-- <div class="details tab-content">
+    <!-- <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
       <h2>Редактировать профиль</h2>
       <p>Эту информацию  можно увидеть в вашем профиле</p>
-      <%= form_with model: current_user, local: true, html: {class: "form-horizontal form-edit-user"} do |f| %>
+      <%#= form_with model: current_user, local: true, html: {class: "form-horizontal form-edit-user"} do |f| %>
 
-        <div>
-          <%= image_tag(@user.image.url, alt: 'Image') if @user.image? %>
-          <%= f.label :image %>
-          <%= f.file_field :image %>
+        <!-- <div>
+          <%#= image_tag(@user.image.url, alt: 'Image') if @user.image? %>
+          <%#= f.label :image %>
+          <%#= f.file_field :image %>
         </div>
 
         <div class="">
-          <%= f.label "Имя пользователя"%>
-          <%= f.text_field :username%>
+          <%#= f.label "Имя пользователя"%>
+          <%#= f.text_field :username%>
         </div>
 
         <div class="">
-          <%= f.label "Сведения о вашем профиле"%>
+          <%#= f.label "Сведения о вашем профиле"%>
           <div class="">
-            <%= f.text_area :bio, class: 'form-control' %>
+            <%#= f.text_area :bio, class: 'form-control' %>
           </div>
-        </div>
+        </div> -->
 
-        <h3>Контакты</h3>
+        <!-- <h3>Контакты</h3>
         <p>Добавьте ссылку на любую соц. сеть, чтобы продолжить общение за пределами сервиса</p>
         <div class="">
-          <%= f.label "Instagram"%>
+          <%#= f.label "Instagram"%>
           <div class="col-sm-9">
-            <%= f.text_field :inst%>
+            <%#= f.text_field :inst%>
           </div>
         </div>
         <div class="">
-          <%= f.label "Telegarm"%>
+          <%#= f.label "Telegarm"%>
           <div class="col-sm-9">
-            <%= f.text_field :tg%>
+            <%#= f.text_field :tg%>
           </div>
         </div>
         <div class="">
-          <%= f.label "Facebook"%>
+          <%#= f.label "Facebook"%>
           <div class="col-sm-9">
-            <%= f.text_field :fb%>
+            <%#= f.text_field :fb%>
           </div>
-        </div>
+        </div> -->
 
-        <div class="">
-          <%= f.submit "Submit", class: 'btn btn-primary' %>
-        </div>
-      <% end %>
+        <!-- <div class="">
+          <%#= f.submit "Submit", class: 'btn btn-primary' %>
+        </div> -->
+      <%# end %>
 
-    </div>
-  </div>
+    <!-- </div>  -->
+  <!-- </div>  -->
 </div>
-<%= link_to 'Назад', @user %>

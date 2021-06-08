@@ -10,7 +10,7 @@ import Play from 'images/playBtn.svg'
 
 
 
-class O_Posts extends React.Component {
+class O_Shorts_Preview extends React.Component {
   render() {
     return (
       <div className="post-preview">
@@ -18,11 +18,6 @@ class O_Posts extends React.Component {
           <div className="post-preview-item">
             <a href={/posts/ +`${post.id}`} key={post.id} className="post-preview-block">
               <div className="cat-play-line">
-                // <A_Category
-                // className="cat-inPreview"
-                // catStyle="category--inPost"
-                // category = {this.props.category}
-                // />
                 <A_PlayBtn
                 imageSrc= {Play}
                 />
@@ -31,17 +26,12 @@ class O_Posts extends React.Component {
             </a>
               <div className= "post-headline">
                 <A_Heading
-                headingStyle = 'heading--black'
+                headingStyle = 'heading--white'
                 headingSize = 'heading--article'>
                 {`${post.title}`}
                 </A_Heading>
                 <M_FunctionList/>
               </div>
-            // <M_Activity
-            // post = {this.props.post}
-            // current_user_id={this.props.current_user_id}
-            // likes = {this.props.likes}/>
-
           </div>
         ))}
       </div>
@@ -49,8 +39,4 @@ class O_Posts extends React.Component {
   }
 }
 
-O_Posts.propTypes = {
-  posts: PropTypes.array
-};
-
-export default O_Posts
+export default O_Shorts_Preview

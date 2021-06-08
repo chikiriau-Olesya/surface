@@ -1,11 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
-import 'stylesheets/O_ProfileEdit.scss'
+import 'stylesheets/O_ProfileForm.scss'
 import M_UserEdit from './M_UserEdit.js'
 import M_SideProfileMenu from './M_SideProfileMenu.js'
 
 
-class O_ProfileEdit extends React.Component {
+class O_ProfileForm extends React.Component {
   render () {
     return (
       <div className="profile-edit">
@@ -18,4 +18,4 @@ class O_ProfileEdit extends React.Component {
   }
 }
 
-export default O_ProfileEdit
+export default O_ProfileForm
