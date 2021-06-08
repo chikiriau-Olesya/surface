@@ -10,5 +10,10 @@
   <%= @city.description %>
 </p>
 
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag(@city.image.url, alt: 'Image') if @city.image? %>
+</p>
+
 <%= link_to 'Edit', edit_city_path(@city) %> |
 <%= link_to 'Back', cities_path %>
