@@ -1,7 +1,8 @@
-.M_SchoolPreview {
+.school_block {
   background-color: white;
   border-radius: 16px;
   width: 528px;
+  margin-bottom: 32px;
 
   &:hover {
     filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.1));

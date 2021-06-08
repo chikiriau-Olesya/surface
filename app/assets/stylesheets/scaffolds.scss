@@ -13,6 +13,7 @@
   --color-text-secondary: #9F9F9F;
 
   //main colors
+  --color-black: #101010;
 
   //button standart
   --color-sunset: #2763BD;
@@ -140,6 +141,10 @@ p .font-system{
   line-height: 16px;
   font-weight: 500;
 }
+p strong {
+  font-weight: 500;
+  font-size: 18px;
+}
 ul{
   list-style: none;
   li{
@@ -172,15 +177,10 @@ pre {
   font-size: 11px; }
 
 a {
-  color: #000;
-  font-size: 18px;
   font-family: 'Raleway', sans-serif;
   text-decoration: none;
  }
 
-a:hover {
-  color: #666;
-}
 
 th {
   padding-bottom: 5px; }

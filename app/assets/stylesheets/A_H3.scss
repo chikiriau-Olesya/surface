@@ -2,8 +2,13 @@
   font-weight: 600;
   font-size: 32px;
   line-height: 38px;
+  color: var(--color-text);
 }
 
-.heading--white {
-  color: white;
+.A_H3--white {
+  color: var(--color-sea-foam);
+}
+
+.A_H3--black {
+  color: var(--color-text);
 }

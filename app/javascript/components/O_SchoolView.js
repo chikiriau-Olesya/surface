@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import A_SchoolGalery from "./A_SchoolGalery.js"
 import A_Btn from "./A_Btn.js"
-import A_PicView from "./A_PicView.js"
+import A_SchoolCover from "./A_SchoolCover.js"
 import M_SchoolInf from "./M_SchoolInf.js"
 import M_SchoolInnerMap from "./M_SchoolInnerMap.js"
 import M_SchoolOffers from "./M_SchoolOffers.js"
@@ -14,15 +14,30 @@ import M_ShareSocials from "./M_ShareSocials.js"
 
 class O_SchoolView extends React.Component {
   render() {
+
+    let imgsrc = '';
+
+    if (!this.props.school.image.url) {
+      imgsrc = '';
+    }  else {
+      imgsrc = this.props.school.image.url;
+    }
+
+    var sectionStyle = {
+      backgroundImage: `url(${imgsrc})`
+    };
+
     return (
       <div className="O_SchoolView">
         <div className="O_SchoolView-block">
-          <A_PicView
-          src = {this.props.school.image.schoolshow.url}>
-          </A_PicView>
+          <div style={sectionStyle} className="school-banner">
+          </div>
         </div>
         <div className="O_SchoolView-block">
-          <M_SchoolDesc school = {this.props.school}/>
+          <M_SchoolDesc
+            school = {this.props.school}
+            surftype = {this.props.surftype}
+            />
         </div>
         <div className="O_SchoolView-block">
           <M_SchoolOffers school = {this.props.school}/>

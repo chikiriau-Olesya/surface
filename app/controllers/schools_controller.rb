@@ -56,23 +56,37 @@ class SchoolsController < ApplicationController
   # GET /schools/1
   # GET /schools/1.json
   def show
+    @surftypes = Surftype.all
+    @surftype = Surftype.find(@school.surftype_id)
+    
+    if params.has_key?(:surftype)
+      @surftype = Surftype.find_by_name(params[:surftype])
+      @schools = School.where(surftype: @surftype)
+    else
+      @schools = School.all
+    end
+
     if params.has_key?(:category)
       @category = Category.find_by_name(params[:category])
       @posts = Post.where(category: @category)
     else
       @posts = Post.all
     end
+
     if params.has_key?(:city)
       @city = City.find_by_name(params[:city])
       @schools = School.where(city: @city)
     else
       @schools = School.all
     end
+
+
   end
 
   # GET /schools/new
   def new
     @school = School.new
+    @surftypes= [{id:"1", name:"классика"}, {id:"2", name:"сап"}, {id:"3", name:"вейк"}, {id:"4", name:"кайт"}, {id:"5", name:"винд"}, {id:"6", name:"скейт"}, {id:"7", name:"искусственная волна"}]
   end
 
   # GET /schools/1/edit

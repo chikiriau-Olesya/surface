@@ -7,8 +7,13 @@
   .A_SchoolInf-block {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 40px;
+
     .A_SchoolInf-block-column:first-of-type{
       margin-right: 56px;
     }
+  }
+  .A_SchoolInf-link {
+    margin-top: 72px;
   }
 }

@@ -18,7 +18,7 @@
 .text--body{
   font-weight: 400;
   font-size: 21px;
-  line-height: 146%;
+  line-height: 140%;
 }
 .text--descript{
 font-size: 16px;
@@ -32,7 +32,8 @@ font-size: 18px;
 
 /* Heading styles*/
 .text--black{
-color: #101010;}
+color:  var(--color-text);
+}
 .text--gray{
 color: #9F9F9F;}
 .text--red{

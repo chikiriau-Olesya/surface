@@ -1,0 +1,116 @@
+.school-page {
+  display: flex;
+  overflow: hidden;
+}
+
+.school-page_item:first-of-type {
+  width: 48%
+}
+
+.school-page_item:nth-of-type(2) {
+  width: 52%;
+  position: fixed;
+  right: 0;
+}
+
+.school-page_item-left {
+    margin-left: 9.2%;
+}
+
+.surftype__block {
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.surftype__block__select {
+  display: flex;
+  flex-wrap: wrap;
+  width: 72%;
+  margin-top: 8px;
+}
+
+.surftype--text {
+  background: #E8E8E8;
+  border-radius: 24px;
+  align-items: center;
+  padding: 8px 16px 8px 32px;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--color-grey);
+  position: relative;
+  margin-right: 4px;
+  margin-bottom: 4px;
+
+  &:hover {
+    background-color: var(--color-black);
+    color: var(--color-sea-foam);
+    transition: all 0.2s linear;
+    &.surftype--text:first-of-type::before {
+      transition: all 0.2s linear;
+      background-image: url(image-path('classic_icon-white.svg'));
+    }
+    &.surftype--text:nth-of-type(2)::before {
+      transition: all 0.2s linear;
+      background-image: url(image-path('sup_icon-white.svg'));
+    }
+    &.surftype--text:nth-of-type(3)::before {
+      transition: all 0.2s linear;
+      background-image: url(image-path('veyk_icon-white.svg'));
+    }
+    &.surftype--text:nth-of-type(4)::before {
+      transition: all 0.2s linear;
+      background-image: url(image-path('kite_icon-white.svg'));
+    }
+    &.surftype--text:nth-of-type(5)::before {
+      transition: all 0.2s linear;
+      background-image: url(image-path('wind_icon-white.svg'));
+    }
+    &.surftype--text:nth-of-type(6)::before {
+      transition: all 0.2s linear;
+      background-image: url(image-path('skate_icon-white.svg'));
+    }
+    &.surftype--text:nth-of-type(7)::before {
+      transition: all 0.2s linear;
+      background-image: url(image-path('wave_icon-white.svg'));
+    }
+  }
+}
+
+.surftype--text::before {
+  content: '';
+  width: 14px;
+  height: 14px;
+  left: 12px;
+  position: absolute;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.surftype--text:first-of-type::before {
+  background-image: url(image-path('classic_icon.svg'));
+}
+
+.surftype--text:nth-of-type(2)::before {
+  background-image: url(image-path('sup_icon.svg'));
+}
+
+.surftype--text:nth-of-type(3)::before {
+  background-image: url(image-path('veyk_icon.svg'));
+}
+
+.surftype--text:nth-of-type(4)::before {
+  background-image: url(image-path('kite_icon.svg'));
+}
+
+.surftype--text:nth-of-type(5)::before {
+  background-image: url(image-path('wind_icon.svg'));
+}
+
+.surftype--text:nth-of-type(6)::before {
+  background-image: url(image-path('skate_icon.svg'));
+}
+
+.surftype--text:nth-of-type(7)::before {
+  background-image: url(image-path('wave_icon.svg'));
+}

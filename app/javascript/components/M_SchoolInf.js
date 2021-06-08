@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 // import './A_SchoolInfo.css'
 import A_SchoolInfo from './A_SchoolInfo.js'
 import A_H4 from "./A_H4.js"
+import A_Link from "./A_Link.js"
 import Flag from 'images/flag.svg'
 import Wind from 'images/thermometer.svg'
 import Water from 'images/wavetemp.svg'
@@ -29,7 +30,12 @@ class M_SchoolInf extends React.Component {
             </A_SchoolInfo>
           </div>
         </div>
-
+        <div className ="A_SchoolInf-link">
+          <A_Link linkStyle = "link--grey"
+            address = "https://magicseaweed.com/Russia-Surf-Forecast/96/"
+            name  = "Подробнее о прогнозах"
+            />
+        </div>
       </div>
     );
   }

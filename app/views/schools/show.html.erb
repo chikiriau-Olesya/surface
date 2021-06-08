@@ -1,16 +1,8 @@
 <p id="notice"><%= notice %></p>
-<%#= image_tag(@school.image.schoolshow.url, alt: 'Image') if @school.image? %>
+
 <%= react_component 'O_SchoolView', { school: @school} %>
 
-<!--
-<div class="">
-  <h3>Условия</h3>
-  <div>
-    <#% if @school.room == true %>
-      <p>Раздевалки</p>
-    <#% end %>
-  </div>
-</div> -->
+
 
 <%= link_to 'Edit', edit_school_path(@school) %> |
 <%= link_to 'Back', schools_path %>
