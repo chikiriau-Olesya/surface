@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :questions
   resources :surftypes
   resources :cities
   resources :schools
@@ -43,6 +44,7 @@ Rails.application.routes.draw do
   get 'styleguide', to: 'styleguide#index'
   get 'schools', to: 'schools#index'
   get 'cities', to: 'cities#index'
+  get 'questions', to: 'questions#index'
 
   get "schoolsMain" => "schools#schoolsMain", as: "schoolsMain"
   get "schoolsCities" => "schools#schoolsCities", as: "schoolsCities"

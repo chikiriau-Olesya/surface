@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_123625) do
+ActiveRecord::Schema.define(version: 2021_06_09_103016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -121,6 +121,14 @@ ActiveRecord::Schema.define(version: 2021_06_08_123625) do
     t.index ["tag_id"], name: "index_posts_tags_on_tag_id"
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_questions_on_user_id"
+  end
+
   create_table "schools", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -205,6 +213,7 @@ ActiveRecord::Schema.define(version: 2021_06_08_123625) do
   add_foreign_key "posts", "users"
   add_foreign_key "posts_tags", "posts"
   add_foreign_key "posts_tags", "tags"
+  add_foreign_key "questions", "users"
   add_foreign_key "schools", "cities"
   add_foreign_key "schools", "surftypes"
 end

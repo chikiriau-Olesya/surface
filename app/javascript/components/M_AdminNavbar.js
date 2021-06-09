@@ -30,6 +30,12 @@ class M_AdminNavbar extends React.Component {
             </A_Btn>
 
             <A_Btn buttonStyle = 'btn--admin--transp'>
+              <a href="/questions" className="admin-list-item">
+                {"Заявки"}
+              </a>
+            </A_Btn>
+
+            <A_Btn buttonStyle = 'btn--admin--transp'>
               <a href="/coments" className="admin-list-item">
                 {"Комментарии"}
               </a>
