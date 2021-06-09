@@ -52,8 +52,8 @@ class M_PostView extends React.Component {
               </A_H2>
 
               <A_Textblock className="post-text"
-              textStyle = 'text--black'
-              textSize = 'text--body'>
+                textStyle = 'text--grey'
+                textSize = 'text--body'>
                 {`${this.props.post.content}`}
               </A_Textblock>
 

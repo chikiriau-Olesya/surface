@@ -2,10 +2,11 @@
   <% set_meta_tags title: @post.title, description: @post.category.name %>
 
   <%= react_component 'O_PostView', {category: @category, post: @post, posts: @posts} %>
-
   <%= react_component 'A_CommentAmount'%>
   <%= react_component 'A_PostAuthor', {post: @post} %>
   <%= react_component 'A_PostTopic', {post: @post} %>
+
+  <%= react_component 'M_AuthorQuestion' %>
 
   <div class="">
     <% if user_signed_in? %>
@@ -36,6 +37,9 @@
   <%= link_to 'Edit', edit_post_path(@post) %> |
   <% end %>
   <%#= link_to 'Back', posts_path %>
+
+
+
 
 <table>
     <tbody>
