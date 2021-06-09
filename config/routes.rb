@@ -61,5 +61,6 @@ Rails.application.routes.draw do
   get 'users/:id/following', :to => "users#following", :as => :following
 
   get 'admin', to: 'admin#index'
+  get "changeRole" => "users#changeRole", as: "changeRole"
   # get 'admin#index', to: 'choosePost#index'
 end

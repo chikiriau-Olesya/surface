@@ -14,6 +14,10 @@
   </div> -->
 
   <div class="profile-posts">
+    <% if user_signed_in? && current_user.isauthor == true%>
+      <%= link_to "Новая публикация", newmagazine_posts_path  %>
+    <% end %>
+
     Сохраненные публикации <%= @user.favorites.count %> <%= (@user.favorites.count) == 1 ? 'Post' : 'Posts'%>
     <%# @posts.each do |post| %>
       <br><%#= link_to(image_tag(post.image.thumb.url, alt: 'Image'), post.image.url, target: '_blank') if post.image? %>
@@ -23,7 +27,7 @@
 
     <div class="user-posts">
       <h1>Мои публикации</h1>
-      <span><%=@user.posts.count  %></span> публикации
+      <span><%=@user.posts.count%></span> публикации
       <% @user.posts.each do |post|%>
           <%=link_to post_path(post) do %>
               <%= link_to post.title, post %>

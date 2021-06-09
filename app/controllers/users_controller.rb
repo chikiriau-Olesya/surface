@@ -30,6 +30,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def changeRole
+    @user = User.find(params[:id])
+  end
+
   def update
     # current_user.update(params[:user])
     # redirect_to current_user
@@ -78,7 +82,7 @@ private
   end
 
   def user_params
-     params.require(:user).permit( :email, :username, :inst, :tg, :fb, :bio, :isadmin, :password, :image)
+     params.require(:user).permit( :email, :username, :inst, :tg, :fb, :bio, :isadmin, :isauthor, :password, :image)
   end
 
 end

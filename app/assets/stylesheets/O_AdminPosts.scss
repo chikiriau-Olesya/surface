@@ -1,14 +1,17 @@
-.admin-view{
+.admin-container{
   display: flex;
-  .admin-content{
-    margin-top: 220px;
-  }
+  flex-direction: column;
   .admin-posts{
-    margin-top: 40px;
+    margin-top: 24px;
   }
   .admin-top-line{
     display: flex;
     justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    .form-group {
+      margin-bottom: 0;
+    }
   }
   .admin-second-line{
     display: flex;

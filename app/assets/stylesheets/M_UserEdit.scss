@@ -1,12 +1,17 @@
+.edit_user {
+  width: 60%;
+}
+
 .form-total > span{
   margin: 3vw;
-  padding: 48px 116px 48px 116px;
+  padding: 48px 0px 48px 116px;
 }
+
 .form-wrapper{
   background-color: #fff;
   border-radius: 32px;
-  margin: 48px 48px 48px 304px;
   padding: 48px 116px 48px 116px;
+
   .head-text{
     display: flex;
     flex-direction: column;
@@ -22,6 +27,7 @@
       max-width: 400px;
     }
   }
+
   .media-inputs{
     display: flex;
     flex-direction: column;
@@ -31,4 +37,5 @@
       margin: 5px 0 20px 0;
     }
   }
+
 }

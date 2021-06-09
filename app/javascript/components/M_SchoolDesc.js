@@ -11,6 +11,7 @@ class M_SchoolDesc extends React.Component {
     if (this.props.surftype) {
       surftype = this.props.surftype.name
     }
+    let textpart = <span>{surftype}</span>
 
     return (
       <div className="M_SchoolDesc">
@@ -28,7 +29,8 @@ class M_SchoolDesc extends React.Component {
           <div>
           <A_SchoolSurf
             surftype = {this.props.school.surftype_id}
-            text = {this.props.school.surftype_id}
+            textpart = {this.props.school.surftype_id}
+
           />
 
           </div>

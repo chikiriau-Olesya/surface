@@ -58,7 +58,7 @@ class SchoolsController < ApplicationController
   def show
     @surftypes = Surftype.all
     @surftype = Surftype.find(@school.surftype_id)
-    
+
     if params.has_key?(:surftype)
       @surftype = Surftype.find_by_name(params[:surftype])
       @schools = School.where(surftype: @surftype)
