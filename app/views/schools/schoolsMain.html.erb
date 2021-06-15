@@ -1,5 +1,7 @@
 
 <%= react_component 'O_SchoolMainPage'%>
+  <%= react_component 'O_PopularCities', {cities: @cities, city: @city, school: @school, schools: @schools } %>
+
 <%= link_to 'schoolsCities', schoolsCities_path(@school) %>
 <% City.all.each do |city| %>
   <%= link_to city.name, schools_path(city: city.name) %>
@@ -51,5 +53,3 @@
 </div>
 
 <%= react_component 'M_BlockMore'%>
-
-<%= react_component 'M_SchoolPreview', { schools: @schools, school: @school } %>

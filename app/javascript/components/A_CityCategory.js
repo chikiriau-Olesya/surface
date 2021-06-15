@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import 'stylesheets/A_CityCategory.scss'
+import 'stylesheets/M_CityCategory.scss'
 
 const STYLES = [
   'city--default',

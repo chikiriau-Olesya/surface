@@ -15,7 +15,7 @@ class M_BlockMore extends React.Component {
       <div className="bottom-layer">
         <div className="top-layer">
           <div className="top-layer-text">
-            <A_H3 className = 'heading--white'
+            <A_H3 color= 'A_H3--white'
               content = "Все о видах серфинга">
             </A_H3>
             <A_Textblock

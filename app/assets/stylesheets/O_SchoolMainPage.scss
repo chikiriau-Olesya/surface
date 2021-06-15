@@ -1,0 +1,20 @@
+.main-schools-page{
+  margin-left: 64px;
+  h3{
+    margin-top: 44px;
+  }
+  .popular-cities{
+    margin-top: 24px;
+  }
+  .more-cities{
+    background-color: var(--color-black);
+    color: var(--color-white);
+    padding: 90px 0 90px 60px;
+    border-radius: 32px;
+    width: 416px;
+    height: 5vw;
+    .more-cities-text{
+      align-items: center;
+    }
+  }
+}

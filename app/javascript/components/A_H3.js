@@ -9,6 +9,7 @@ const STYLES = [
 
 const A_H3 = ({
   content,
+  type,
   color,
 }) => {
 
@@ -16,7 +17,7 @@ const A_H3 = ({
   ? color : STYLES[0]
 
   return(
-      <h3 className = {`A_H3 ${checkColor}`}>
+      <h3 className = {`A_H3 ${checkColor}`} type = {type}>
         {content}
       </h3>
 

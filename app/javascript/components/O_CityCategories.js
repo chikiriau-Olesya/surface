@@ -2,23 +2,27 @@ import React from "react"
 import PropTypes from "prop-types"
 import A_H3 from "./A_H3.js"
 import A_CityCategory from "./A_CityCategory.js"
-import 'stylesheets/A_CityCategory.scss'
+import M_CityPreview from "./M_CityPreview.js"
+import 'stylesheets/M_CityCategory.scss'
 
 
-class M_CityCategories extends React.Component {
+class O_CityCategories extends React.Component {
   render() {
+
     let schoolArray = '';
     let schoolNumber = schoolArray.lenght;
     return (
-      <div>
+      <div className = "city-cats">
         <A_H3
         content = "Направления">
          </A_H3>
          <div className='city--list'>
            {this.props.cities.map(city => (
-             <a href={`/schools?city=${city.id}`} className="city--square" key={city.id}>
-               <div className="city--name">{`${city.name}`}</div>
-               <div>{schoolArray}</div>
+             <a href={`/schools?city=${city}`}>
+               <M_CityPreview
+               key = {city.id}
+               city = {city}
+               />
              </a>
            ))}
          </div>
@@ -27,4 +31,4 @@ class M_CityCategories extends React.Component {
   }
 }
 
-export default M_CityCategories
+export default O_CityCategories

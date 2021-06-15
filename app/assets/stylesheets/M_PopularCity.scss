@@ -1,0 +1,19 @@
+.pop-city-preview{
+  .pop-city-banner {
+    height: 382px;
+    width: 416px;
+    border-radius: 32px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .pop-city-banner-img{
+    position: absolute;
+    border-radius: 32px;
+  }
+  .pop-city-banner-text{
+    position: absolute;
+    z-index: 2;
+    padding: 140px 24px 16px 24px;
+  }
+}

@@ -9,14 +9,9 @@ class M_SchoolBanner extends React.Component {
     return (
       <div className="M_SchoolBanner">
         <A_H1
+        color="A_H1--white"
         content = "Серфшколы в России">
          </A_H1>
-        <A_Textblock
-        textStyle = 'text--black'
-        textSize = 'text--body'
-        children = "Отправляемся навстречу волнам чила и гармонии">
-        </A_Textblock>
-
       </div>
     );
   }

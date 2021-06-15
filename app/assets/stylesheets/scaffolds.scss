@@ -165,6 +165,7 @@ body {
   font-family: 'Raleway', helvetica, sans-serif;
   width: 100%;
   margin: 0 auto;
+  padding-top: 66px;
  }
 
 body, p, ol, ul, td {
@@ -179,6 +180,9 @@ pre {
 a {
   font-family: 'Raleway', sans-serif;
   text-decoration: none;
+ }
+ a:visited{
+   color: inherit;
  }
 
 
