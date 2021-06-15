@@ -1,10 +1,33 @@
 <% if user_signed_in? && current_user.isadmin == true%>
   <%= react_component 'M_AdminNavbar' %>
 <% end %>
-<%= react_component 'M_AdminNavbar' %>
 
-<%#= react_component 'M_CategoryMenu', { categories: @categories, category: @category } %>
 <%= react_component 'O_AdminPosts', { posts: @posts, post: @post, categories: @categories, category: @category } %>
+
+<table>
+  <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= image_tag(user.image.thumb.url, alt: 'Image') if user.image? %><span><%= user.username %></span></td>
+          <td><%= user.id %></td>
+          <% if user_signed_in? && current_user.isadmin == true %>
+            <% if user.isadmin == true %>
+              <td>Админ</td>
+            <% end %>
+          <% end %>
+          <% if user_signed_in? && current_user.isadmin == true %>
+            <% if user.isauthor == true %>
+              <td>Автор</td>
+            <% end %>
+          <% end %>
+          <td><span><%= link_to user.email, user %></span></td>
+          <td><span><%= user.created_at.mday %>.<%= user.created_at.month %>.<%= user.created_at.year %><span/></td>
+          <td><%= link_to 'Переназначить', edit_user_path(user) %></td>
+          <td><%= link_to "Заблокировать", user, method: :delete, data: { confirm: "Are you sure?" } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+</table>
 
 <%#= link_to 'Новая статья', newmagazine_posts_path %>
 

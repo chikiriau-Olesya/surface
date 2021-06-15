@@ -44,13 +44,13 @@ import M_SideProfileMenu from './M_SideProfileMenu.js'
   render() {
     return (
       <div className ="form-wrapper">
-          <div className="head-text">
-            <A_Heading
-            headingStyle = 'heading--black'
-            headingSize = 'heading--h3'>
-            {"Редактировать профиль"}
-            </A_Heading>
-          </div>
+        <div className="head-text">
+          <A_Heading
+          headingStyle = 'heading--black'
+          headingSize = 'heading--h3'>
+          {"Редактировать профиль"}
+          </A_Heading>
+        </div>
 
         <A_Input
           textChild ={"Имя пользователя"}
@@ -59,7 +59,7 @@ import M_SideProfileMenu from './M_SideProfileMenu.js'
           name="user[username]"
           value={this.state.username}
           onChange={this.handleUsernameChange}
-          />
+        />
 
         <A_H5
         content = "Пару слов о вас">
@@ -71,6 +71,7 @@ import M_SideProfileMenu from './M_SideProfileMenu.js'
         value={this.state.bio}
         onChange={this.handleBioChange}
         />
+        
         <textarea
         type = 'hidden'
         name="user[user]"

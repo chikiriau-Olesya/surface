@@ -8,8 +8,9 @@ class M_AdminNavbar extends React.Component {
   render () {
     return (
       <div className="admin-topbar">
-      <A_H3 content = "Мастерская Surface"/>
-        <div className="admin-links">
+        <div className="admin-topbar-inner">
+          <A_H3 content = "Мастерская Surface"/>
+          <div className="admin-links">
             <A_Btn buttonStyle = 'btn--admin--white'
             buttonState = 'btn--primary'>
               <a href="/admin" className="admin-list-item">
@@ -25,6 +26,12 @@ class M_AdminNavbar extends React.Component {
             <A_Btn buttonStyle = 'btn--admin--transp'>
               <a href="/users" className="admin-list-item">
                 {"Люди"}
+              </a>
+            </A_Btn>
+
+            <A_Btn buttonStyle = 'btn--admin--transp'>
+              <a href="/questions" className="admin-list-item">
+                {"Заявки"}
               </a>
             </A_Btn>
 
@@ -51,6 +58,7 @@ class M_AdminNavbar extends React.Component {
                 {"Статистика"}
               </a>
             </A_Btn>
+          </div>
         </div>
       </div>
     );

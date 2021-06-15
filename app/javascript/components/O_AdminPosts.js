@@ -17,29 +17,27 @@ import A_Select from './A_Select.js'
 class O_AdminPosts extends React.Component {
   render () {
     return (
-      <div className="admin-view">
-        <div className="admin-content">
-          <div className="admin-top-line">
-            <A_Select
-              title={"Категория"}
-              name="post[category_id]"
-              value={this.props.category}
-              placeholder={"Категория"}
-              handleChange={this.handleCategoryChange}
-              options={this.props.categories}
-            />
-            <a href="/posts/newmagazine">
-              <A_Btn
-              buttonStyle = 'btn--main'
-              buttonState = 'btn--primary'>
-              {"Новая публикация"}
-              </A_Btn>
-            </a>
-          </div>
-          <div className="admin-posts">
+      <div className="admin-container">
+        <div className="admin-top-line">
+          <A_Select
+            title={"Категория"}
+            name="post[category_id]"
+            value={this.props.category}
+            placeholder={"Категория"}
+            handleChange={this.handleCategoryChange}
+            options={this.props.categories}
+          />
+          <a href="/posts/newmagazine">
+            <A_Btn
+            buttonStyle = 'btn--main'
+            buttonState = 'btn--primary'>
+            {"Новая публикация"}
+            </A_Btn>
+          </a>
+        </div>
+        <div className="admin-posts">
           <O_Posts_Preview posts={this.props.posts}/>
           <M_FunctionList/>
-          </div>
         </div>
       </div>
     );

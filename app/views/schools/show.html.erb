@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<% set_meta_tags title: @school.name, description: @school.city.name %>
+
+
 <%= react_component 'O_SchoolView', { school: @school} %>
 
 

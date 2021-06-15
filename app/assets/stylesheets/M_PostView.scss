@@ -4,6 +4,7 @@
   margin: 0 auto;
   align-items: center;
   margin-bottom: 96px;
+  
   .post-view-pic{
     border-radius: 3vw;
     width: 100%;
@@ -11,14 +12,17 @@
     align-items: center;
     margin-bottom: 16px;
   }
+
   .post-content {
-    width: 90%;
+    padding: 0vw 7vw;
     margin: 0 auto;
   }
+
   .post-info{
     display: flex;
     align-items: center;
   }
+
   .post-text{
     margin-top: 32px;
     display: flex;
@@ -28,11 +32,7 @@
       width: 80%;
     }
   }
-  // span{
-  //   max-width: 60vw;
-  //   line-height: 24px;
-  //   margin-top: 3vw;
-  // }
+
   .post-hashes{
     margin-top: 2vw;
     margin-bottom: 3vw;

@@ -1,12 +1,14 @@
 .user-edit-sidebar{
   margin-top: 72px;
   margin-left: 48px;
-  position: fixed;
-  z-index: 99;
 }
+
+.user-edit-form-inner {
+  display: flex;
+}
+
 .user-edit-avatar{
   padding-top: 72px;
-  margin-left: 304px;
   display: flex;
   align-items: center;
   img{
@@ -15,7 +17,4 @@
   .user-edit-upload-pic{
     margin-left: 2vw;
   }
-}
-.user-edit-second-btn{
- margin-left: 304px;
 }

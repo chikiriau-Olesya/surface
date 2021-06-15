@@ -6,9 +6,6 @@ import A_Textblock from "./A_Textblock.js"
 import A_Btn from "./A_Btn.js"
 import 'stylesheets/M_BlockMore.scss'
 
-
-
-
 class M_BlockMore extends React.Component {
   render() {
     return (
