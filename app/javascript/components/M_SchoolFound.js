@@ -8,8 +8,9 @@ class M_SchoolFound extends React.Component {
     return (
       <div className="M_SchoolFound">
         <div className="schoolFound__text">
-          <A_H3 className = 'A_H3--white'
-            content = "Серфшколы">
+          <A_H3
+            color = 'A_H3--white'
+            content = "Серфшколы в">
           </A_H3>
         </div>
       </div>

@@ -1,17 +1,17 @@
 import React from "react"
 import PropTypes from "prop-types"
 import A_H2 from "./A_H2.js"
-import A_SchoolSurf from "./A_SchoolSurf.js"
+import A_SchoolCity from "./A_SchoolCity.js"
 import A_Textblock from "./A_Textblock.js"
 import 'stylesheets/M_SchoolDesc.scss'
 
 class M_SchoolDesc extends React.Component {
   render() {
-    let surftype = '';
-    if (this.props.surftype) {
-      surftype = this.props.surftype.name
+    let city = '';
+    if (this.props.city) {
+      city = this.props.city.name
     }
-    let textpart = <span>{surftype}</span>
+    let textpart = <span>{city}</span>
 
     return (
       <div className="M_SchoolDesc">
@@ -27,10 +27,9 @@ class M_SchoolDesc extends React.Component {
           </A_Textblock>
 
           <div>
-          <A_SchoolSurf
-            surftype = {this.props.school.surftype_id}
-            textpart = {this.props.school.surftype_id}
-
+          <A_SchoolCity
+            city = {this.props.school.city_id}
+            textpart = {this.props.school.city_id}
           />
 
           </div>

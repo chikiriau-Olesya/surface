@@ -2,10 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import A_Textblock from './A_Textblock.js'
 import A_Heading from './A_Heading.js'
-import Sample from 'images/sample.png'
-import 'stylesheets/M_City.scss'
+import 'stylesheets/M_SchoolCities.scss'
 
-class M_AdminCity extends React.Component {
+class M_SchoolCities extends React.Component {
   render() {
     return (
       <div className="city-wrapper">
@@ -13,6 +12,7 @@ class M_AdminCity extends React.Component {
           <div key={city.id} className="city-item">
           <a href={/cities/ +`${city.id}`}>
             <div className="city-item-top">
+              <img scr={`${city.image}`}></img>
               <A_Heading
               headingStyle = 'heading--white'
               headingSize = 'heading--h3'>
@@ -21,12 +21,9 @@ class M_AdminCity extends React.Component {
               <A_Textblock className="cat-text"
               textStyle = 'text--white'
               textSize = 'text--s-descript'>
-                {`${city.school}`}
+                {`${city.schools}`}
               </A_Textblock>
             </div>
-              <div className="city-img">
-                <img src={Sample}/>
-              </div>
           </a>
           </div>
         ))}
@@ -35,4 +32,4 @@ class M_AdminCity extends React.Component {
   }
 }
 
-export default M_AdminCity
+export default M_SchoolCities

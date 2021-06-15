@@ -102,8 +102,11 @@
     <%= form.label "Легко доехать" %>
   </div>
 
-
   <h2>Фотогалерея</h2>
+  <div class="field">
+    <%= form.label "загрузите фото" %>
+    <%= form.cktext_area :gallery %>
+  </div>
 
   <h2>Контакты</h2>
   <div class="field">

@@ -12,7 +12,8 @@ class M_SchoolContacts extends React.Component {
   render() {
     return (
       <div className="M_SchoolContacts">
-        <A_H4 className = 'heading--white'
+        <A_H4
+          color = 'A_H4--white'
           content = "Контакты">
         </A_H4>
         <div className="M_SchoolContacts-block">

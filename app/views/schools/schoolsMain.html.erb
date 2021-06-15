@@ -1,6 +1,6 @@
 
 <%= react_component 'O_SchoolMainPage'%>
-  <%= react_component 'O_PopularCities', {cities: @cities, city: @city, school: @school, schools: @schools } %>
+<%#= react_component 'O_PopularCities', {cities: @cities, city: @city, school: @school, schools: @schools } %>
 
 <%= link_to 'schoolsCities', schoolsCities_path(@school) %>
 <% City.all.each do |city| %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_09_103016) do
+ActiveRecord::Schema.define(version: 2021_06_15_131641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -157,6 +157,7 @@ ActiveRecord::Schema.define(version: 2021_06_09_103016) do
     t.boolean "equip", default: false
     t.boolean "car", default: false
     t.bigint "surftype_id", null: false
+    t.string "gallery"
     t.index ["city_id"], name: "index_schools_on_city_id"
     t.index ["surftype_id"], name: "index_schools_on_surftype_id"
   end
