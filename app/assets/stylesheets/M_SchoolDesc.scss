@@ -12,3 +12,21 @@
   }
 
 }
+
+@media (max-width: 768px) {
+  .M_SchoolDesc {
+    padding: 24px 56px 24px;
+    width: 83.4%;
+  }
+}
+
+@media (max-width: 428px) {
+  .M_SchoolDesc {
+    padding: 16px 16px 16px;
+    width: 90%;
+    border-radius: 16px;
+    .school_inner {
+      width: 100%;
+    }
+  }
+}

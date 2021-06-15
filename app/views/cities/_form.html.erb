@@ -16,10 +16,18 @@
     <%= form.text_field :name %>
   </div>
 
-
   <div class="field">
     	<%= form.label :image %>
     	<%= form.file_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label "Долгота" %>
+    <%= form.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= form.label "Широта" %>
+    <%= form.text_field :latitude %>
   </div>
 
   <div class="field">

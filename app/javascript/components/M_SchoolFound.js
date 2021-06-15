@@ -12,6 +12,14 @@ class M_SchoolFound extends React.Component {
             color = 'A_H3--white'
             content = "Серфшколы в">
           </A_H3>
+          <div className="">
+            {this.props.schools.map(school => (
+              <div key={school.id} className="">
+                {`${school.city_id.name}`}
+              </div>
+            ))}
+          </div>
+
         </div>
       </div>
     );
