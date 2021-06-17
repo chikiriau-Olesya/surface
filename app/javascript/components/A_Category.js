@@ -15,7 +15,7 @@ category,
 textpart,
 catStyle
 }) => {
-  
+
 
   const checkCatStyle = STYLES.includes(catStyle)
   ? catStyle : STYLES[0]

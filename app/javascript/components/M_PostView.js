@@ -27,11 +27,28 @@ class M_PostView extends React.Component {
       let textpart = <span>{category}</span>
 
 
+
+
+      let imgsrc = '';
+
+      if (!this.props.post.image.url) {
+        imgsrc = '';
+      }  else {
+        imgsrc = this.props.post.image.url;
+      }
+
+      let postInnerStyle = {
+        backgroundImage: `url(${imgsrc})`,
+        width: "100%",
+        height: "30vw",
+        backgroundRepeat: "no-repeat",
+        borderRadius: "3vw"
+      };
+
       return (
         <div className="post-view">
-          <A_PicView
-          src = {this.props.post.image.url}>
-          </A_PicView>
+          <img style={postInnerStyle} className="post-inner-banner">
+          </img>
 
           <div className="post-content">
             <div className="post-info">

@@ -4,8 +4,9 @@ import M_Activity from "./M_Activity.js"
 import A_Heading from "./A_Heading.js"
 import A_PlayBtn from "./A_PlayBtn.js"
 import A_Category from "./A_Category.js"
-import M_FunctionList from "./M_FunctionList.js"
-import 'stylesheets/O_Posts.scss'
+import A_CategoryPreview from "./A_CategoryPreview.js"
+import M_PostPreview from "./M_PostPreview.js"
+import 'stylesheets/O_Posts_Preview.scss'
 import Play from 'images/playBtn.svg'
 
 
@@ -19,35 +20,24 @@ class O_Posts_Preview extends React.Component {
     }
     let textpart = <span>{category}</span>
 
+
     return (
-      <div className="post-preview">
-        {this.props.posts.map(post => (
-          <div className="post-preview-item">
-            <a href={/posts/ +`${post.id}`} key={post.id} className="post-preview-block">
-              <div className="cat-play-line">
-                <A_PlayBtn
-                imageSrc= {Play}
-                />
-              </div>
-              <img className="post-preview-img" src={post.image.url}/>
-            </a>
-              <div className= "post-headline">
-                <A_Heading
-                headingStyle = 'heading--black'
-                headingSize = 'heading--article'>
-                {`${post.title}`}
-                </A_Heading>
-                <M_FunctionList/>
-              </div>
-          </div>
-        ))}
+      <div className = "all-posts">
+         <div className='post-list'>
+           {this.props.posts.splice(-2, 2).map(post => (
+             <div>
+               <M_PostPreview
+               key = {post.id}
+               post = {post}
+               category = {post.category}
+               />
+             </div>
+           ))}
+         </div>
       </div>
     );
   }
 }
 
-O_Posts_Preview.propTypes = {
-  posts: PropTypes.array
-};
 
 export default O_Posts_Preview

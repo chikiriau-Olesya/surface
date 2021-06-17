@@ -58,7 +58,7 @@ class O_Profile extends React.Component {
             </div>
           </div>
         </div>
-        <a href="#">
+        <a href="/questions/new">
           <A_Btn
             type ='button'
             buttonStyle = 'btn--primary'

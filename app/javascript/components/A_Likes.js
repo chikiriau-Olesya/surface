@@ -9,14 +9,14 @@ const imageLike ={
 }
 
 class A_Likes extends React.Component {
-
   constructor(props) {
       super(props);
       this.state={
         likes_count: this.props.likes ? this.props.likes.length : 0,
         pre_like: this.props.likes ? this.props.likes.find((element, index, array) => {return element.user_id == this.props.current_user_id}) : null
       }
-}
+  }
+
 
   componentDidMount(e) {
       this.setState({
@@ -33,17 +33,12 @@ if(this.state.pre_like) {
     likes_count:  this.state.likes_count-1
   });
 }
-  else {requestOption .method = 'POST';
+  else {requestOption.method = 'POST';
   this.setState({
     likes_count:  this.state.likes_count+1
   });
 }
 
-let post_id = '';
-if (this.props.post) {
-  post_id = this.props.post.id
-}
-// let post_numb = <span>{post_id}</span>
 
 let requestUrl = "/posts/"+ post_id+"/likes";
 if(this.state.pre_like) requestUrl+="/"+this.state.pre_like.id;

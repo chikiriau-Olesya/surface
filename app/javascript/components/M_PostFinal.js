@@ -16,6 +16,10 @@ class M_PostFinal extends React.Component {
     return (
       <div className="post-final">
         <div className="post-final-inner">
+
+        <div className="liking">
+        </div>
+
           <div className="post-final-inner-hashtag">
             <A_Hashtag className="post-hashes" post = {this.props.post}/>
           </div>

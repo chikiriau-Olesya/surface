@@ -11,18 +11,32 @@ class PostsController < ApplicationController
       |post|
       post.as_json(include: [:category, :image, :likes, :favorites])
     end
-    if params.has_key?(:category)
-      @category = Category.find_by_name(params[:category])
-      @posts = Post.where(category: @category)
-    else
-      @posts = Post.all
-    end
 
-    # @posts = Post.where(nil)
-    # filtering_params(params).each do |key, value|
-    # @posts = @posts.public_send("filter_by_#{key}", value) if value.present?
+
+   #  filtering_params(params).each do |key, value|
+   #   @posts = @posts.public_send("filter_by_#{key}", value).includes(:category, :likes, :favorites).map do
+   #     |post|
+   #     post.as_json(include: [:category, :image, :likes, :favorites])
+   #   end if value.present?
+   # end
+
+    # if params.has_key?(:category)
+    #   @category = Category.find_by_name(params[:category])
+    #   @posts = Post.where(category: @category)
+    # else
+    #   @posts = Post.all
     # end
+    #
+
+
+
+    filtering_params(params).each do |key, value|
+    @posts = @posts.public_send("filter_by_#{key}", value).includes(:category, :likes, :favorites)
+
   end
+
+
+end
 
   # GET /posts/1
   # GET /posts/1.json

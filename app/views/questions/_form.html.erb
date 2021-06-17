@@ -1,4 +1,5 @@
 <%= form_with(model: question, local: true) do |form| %>
+<%= react_component 'O_QuestionForm', {question: @question, user: @user} %>
   <% if question.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>

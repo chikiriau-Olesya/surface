@@ -30,7 +30,7 @@ class M_FunctionList extends React.Component {
                 <img src={Dots} onClick={this.handleClick}/>
                   <div>{this.state.active &&
                     <div className="admin-actions">
-                      <a href={"#"} className="action-edit">Редактировать</a>
+                      <a href={`/posts/${this.props.post.id}/edit`} className="action-edit">Редактировать</a>
                       <a href = {"#"} className="action-delete">Удалить</a>
                     </div>}
                 </div>
