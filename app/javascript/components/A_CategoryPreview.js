@@ -19,9 +19,9 @@ class A_CategoryPreview extends React.Component {
     let textpart = <span>{category}</span>
 
     return (
-      <a
+      <p
       className = {`category ${checkCategoryStyles}`}
-      href={`/posts?category=${category}`}>{textpart}</a>
+      >{textpart}</p>
     );
   }
 }

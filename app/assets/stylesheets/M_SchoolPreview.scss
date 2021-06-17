@@ -1,17 +1,19 @@
 .school_block {
   background-color: white;
   border-radius: 16px;
-  width: 528px;
+  width: 36.48vw;
   margin-bottom: 32px;
 
   &:hover {
     filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.1));
+    transform: scale(1.01);
+    transition: all 0.4s linear;
   }
 }
 
 .school_block_img {
-  width: 528px;
-  height: 360px;
+  width: 36.48vw;
+  height: 24vw;
   border-radius: 16px;
 }
 

@@ -1,102 +1,76 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { YMaps, Map, ObjectManager, ZoomControl, SearchControl } from "react-yandex-maps";
+import 'stylesheets/M_Map.scss'
+import Pin from 'images/map-icon.svg'
+import { YMaps, Map, Placemark, GeolocationControl, ZoomControl } from "react-yandex-maps";
 
-import points from "./points.js";
-
-// import "./styles.css";
 
 let mapState = {
   center: [55.751574, 37.573856],
-  zoom: 12,
+  zoom: 11,
   controls: []
 };
+
+let pin = Pin
 
 let getIdFromHash = hash => {
   hash = parseInt(hash.replace(/\D/g, ""), 10);
   return isNaN(hash) ? null : hash;
 };
 
+
 class M_MainMap extends React.Component {
-  state = {
-    currentItem: getIdFromHash(window.location.hash)
-  };
-
-  onHashChange = () => {
-    let currentItem = getIdFromHash(window.location.hash);
-    if (currentItem !== this.state.currentItem) {
-      this.setState({ currentItem });
-    }
-  };
-
-  closeDescription = () => {
-    window.location.hash = "";
-    this.setState({ currentItem: null });
-  };
-
-  componentDidMount() {
-    window.addEventListener("hashchange", this.onHashChange);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("hashchange", this.onHashChange);
-  }
-
   render() {
+    let longitude = '';
+    if (this.props.schools.city_id) {
+      longitude = this.props.city.longitude
+    }
+
+    let latitude = '';
+    if (this.props.schools.city_id) {
+      latitude = this.props.city.latitude
+    }
     return (
       <div>
         <YMaps query={{ mode: "debug" }}>
-          <Map defaultState={mapState}
-            width='60vw'
-            height='50vw'
+          <Map defaultState={{ center: [longitude, latitude], zoom: 4}}
+            width='100%'
+            height='53vw'
           >
-            <ZoomControl/>
-           <SearchControl/>
-            <ObjectManager
-              objects={{
-                openBalloonOnClick: true
-              }}
-              clusters={{}}
-              options={{
-                clusterize: true,
-                gridSize: 32
-              }}
-              defaultFeatures={{
-                type: "FeatureCollection",
-                features: points.map((point, id) => {
-                  return {
-                    id: id,
-                    type: "Feature",
-                    geometry: {
-                      type: "Point",
-                      coordinates: point.coords
-                    },
-                    properties: {
-                      balloonContent: `
-                      <p>Информация о метке №${id + 1}.</p>
-                      <p>
-                        <a href="/schools/${id}">Больше информации...</a>
-                      </p>
-                  `,
-                      clusterCaption: `Метка №${id + 1}`
-                    }
-                  };
-                })
-              }}
-              modules={[
-                "objectManager.addon.objectsBalloon",
-                "objectManager.addon.clustersBalloon"
-              ]}
-            />
+            <ZoomControl options={{ float: 'right' }}/>
+
+            {
+             this.props.schools.map(school => {
+               return (
+               <Placemark
+                   key={school.id}
+                   geometry={[school.longitude, school.latitude]}
+                   options={{
+                     iconLayout: 'default#image',
+                     iconImageHref: pin,
+                     iconImageSize: [30, 30],
+                     hideIconOnBalloonOpen: false,
+                     balloonOffset: [3, -40]
+                   }}
+                   properties={{
+                     hintContent: `${school.name}`,
+                     balloonContent: `<a href="/schools/${school.id}">
+                       <div className="baloon">
+                         <img className="baloon_school_block_img" src=${school.image.thumb.url}/>
+                         ${school.name}
+                       </div>
+                     </a>`,
+                   }}
+                   modules={[
+                     "geoObject.addon.hint",
+                     "geoObject.addon.balloon"
+                   ]}
+               />)
+             })
+            }
           </Map>
         </YMaps>
-        {this.state.currentItem !== null && (
-          <article>
-            <h1>Подробная информация о метке №{this.state.currentItem + 1}</h1>
-            <p>{points[this.state.currentItem].descr}</p>
-            <button onClick={this.closeDescription}>Закрыть</button>
-          </article>
-        )}
+
       </div>
     );
   }

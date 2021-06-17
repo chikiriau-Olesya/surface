@@ -7,6 +7,8 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
+      <th>Description</th>
+      <th>Description</th>
       <th>Number of school</th>
       <th>Link to school list</th>
       <th colspan="3"></th>
@@ -21,6 +23,8 @@
    				<%= image_tag(city.image.url, alt: 'Image') if city.image? %>
         </td>
         <td><%= city.description %></td>
+        <td><%= city.longitude %></td>
+        <td><%= city.latitude %></td>
         <td>
           <p><%= city.school.count %>
             <%= (city.school.count ) == 1 ? 'Школа' : 'Школ'%>

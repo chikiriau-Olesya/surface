@@ -11,9 +11,20 @@
 	</p>
 </div>
 
+<!-- <div class="">
+  	<% @schools.each do |school| %>
+      Серфшколы в <%#= school.city.name %>
+  	<% end %>
+</div> -->
+
+
+<!-- <div class="">
+  Серфшколы в <%#= @city.name %>
+</div> -->
+
 <div class="school-page">
 	<div class="school-page_item">
-		<%= react_component 'M_SchoolFound', {surftypes: @surftypes, surftype: @surftype, school: @school, schools: @schools } %>
+		<%= react_component 'M_SchoolFound', {surftypes: @surftypes, surftype: @surftype, school: @school, schools: @schools, city: @city, cities: @cities} %>
 		<div class="school-page_item-left">
 			<div class="surftype__block">
 				<h5 class="A_H5">Выбрать вид серфа</h5>
@@ -28,8 +39,8 @@
 		</div>
 
 	</div>
-	<div class="school-page_item">
-			<%= react_component 'M_Map', {school: @school, schools: @schools } %>
+	<div class="school-page_item school-page_item-map">
+			<%= react_component 'M_MainMap', {school: @school, schools: @schools, city: @cities } %>
 	</div>
 </div>
 

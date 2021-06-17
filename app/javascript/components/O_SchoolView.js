@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import A_SchoolGalery from "./A_SchoolGalery.js"
+import A_SchoolGallery from "./A_SchoolGallery.js"
 import A_Btn from "./A_Btn.js"
 import A_SchoolCover from "./A_SchoolCover.js"
 import M_SchoolInf from "./M_SchoolInf.js"
@@ -36,7 +36,7 @@ class O_SchoolView extends React.Component {
         <div className="O_SchoolView-block">
           <M_SchoolDesc
             school = {this.props.school}
-            surftype = {this.props.surftype}
+            city = {this.props.city}
             />
         </div>
         <div className="O_SchoolView-block">
@@ -48,11 +48,11 @@ class O_SchoolView extends React.Component {
           <M_SchoolFacilities school = {this.props.school}/>
         </div>
         <div className="O_SchoolView-block">
-          <A_SchoolGalery/>
+          <A_SchoolGallery gallery = {this.props.school.gallery}/>
           <M_SchoolContacts school = {this.props.school}/>
         </div>
 
-        <div className="">
+        <div className="O_SchoolView-share">
           <M_ShareSocials/>
         </div>
       </div>

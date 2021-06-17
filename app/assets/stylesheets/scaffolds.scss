@@ -40,13 +40,14 @@
   --color-winter-grey: #F4F4F4;
   --color-system-grey: #E8E8E8;
   --color-light-grey: #9F9F9F;
+  --color-cold-grey: #EEF2F6;
   --color-grey: #424242;
   --color-black-sand: #101010;
   --color-sea-foam: #fff;
 
   //shadows
   --shadow-basic: 0 0 4px rgba(0, 0, 0, 0.1);
-  --shadow-exprmnt: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --shadow-strong: 0 4px 10px rgba(0, 0, 0, 0.1);
 
   //margins
 
@@ -111,6 +112,11 @@
 //   line-height: 130%;
 //   font-weight: 600;
 // }
+
+html {
+  overflow-x: hidden;
+}
+
 p .font-additional{
   font-family: "Raleway", helvetica, sans-serif;
   font-size: 18px;

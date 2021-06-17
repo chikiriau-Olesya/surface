@@ -24,7 +24,7 @@ class O_Posts_Preview extends React.Component {
     return (
       <div className = "all-posts">
          <div className='post-list'>
-           {this.props.posts.splice(-2, 2).map(post => (
+           {this.props.posts.map(post => (
              <div>
                <M_PostPreview
                key = {post.id}

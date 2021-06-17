@@ -6,8 +6,8 @@ text
 }) => {
     return (
       <div className="A_SchoolOffer">
-      <div dangerouslySetInnerHTML={{__html: `${text}` }}></div>
-       </div>
+        <div dangerouslySetInnerHTML={{__html: `${text}` }}></div>
+      </div>
     );
 }
 

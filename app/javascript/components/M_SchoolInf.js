@@ -13,7 +13,8 @@ class M_SchoolInf extends React.Component {
   render () {
     return (
       <div className="M_SchoolInf">
-        <A_H4 className = 'heading--black'
+        <A_H4
+          color = 'heading--black'
           content = "Лучший сезон">
         </A_H4>
         <div className="A_SchoolInf-block">

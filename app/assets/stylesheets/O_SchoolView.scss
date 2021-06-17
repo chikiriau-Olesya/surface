@@ -13,4 +13,32 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  .O_SchoolView-share {
+    margin-top: 58px;
+  }
+}
+
+@media (max-width: 768px) {
+  .O_SchoolView {
+    .school-banner {
+      height: 56vw;
+    }
+
+    .O_SchoolView-block {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 428px) {
+  .O_SchoolView {
+    .school-banner {
+      height: 80vw;
+    }
+    .O_SchoolView-block {
+      margin-bottom: 24px;
+    }
+
+  }
 }

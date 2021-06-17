@@ -6,6 +6,7 @@ class SchoolsController < ApplicationController
   def index
     @cities = City.all
     @surftypes = Surftype.all
+
     # if params.has_key?(:city)
     #   @city = City.find_by_name(params[:city])
     #   @schools = School.where(city: @city)
@@ -149,6 +150,6 @@ class SchoolsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def school_params
-      params.require(:school).permit(:name, :description, :longitude, :latitude, :city_id, :image, :inst, :tg, :fb, :website, :email, :tel, :service, :price, :season, :water, :wind, :wetsuit, :cafe, :shower, :room, :shop, :equip, :car, :surftype_id)
+      params.require(:school).permit(:name, :description, :longitude, :latitude, :city_id, :image, :inst, :tg, :fb, :website, :email, :tel, :service, :price, :season, :water, :wind, :wetsuit, :cafe, :shower, :room, :shop, :equip, :car, :surftype_id, :gallery)
     end
 end

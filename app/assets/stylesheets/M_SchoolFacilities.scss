@@ -9,3 +9,21 @@
     margin-top: 40px;
   }
 }
+
+@media (max-width: 768px) {
+  .M_SchoolFacilities {
+    width: 90%;
+  }
+}
+
+@media (max-width: 428px) {
+  .M_SchoolFacilities {
+    width: 90%;
+    margin-bottom: 16px;
+    padding: 24px 16px;
+    border-radius: 16px;
+    .M_SchoolFacilities-block {
+      display: block;
+    }
+  }
+}

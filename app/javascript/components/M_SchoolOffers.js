@@ -8,7 +8,8 @@ class M_SchoolOffers extends React.Component {
   render () {
     return (
       <div className="M_SchoolOffers">
-        <A_H4 className = 'heading--black'
+        <A_H4
+          color = 'A_H4--white'
           content = "Примеры услуг">
         </A_H4>
         <div className="M_SchoolOffers_link">

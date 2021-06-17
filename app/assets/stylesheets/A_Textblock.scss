@@ -40,3 +40,11 @@ color: #9F9F9F;}
 color: #E60024;}
 .text--white{
 color: #fff;}
+
+
+@media (max-width: 428px) {
+  .text--body {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

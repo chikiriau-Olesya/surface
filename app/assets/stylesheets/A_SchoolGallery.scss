@@ -1,0 +1,25 @@
+.A_SchoolGallery {
+  margin-right: 32px;
+  border-radius: 32px;
+  width: 75%;
+  overflow: scroll;
+
+  p {
+    display: flex;
+  }
+
+  .A_SchoolGallery-img {
+    width: 56vw;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .A_SchoolGallery {
+    width: 100%;
+    margin-bottom: 32px;
+    .A_SchoolGallery-img {
+      width: 100vw;
+    }
+  }
+}

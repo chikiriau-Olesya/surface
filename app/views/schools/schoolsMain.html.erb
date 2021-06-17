@@ -1,6 +1,6 @@
 
 <%= react_component 'O_SchoolMainPage'%>
-  <%= react_component 'O_PopularCities', {cities: @cities, city: @city, school: @school, schools: @schools } %>
+<%#= react_component 'O_PopularCities', {cities: @cities, city: @city, school: @school, schools: @schools } %>
 
 <%= link_to 'schoolsCities', schoolsCities_path(@school) %>
 <% City.all.each do |city| %>
@@ -14,6 +14,7 @@
 				<%= link_to(image_tag(school.image.thumb.url, alt: 'Image'), school.image.url, target: '_blank') if school.image? %>
 		 </div>
 		 <div><%= school.name %></div>
+     <div><%= school.city.name %></div>
 		 <div>
 			 <% if school.room == true %>
 				 <p>Раздевалки</p>

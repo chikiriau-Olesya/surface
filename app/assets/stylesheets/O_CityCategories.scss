@@ -1,0 +1,51 @@
+.city-cats{
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 6vw;
+}
+
+.city-cats-title {
+  h3 {
+    text-align: center;
+    background-image: url('.././images/cities-way-bc.svg');
+    background-color: var(--color-black);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 24px;
+    border-radius: 56px;
+  }
+}
+
+.city--list {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 32px;
+  grid-row-gap: 32px;
+}
+
+.city-item {
+  &:hover {
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.1));
+    transform: scale(1.01);
+    transition: all 0.4s linear;
+  }
+}
+
+@media (max-width: 768px) {
+  .city--list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 428px) {
+  .city--list {
+    grid-template-columns: 1fr;
+    grid-column-gap: 0px;
+  }
+
+  .city-cats{
+    margin-bottom: 12vw;
+  }
+}

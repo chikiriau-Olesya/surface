@@ -2,8 +2,9 @@
   background: #101010;
   border-radius: 32px;
   padding: 32px;
-  width: 20%;
+  // width: 25%;
   color: #FFFFFF;
+
   a {
     text-decoration: none;
     font-weight: 500;
@@ -16,11 +17,11 @@
   }
 
   .M_SchoolContacts-link {
-    margin-top: 75%;
+    color: var(--color-sunset);
+    background-color: var(--color-background-page);
+    padding: 1.4vw 2.4vw;
+    border-radius: 20px;
     a{
-      padding: 3.4vw 2.4vw;
-      background: #F4F4F4;
-      border-radius: 20px;
       align-items: center;
       text-align: center;
       &:hover {

@@ -6,3 +6,18 @@
     }
   }
 }
+
+@media (max-width: 428px) {
+  .A_SchoolOffer {
+    table {
+      tbody {
+        td {
+          tr {
+            display: flex;
+            flex-direction: column;
+          }
+        }
+      }
+    }
+  }
+}

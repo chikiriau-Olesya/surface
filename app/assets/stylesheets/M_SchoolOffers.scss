@@ -9,8 +9,26 @@
 
 .M_SchoolOffers_link {
   margin-top: 8px;
+  color: var(--color-light-grey);
 }
 
 .M_SchoolOffers_table {
   margin-top: 56px;
+}
+
+
+@media (max-width: 768px) {
+  .M_SchoolOffers {
+    width: 90%;
+    margin-bottom: 32px;
+  }
+}
+
+
+@media (max-width: 428px) {
+  .M_SchoolOffers {
+    width: 83%;
+    border-radius: 16px;
+    margin-bottom: 24px;
+  }
 }
