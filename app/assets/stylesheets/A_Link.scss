@@ -16,6 +16,9 @@
 .link--blue:hover{
   color: var(--color-light-sunset);
 }
+.link--blue:visited {
+  color: var(--color-night);
+}
 
 
 .link--black{
@@ -36,4 +39,15 @@
 .link--grey:hover{
   color: var(--color-grey);
   text-decoration: none;
+}
+
+.link--white {
+  color: var(--color-sea-foam);
+}
+.link--white:hover {
+  color: var(--color-light-grey);
+  text-decoration: none;
+}
+.link--white:visited {
+  color: var(--color-sea-foam);
 }

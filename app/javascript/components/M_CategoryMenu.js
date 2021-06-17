@@ -9,7 +9,7 @@ class M_CategoryMenu extends React.Component {
         <a href={`/posts`} className="category">Все</a>
         {this.props.categories.map(category => (
           <div key={category.id}>
-              <a href={`/posts?category=${category.name}`} className="category">
+              <a href={`/posts?category=${category.id}`} className="category">
               {`${category.name}`}
               </a>
           </div>

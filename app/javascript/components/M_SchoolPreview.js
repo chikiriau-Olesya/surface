@@ -33,7 +33,4 @@ class M_SchoolPreview extends React.Component {
   }
 }
 
-
-
-
 export default M_SchoolPreview

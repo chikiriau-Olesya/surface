@@ -1,0 +1,27 @@
+.M_SchoolPreviewSmall {
+  width: 90%;
+  margin: 0 auto;
+  .M_SchoolPreviewSmall--blocks {
+    display: flex;
+    margin-top: 24px;
+  }
+  .school_block__small {
+    width: 28vw;
+    background-color: var(--color-sea-foam);
+    border-radius: 16px;
+    margin-right: 32px;
+    &:hover {
+      filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.1));
+      transform: scale(1.01);
+      transition: all 0.4s linear;
+    }
+  }
+
+  .school_block_img__small {
+    width: 28vw;
+    height: 18vw;
+    border-radius: 16px;
+  }
+
+
+}

@@ -12,6 +12,8 @@ class PostsController < ApplicationController
       post.as_json(include: [:category, :image, :likes, :favorites])
     end
 
+    @posts = Post.where(nil)
+    @posts = @posts.filter_by_category(params[:category]) if params[:category].present?
 
    #  filtering_params(params).each do |key, value|
    #   @posts = @posts.public_send("filter_by_#{key}", value).includes(:category, :likes, :favorites).map do
@@ -28,15 +30,38 @@ class PostsController < ApplicationController
     # end
     #
 
-
-
     filtering_params(params).each do |key, value|
     @posts = @posts.public_send("filter_by_#{key}", value).includes(:category, :likes, :favorites)
-
-  end
+    end
 
 
 end
+
+
+  def postsMain
+    @cities = City.all
+
+    @school = School.find_by_name(params[:school])
+    @schools = School.all
+    if params.has_key?(:city)
+      @city = City.find_by_name(params[:city])
+      @schools = School.where(city: @city)
+    else
+      @schools = School.all
+    end
+
+
+    @categories = Category.all
+
+    @posts = Post.all.includes(:category,:likes, :favorites).map do
+      |post|
+      post.as_json(include: [:category, :image, :likes, :favorites])
+    end
+    filtering_params(params).each do |key, value|
+    @posts = @posts.public_send("filter_by_#{key}", value).includes(:category, :likes, :favorites)
+    end
+
+  end
 
   # GET /posts/1
   # GET /posts/1.json
@@ -149,7 +174,7 @@ end
     end
 
     def filtering_params(params)
-      params.slice(:user, :category, :starts_with)
+      params.slice(:category, :starts_with)
     end
 
     # Only allow a list of trusted parameters through.

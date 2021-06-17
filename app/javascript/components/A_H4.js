@@ -18,9 +18,9 @@ const A_H4 = ({
   ? color : STYLES[0]
 
   return(
-      <h3 className = {`A_H4 ${checkColor}`} type = {type}>
+      <h4 className = {`A_H4 ${checkColor}`} type = {type}>
         {content}
-      </h3>
+      </h4>
 
   )
 }

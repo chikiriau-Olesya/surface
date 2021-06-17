@@ -13,50 +13,50 @@
     </div>
   <% end %>
 
-  <!-- <div class="field">
-    <%#= form.label :name %>
-    <%#= form.text_field :name %>
+<div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%#= form.label :title %>
-    <%#= form.text_field :title %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
   </div>
 
 <div>
-  	<%#= form.label :image %>
-    <%#= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
-  	<%#= form.file_field :image %>
+  	<%= form.label :image %>
+    <%= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
+  	<%= form.file_field :image %>
   </div>
 
 <div class="field">
-    	<%#= form.label :author %>
-    	<%#= form.text_field :author, placeholder: 'name'%>
+    	<%= form.label :author %>
+    	<%= form.text_field :author, placeholder: 'name'%>
     </div>
 
 
 <div class="field">
-    <%#= form.label :content %>
-    <%#= form.cktext_area :content %>
+    <%= form.label :content %>
+    <%= form.cktext_area :content %>
   </div>
 
 <div class="field">
-    <%#= form.label :tagline %>
-    <%#= form.text_field :tagline %>
+    <%= form.label :tagline %>
+    <%= form.text_field :tagline %>
   </div>
 
  <div class="field">
-    <%#= form.label :category_id %>
-    <%#= form.select :category_id, Category.pluck(:name, :id) %>
-    <%#= form.hidden_field :post_type_id, value: post.post_type.id %>
+    <%= form.label :category_id %>
+    <%= form.select :category_id, Category.pluck(:name, :id) %>
+    <%= form.hidden_field :post_type_id, value: post.post_type.id %>
   </div>
 
  <div class="field">
-    <%#= form.label :topic %>
-    <%#= form.text_field :topic %>
+    <%= form.label :topic %>
+    <%= form.text_field :topic %>
   </div>
 
 <div class="actions">
-    <%#= form.submit %>
-  </div> -->
+    <%= form.submit %>
+  </div>
 <% end %>
