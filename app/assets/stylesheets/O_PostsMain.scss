@@ -27,3 +27,62 @@
 
   }
 }
+
+
+@media (max-width: 1024px) {
+  .O_PostsMain {
+    .O_PostsMain-link {
+      a {
+        padding: 56px 38vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .O_PostsMain {
+
+    .main--title,
+    .all-posts {
+      width: 96%;
+    }
+
+    .O_PostsMain-link {
+      a {
+        padding: 40px 38vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .O_PostsMain {
+
+    .main--title,
+    .all-posts {
+      width: 96%;
+    }
+
+    .O_PostsMain-link {
+      a {
+        padding: 40px 32vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 428px) {
+  .O_PostsMain {
+
+    .main--title,
+    .all-posts {
+      width: 90%;
+    }
+
+    .O_PostsMain-link {
+      a {
+        padding: 32px 22vw;
+      }
+    }
+  }
+}
