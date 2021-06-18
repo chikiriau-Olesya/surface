@@ -6,6 +6,7 @@ const STYLES = [
   'link--black',
   'link--blue',
   'link--grey',
+  'link--white',
 ]
 const A_Link = ({
   address,

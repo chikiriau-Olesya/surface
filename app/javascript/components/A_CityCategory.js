@@ -1,41 +1,20 @@
 import React from "react"
 import PropTypes from "prop-types"
-import 'stylesheets/M_CityCategory.scss'
+import A_H4 from "./A_H4.js"
+import A_Textblock from './A_Textblock.js'
+import 'stylesheets/A_CityCategory.scss'
 
-const STYLES = [
-  'city--default',
-  'city--long',
-  'city--square',
-]
+class A_CityCategory extends React.Component {
+  render() {
 
-const SIZES = [
-  'category--default',
-  'category--active',
-  'category--inPost',
-  'category--inArticle'
-]
-
-const A_CityCategory = ({
-city,
-textpart,
-schoolNumber,
-cityStyle,
-citySize
-}) => {
-
-  const checkCityStyle = STYLES.includes(cityStyle)
-  ? cityStyle : STYLES[0]
-
-  const checkCitySizes = SIZES.includes(citySize)
-  ? cityStyle : SIZES[0]
-
-
-  return (
-    <a href={`/schools?city=${city}`}>
-      {textpart}
-      {schoolNumber}
-    </a>
-  );
+    return (
+      <div className="A_CityCategory">
+        <A_H4 color="A_H4--white"
+          content = {this.props.city.name}>
+        </A_H4>
+      </div>
+    );
+  }
 }
 
 

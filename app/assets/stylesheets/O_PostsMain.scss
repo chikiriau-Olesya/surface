@@ -1,0 +1,29 @@
+.O_PostsMain {
+  margin: 64px 0px;
+  background-color: #EEF2F6;
+  border-radius: 56px;
+  padding-top: 48px;
+  padding-bottom: 96px;
+  .main--title {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 32px;
+  }
+  .O_PostsMain-link{
+    width: 100%;
+    text-align: center;
+    margin-top: 88px;
+    a {
+      background-color: var(--color-black);
+      text-align: center;
+      border-radius: 96px;
+      padding: 56px 42vw;
+    }
+    a:hover {
+      background-color: var(--color-adventure-spirit);
+      color: var(--color-black);
+      transition: all 0.2s linear;
+    }
+
+  }
+}
