@@ -3,6 +3,21 @@
   border-radius: 32px;
   width: 75%;
   overflow: scroll;
+  position: relative;
+
+  .A_SchoolGallery--arrow {
+    position: absolute;
+    background-color: var(--color-sea-foam);
+    padding: 4px 8px;
+    border-radius: 16px;
+    top: 16px;
+    left: 16px;
+  }
+
+  .A_SchoolGallery--block {
+    border-radius: 32px;
+    overflow: scroll;
+  }
 
   p {
     display: flex;

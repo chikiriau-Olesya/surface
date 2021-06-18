@@ -2,80 +2,10 @@
 
 <% set_meta_tags title: @school.name, description: @school.city.name %>
 
-
 <%= react_component 'O_SchoolView', { school: @school} %>
-
+<%= react_component 'M_SchoolPreviewSmall', {surftypes: @surftypes, surftype: @surftype, school: @school, schools: @schools } %>
+<%= react_component 'O_Posts_Ending', { posts: @posts, post: @post, categories: @categories, category: @category } %>
 
 
 <%= link_to 'Edit', edit_school_path(@school) %> |
 <%= link_to 'Back', schools_path %>
-
-<div class="">
-	<% @schools.each do |school| %>
-	 <div class="">
-		 <div>
-				<%= link_to(image_tag(school.image.thumb.url, alt: 'Image'), school.image.url, target: '_blank') if school.image? %>
-		 </div>
-		 <div><%= school.name %></div>
-		 <div>
-			 <% if school.room == true %>
-				 <p>Раздевалки</p>
-			 <% end %>
-		 </div>
-		 <div>
-			 <% if school.shower == true %>
-				 <p>Душевая</p>
-			 <% end %>
-		 </div>
-		 <div>
-			 <% if school.equip == true %>
-				 <p>Оборудование</p>
-			 <% end %>
-		 </div>
-		 <div>
-			 <% if school.cafe == true %>
-				 <p>Кафе по близости</p>
-			 <% end %>
-		 </div>
-		 <div>
-			 <% if school.shop == true %>
-				 <p>Магазины рядом</p>
-			 <% end %>
-		 </div>
-		 <div>
-			 <% if school.car == true %>
-				 <p>Легко доехать</p>
-			 <% end %>
-		 </div>
-		 <div>Тренировки от <%= school.price %></div>
-		 <div><%= link_to 'Show', school %></div>
-	 </div>
-	<% end %>
-</div>
-
-
-<table>
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td>
-           <%= link_to(image_tag(post.image.thumb.url, alt: 'Image'), post.image.url, target: '_blank') if post.image? %>
-        </td>
-         <td>
-           <%= post.title %>
-         </td>
-        <td>
-        <% if post.category_id? %>
-          <span>
-          <%= post.category.name %>
-          </span>
-        <% end %>
-        </td>
-
-        <td><%= post.likes.count %> <%= (post.likes.count) == 1 ? '💙' : '💙'%></td>
-        <td><%= post.coments.count %> <%= (post.coments.count) == 1 ? ' 💬' : ' 💬'%></td>
-        <td><%= link_to '👀', post %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
