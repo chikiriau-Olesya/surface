@@ -10,11 +10,40 @@
   padding: 2vw 7vw;
 }
 
+.activity--inPost{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  .like{
+    display: flex;
+    flex-direction: row;
+    .like-count{
+      font-size: 15px;
+      color: #9a9a9a;
+      font-weight: 400;
+      padding: 0.4vw;
+    }
+  }
+  .fav{
+    display: flex;
+    flex-direction: row;
+    margin-left: 1vw;
+    .fav-count{
+      font-size: 15px;
+      color: #9a9a9a;
+      font-weight: 400;
+      padding: 0.4vw;
+    }
+  }
+}
+
 .post-final-inner-hashtag {
-  margin-bottom: 40px;
+  margin-top: 40px;
+  margin-bottom: 44px;
 }
 
 .media-share{
+  margin-top: 1vw;
   a{
     margin-right: 1vw;
   }

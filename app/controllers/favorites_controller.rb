@@ -12,6 +12,7 @@ class FavoritesController < ApplicationController
     end
     redirect_to post_path(@post)
   end
+  
   def destroy
     if !(already_favorited?)
       flash[:notice] = "Cannot unfavorite"

@@ -65,7 +65,7 @@ addPic = () => this.state.pre_favorite ? imageSave.fav : imageSave.unfav
           }>
           <img src={this.addPic()}/>
         </div>
-        <div>{this.state.favorites_count}</div>
+        <p className="fav-count">{this.state.favorites_count}</p>
       </div>
     );
 

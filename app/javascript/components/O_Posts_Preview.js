@@ -10,7 +10,6 @@ import 'stylesheets/O_Posts_Preview.scss'
 import Play from 'images/playBtn.svg'
 
 
-
 class O_Posts_Preview extends React.Component {
   render() {
 
@@ -23,9 +22,9 @@ class O_Posts_Preview extends React.Component {
 
     return (
       <div className = "all-posts">
-         <div className='post-list'>
+         <div className='post--list'>
            {this.props.posts.map(post => (
-             <div>
+             <div className="post-item">
                <M_PostPreview
                key = {post.id}
                post = {post}

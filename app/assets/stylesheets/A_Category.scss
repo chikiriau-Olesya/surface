@@ -1,8 +1,8 @@
 .category{
-  padding: 8px 24px;
+  padding: 8px 24px 8px 24px;
+  margin-right: 1vw;
   font-family: "Raleway", sans-serif;
   font-size: 16px;
-  margin-right: 1vw;
   font-weight: 500;
   border-radius: 3vw;
   background-color: #EEF2F6;
@@ -12,7 +12,7 @@
   background-color: #101010;
 }
 .category--default{
-  color: #101010;
+  color: var(--color-black-sand);
   background-color: var(--color-sea-foam);
 }
 .category--active{
@@ -26,4 +26,13 @@
 .category--inArticle{
   color: #101010;
   background-color: #fff;
+}
+.default{
+  color: var(--color-black-sand);
+  background-color: var(--color-sea-foam);
+  padding: 8px 24px 8px 24px;
+}
+.default:hover{
+  color: var(--color-black-sand);
+  background-color: var(--color-sea-foam);
 }

@@ -19,9 +19,9 @@ class A_CategoryPreview extends React.Component {
     let textpart = <span>{category}</span>
 
     return (
-      <p
+      <a
       className = {`category ${checkCategoryStyles}`}
-      >{textpart}</p>
+      >{textpart}</a>
     );
   }
 }

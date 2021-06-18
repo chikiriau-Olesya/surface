@@ -40,7 +40,7 @@ if(this.state.pre_like) {
 }
 
 
-let requestUrl = "/posts/"+ post_id+"/likes";
+let requestUrl = "/posts/"+this.props.post.id+"/likes";
 if(this.state.pre_like) requestUrl+="/"+this.state.pre_like.id;
 requestUrl+="?authenticity_token="+encodeURIComponent(this.state.token);
 
@@ -67,7 +67,7 @@ addPic = () => this.state.pre_like ? imageLike.like : imageLike.unlike
           }>
           <img src={this.addPic()}/>
         </div>
-        <div>{this.state.likes_count}</div>
+        <p className="like-count">{this.state.likes_count}</p>
       </div>
     );
 

@@ -1,7 +1,10 @@
 <%= form_with(model: [@post, @post.coments.build]) do |f| %>
-  <div class="form-group">
-    <%= f.label 'New comment' %>
-    <%= f.text_area :body, class: 'form-control' %>
+  <div class="coment-form">
+
+     <%= react_component 'A_Avatar', { user: current_user }, class: 'avatar--default-small' %>
+      <%= f.text_area :body, class: 'form-control', placeholder: 'Новый комментарий'%>
+      <div class = "coment-send">
+       <%= f.submit ' ', class: 'btn btn--icons' %>
+      </div>
   </div>
-    <%= f.submit 'Submit', class: ' btn btn--main' %>
 <% end %>

@@ -38,17 +38,13 @@ class M_PostView extends React.Component {
       }
 
       let postInnerStyle = {
-        backgroundImage: `url(${imgsrc})`,
-        width: "100%",
-        height: "30vw",
-        backgroundRepeat: "no-repeat",
-        borderRadius: "3vw"
+        backgroundImage: `url(${imgsrc})`
       };
 
       return (
         <div className="post-view">
-          <img style={postInnerStyle} className="post-inner-banner">
-          </img>
+          <div style={postInnerStyle} className="post-inner-banner">
+          </div>
 
           <div className="post-content">
             <div className="post-info">

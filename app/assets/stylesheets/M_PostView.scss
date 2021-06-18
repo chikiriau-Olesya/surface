@@ -5,7 +5,14 @@
   align-items: center;
   margin-bottom: 96px;
 
-
+  .post-inner-banner{
+    width: 100%;
+    height: 36vw;
+    border-radius: 32px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   .post-content {
     padding: 0vw 7vw;
     margin: 0 auto;
@@ -29,5 +36,21 @@
   .post-hashes{
     margin-top: 2vw;
     margin-bottom: 3vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .post-view {
+    .post-inner-banner {
+      height: 70vw;
+    }
+  }
+}
+
+@media (max-width: 428px) {
+  .post-view {
+    .post-inner-banner {
+      height: 94vw;
+    }
   }
 }
