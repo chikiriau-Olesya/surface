@@ -7,6 +7,8 @@ import Cafe from 'images/restaurant.svg'
 import Shop from 'images/shopping-cart.svg'
 import Room from 'images/toilet.svg'
 import Shower from 'images/shower.svg'
+import 'stylesheets/M_SchoolFacilitiesList.scss'
+
 
 class M_SchoolFacilitiesList extends React.Component {
   render () {

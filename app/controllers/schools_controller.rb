@@ -45,6 +45,14 @@ class SchoolsController < ApplicationController
     else
       @schools = School.all
     end
+
+    if params.has_key?(:category)
+      @category = Category.find_by_name(params[:category])
+      @posts = Post.where(category: @category)
+    else
+      @posts = Post.all
+    end
+    
   end
 
   def schoolsCities

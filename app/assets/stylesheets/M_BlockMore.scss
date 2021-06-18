@@ -1,26 +1,21 @@
-.bottom-layer{
-  margin: 3vw;
-  background-color: #A7D22B;
-  width: 94vw;
-  border-radius: 4vw;
+.M_BlockMore{
+  width: 80%;
+  margin: 0 auto;
+  background-color: var(--color-black);
+  background-image: url('.././images/M_BlockMore.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 32px;
+  margin-top: 80px;
+  padding: 56px 64px;
 }
-.top-layer{
-  background-color: #101010;
-  width: 88vw;
-  border-radius: 4vw 10vw 10vw 4vw;
-  .top-layer-text{
-  display: flex;
-  flex-direction: column;
-  span:nth-of-type(2){
-    max-width: 40vw;
-    margin: 2vw 0 3vw 0;
+.M_BlockMore--text{
+  margin-bottom: 32px;
+  h3 {
+    margin-bottom: 16px;
   }
-  }
-  padding: 2vw;
-  .more-text{
-    margin-top: 1vw;
-  }
-  .more-btn{
-    margin-top: 2vw;
+  p {
+    width: 60%;
   }
 }

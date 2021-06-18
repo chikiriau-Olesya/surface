@@ -27,12 +27,8 @@ Rails.application.routes.draw do
   resources :subscribers
 
 
-  # resources :admins do
-  #   collection do
-  #    get :choosePost
-  #  end
-  # end
 
+  root 'posts#postsMain'
 
   get 'posts/index'
   get '/posts/hashtag/:name', to: 'posts#hashtags'
@@ -52,8 +48,6 @@ Rails.application.routes.draw do
   # get 'landing/index'
   # get 'styleguide/index'
 
-  root 'landing#index'
-
   get "search", to: "search#search"
   # get "searchPage", to: "searchPage#searchPage"
   get "searchPage" => "search#searchPage", as: "searchPage"
@@ -65,5 +59,5 @@ Rails.application.routes.draw do
 
   get 'admin', to: 'admin#index'
   get "changeRole" => "users#changeRole", as: "changeRole"
-  # get 'admin#index', to: 'choosePost#index'
+
 end

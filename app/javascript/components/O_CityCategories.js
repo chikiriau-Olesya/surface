@@ -20,7 +20,7 @@ class O_CityCategories extends React.Component {
            </A_H3>
         </div>
          <div className='city--list'>
-           {this.props.cities.slice(0, 3).map(city => (
+           {this.props.cities.map(city => (
              <a href={'/schools?city=' +`${city.id}`} key={city.id} className="city-item">
                <M_CityPreview
                key = {city.id}
