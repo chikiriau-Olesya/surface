@@ -10,3 +10,23 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .M_SchoolFacilitiesList {
+    .A_SchoolIFacility {
+      img {
+        width: 2vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 428px) {
+  .M_SchoolFacilitiesList {
+    .A_SchoolIFacility {
+      img {
+        width: 4vw;
+      }
+    }
+  }
+}

@@ -2,9 +2,9 @@
   width: 90%;
   margin: 0 auto;
   margin-bottom: 64px;
+  margin-top: 40px;
 
   .O_PopularCities--list {
-    margin-top: 40px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-column-gap: 32px;
@@ -59,6 +59,48 @@
     span {
       font-weight: 600;
       font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .O_PopularCities {
+    width: 96%;
+    margin-bottom: 48px;
+    .O_PopularCities--list  {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-column-gap: 16px;
+      grid-row-gap: 16px;
+    }
+  }
+}
+
+@media (max-width: 428px) {
+  .O_PopularCities {
+    width: 100%;
+    margin-bottom: 56px;
+    margin-top: 16px;
+
+    .O_PopularCities--list  {
+      display: flex;
+      overflow-x: scroll;
+      a {
+        .city-preview {
+          .city-preview__banner {
+            width: 30vw;
+            height: 42vw;
+          }
+        }
+      }
+      a:first-of-type {
+        margin-left: 24px;
+      }
+    }
+    .O_PopularCities--link {
+      padding: 16px;
+      text-align: center;
+      width: 40vw;
+      margin-right: 24px;
     }
   }
 }

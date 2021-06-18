@@ -12,3 +12,22 @@
 .A_H1--black {
   color: var(--color-text);
 }
+
+@media (max-width: 1024px) {
+  .A_H1 {
+    font-size: 64px;
+  }
+}
+
+@media (max-width: 768px) {
+  .A_H1 {
+    font-size: 48px;
+  }
+}
+
+
+@media (max-width: 428px) {
+  .A_H1 {
+    font-size: 32px;
+  }
+}

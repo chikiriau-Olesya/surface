@@ -1,12 +1,3 @@
-/* :root{
-  --h1: #2763BD;
-  --h2: #2763BD;
-  --h3: #2763BD;
-  --h4: #9F9F9F;
-  --h5: #424242;
-  --number: #9F9F9F;
-} */
-
 
 .textblock{
   font-family: 'Raleway', sans-serif;
@@ -41,6 +32,12 @@ color: #E60024;}
 .text--white{
 color: #fff;}
 
+@media (max-width: 768px) {
+  .text--body {
+    font-size: 18px;
+    line-height: 130%;
+  }
+}
 
 @media (max-width: 428px) {
   .text--body {
