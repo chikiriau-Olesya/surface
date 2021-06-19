@@ -1,15 +1,18 @@
 .input{
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
-  border-radius: 1.5vw;
+  border-radius: 16px;
   background-color: #fff;
-  border: solid 1px #E8E8E8;
+  border: solid 1px var(--color-system-grey);
   padding-left: 16px;
-  color: #9F9F9F;
+  color: var(--color-text);
   height: 36px;
 }
+.input::placeholder{
+  color: var(--color-text-secondary);
+}
 .input:focus{
-  border: solid 1px #ACC7EF;
+  border: solid 1px transparent;
   border-radius: 2vw;
 }
 .input + img{
@@ -29,11 +32,13 @@ width:432px;
 height: 164px;
 }
 .input--image{
-background-color: #E8E8E8;
-align-items: center;
-justify-content: center;
-padding: 13vw 8vw 7vw 16vw;
+background-color: var(--color-system-grey);
+background-image: url(/assets/img-placeholder.svg);
+background-position: center;
+background-repeat: no-repeat;
+padding: 0 400px 400px 0;
 border: none;
+border-radius: 32px;
 size: 10vw;
 }
 .input--image + img{

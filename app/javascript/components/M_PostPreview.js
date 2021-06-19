@@ -22,47 +22,45 @@ class M_PostPreview extends React.Component {
     }
 
     let postStyle = {
-      backgroundImage: `url(${imgsrc})`,
+      backgroundImage: `url(${imgsrc})`
     };
 
 
     return (
-      <div className="post-preview">
-        <a href={`/posts/${this.props.post.id}`} style={postStyle}  className="post-preview__banner">
-        </a>
-        <div className = "post-preview-cat">
-          <A_CategoryPreview
-            category = {this.props.post.category}
-            categoryStyles = "default"/>
-        </div>
-          <div className = "post-lower-part">
-            <div className="post-preview__banner__text">
-              <A_H4 color="A_H4--black"
-                content = {this.props.post.title}>
-              </A_H4>
-            </div>
-            <div className="post-admin-actions">
-              <M_FunctionList
-              post ={this.props.post}/>
+      <div className="post-item">
+        <a href={"/posts/" + `${this.props.post.id}`} className="post-preview">
+          <div style={postStyle} className="post-preview__banner">
+            <div className = "post-preview-cat">
+              <A_CategoryPreview
+                category = {this.props.post.category}
+                categoryStyles = "default"/>
             </div>
           </div>
-          <div className="activity--inPost">
-            <div className="activity_item--inPost">
-              <A_Likes
+              <div className="post-preview__banner__text">
+                <A_H4 color="A_H4--black"
+                  content = {this.props.post.title}>
+                </A_H4>
+              </div>
+        </a>
+
+        <div className="activity--inPost">
+          <div className="activity_item--inPost">
+            <A_Likes
+            post = {this.props.post}
+            likes = {this.props.likes}
+            current_user_id = {this.props.current_user_id}
+            />
+          </div>
+
+          <div className="activity_item--inPost">
+            <A_Favorites
               post = {this.props.post}
-              likes = {this.props.likes}
+              favorites = {this.props.favorites}
               current_user_id = {this.props.current_user_id}
               />
-            </div>
-
-            <div className="activity_item--inPost">
-              <A_Favorites
-                post = {this.props.post}
-                favorites = {this.props.favorites}
-                current_user_id = {this.props.current_user_id}
-                />
-            </div>
           </div>
+        </div>
+
       </div>
     );
   }

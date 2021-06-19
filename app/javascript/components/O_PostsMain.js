@@ -7,7 +7,7 @@ import A_Link from "./A_Link.js"
 import A_Category from "./A_Category.js"
 import A_CategoryPreview from "./A_CategoryPreview.js"
 import M_PostPreview from "./M_PostPreview.js"
-import 'stylesheets/O_Posts_Preview.scss'
+import 'stylesheets/O_PostsPreview.scss'
 
 class O_PostsMain extends React.Component {
   render() {

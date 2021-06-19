@@ -23,7 +23,7 @@
       <br><%#= link_to(image_tag(post.image.thumb.url, alt: 'Image'), post.image.url, target: '_blank') if post.image? %>
       <br><%#= link_to post.title, post %>
     <%# end %>
-    <%= react_component 'O_Posts_Preview', { posts: @posts, post: @post } %>
+    <%= react_component 'O_PostsPreview', { posts: @posts, post: @post } %>
 
     <div class="user-posts">
       <h1>Мои публикации</h1>

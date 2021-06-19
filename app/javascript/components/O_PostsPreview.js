@@ -6,11 +6,11 @@ import A_PlayBtn from "./A_PlayBtn.js"
 import A_Category from "./A_Category.js"
 import A_CategoryPreview from "./A_CategoryPreview.js"
 import M_PostPreview from "./M_PostPreview.js"
-import 'stylesheets/O_Posts_Preview.scss'
+import 'stylesheets/O_PostsPreview.scss'
 import Play from 'images/playBtn.svg'
 
 
-class O_Posts_Preview extends React.Component {
+class O_PostsPreview extends React.Component {
   render() {
 
     let category = '';
@@ -24,7 +24,10 @@ class O_Posts_Preview extends React.Component {
       <div className = "all-posts">
          <div className='post--list'>
            {this.props.posts.map(post => (
-             <div className="post-item">
+             <div
+             key={post.id}
+             // className="post-item"
+             >
                <M_PostPreview
                key = {post.id}
                post = {post}
@@ -39,4 +42,4 @@ class O_Posts_Preview extends React.Component {
 }
 
 
-export default O_Posts_Preview
+export default O_PostsPreview

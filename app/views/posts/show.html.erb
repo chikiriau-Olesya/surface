@@ -3,43 +3,66 @@
 
   <%= react_component 'O_PostView', {category: @category, post: @post, posts: @posts} %>
 
-  <!-- <div class="">
-    <%# if user_signed_in? %>
-    <%# pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
+  <div class="post-final">
+    <div class="post-final-items">
+    <% if user_signed_in? %>
+    <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
 
-     <div class="post-view-activity">
-      <div class="liking">
-        <%#= react_component 'A_Likes', { post: @post, likes: @post.likes, current_user_id: current_user.id } %>
+      <div class="activity--inPost">
+        <div class="liking">
+          <%== react_component 'A_Likes', { post: @post, likes: @post.likes, current_user_id: current_user.id } %>
+        </div>
+
+        <div class="favs">
+          <%= react_component 'A_Favorites', { post: @post, favorites: @post.favorites, current_user_id: current_user.id } %>
+        </div>
+      </div>
+    <% end %>
+      <%= react_component 'M_PostFinal', {post: @post} %>
+    </div>
+  </div>
+
+
+<div class="coments-section">
+
+  <div class="pre-comment-info">
+    <%= react_component 'A_CommentAmount'%>
+
+    <div class="comments-topic-block">
+      <div class="">
+        <%= react_component 'A_Avatar', { user: current_user }, class: 'avatar--default-medium' %>
       </div>
 
-      <div class="favs">
-        <%#= react_component 'A_Favorites', { post: @post, favorites: @post.favorites, current_user_id: current_user.id } %>
+      <div class="comments-author-topic">
+        <%= react_component 'A_PostAuthor', {post: @post} %>
+        <%= react_component 'A_PostTopic', {post: @post} %>
       </div>
-     </div>
-    <%# end %>
-  </div> -->
+    </div>
+  </div>
+  <div class="post-coments">
 
+    <% if user_signed_in? %>
+      <%= render "coments/form" %>
+    <% else %>
+    <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
+    <% end %>
 
-  <%= react_component 'A_CommentAmount'%>
-  <%= react_component 'A_PostAuthor', {post: @post} %>
-  <%= react_component 'A_PostTopic', {post: @post} %>
+    <%= render @post.coments %>
 
-<% if user_signed_in? %>
-  <%= render "coments/form" %>
-<% else %>
-  <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
-<% end %>
+    <%= react_component 'M_AuthorQuestion' %>
+    <%= react_component 'O_PostsEnding', { posts: @posts, post: @post, categories: @categories, category: @category } %>
+  </div>
+</div>
 
-<%= render @post.coments %>
-
-  <%= react_component 'M_AuthorQuestion' %>
-  <%= react_component 'O_Posts_Ending', { posts: @posts, post: @post, categories: @categories, category: @category } %>
-
-
-<!-- <table>
+<table>
     <tbody>
-      <%# @posts.each do |post| %>
+      <% @posts.each do |post| %>
         <tr>
+
+          <td><%= link_to '👀', post %></td>
+          <td>
+            <%= react_component 'M_PostPreview', { post: @post, posts: @posts} %>
+          </td>
   				<td>
   					 <%#= link_to(image_tag(post.image.thumb.url, alt: 'Image'), post.image.url, target: '_blank') if post.image? %>
   				</td>
@@ -62,22 +85,45 @@
           <%# end %>
 
   				<td><%#= post.post_type.name %></td>
+  				<td>
+            <div class="activity--inPost">
+              <div class="liking">
+                <%== react_component 'A_Likes', { post: @post, likes: @post.likes, current_user_id: current_user.id } %>
+              </div>
+
+              <div class="favs">
+                <%= react_component 'A_Favorites', { post: @post, favorites: @post.favorites, current_user_id: current_user.id } %>
+              </div>
+            </div>
+          </td>
+
           <td><%#= post.likes.count %> <%#= (post.likes.count) == 1 ? '💙' : '💙'%></td>
           <td><%#= post.coments.count %> <%#= (post.coments.count) == 1 ? ' 💬' : ' 💬'%></td>
-          <td><%#= link_to '👀', post %></td>
+          <td><%#= post.favorites.count %> <%#= (post.favorites.count) == 1 ? '💙' : '💙'%></td>
+
 
   				<!-- open view to delete and edit btn for admin in blog -->
-  				<%# if user_signed_in? && current_user.isadmin == true %>
-  					<!-- <td><%#= link_to '🛠', edit_post_path(@post) %></td> -->
-  					<!-- <td><%#= link_to '🗑', post, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
-  				<%# end %>
-        <!-- </tr> -->
-      <%# end %>
-    <!-- </tbody> -->
-  <!-- </table> -->
-  <!-- <td><%#= link_to '🛠', edit_post_path(@post) %></td>
-  <td><%#= link_to '🗑', @post, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+  				<% if user_signed_in? && current_user.isadmin == true %>
+          <td>
+            <%= react_component 'M_FunctionList', { post: @post} %>
+          </td>
+      			<td>
+              <%#= link_to '🛠', edit_post_path(@post) %>
+            </td>
+
+    				<td>
+              <%#= link_to '🗑', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+  				<% end %>
+
+        </tr>
+      <% end %>
+  </tbody>
+</table>
+
+<div class="final-admin-actions">
   <% if user_signed_in? && current_user.isadmin == true %>
-    <td><%= link_to '🛠', edit_post_path(@post) %></td>
-    <td><%= link_to '🗑', @post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Редактировать', edit_post_path(@post), class: 'btn btn--main' %></td>
+    <td><%= link_to 'Удалить', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn--secondary'  %></td>
   <% end %>
+</div>

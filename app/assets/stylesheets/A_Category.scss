@@ -4,15 +4,22 @@
   font-family: "Raleway", sans-serif;
   font-size: 16px;
   font-weight: 500;
-  border-radius: 3vw;
+  border-radius: 32px;
   background-color: #EEF2F6;
 }
 .category:hover{
-  color: #fff;
-  background-color: #101010;
+  color: var(--color-sea-foam);
+  background-color: var(--color-black);
 }
+.category.activeTab{
+  color: var(--color-sea-foam);
+  background-color: var(--color-black);
+}
+
+
+
 .category--default{
-  color: var(--color-black-sand);
+  color: var(--color-black);
   background-color: var(--color-sea-foam);
 }
 .category--active{

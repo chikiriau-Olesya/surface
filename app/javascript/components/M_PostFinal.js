@@ -15,27 +15,7 @@ import 'stylesheets/M_PostFinal.scss'
 class M_PostFinal extends React.Component {
   render() {
     return (
-      <div className="post-final">
-        <div className="post-final-inner">
-
-        <div className="activity--inPost">
-          <div className="activity_item--inPost">
-            <A_Likes
-            post = {this.props.post}
-            likes = {this.props.likes}
-            current_user_id = {this.props.current_user_id}
-            />
-          </div>
-
-          <div className="activity_item--inPost">
-            <A_Favorites
-              post = {this.props.post}
-              favorites = {this.props.favorites}
-              current_user_id = {this.props.current_user_id}
-              />
-          </div>
-        </div>
-
+      <div className="post-final-inner">
           <div className="post-final-inner-hashtag">
             <A_Hashtag className="post-hashes" post = {this.props.post}/>
           </div>
@@ -49,7 +29,6 @@ class M_PostFinal extends React.Component {
              <a href="https://www.instagram.com/trinitysurfingmag/"><img src={Fb}/></a>
              <a href="https://www.instagram.com/trinitysurfingmag/"><img src={Telega}/></a>
           </div>
-        </div>
       </div>
     );
   }

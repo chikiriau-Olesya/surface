@@ -8,7 +8,6 @@ class O_PostView extends React.Component {
     return (
       <div className='O_PostView'>
         <M_PostView post = {this.props.post} category = {this.props.category}/>
-        <M_PostFinal post = {this.props.post}/>
       </div>
     );
   }
