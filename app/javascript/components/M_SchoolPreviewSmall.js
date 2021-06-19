@@ -11,6 +11,7 @@ import 'stylesheets/M_SchoolPreviewSmall.scss'
 
 class M_SchoolPreviewSmall extends React.Component {
   render() {
+
     return (
       <div className="M_SchoolPreviewSmall">
         <div className = "main--title">
