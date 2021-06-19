@@ -1,6 +1,7 @@
 .M_CityPreviewSmall {
   width: 90%;
   margin: 0 auto;
+  margin-top: 24px;
   .main--title {
     margin-bottom: 24px;
   }
@@ -33,6 +34,7 @@
   }
 
   .M_CityPreviewSmall--block--link {
+    padding-top: 5vw;
     .M_CityPreviewSmall--block--link--img {
         margin: 0 auto;
         width: 40px;
@@ -49,6 +51,7 @@
   .M_CityPreviewSmall {
     width: 100%;
     margin: 0 auto;
+    margin-top: 24px;
     .main--title {
       margin-bottom: 24px;
       width: 90%;
@@ -74,8 +77,6 @@
 
 @media (max-width: 768px) {
   .M_CityPreviewSmall {
-    width: 100%;
-    margin: 0 auto;
     .main--title {
       margin-bottom: 24px;
       width: 96%;
@@ -104,6 +105,9 @@
   .M_CityPreviewSmall {
     .main--title {
       width: 90%;
+    }
+    .M_CityPreviewSmall--block--link {
+      padding-top: 18vw;
     }
   }
 }
