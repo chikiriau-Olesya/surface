@@ -1,10 +1,24 @@
 <%= form_with(model: [@post, @post.coments.build]) do |f| %>
-  <div class="coment-form">
+
+<div class="coment-form">
 
      <%= react_component 'A_Avatar', { user: current_user }, class: 'avatar--default-small' %>
       <%= f.text_area :body, class: 'form-control', placeholder: 'Новый комментарий'%>
+
+    <div class="coment-additions">
+      <%= react_component 'A_ShakaBtn' %>
+
+      <div class="coment-input--image">
+        <%= f.file_field :image,
+        class: 'btn',
+        style: "opacity: 0" %>
+      </div>
+
+
       <div class = "coment-send">
        <%= f.submit ' ', class: 'btn btn--icons' %>
       </div>
-  </div>
+
+    </div>
+</div>
 <% end %>

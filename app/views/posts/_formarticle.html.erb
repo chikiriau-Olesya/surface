@@ -1,6 +1,5 @@
-
 <%= form_with(model: post, local: true) do |form| %>
-  <%= react_component 'O_PostForm', {post: @post, categories: @categories} %>
+  <%#= react_component 'O_PostForm', {post: @post, categories: @categories} %>
   <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -12,51 +11,72 @@
       </ul>
     </div>
   <% end %>
+  <div class="post-form">
+    <h3 class = " A_H3 A_H3--black">Новая публикация</h3>
+    <div class="form-wrapper">
+      <div>
+        <%= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
+        <div class="input--image">
+          <p>выберите обложку</p>
+        <%= form.file_field :image,
+        class: 'btn btn--icons',
+        style: "opacity: 0"
+         %>
+        </div>
+      </div>
 
-<div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+      <div class="form--item">
+        <%= form.label 'Заголовок', class: 'input--label' %>
+        <%= form.text_field :title,
+        placeholder: 'О чем ваш пост?',
+        class: 'input'%>
+      </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
 
-<div>
-  	<%= form.label :image %>
-    <%= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
-  	<%= form.file_field :image %>
-  </div>
+      <div class="form--item">
+      	<%= form.label 'Автор', class: 'input--label'%>
+      	<%= form.text_field :author,
+        placeholder: '@surface',
+        class: 'input'%>
+      </div>
 
-<div class="field">
-    	<%= form.label :author %>
-    	<%= form.text_field :author, placeholder: 'name'%>
+      <div class="form--cat-tag">
+        <div class="form--item">
+          <%= form.label 'Категория', class: 'input--label' %>
+          <%= form.select :category_id, Category.pluck(:name, :id),
+          class: 'select' %>
+          <%= form.hidden_field :post_type_id, value: post.post_type.id ,
+          class: 'input'  %>
+        </div>
+
+        <div class="form--item">
+          <%= form.label 'Теги', class: 'input--label'%>
+          <%= form.text_field :tagline,
+          placeholder: '#камчатка',
+          class: 'input'  %>
+        </div>
+      </div>
+
+
+      <div class="form--item">
+        <%= form.label 'Тема для обсуждения', class: 'input--label' %>
+        <%= form.text_field :topic,
+        placeholder: 'Сапсерфинг',
+        class: 'input' %>
+      </div>
+
+
+      <div class="form--item">
+        <%= form.label 'Контент', class: 'input--label'%>
+        <%= form.cktext_area :content,
+        placeholder: 'Текст про удивительный серфинг',
+        class: 'input' %>
+      </div>
+
+      <div class="form-submit">
+        <%= form.submit 'Создать публикацию' , class: 'btn btn--main'%>
+      </div>
+
     </div>
-
-
-<div class="field">
-    <%= form.label :content %>
-    <%= form.cktext_area :content %>
-  </div>
-
-<div class="field">
-    <%= form.label :tagline %>
-    <%= form.text_field :tagline %>
-  </div>
-
- <div class="field">
-    <%= form.label :category_id %>
-    <%= form.select :category_id, Category.pluck(:name, :id) %>
-    <%= form.hidden_field :post_type_id, value: post.post_type.id %>
-  </div>
-
- <div class="field">
-    <%= form.label :topic %>
-    <%= form.text_field :topic %>
-  </div>
-
-<div class="actions">
-    <%= form.submit %>
   </div>
 <% end %>

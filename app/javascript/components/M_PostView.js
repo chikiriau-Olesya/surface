@@ -9,6 +9,7 @@ import A_PostDate from "./A_PostDate.js"
 import A_Textblock from './A_Textblock.js'
 import A_PicView from "./A_PicView.js"
 import M_ComentForm from "./M_ComentForm.js"
+import A_PostContent from "./A_PostContent.js"
 
 class M_PostView extends React.Component {
   render() {
@@ -64,12 +65,9 @@ class M_PostView extends React.Component {
                 content = {this.props.post.title}>
               </A_H2>
 
-              <A_Textblock className="post-text"
-                textStyle = 'text--grey'
-                textSize = 'text--body'>
-                {`${this.props.post.content}`}
-              </A_Textblock>
-
+              <A_PostContent className="post-text"
+              text = {this.props.post.content}
+                />
             </div>
           </div>
 

@@ -8,12 +8,12 @@ import A_H3 from "./A_H3.js"
 import A_Link from "./A_Link.js"
 import A_CategoryPreview from "./A_CategoryPreview.js"
 import M_PostPreview from "./M_PostPreview.js"
-import 'stylesheets/O_Posts_Ending.scss'
+import 'stylesheets/O_PostsEnding.scss'
 import Play from 'images/playBtn.svg'
 
 
 
-class O_Posts_Ending extends React.Component {
+class O_PostsEnding extends React.Component {
   render() {
 
     let category = '';
@@ -37,13 +37,14 @@ class O_Posts_Ending extends React.Component {
         </div>
         <div className='post--list'>
            {this.props.posts.splice(-2, 2).map(post => (
-             <div className="post-item">
+             <a href={"/posts/" + `${post.id}`}
+             key={post.id} className="post-item">
                <M_PostPreview
                key = {post.id}
                post = {post}
                category = {post.category}
                />
-             </div>
+             </a>
            ))}
         </div>
       </div>
@@ -52,4 +53,4 @@ class O_Posts_Ending extends React.Component {
 }
 
 
-export default O_Posts_Ending
+export default O_PostsEnding

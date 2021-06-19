@@ -1,6 +1,6 @@
 :root{
   --sunset: #2763BD;
-  --hover: #437ACD;
+  // --hover: #437ACD;
   --pressed: #1B4D97;
   --disabled: #9F9F9F;
 }
@@ -31,6 +31,10 @@
   img{
     display: none;
   }
+}
+.btn--secondary:hover{
+  background-color: transparent;
+  color: var(--color-light-sunset);
 }
 
 .btn--admin--white{

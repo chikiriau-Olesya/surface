@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import 'stylesheets/O_AdminPosts.scss'
 import A_Link from './A_Link.js'
 import A_Icon from './A_Icon.js'
-import O_Posts_Preview from './O_Posts_Preview.js'
+import O_PostsPreview from './O_PostsPreview.js'
 import A_Btn from './A_Btn.js'
 import A_H3 from './A_H3.js'
 import A_Textblock from './A_Textblock.js'
@@ -36,7 +36,7 @@ class O_AdminPosts extends React.Component {
           </a>
         </div>
         <div className="admin-posts">
-          <O_Posts_Preview posts={this.props.posts}/>
+          <O_PostsPreview posts={this.props.posts}/>
           <M_FunctionList/>
         </div>
       </div>
