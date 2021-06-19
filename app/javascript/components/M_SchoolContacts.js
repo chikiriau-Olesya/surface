@@ -6,6 +6,7 @@ import A_Link from "./A_Link.js"
 import InstaSmall from 'images/insta_icon_small.svg'
 import FbSmall from 'images/fb_icon_small.svg'
 import TgSmall from 'images/tg_icon_small.svg'
+import 'stylesheets/M_SchoolContacts.scss'
 
 
 class M_SchoolContacts extends React.Component {

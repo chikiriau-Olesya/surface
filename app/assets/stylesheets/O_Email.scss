@@ -1,0 +1,75 @@
+.O_Email {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 72px;
+  margin-bottom: 72px;
+  background-color: var(--color-sunset);
+  border-radius: 16px;
+  display: flex;
+}
+
+
+.O_Email--main {
+  padding: 5vw 6vw 5vw 56px;
+  background-color: var(--color-sea-foam);
+  border-radius: 16px 160px 160px 16px;
+  .O_Email--main--text {
+    width: 70%;
+    margin-bottom: 48px;
+    h3 {
+      font-size: 32px;
+      line-height: 120%;
+      font-weight: 500;
+      color: var(--color-sunset);
+      margin-bottom: 24px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 130%;
+      color: var(--color-sunset);
+    }
+  }
+}
+
+.O_Email--block {
+  margin: 0 auto;
+  margin-top: 5.38vw;
+}
+
+.O_Email--block-img {
+    background-image: url(image-path('U-icon.svg'));
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media (max-width: 1024px) {
+  .O_Email--block {
+    padding: 9vw;
+    margin: 0 auto;
+    .O_Email--main--text {
+      h3 {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 428px) {
+  .O_Email {
+    margin-top: 48px;
+  }
+  .O_Email--main {
+    padding: 12vw 6vw;
+
+    .O_Email--main--text {
+      width: 80%;
+    }
+  }
+  .O_Email--block {
+    display: none;
+  }
+}

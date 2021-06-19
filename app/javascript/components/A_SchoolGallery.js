@@ -6,7 +6,10 @@ const A_SchoolGallery = ({
 gallery
 }) => {
     return (
-      <div className="A_SchoolGallery" dangerouslySetInnerHTML={{__html: `${gallery}` }}></div>
+      <div className="A_SchoolGallery">
+        <div className="A_SchoolGallery--arrow">скролл ⟶</div>
+        <div className="A_SchoolGallery--block" dangerouslySetInnerHTML={{__html: `${gallery}` }}></div>
+      </div>
     );
 }
 

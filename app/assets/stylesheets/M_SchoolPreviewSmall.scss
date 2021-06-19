@@ -23,5 +23,63 @@
     border-radius: 16px;
   }
 
+}
 
+@media (max-width: 1024px) {
+  .M_SchoolPreviewSmall {
+    .M_SchoolPreviewSmall--blocks {
+      overflow-x: scroll;
+    }
+    .school_block__small {
+      width: 41vw;
+      margin-right: 24px;
+    }
+    .school_block_img__small {
+      width: 41vw;
+      height: 28vw;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .M_SchoolPreviewSmall {
+    width: 100%;
+    .main--title {
+      width: 96%;
+      margin: 0 auto;
+    }
+    .school_block__small:first-of-type {
+      margin-left: 16px;
+    }
+  }
+}
+
+
+@media (max-width: 428px) {
+  .M_SchoolPreviewSmall {
+    width: 100%;
+    .M_SchoolPreviewSmall--blocks {
+      overflow-x: hidden;
+      flex-direction: column;
+    }
+    .main--title {
+      width: 90%;
+      margin: 0 auto;
+    }
+    .school_block__small {
+      width: auto;
+      margin: 0 auto;
+      margin-bottom: 32px;
+      width: 90%;
+      filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.1));
+    }
+    .school_block__small:first-of-type {
+      margin: 0 auto;
+      margin-bottom: 32px;
+    }
+    .school_block_img__small {
+      width: 90vw;
+      height: 45vw;
+    }
+  }
 }

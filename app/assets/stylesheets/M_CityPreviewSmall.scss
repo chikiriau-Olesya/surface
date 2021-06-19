@@ -1,6 +1,7 @@
 .M_CityPreviewSmall {
   width: 90%;
   margin: 0 auto;
+  margin-top: 24px;
   .main--title {
     margin-bottom: 24px;
   }
@@ -33,6 +34,7 @@
   }
 
   .M_CityPreviewSmall--block--link {
+    padding-top: 5vw;
     .M_CityPreviewSmall--block--link--img {
         margin: 0 auto;
         width: 40px;
@@ -41,6 +43,71 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-image: url('.././images/arrow-round.svg');
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .M_CityPreviewSmall {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 24px;
+    .main--title {
+      margin-bottom: 24px;
+      width: 90%;
+      margin: 0 auto;
+    }
+    .M_CityPreviewSmall--block {
+      display: flex;
+      overflow-x: scroll;
+    }
+    .M_CityPreviewSmall--block--item {
+      margin-right: 24px;
+      &:first-of-type {
+        margin-left: 4.8vw;
+      }
+    }
+    .M_CityPreviewSmall--block--link {
+      margin-right: 4.8vw;
+      padding-top: 16px;
+    }
+
+  }
+}
+
+@media (max-width: 768px) {
+  .M_CityPreviewSmall {
+    .main--title {
+      margin-bottom: 24px;
+      width: 96%;
+      margin: 0 auto;
+    }
+    .M_CityPreviewSmall--block {
+      display: flex;
+      overflow-x: scroll;
+    }
+    .M_CityPreviewSmall--block--item {
+      margin-right: 24px;
+      &:first-of-type {
+        margin-left: 4.8vw;
+      }
+    }
+    .M_CityPreviewSmall--block--link {
+      span {
+        display: none;
+      }
+    }
+
+  }
+}
+
+@media (max-width: 560px) {
+  .M_CityPreviewSmall {
+    .main--title {
+      width: 90%;
+    }
+    .M_CityPreviewSmall--block--link {
+      padding-top: 18vw;
     }
   }
 }

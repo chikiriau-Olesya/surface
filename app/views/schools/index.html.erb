@@ -1,5 +1,4 @@
 <p id="notice"><%= notice %></p>
-
 <% set_meta_tags title: 'Школы', description: 'Серфшколы России'%>
 <% set_meta_tags og: {
     title: ['Школы']
@@ -11,12 +10,7 @@
 	</p>
 </div>
 
-<!-- <div class="">
-  	<% @schools.each do |school| %>
-      Серфшколы в <%#= school.city.name %>
-  	<% end %>
-</div> -->
-
+<%#= City.where(id:2).select("city_name") %>
 
 <!-- <div class="">
   Серфшколы в <%#= @city.name %>
@@ -40,7 +34,7 @@
 
 	</div>
 	<div class="school-page_item school-page_item-map">
-			<%= react_component 'M_MainMap', {school: @school, schools: @schools, city: @cities } %>
+			<%= react_component 'M_MainMap', {school: @school, schools: @schools, cities: @cities,  city: @city } %>
 	</div>
 </div>
 

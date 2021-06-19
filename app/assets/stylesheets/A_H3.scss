@@ -16,3 +16,16 @@
 .A_H3--grey {
   color: var(--color-grey);
 }
+
+
+@media (max-width: 1024px) {
+  .A_H3 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .A_H3 {
+  
+  }
+}

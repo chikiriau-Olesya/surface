@@ -1,13 +1,15 @@
 .M_SchoolBanner {
-  // background-image: url(image-path('M_SchoolBanner.svg'));
-  // background-repeat: no-repeat;
-  // background-position: center;
-  // background-size: cover;
   background-color: var(--color-black);
   text-align: center;
-  width: 90%;
-  margin: 0 0px;
+  width: 88%;
+  margin: 0 auto;
   border-radius: 98px;
-  padding: 40px 40px 60px 40px;
+  padding: 32px 40px 32px 40px;
 
+}
+
+@media (max-width: 428px) {
+  .M_SchoolBanner {
+    padding: 24px 16px 24px 16px;
+  }
 }

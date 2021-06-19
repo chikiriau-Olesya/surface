@@ -1,42 +1,43 @@
-.link{
+.link {
   color: var(--color-sunset);
   font-family: "Raleway", sans-serif;
   font-weight: 500;
   text-decoration: none;
   font-size: 16px;
 }
-.link:hover{
+.link:hover {
   text-decoration: underline;
 }
 
 
-.link--blue{
+.link--blue {
   color: var(--color-sunset);
 }
-.link--blue:hover{
-  color: var(--color-light-sunset);
+.link--blue:hover {
+  color: var(--color-black-sand);
+  text-decoration: none;
 }
 .link--blue:visited {
-  color: var(--color-night);
+  color: var(--color-black-sand);
 }
 
 
-.link--black{
+.link--black {
   color: var(--color-black-sand);
   text-transform: none;
   font-weight: 500;
 }
-.link--black:hover{
+.link--black:hover {
   color: var(--color-light-grey);
   text-decoration: none;
 }
 
-.link--grey{
+.link--grey {
   color: var(--color-light-grey);
   text-transform: none;
   font-weight: 500;
 }
-.link--grey:hover{
+.link--grey:hover {
   color: var(--color-grey);
   text-decoration: none;
 }

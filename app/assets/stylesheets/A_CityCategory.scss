@@ -7,3 +7,43 @@
     padding: 7vw 2vw;
   }
 }
+
+
+@media (max-width: 1024px) {
+  .A_CityCategory {
+    width: 20vw;
+    height: 12vw;
+    h4 {
+      padding: 4.2vw 0vw;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .A_CityCategory {
+    width: 26vw;
+    h4 {
+      padding: 4vw 0vw;
+    }
+  }
+}
+
+@media (max-width: 560px) {
+  .A_CityCategory {
+    width: 40vw;
+    height: 24vw;
+    h4 {
+      padding: 9vw 0vw;
+    }
+  }
+}
+
+@media (max-width: 428px) {
+  .A_CityCategory {
+    width: 45vw;
+    height: 50vw;
+    h4 {
+      padding: 21vw 0vw;
+    }
+  }
+}
