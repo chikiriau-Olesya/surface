@@ -26,7 +26,6 @@ class O_PostsPreview extends React.Component {
            {this.props.posts.map(post => (
              <div
              key={post.id}
-             // className="post-item"
              >
                <M_PostPreview
                key = {post.id}

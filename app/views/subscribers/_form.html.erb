@@ -7,8 +7,10 @@
     <div class="O_Email--main--form">
       <% @subscriber = Subscriber.new %>
       <%= form_for @subscriber do |f| %>
-        <%= f.email_field :email, placeholder: "Ваш Email" %>
-        <%= f.submit "Подписаться!" %>
+      <%= f.email_field :email, autofocus: true,
+        class: 'input input--sub',
+        autocomplete: "email" %>
+      <%= f.submit "Подписаться!", class: 'btn btn--main' %>
       <% end %>
     </div>
   </div>
