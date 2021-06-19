@@ -232,3 +232,9 @@ div.actions {
 
 label {
   display: block; }
+
+:focus-visible {
+  border-radius: 8px;
+  border-color: #ACC7EF;
+  outline: 4px #ACC7EF;
+}

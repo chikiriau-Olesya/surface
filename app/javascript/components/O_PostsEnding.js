@@ -36,7 +36,7 @@ class O_PostsEnding extends React.Component {
             />
         </div>
         <div className='post--list'>
-           {this.props.posts.splice(-2, 2).map(post => (
+           {this.props.posts.splice(-3, 3).map(post => (
              <a href={"/posts/" + `${post.id}`}
              key={post.id} className="post-item">
                <M_PostPreview

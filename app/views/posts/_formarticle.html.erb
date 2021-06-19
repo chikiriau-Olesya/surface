@@ -17,30 +17,14 @@
       <div>
         <%= link_to(image_tag(@post.image.thumb.url, alt: 'Image'), @post.image.url, target: '_blank') if @post.image? %>
         <div class="input--image">
-          <p>выберите обложку</p>
-        <%= form.file_field :image,
-        class: 'btn btn--icons',
-        style: "opacity: 0"
-         %>
+          <%= form.file_field :image,
+          class: 'btn btn--icons',
+          style: "opacity: 0"
+           %>
         </div>
       </div>
 
-      <div class="form--item">
-        <%= form.label 'Заголовок', class: 'input--label' %>
-        <%= form.text_field :title,
-        placeholder: 'О чем ваш пост?',
-        class: 'input'%>
-      </div>
-
-
-      <div class="form--item">
-      	<%= form.label 'Автор', class: 'input--label'%>
-      	<%= form.text_field :author,
-        placeholder: '@surface',
-        class: 'input'%>
-      </div>
-
-      <div class="form--cat-tag">
+      <div class="form--block">
         <div class="form--item">
           <%= form.label 'Категория', class: 'input--label' %>
           <%= form.select :category_id, Category.pluck(:name, :id),
@@ -50,33 +34,45 @@
         </div>
 
         <div class="form--item">
-          <%= form.label 'Теги', class: 'input--label'%>
-          <%= form.text_field :tagline,
-          placeholder: '#камчатка',
-          class: 'input'  %>
+          <%= form.label 'Автор', class: 'input--label'%>
+          <%= form.text_field :author,
+          placeholder: 'автор поста',
+          class: 'input' %>
         </div>
       </div>
 
-
-      <div class="form--item">
-        <%= form.label 'Тема для обсуждения', class: 'input--label' %>
-        <%= form.text_field :topic,
-        placeholder: 'Сапсерфинг',
-        class: 'input' %>
+      <div class="form--item form--item--title">
+        <%= form.label 'Заголовок', class: 'input--label' %>
+        <%= form.text_field :title,
+        placeholder: 'Заголовок поста',
+        class: 'input'%>
       </div>
 
-
       <div class="form--item">
-        <%= form.label 'Контент', class: 'input--label'%>
         <%= form.cktext_area :content,
         placeholder: 'Текст про удивительный серфинг',
         class: 'input' %>
       </div>
 
+      <div class="form--block">
+        <div class="form--item">
+          <%= form.label 'Теги', class: 'input--label'%>
+          <%= form.text_field :tagline,
+          placeholder: 'Например, #камчатка',
+          class: 'input'  %>
+        </div>
+
+        <div class="form--item">
+          <%= form.label 'Тема для обсуждения', class: 'input--label' %>
+          <%= form.text_field :topic,
+          placeholder: 'Например, где лучше посерфить?',
+          class: 'input' %>
+        </div>
+      </div>
+
       <div class="form-submit">
         <%= form.submit 'Создать публикацию' , class: 'btn btn--main'%>
       </div>
-
     </div>
   </div>
 <% end %>
