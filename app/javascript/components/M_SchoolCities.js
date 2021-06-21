@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import A_Textblock from './A_Textblock.js'
 import A_Heading from './A_Heading.js'
-import 'stylesheets/M_SchoolCities.scss'
+// import 'stylesheets/M_SchoolCities.scss'
 
 class M_SchoolCities extends React.Component {
   render() {
