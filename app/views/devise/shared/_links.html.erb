@@ -3,11 +3,13 @@
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Войти", new_registration_path(resource_name) %> <br>
+<span>У вас ещё нет аккаунта?</span>
+<%= link_to "Зарегистироваться", new_registration_path(resource_name) %> <br>
 <% end %>
 
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Зарегистироваться", new_session_path(resource_name) %>
+<span>Уже есть аккаунт?</span>
+  <%= link_to "Войти", new_session_path(resource_name) %>
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>

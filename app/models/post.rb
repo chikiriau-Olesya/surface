@@ -1,13 +1,13 @@
-		require 'elasticsearch/model'
+		# require 'elasticsearch/model'
 class Post < ApplicationRecord
 
 	# scope :filter_by_user, -> (user) { where user: user }
 	scope :filter_by_category, -> (category) { where category: category }
 	scope :filter_by_starts_with, -> (title) { where("title like ?", "%#{title}%")}
-	
-		searchkick
-		include Elasticsearch::Model
-		include Elasticsearch::Model::Callbacks
+
+		# searchkick
+		# include Elasticsearch::Model
+		# include Elasticsearch::Model::Callbacks
 
 		# validates :name, :presence => true
 		validates :content, :presence => true,
