@@ -1,8 +1,8 @@
-
 .coments-section{
   padding-top: 90px;
   width: 90%;
-  margin: 0 auto;
+  margin-left: 176px;
+  margin-bottom: 80px;
 }
 .comments-topic-block{
   margin-top: 2vw;
@@ -17,4 +17,32 @@
 
 .post-coments{
   margin-top: 40px;
+}
+
+
+@media (max-width: 768px) {
+  .coments-section{
+    margin-left: 94px;
+    margin-bottom: 48px;
+    padding-top: 52px;
+  }
+}
+
+@media (max-width: 428px) {
+  .post-view {
+    .post-inner-banner {
+      height: 94vw;
+    }
+  }
+  .coments-section{
+    margin-left: 16px;
+    margin-bottom: 56px;
+    padding-top:64px;
+  }
+
+  .comments-topic-block{
+    .comments-author-topic{
+      margin-left: 8px;
+    }
+  }
 }

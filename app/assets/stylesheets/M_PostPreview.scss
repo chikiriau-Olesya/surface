@@ -37,10 +37,17 @@
     .post-preview__banner{
       height: 26vw;
     }
+    .post-preview-cat{
+      padding: 21vw 1vw 0 1vw;
+    }
+
   }
 
   @media (max-width: 428px) {
     .post-preview__banner{
       height: 64vw;
+    }
+    .post-preview-cat{
+      padding: 54vw 2vw 0 2vw;
     }
   }

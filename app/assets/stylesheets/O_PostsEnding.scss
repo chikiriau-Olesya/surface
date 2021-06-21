@@ -15,7 +15,7 @@
 
 @media (max-width: 768px) {
   .final-posts{
-    margin-top: 90px;
+    margin-top: 60px;
   }
   .post--list {
     grid-template-columns: 1fr 1fr;
@@ -25,6 +25,18 @@
 @media (max-width: 428px) {
   .final-posts{
     margin-top: 64px;
+  }
+  .all-posts--heading{
+    justify-content: flex-start;
+    h3{
+      font-size: 18px;
+      line-height: 21px;
+      width: 260px;
+    }
+    a{
+      font-size: 14px;
+      width: 100px;
+    }
   }
   .post--list {
     grid-template-columns: 1fr;

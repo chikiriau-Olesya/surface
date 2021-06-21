@@ -17,13 +17,31 @@ class M_CategoryMenu extends React.Component {
    }
 
   render() {
-    let btn_class = this.state.black ? "blackButton" : "whiteButton";
+
+    // let categStyle = '';
+    // const getAddress = window.location.pathname;
+    //
+    // if (getAddress == `/posts?category=${category.id}`) {
+    //   categStyle = {
+    //     backgroundColor: "#101010",
+    //     color: "#fff"
+    //   };
+    // }  else {
+    //   categStyle = {
+    //     backgroundColor: "#EEF2F6",
+    //     color: "#000"
+    //   };
+    // }
+
+    // let btn_class = this.state.black ? "blackButton" : "whiteButton";
+
     return (
       <div className="all-cats">
         <a href={`/posts`} className="category">Все</a>
         {this.props.categories.map(category => (
           <div key={category.id}>
-              <a href={`/posts?category=${category.id}`} className="category">
+              <a href={`/posts?category=${category.id}`}
+               className="category">
               {`${category.name}`}
               </a>
           </div>

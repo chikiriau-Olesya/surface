@@ -2,13 +2,13 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
   textarea{
+    font-family: 'Raleway', sans-serif;
     background-color: #EEF2F6;
     border-radius: 16px;
     border: none;
-    padding: 1vw 0 0 1vw;
-    width: 600px;
+    padding: 12px 0 12px 16px;
+    width: 42vw;
     max-height: 40px;
     margin-left: 1vw;
   }
@@ -22,8 +22,9 @@
 .coment-additions{
 display: flex;
 flex-direction: row;
-align-items: flex-start;
-justify-content: space-around;
+z-index: 10;
+margin-left: -8vw;
+align-items: baseline;
   .coment-input--image{
   background-color: transparent;
   background-image: url(/assets/commentPic.svg);
@@ -31,8 +32,7 @@ justify-content: space-around;
   border: none;
     .btn{
       width: 10px;
-      padding-right: 0;
-      padding-bottom: 0;
+      padding: 10px 0 0 16px;
     }
   }
 }
@@ -42,6 +42,7 @@ justify-content: space-around;
     background-repeat: no-repeat;
     background-color: transparent;
     border-radius: 0;
+    padding-bottom: 0;
   }
   .btn:disabled{
     background-color: transparent;
@@ -53,12 +54,74 @@ justify-content: space-around;
     background-color: transparent;
   }
 }
+.coment-reply{
+  margin-left: 48px;
+}
 
 
 
+.all-coments{
+  margin: 56px 0 16px 0;
+}
+.coment-actions{
+  display: flex;
+  margin-top: 16px;
+}
+.coment-reply-link{
+  a{
+  font-size: 14px;
+  color: var(--color-light-grey);
+  }
+}
+
+.coment-reply-link:nth-of-type(2){
+  margin-left: 32px;
+}
+
+.coment-body{
+  margin-top: 8px;
+}
 
 
 .coment-line{
   display: flex;
   flex-direction: row;
+  align-items: center;
+  h3{
+    margin-left: 16px;
+  }
+}
+
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 428px) {
+ .my-coment-avatar{
+   display: none;
+ }
+ .coment-form{
+   textarea{
+     max-height: 16px;
+     width: 343px;
+     margin-left: 0;
+   }
+   .coment-additions{
+   margin-left: -26vw;
+   }
+ }
+ .post-coments{
+   margin: 30px 0 56px 0;
+ }
+ .coment-body{
+   p{
+     font-size: 16px;
+     font-weight: 400;
+   }
+ }
+ .coment-line{
+   h3{
+     margin-left: 8px;
+   }
+ }
 }

@@ -1,27 +1,40 @@
 <div class="card ml-5">
-  <div class="card-body">
-    <div>
-      <% if reply.user_id %>
-        <%= react_component 'A_Avatar', { user: current_user }, class: 'avatar--default-small' if reply.user.image? %>
-      <% end %>
+  <div class="coment-reply">
+      <div class="coment-line">
+        <% if reply.user_id %>
+          <%= react_component 'A_Avatar', { user: current_user }, class: 'avatar--default-small' if reply.user.image? %>
+        <% end %>
+        <h3 class="A_H5 A_H5--black">
+          <%= User.find(reply.user_id).username %>
+        </h3>
+      </div>
 
-      <%= User.find(reply.user_id).username %>
-    </div>
-    <%= reply.body %>
-    <%= link_to 'Ответить', new_post_coment_path(@post, parent_id: reply.id), remote: true, class: 'd-block' %>
-    <% if user_signed_in? && current_user.id == reply.user_id  %>
-      <p>
-      <%# <%= link_to 'Destroy Comment', [reply.post, reply],
-                 :confirm => 'Are you sure?',
-                 :method => :delete %>
-       <%= link_to 'Удалить', reply, method: :delete, data: { confirm: 'Вы уверены, что хотите удалить комментарий?' } %>
-      </p>
-    <% end %>
+
+      <div class="coment-body">
+        <p class="textblock text--subbody">
+          <%= reply.body %>
+        </p>
+      </div>
+
+      <div class="coment-actions">
+        <div class="coment-reply-link">
+          <%= link_to 'Ответить', new_post_coment_path(@post, parent_id: reply.id), remote: true, class: 'd-block' %>
+        </div>
+
+        <div class="coment-reply-link">
+          <% if user_signed_in? && current_user.id == reply.user_id  %>
+           <%= link_to 'Удалить', reply, method: :delete, data: { confirm: 'Вы уверены, что хотите удалить комментарий?' } %>
+          <% end %>
+        </div>
+      </div>
+
   </div>
 </div>
-<% if reply.replies.any? %>
-  <% reply.replies.each do |reply| %>
-    <%= render partial: 'coments/reply', locals: { reply: reply } %>
-  <% end %>
-<% end %>
-<div id="reply-form-<%= reply.id %>"></div>
+  <div class="all-coments-replies">
+    <% if reply.replies.any? %>
+      <% reply.replies.each do |reply| %>
+        <%= render partial: 'coments/reply', locals: { reply: reply } %>
+      <% end %>
+    <% end %>
+    <div id="reply-form-<%= reply.id %>"></div>
+  </div>

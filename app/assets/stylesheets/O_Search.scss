@@ -1,0 +1,32 @@
+.search-page{
+  margin-top: 178px;
+  margin-bottom: 178px;
+}
+.search-form{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 15vw 15vw 2vw 15vw;
+}
+.search-image{
+margin-left: -3vw;
+background-color: transparent;
+background-image: url(/assets/search_icon.svg);
+background-repeat: no-repeat;
+border: none;
+  .btn{
+    width: 30px;
+    padding-top: 0.5vw;
+    padding-right: 0;
+    padding-bottom: 0;
+    background-color: transparent;
+  }
+  .btn:hover{
+    background-color: transparent;
+  }
+}
+
+.search-hashtags{
+  margin: 1vw 15vw 2vw 15vw;
+
+}

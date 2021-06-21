@@ -10,7 +10,7 @@
 
       <div class="activity--inPost">
         <div class="liking">
-          <%== react_component 'A_Likes', { post: @post, likes: @post.likes, current_user_id: current_user.id } %>
+          <%= react_component 'A_Likes', { post: @post, likes: @post.likes, current_user_id: current_user.id } %>
         </div>
 
         <div class="favs">
@@ -47,12 +47,15 @@
     <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
     <% end %>
 
-    <%= render @post.coments %>
+    <div class="show-all-coments">
+      <%= render @post.coments %>
+    </div>
+  </div>
+</div>
 
     <%= react_component 'M_AuthorQuestion' %>
     <%= react_component 'O_PostsEnding', { posts: @posts, post: @post, categories: @categories, category: @category } %>
-  </div>
-</div>
+    <%= react_component 'M_SchoolPreviewSmall', {surftypes: @surftypes, surftype: @surftype, school: @school, schools: @schools } %>
 
 <table>
     <tbody>
@@ -88,7 +91,7 @@
   				<td>
             <div class="activity--inPost">
               <div class="liking">
-                <%== react_component 'A_Likes', { post: @post, likes: @post.likes, current_user_id: current_user.id } %>
+                <%= react_component 'A_Likes', { post: @post, likes: @post.likes, current_user_id: current_user.id } %>
               </div>
 
               <div class="favs">

@@ -8,7 +8,7 @@ class A_PostTopic extends React.Component {
 
       return (
         <div className="post-topic">
-        <A_H5 className = 'heading--black'
+        <A_H5 color="A_H5--black"
           content = {this.props.post.topic}>
         </A_H5>
        </div>

@@ -21,7 +21,7 @@
       font-size: 15px;
       color: #9a9a9a;
       font-weight: 400;
-      padding: 0.4vw;
+      padding: 4px;
     }
   }
   .fav{
@@ -32,7 +32,7 @@
       font-size: 15px;
       color: #9a9a9a;
       font-weight: 400;
-      padding: 0.4vw;
+      padding: 4px;
     }
   }
 }
@@ -43,8 +43,36 @@
 }
 
 .media-share{
-  margin-top: 1vw;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
   a{
-    margin-right: 1vw;
+    margin-right: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .post-final-items {
+    padding: 3vw 7vw;
+  }
+  .media-share{
+    a{
+      margin-right: 20px;
+    }
+  }
+}
+
+@media (max-width: 428px) {
+  .post-final-items {
+    padding: 24px 24px;
+    span{
+      font-size: 18px;
+    }
+  }
+
+  .activity--inPost{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }

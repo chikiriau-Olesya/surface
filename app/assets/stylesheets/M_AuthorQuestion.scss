@@ -18,3 +18,23 @@
 .M_AuthorQuestion-more {
   margin-top: 64px;
 }
+@media (max-width: 768px) {
+  .M_AuthorQuestion-wrapper {
+    padding: 5vw 14vw 5vw 7vw;
+  }
+  .M_AuthorQuestion-more {
+    margin-top: 48px;
+  }
+}
+
+@media (max-width: 428px) {
+  .M_AuthorQuestion-wrapper {
+    padding: 5vw 10vw 5vw 7vw;
+    h3{
+      line-height: 28px;
+    }
+  }
+  .M_AuthorQuestion-more {
+    margin-top: 56px;
+  }
+}

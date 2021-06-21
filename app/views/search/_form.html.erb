@@ -6,8 +6,16 @@
 <%# end %>
 
 <%= form_tag posts_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :starts_with, params[:starts_with] %>
-    <%= submit_tag "Search", :name => nil %>
-  </p>
+<div class="search-form">
+
+    <div>
+      <%= text_field_tag :starts_with, params[:starts_with], class: 'input input--search', placeholder: 'Что такое серфинг' %>
+    </div>
+
+    <div class="search-image">
+      <%= submit_tag "", :name => nil, class: 'btn' %>
+    </div>
+
+</div>
+
 <% end %>

@@ -2,11 +2,17 @@
 
 <div class="coment-form">
 
+    <div class="my-coment-avatar">
      <%= react_component 'A_Avatar', { user: current_user }, class: 'avatar--default-small' %>
+    </div>
       <%= f.text_area :body, class: 'form-control', placeholder: 'Новый комментарий'%>
+      <%= f.hidden_field :body %>
 
     <div class="coment-additions">
-      <%= react_component 'A_ShakaBtn' %>
+
+      <div class="coment-shaka">
+        <%= react_component 'A_ShakaBtn'%>
+     </div>
 
       <div class="coment-input--image">
         <%= f.file_field :image,
@@ -18,7 +24,6 @@
       <div class = "coment-send">
        <%= f.submit ' ', class: 'btn btn--icons' %>
       </div>
-
     </div>
 </div>
 <% end %>

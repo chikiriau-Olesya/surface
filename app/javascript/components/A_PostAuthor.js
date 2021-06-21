@@ -7,7 +7,7 @@ class A_PostAuthor extends React.Component {
   render() {
 
       return (
-        <div className="post-topic">
+        <div className="post-author">
         <A_H4 className = 'heading--black'
           content = {this.props.post.author}>
         </A_H4>

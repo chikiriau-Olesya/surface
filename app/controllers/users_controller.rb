@@ -8,6 +8,7 @@ class UsersController < ApplicationController
      format.html  # index.html.erb
      format.json  { render :json => @users }
     end
+
    end
 
   def show
@@ -79,6 +80,7 @@ private
 
   def set_user
      @user = User.find(params[:id])
+
   end
 
   def user_params

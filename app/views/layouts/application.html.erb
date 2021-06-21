@@ -13,7 +13,6 @@
     <%= javascript_include_tag Ckeditor.cdn_url %>
   </head>
 
-
   <body>
   <% if notice %>
      <p class="notice"><%= notice %></p>
@@ -33,7 +32,10 @@
     <% end %>
   </div> -->
 
-  <%= react_component 'O_Header'%>
+
+  <% if user_signed_in?%>
+    <%= react_component 'O_Header'%>
+  <% end %>
 
     <%= yield %>
     <%= react_component 'O_Footer'%>

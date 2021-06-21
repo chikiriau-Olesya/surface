@@ -1,5 +1,7 @@
-<h1>Поиск в бескрайнем окене</h1>
-
+<div class="search-page">
   <%= render 'search/form' %>
 
-<%= react_component 'M_HashtagsList', { tag: @tag} %>
+  <div class="search-hashtags">
+    <%= react_component 'M_HashtagsList', { tag: @tag} %>
+  </div>
+</div>
