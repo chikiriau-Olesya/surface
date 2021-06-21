@@ -5,10 +5,19 @@
 @media (max-width: 428px) {
   .M_SchoolMainTitleMobile {
     display: flex;
-    width: 88%;
+    width: 100%;
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
-    margin-top: 32px;
+    margin-top: -5vw;
+    padding-top: 8vw;
+    background-color: var(--color-background-page);
+    border-radius: 24px;
+    h3 {
+      margin-left: 28px;
+    }
+    a {
+      margin-right: 24px;
+    }
   }
 }

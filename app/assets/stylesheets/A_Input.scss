@@ -1,7 +1,7 @@
 .input{
   font-family: 'Raleway', sans-serif;
   font-weight: 500;
-  border-radius: 16px;
+  border-radius: 8px;
   background-color: #fff;
   border: solid 1px var(--color-system-grey);
   padding-left: 16px;
@@ -13,7 +13,8 @@
 }
 .input:focus{
   border: solid 1px transparent;
-  border-radius: 2vw;
+  border-radius: 8px;
+  border-color: #ACC7EF;
 }
 .input + img{
   display: none;
@@ -33,13 +34,11 @@ height: 164px;
 }
 .input--image{
 background-color: var(--color-system-grey);
-background-image: url(/assets/img-placeholder.svg);
+background-image: url('/assets/img-placeholder.svg');
 background-position: center;
 background-repeat: no-repeat;
-padding: 0 400px 400px 0;
 border: none;
 border-radius: 32px;
-size: 10vw;
 }
 .input--image + img{
   display: block;

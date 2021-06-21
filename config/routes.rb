@@ -29,6 +29,7 @@ Rails.application.routes.draw do
 
 
   root 'posts#postsMain'
+  # root 'posts#index'
 
   get 'posts/index'
   get '/posts/hashtag/:name', to: 'posts#hashtags'

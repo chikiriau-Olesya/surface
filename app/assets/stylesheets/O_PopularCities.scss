@@ -1,8 +1,14 @@
+.O_PopularCities--block {
+  background-color: var(--color-background-page);
+  margin-top: -4vw;
+  border-radius: 64px;
+}
+
 .O_PopularCities {
   width: 90%;
   margin: 0 auto;
   margin-bottom: 80px;
-  margin-top: 40px;
+  padding-top: 4vw;
 
   .O_PopularCities--list {
     display: grid;

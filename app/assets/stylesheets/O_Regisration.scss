@@ -1,0 +1,55 @@
+.enter {
+  background-image: url(image_path('reg-bc.png'));
+  padding-top: 2vw;
+}
+
+.enter--wrapper {
+  background-color: var(--color-sea-foam);
+  padding: 5vw 5vw;
+  width: 40%;
+  margin: 0 auto;
+  border-radius: 72px;
+  margin-bottom: 2vw;
+
+  .enter--wrapper--block {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  h4 {
+    margin-bottom: 32px;
+  }
+}
+
+.input--email {
+  height: 24px;
+  width: 100%;
+}
+
+.form--item--email {
+  margin-bottom: 16px;
+}
+
+.btn--enter {
+  width: 100%;
+}
+
+.form--check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.form--links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  a {
+    margin-bottom: 4px;
+  }
+}
+
+.input--text--desc {
+  font-size: 12px;
+  color: var(--color-light-grey);
+}

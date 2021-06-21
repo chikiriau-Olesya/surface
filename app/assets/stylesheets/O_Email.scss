@@ -8,7 +8,6 @@
   display: flex;
 }
 
-
 .O_Email--main {
   padding: 5vw 6vw 5vw 56px;
   background-color: var(--color-sea-foam);
@@ -30,6 +29,14 @@
     }
   }
 }
+
+.O_Email--main--form {
+  .input--sub {
+    width: 20vw;
+    margin-right: 8px;
+  }
+}
+
 
 .O_Email--block {
   margin: 0 auto;
@@ -71,5 +78,15 @@
   }
   .O_Email--block {
     display: none;
+  }
+  .O_Email--main--form {
+    .input--sub {
+      width: 60vw;
+      margin-bottom: 8px;
+    }
+
+    .btn {
+      width: 84%;
+    }
   }
 }

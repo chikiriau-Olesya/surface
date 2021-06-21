@@ -28,9 +28,11 @@ class O_PostsMain extends React.Component {
              </A_H3>
           </div>
           <div className = "all-posts">
-             <div className='post-list'>
+             <div className='post--list'>
                {this.props.posts.splice(-10, 10).map(post => (
-                 <div>
+                 <div
+                 key={post.id}
+                 >
                    <M_PostPreview
                    key = {post.id}
                    post = {post}

@@ -4,7 +4,7 @@
 
 <%= react_component 'O_SchoolView', { school: @school} %>
 <%= react_component 'M_SchoolPreviewSmall', {surftypes: @surftypes, surftype: @surftype, school: @school, schools: @schools } %>
-<%= react_component 'O_Posts_Ending', { posts: @posts, post: @post, categories: @categories, category: @category } %>
+<%= react_component 'O_PostsEnding', { posts: @posts, post: @post, categories: @categories, category: @category } %>
 
 
 <%= link_to 'Edit', edit_school_path(@school) %> |
