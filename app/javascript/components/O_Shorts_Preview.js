@@ -5,7 +5,7 @@ import A_Heading from "./A_Heading.js"
 import A_Category from "./A_Category.js"
 import A_PlayBtn from "./A_PlayBtn.js"
 import M_FunctionList from "./M_FunctionList.js"
-import 'stylesheets/O_Posts.scss'
+// import 'stylesheets/O_Posts.scss'
 import Play from 'images/playBtn.svg'
 
 
