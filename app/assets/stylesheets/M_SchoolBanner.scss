@@ -1,21 +1,25 @@
 .M_SchoolBanner {
-  background-image: url('schoolMain-bc.svg');
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
   margin: 0 auto;
   width: 100%;
   height: 20vw;
+  margin-top: -2vw;
   h1 {
-    padding-top: 4vw;
+    padding-top: 6vw;
   }
 }
 
 @media (max-width: 428px) {
   .M_SchoolBanner {
-    padding: 24px 16px 24px 16px;
+    margin-top: -7vw;
+    height: 30vw;
+    padding: 4vw 0vw;
     background-position: center;
-    background-image: url('schoolMain-bc-mobile.svg');
-    background-position: center;
+    h1 {
+      text-align: center;
+      padding: 6vw;
+    }
   }
 }
