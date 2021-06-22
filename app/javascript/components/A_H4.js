@@ -5,7 +5,8 @@ import 'stylesheets/A_Heading.scss'
 
 const STYLES = [
   'A_H4--black',
-  'A_H4--white'
+  'A_H4--white',
+  'A_H4--grey'
 ]
 
 const A_H4 = ({

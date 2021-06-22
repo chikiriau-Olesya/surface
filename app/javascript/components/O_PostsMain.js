@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import M_Activity from "./M_Activity.js"
 import A_Heading from "./A_Heading.js"
-import A_H3 from "./A_H3.js"
+import A_H1 from "./A_H1.js"
 import A_Link from "./A_Link.js"
 import A_Category from "./A_Category.js"
 import A_CategoryPreview from "./A_CategoryPreview.js"
@@ -22,10 +22,10 @@ class O_PostsMain extends React.Component {
       <div className = "O_PostsMain">
         <div className = "O_PostsMain--wrapper">
           <div className = "main--title">
-            <A_H3
-            color ="A_H3--black"
+            <A_H1
+            color ="A_H1--black"
             content = "Что узнать на пляже">
-             </A_H3>
+             </A_H1>
           </div>
           <div className = "all-posts">
              <div className='post--list'>

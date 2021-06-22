@@ -8,7 +8,7 @@
 #     email: "shevoles@list.ru",
 #     username: "Олеся Шевченко",
 #     isadmin: true,
-#     encrypted_password: "123456789",
+#     password: "123456789",
 #   },
 # ]
 # users.each do |us|
