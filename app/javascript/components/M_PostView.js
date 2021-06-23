@@ -12,6 +12,7 @@ import M_ComentForm from "./M_ComentForm.js"
 import A_PostContent from "./A_PostContent.js"
 
 class M_PostView extends React.Component {
+
   render() {
 
       let myRe = new RegExp("#\\w+", "g");
@@ -26,8 +27,6 @@ class M_PostView extends React.Component {
         category = this.props.category.name
       }
       let textpart = <span>{category}</span>
-
-
 
 
       let imgsrc = '';

@@ -1,14 +1,39 @@
 <div class="card ml-5">
   <div class="card-body">
     <%= form_with(model: [@post, @coment]) do |f| %>
+    <div class="coment-form">
       <%= f.hidden_field :parent_id %>
-      <div class="form-group">
 
-        <%= f.label 'Ответить' %>
-        <%= f.text_area :body, class: 'form-control' %>
+        <div class="my-coment-avatar">
+         <%= react_component 'A_Avatar', { user: current_user }, class: 'avatar--default-small' %>
+        </div>
+        <%= f.text_area :body, class: 'form-control',
+        placeholder: 'Мой ответ' %>
+
+
+      <div class="coment-additions">
+
+          <div class="coment-shaka">
+            <%= react_component 'A_ShakaBtn'%>
+          </div>
+
+          <div class="coment-input--image">
+            <%= f.file_field :image,
+            class: 'btn',
+            style: "opacity: 0" %>
+          </div>
+
+
+          <div class = "coment-send">
+            <%= f.submit ' ', class: 'btn btn-primary' %>
+          </div>
+
       </div>
-      <%= f.submit 'Submit', class: 'btn btn-primary' %>
-      <%= link_to 'Cancel', post_path(@post), class: 'btn btn-secondary' %>
+      </div>
+      <div class="coment-reply-link">
+        <%= link_to 'Отмена', post_path(@post), class: 'd-block' %>
+      </div>
     <% end %>
+
   </div>
 </div>

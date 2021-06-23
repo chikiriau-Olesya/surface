@@ -36,11 +36,11 @@ class M_PostPreview extends React.Component {
                 categoryStyles = "default"/>
             </div>
           </div>
-              <div className="post-preview__banner__text">
+          <div className="post-preview__banner__text">
                 <A_H4 color="A_H4--black"
                   content = {this.props.post.title}>
                 </A_H4>
-              </div>
+          </div>
         </a>
 
         <div className="activity--inPost">

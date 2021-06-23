@@ -21,7 +21,7 @@ class M_SchoolPreviewSmall extends React.Component {
            </A_H3>
         </div>
         <div className="M_SchoolPreviewSmall--blocks">
-          {this.props.schools.slice(0, 3).map(school => (
+          {this.props.schools.map(school => (
             <div className= "school_block__small">
               <a href={/schools/ +`${school.id}`} key={school.id} className="">
                 <img className="school_block_img__small" src={school.image.url}/>

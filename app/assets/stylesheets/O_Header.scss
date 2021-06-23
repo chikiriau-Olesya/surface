@@ -62,3 +62,32 @@
     }
   }
 }
+
+
+
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 428px) {
+  .header-ext-inner {
+    padding: 0  56px 0 0;
+    .header-burger{
+      position: absolute;
+      padding-left: 90vw;
+    }
+  }
+.header{
+  .header--right{
+    .header--right-search{
+      display: none;
+    }
+  }
+  .header--left{
+    .header-links{
+      display: none;
+    }
+  }
+}
+}

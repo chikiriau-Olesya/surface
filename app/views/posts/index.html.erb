@@ -17,12 +17,12 @@
 
 <table>
     <tbody>
-      <% @posts.each do |post| %>
+      <%# @posts.each do |post| %>
         <tr>
 
-          <td><%= link_to '👀', post %></td>
+          <td><%#= link_to '👀', post %></td>
           <td>
-            <%= react_component 'M_PostPreview', { posts: @posts, post: @post, categories: @categories, category: @category} %>
+            <%#= react_component 'M_PostPreview', { posts: @posts, post: @post, categories: @categories, category: @category} %>
           </td>
   				<td>
   					 <%#= link_to(image_tag(post.image.thumb.url, alt: 'Image'), post.image.url, target: '_blank') if post.image? %>
@@ -65,9 +65,9 @@
 
 
   				<!-- open view to delete and edit btn for admin in blog -->
-  				<% if user_signed_in? && current_user.isadmin == true %>
+  				<%# if user_signed_in? && current_user.isadmin == true %>
           <td>
-            <%= react_component 'M_FunctionList', { post: @post} %>
+            <%#= react_component 'M_FunctionList', { post: @post} %>
           </td>
       			<td>
               <%#= link_to '🛠', edit_post_path(@post) %>
@@ -76,10 +76,10 @@
     				<td>
               <%#= link_to '🗑', post, method: :delete, data: { confirm: 'Are you sure?' } %>
             </td>
-  				<% end %>
+  				<%# end %>
 
         </tr>
-      <% end %>
+      <%# end %>
   </tbody>
 </table>
 

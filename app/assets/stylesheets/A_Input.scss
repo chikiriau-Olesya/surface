@@ -62,3 +62,13 @@ border-radius: 32px;
   padding: 2vw;
   border-radius: 50%;
 }
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 428px) {
+  .input--search{
+  width: 70vw;
+  }
+}

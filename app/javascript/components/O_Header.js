@@ -25,7 +25,7 @@ class O_Header extends React.Component {
               className="logo"
               src={Logo}/>
               </a>
-
+            
               <a href="/posts">Пляж</a>
               <a href="/schoolsMain">Школы</a>
 

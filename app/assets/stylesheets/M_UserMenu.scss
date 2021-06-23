@@ -2,7 +2,7 @@
   cursor: pointer;
 }
 .admin-actions-menu{
-  display: flex;
+display: flex;
 flex-direction: column;
 align-items: flex-end;
 position: relative;
@@ -12,15 +12,19 @@ position: relative;
     margin-left: 32px;
     position: relative;
   }
+  img:hover{
+    opacity: .6;
+    cursor: pointer;
+  }
   .admin-links{
     background-color: var(--color-sea-foam);
     padding: 16px 24px 16px 24px;
     position: absolute;
-    display: flex;
-    flex-direction: column;
+    align-items: left;
     border-radius: 16px;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
     margin-left: -150px;
+    margin-top: 40px;
     a{
       text-transform: none;
     }
@@ -28,4 +32,10 @@ position: relative;
       margin-top: 12px;
     }
   }
+}
+.admin-actions-menu .admin-links{
+  display: none;
+}
+.admin-actions-menu-active .admin-links{
+  display: block;
 }

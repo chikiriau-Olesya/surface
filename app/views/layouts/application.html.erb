@@ -20,24 +20,80 @@
      <p class="alert"><%= alert %></p>
   <% end %>
 
-<div class="top_menu">
-    <% if user_signed_in? %>
-      <%= link_to 'Account', current_user %> | <%= link_to 'Sign Out', destroy_user_session_path, method: :delete  %>
-    <% else %>
-      <%= link_to 'Sign In', new_user_session_path %> | <%= link_to 'Sign Up', new_user_registration_path %>
-    <% end %>
+<header class="header-ext">
+  <div class="header-ext-inner">
+    <div class="header-burger">
+      <%= react_component 'A_BurgerMenu'%>
+    </div>
+  <div class="header">
+    <div class="header--left">
+        <a href="/postsMain">
+          <%= image_tag "logo.svg"%>
+        </a>
 
-    <% if user_signed_in? && current_user.isadmin == true%>
-      <%= link_to "Settings", admin_path %>
-    <% end %>
+      <div class="header-links">
+        <a href="/posts">Пляж</a>
+        <a href="/schoolsMain">Школы</a>
+      </div>
+
+        <div class="header--right">
+      </div>
+
+    </div>
+    <div class="header--right">
+      <a class="header--right-search" href="/searchPage">
+        <%= image_tag "search_icon.svg"%>
+      </a>
+      <div class= "admin-actions-menu">
+        <div class="header-profile-img">
+          <%= image_tag "avatar.svg"%>
+        </div>
+        <ul class="admin-links">
+          <li>
+          <% if user_signed_in? && current_user.isadmin == true%>
+            <%= link_to "Мастерская", admin_path,
+            class: "link link--black" %>
+          <% end %>
+          </li>
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to 'Профиль', current_user,
+            class: "link link--black" %>
+          </li>
+          <li>
+          <%= link_to "О сервисе", admin_path,
+          class: "link link--black" %>
+          </li>
+          <li>
+          <%= link_to 'Выйти', destroy_user_session_path,
+          class: "link link--black", method: :delete  %>
+          </li>
+
+        <% else %>
+          <li>
+            <%= link_to 'Войти', new_user_session_path,
+            class: "link link--black" %>
+          </li>
+          <li>
+            <%= link_to 'Регистрация', new_user_registration_path,
+            class: "link link--black" %>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
   </div>
+  </div>
+</header>
 
 
   <% if user_signed_in?%>
-    <%= react_component 'O_Header'%>
+    <%#= react_component 'O_Header'%>
   <% end %>
 
     <%= yield %>
     <%= react_component 'O_Footer'%>
+
+  <%= javascript_pack_tag 'user-menu', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>

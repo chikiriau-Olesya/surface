@@ -58,6 +58,8 @@ Rails.application.routes.draw do
   delete 'users/:id', to: 'users#destroy'
   get 'users/:id/following', :to => "users#following", :as => :following
 
+  post "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_profile_session
+
   get 'admin', to: 'admin#index'
   get "changeRole" => "users#changeRole", as: "changeRole"
 

@@ -23,29 +23,31 @@
 display: flex;
 flex-direction: row;
 z-index: 10;
-margin-left: -8vw;
-align-items: baseline;
+margin-left: 16px;
+align-items: center;
   .coment-input--image{
+  margin: 0 0px 0 10px;
   background-color: transparent;
   background-image: url(/assets/commentPic.svg);
   background-repeat: no-repeat;
   border: none;
     .btn{
       width: 10px;
-      padding: 10px 0 0 16px;
+      padding: 0 0 0 16px;
     }
   }
+}
+.form-control{
+  height: 15px;
 }
 .coment-send{
   .btn{
     background-image: url(/assets/commentSubmit.svg);
     background-repeat: no-repeat;
+    background-position: center;
     background-color: transparent;
     border-radius: 0;
     padding-bottom: 0;
-  }
-  .btn:disabled{
-    background-color: transparent;
   }
   .btn:hover{
     background-color: transparent;
@@ -76,6 +78,10 @@ align-items: baseline;
 
 .coment-reply-link:nth-of-type(2){
   margin-left: 32px;
+}
+
+.coment-form + .coment-reply-link{
+  margin-top: 20px;
 }
 
 .coment-body{

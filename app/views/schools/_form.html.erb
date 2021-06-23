@@ -10,133 +10,205 @@
       </ul>
     </div>
   <% end %>
-<%= react_component 'O_SchoolForm', { school: @school, cities: @cities} %>
+<%#= react_component 'O_SchoolForm', { school: @school, cities: @cities} %>
+<div class="post-form">
+  <h3 class = " A_H3 A_H3--black">Новая школа</h3>
+  <div class="form-wrapper">
 
-  <div>
-    <%= form.label "Выбрать обложку"%>
-    <%= form.file_field :image %>
-  </div>
-
-  <h2>Базовая информация</h2>
-  <div class="field">
-    <%= form.label "Название школы" %>
-    <%= form.text_field :name %>
-  </div>
-  <div class="field">
-    <%= form.label "Краткое описание школы" %>
-    <%= form.text_area :description %>
-  </div>
-  <div class="field">
-    <%= form.label :surftype_id %>
-    <%= form.select :surftype_id, Surftype.pluck(:name, :id) %>
-  </div>
-
-  <h2>Местоположение</h2>
-  <div class="field">
-    <%= form.label "Город" %>
-    <%= form.select :city_id, City.pluck(:name, :id) %>
-  </div>
-  <div class="field">
-    <%= form.label "Долгота" %>
-    <%= form.text_field :longitude %>
-  </div>
-  <div class="field">
-    <%= form.label "Широта" %>
-    <%= form.text_field :latitude %>
-  </div>
-
-  <h2>Услуги</h2>
-  <div class="field">
-    <%= form.label "Предлагаемые услуги" %>
-    <%= form.cktext_area :service, placeholder: "Индивидуальная тренировка, групповая" %>
-  </div>
-  <div class="field">
-    <%= form.label "Минимальная цена за услуги" %>
-    <%= form.text_field :price, placeholder: "от 3600р" %>
-  </div>
+    <div>
+      <%= link_to(image_tag(@school.image.thumb.url, alt: 'Image'), @school.image.url, target: '_blank') if @school.image? %>
+      <div class="input--image">
+        <%= form.file_field :image,
+        class: 'btn btn--icons',
+        style: "opacity: 0"
+         %>
+      </div>
+    <div>
 
 
-  <h2>Сведения о лучшем сезоне</h2>
-  <div class="field">
-    <%= form.label "Когда лучше кататься" %>
-    <%= form.text_field :season %>
-  </div>
-  <div class="field">
-    <%= form.label "Температура воздуха" %>
-    <%= form.text_field :wind %>
-  </div>
-  <div class="field">
-    <%= form.label "Температура воды" %>
-    <%= form.text_field :water %>
-  </div>
-  <div class="field">
-    <%= form.label "Толщина гидрика" %>
-    <%= form.text_field :wetsuit %>
+    <h5 class = "A_H5">Базовая информация</h5>
+
+    <div class="form--item">
+      <%= form.label "Название школы", class: 'input--label' %>
+      <%= form.text_field :name,
+      placeholder: 'Snowave Камчатка',
+      class: 'input'  %>
+    </div>
+    <div class="form--item">
+      <%= form.label "Краткое описание школы", class: 'input--label' %>
+      <%= form.text_area :description,
+      class: 'textarea'  %>
+    </div>
+    <div class="form--item">
+      <%= form.label "Вид серфинга в школе", class: 'input--label' %>
+      <%= form.select :surftype_id, Surftype.pluck(:name, :id) %>
+    </div>
+
+    <h5 class = "A_H5">Местоположение</h5>
+
+    <div class="form--item">
+      <%= form.label "Город", class: 'input--label' %>
+      <%= form.select :city_id, City.pluck(:name, :id) %>
+    </div>
+  <div class="form--items-line">
+    <div class="form--item">
+      <%= form.label "Долгота", class: 'input--label' %>
+      <%= form.text_field :longitude,
+      placeholder: 'Координаты',
+      class: 'input' %>
+    </div>
+    <div class="form--item">
+      <%= form.label "Широта", class: 'input--label' %>
+      <%= form.text_field :latitude,
+      placeholder: 'Координаты',
+      class: 'input' %>
+    </div>
   </div>
 
 
+    <h5 class = "A_H5">Услуги</h5>
 
-  <h2>Удобства</h2>
-  <div class="field" style="display: flex;">
-    <%= form.check_box :room %>
-    <%= form.label "Раздевалки" %>
-  </div>
-  <div class="field" style="display: flex;">
-    <%= form.check_box :shower %>
-    <%= form.label "Душевая" %>
-  </div>
-  <div class="field" style="display: flex;">
-    <%= form.check_box :equip %>
-    <%= form.label "Оборудование" %>
-  </div>
-  <div class="field" style="display: flex;">
-    <%= form.check_box :cafe %>
-    <%= form.label "Кафе по близости" %>
-  </div>
-  <div class="field" style="display: flex;">
-    <%= form.check_box :shop %>
-    <%= form.label "Магазины рядом" %>
-  </div>
-  <div class="field" style="display: flex;">
-    <%= form.check_box :car %>
-    <%= form.label "Легко доехать" %>
-  </div>
+    <div class="form--item">
+      <%= form.label "Предлагаемые услуги", class: 'input--label' %>
+      <%= form.cktext_area :service,
+      placeholder: "Индивидуальная тренировка, групповая",
+      class: 'textarea' %>
+    </div>
 
-  <h2>Фотогалерея</h2>
-  <div class="field">
-    <%= form.label "загрузите фото" %>
-    <%= form.cktext_area :gallery %>
-  </div>
 
-  <h2>Контакты</h2>
-  <div class="field">
-    <%= form.label "Почта" %>
-    <%= form.email_field :email %>
+    <div class="form--item">
+      <%= form.label "Минимальная цена за услуги", class: 'input--label' %>
+      <%= form.text_field :price,
+      placeholder: "от 3600р",
+      class: 'input' %>
+    </div>
+
+
+    <h5 class = "A_H5">Сведения о лучшем сезоне</h5>
+
+
+  <div class="form--items-line">
+    <div class="form--item">
+      <%= form.label "Когда лучше кататься", class: 'input--label' %>
+      <%= form.text_field :season,
+      placeholder: "Месяц(а)",
+      class: 'input' %>
+    </div>
+    <div class="form--item">
+      <%= form.label "Температура воздуха", class: 'input--label' %>
+      <%= form.text_field :wind,
+      placeholder: "По Цельсию",
+      class: 'input' %>
+    </div>
   </div>
-  <div class="field">
-    <%= form.label "Телефон" %>
-    <%= form.telephone_field :tel %>
-  </div>
-  <div class="field">
-    <%= form.label "Инстаграм" %>
-    <%= form.text_field :inst %>
-  </div>
-  <div class="field">
-    <%= form.label "Телеграм" %>
-    <%= form.text_field :tg %>
-  </div>
-  <div class="field">
-    <%= form.label "Facebook" %>
-    <%= form.text_field :fb %>
-  </div>
-  <div class="field">
-    <%= form.label "Сайт школы" %>
-    <%= form.text_field :website %>
+  <div class="form--items-line">
+    <div class="form--item">
+      <%= form.label "Температура воды", class: 'input--label' %>
+      <%= form.text_field :water,
+      placeholder: "По Цельсию",
+      class: 'input' %>
+    </div>
+    <div class="form--item">
+      <%= form.label "Толщина гидрика", class: 'input--label' %>
+      <%= form.text_field :wetsuit,
+      placeholder: "2.3 см",
+      class: 'input' %>
+    </div>
   </div>
 
 
 
-  <div class="actions">
-    <%= form.submit %>
+    <h5 class = "A_H5">Удобства</h5>
+
+    <div class="form--item" style="display: flex;">
+      <%= form.check_box :room, class: 'custom-checkbox' %>
+      <%= form.label "Раздевалки", class: 'input--label' %>
+    </div>
+    <div class="form--item" style="display: flex;">
+      <%= form.check_box :shower, class: 'custom-checkbox' %>
+      <%= form.label "Душевая", class: 'input--label' %>
+    </div>
+    <div class="form--item" style="display: flex;">
+      <%= form.check_box :equip, class: 'custom-checkbox', type: "checkbox" %>
+      <%= form.label "Оборудование", class: 'input--label' %>
+    </div>
+    <div class="form--item" style="display: flex;">
+      <%= form.check_box :cafe, class: 'custom-checkbox' %>
+      <%= form.label "Кафе по близости", class: 'input--label' %>
+    </div>
+    <div class="form--item" style="display: flex;">
+      <%= form.check_box :shop, class: 'custom-checkbox' %>
+      <%= form.label "Магазины рядом", class: 'input--label' %>
+    </div>
+    <div class="form--item" style="display: flex;">
+      <%= form.check_box :car, class: 'custom-checkbox' %>
+      <%= form.label "Легко доехать", class: 'input--label' %>
+    </div>
+
+
+    <h5 class = "A_H5">Фотогалерея</h5>
+
+    <div class="form--item">
+      <%= form.label "Загрузите фото", class: 'input--label' %>
+      <%= form.cktext_area :gallery %>
+    </div>
+
+    <h5 class = "A_H5">Контакты</h5>
+
+  <div class="form--items-line">
+    <div class="form--item">
+      <%= form.label "Почта", class: 'input--label' %>
+      <%= form.email_field :email,
+      placeholder: 'mmm@gmail.com',
+      class: 'input' %>
+    </div>
+    <div class="form--item">
+      <%= form.label "Телефон", class: 'input--label' %>
+      <%= form.telephone_field :tel,
+      placeholder: '+7(___) ___ __ __',
+      class: 'input' %>
+    </div>
   </div>
+
+  <div class="form--items-line">
+    <div class="form--item">
+      <%= form.label "Сайт школы", class: 'input--label' %>
+      <%= form.text_field :website,
+      placeholder: 'surfschool.com',
+      class: 'input' %>
+    </div>
+
+    <div class="form--item">
+      <%= form.label "Инстаграм", class: 'input--label' %>
+      <%= form.text_field :inst,
+      placeholder: '@surf_school',
+      class: 'input' %>
+    </div>
+  </div>
+
+  <div class="form--items-line">
+    <div class="form--item">
+      <%= form.label "Телеграм", class: 'input--label' %>
+      <%= form.text_field :tg,
+      placeholder: '@surfero',
+      class: 'input' %>
+    </div>
+    <div class="form--item">
+      <%= form.label "Facebook", class: 'input--label' %>
+      <%= form.text_field :fb,
+      placeholder: '@surfero',
+      class: 'input' %>
+    </div>
+  </div>
+
+
+
+    <div class="form-submit">
+      <%= form.submit 'Создать школу', class: 'btn btn--main'%>
+    </div>
+  </div>
+</div>
+</div>
+
+
 <% end %>
