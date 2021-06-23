@@ -25,12 +25,12 @@
     border-radius: 16px;
 
     &:hover {
-      transform: scale(1.01);
+      transform: scale(1.05);
       transition: all 0.4s linear;
     }
 
     // &:first-of-type {
-    //   background-image: url('.././images/CityPreviewSmall-bc2.svg');
+    //   background-image: url('../../images/CityPreviewSmall-bc2.svg');
     // }
   }
 
@@ -41,6 +41,13 @@
     background-color: var(--color-text);
     color: var(--color-sea-foam);
     text-align: center;
+    &:hover {
+      transform: scale(1.05);
+      transition: all 0.4s linear;
+    }
+    span {
+      color: var(--color-sea-foam);
+    }
     .M_CityPreviewSmall--block--link--img {
         margin: 0 auto;
         margin-top: 2vw;

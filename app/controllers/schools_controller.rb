@@ -52,7 +52,7 @@ class SchoolsController < ApplicationController
     else
       @posts = Post.all
     end
-    
+
   end
 
   def schoolsCities

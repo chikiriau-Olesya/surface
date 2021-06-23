@@ -17,14 +17,14 @@ class M_MapInner extends React.Component {
     return (
       <div>
         <YMaps query={{ mode: "debug" }}>
-          <Map defaultState={{ center: [`${this.props.school.longitude}`, `${this.props.school.latitude}`], zoom: 12 }}
+          <Map defaultState={{ center: [`${this.props.school.latitude}`, `${this.props.school.longitude}`], zoom: 12 }}
             width='450px'
             height='360px'
           >
           <ZoomControl options={{ float: 'right' }}/>
 
           <Placemark
-             geometry={[`${this.props.school.longitude}`, `${this.props.school.latitude}`]}
+             geometry={[`${this.props.school.latitude}`, `${this.props.school.longitude}`]}
              options={{
                iconLayout: 'default#image',
                iconImageHref: pin,

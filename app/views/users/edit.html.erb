@@ -24,89 +24,43 @@
     <% end %>
 
     <% if user_signed_in? && current_user.isadmin == true %>
-      <%= form_with model: @user do |f| %>
-        <h1>Изменить роль</h1>
-        <span>E-mail</span><%= link_to @user.email, @user %>
-        <span>Username</span><span><%= link_to @user.username, @user %></span>
+    <div class="O_AdminUsersForm">
+      <div class="O_AdminUsersForm--main">
+        <%= form_with model: @user do |f| %>
+          <h2 class="A_H2">Изменить роль</h2>
+          <span class="A_H4"><%= link_to @user.username, @user %></span>
+          <span class="A_H4"><%= link_to @user.email, @user %></span>
 
-        <% if @user.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(@user.errors.count, "error") %> prohibited this post_type from being saved:</h2>
+          <% if @user.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@user.errors.count, "error") %> prohibited this post_type from being saved:</h2>
 
-            <ul>
-              <% @user.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
+              <ul>
+                <% @user.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="O_AdminUsersForm--check">
+            <% if signed_in? %>
+              <% if current_user.isadmin? %>
+                <div class="text--subbody check"> Автор
+                <%= f.check_box :isauthor %></div>
               <% end %>
-            </ul>
+            <% end %>
+            <% if signed_in? %>
+              <% if current_user.isadmin? %>
+                <div class="text--subbody"> Администратор
+                <%= f.check_box :isadmin %></div>
+              <% end %>
+            <% end %>
+          </div>
+          <div>
+            <%= f.submit "Изменить роль", class: "btn btn--main"%>
           </div>
         <% end %>
-        <% if signed_in? %>
-          <% if current_user.isadmin? %>
-            <h3> Администратор
-            <%= f.check_box :isadmin %></h3>
-          <% end %>
-        <% end %>
-        <% if signed_in? %>
-          <% if current_user.isadmin? %>
-            <h3> Автор
-            <%= f.check_box :isauthor %></h3>
-          <% end %>
-        <% end %>
-        <div class="actions">
-          <%= f.submit "Да"%>
-        </div>
-      <% end %>
+      </div>
+    </div>
     <% end %>
   <div>
-
-
-  <!-- <div class="details tab-content">
-    <!-- <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-      <h2>Редактировать профиль</h2>
-      <p>Эту информацию  можно увидеть в вашем профиле</p>
-      <%#= form_with model: current_user, local: true, html: {class: "form-horizontal form-edit-user"} do |f| %>
-        <!-- <div>
-          <%#= image_tag(@user.image.url, alt: 'Image') if @user.image? %>
-          <%#= f.label :image %>
-          <%#= f.file_field :image %>
-        </div>
-        <div class="">
-          <%#= f.label "Имя пользователя"%>
-          <%#= f.text_field :username%>
-        </div>
-        <div class="">
-          <%#= f.label "Сведения о вашем профиле"%>
-          <div class="">
-            <%#= f.text_area :bio, class: 'form-control' %>
-          </div>
-        </div> -->
-
-        <!-- <h3>Контакты</h3>
-        <p>Добавьте ссылку на любую соц. сеть, чтобы продолжить общение за пределами сервиса</p>
-        <div class="">
-          <%#= f.label "Instagram"%>
-          <div class="col-sm-9">
-            <%#= f.text_field :inst%>
-          </div>
-        </div>
-        <div class="">
-          <%#= f.label "Telegarm"%>
-          <div class="col-sm-9">
-            <%#= f.text_field :tg%>
-          </div>
-        </div>
-        <div class="">
-          <%#= f.label "Facebook"%>
-          <div class="col-sm-9">
-            <%#= f.text_field :fb%>
-          </div>
-        </div> -->
-
-        <!-- <div class="">
-          <%#= f.submit "Submit", class: 'btn btn-primary' %>
-        </div> -->
-      <%# end %>
-
-    <!-- </div>  -->
-  <!-- </div>  -->
-</div>

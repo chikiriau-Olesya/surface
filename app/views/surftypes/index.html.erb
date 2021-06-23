@@ -1,29 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Surftypes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @surftypes.each do |surftype| %>
-      <tr>
-        <td><%= surftype.name %></td>
-        <td><%= surftype.description %></td>
-        <td><%= link_to 'Show', surftype %></td>
-        <td><%= link_to 'Edit', edit_surftype_path(surftype) %></td>
-        <td><%= link_to 'Destroy', surftype, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
 
 <%= link_to 'New Surftype', new_surftype_path %>
+
+<%= react_component 'M_Surftype', {surftype: @surftype, surftypes: @surftypes} %>

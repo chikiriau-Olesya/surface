@@ -14,7 +14,7 @@
   cursor: pointer;
   transition: 0.2 ease;
   padding: 12px 16px 12px 16px;
-  color: #fff;
+  color: var(--color-sunset);
 }
 
 /* Button styles */
@@ -26,6 +26,10 @@
   }
 }
 .btn--secondary{
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 16px 12px 16px;
   background-color: transparent;
   color: var(--sunset);
   img{

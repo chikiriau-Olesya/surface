@@ -4,4 +4,8 @@
 }
 .schoolFound__text {
   padding: 16px 0px 24px 64px;
+  display: flex;
+  h3 {
+    margin-right: 8px;
+  }
 }

@@ -7,7 +7,7 @@ class M_HashtagsList extends React.Component {
     let myRe = new RegExp("#\\w+", "g");
     let myArray = [];
     let tag = null;
-    while((tag = myRe.exec("#surf, #surfing")) != null){
+    while((tag = myRe.exec("#surf, #kamchatka, #begginers, #sport, #profi, #nature, #sea")) != null){
       myArray.push(tag[0]);
     }
 

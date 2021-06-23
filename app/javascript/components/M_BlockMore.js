@@ -5,11 +5,15 @@ import A_H3 from "./A_H3.js"
 import A_Textblock from "./A_Textblock.js"
 import A_Link from "./A_Link.js"
 import 'stylesheets/M_BlockMore.scss'
+import Bc from "images/M_BlockMore.png"
 
 class M_BlockMore extends React.Component {
   render() {
+    var sectionStyle = {
+      backgroundImage: `url(${Bc})`
+    };
     return (
-      <div className="M_BlockMore">
+      <div style={sectionStyle} className="M_BlockMore">
           <div className="M_BlockMore--text">
             <A_H3 color= 'A_H3--white'
               content = "Все о видах серфинга">
