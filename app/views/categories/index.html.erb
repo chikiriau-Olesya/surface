@@ -6,7 +6,7 @@
 <% end %>
 
 <%= react_component 'O_AdminCats', { categories: @categories, category: @category }%>
-<!-- <table>
+<table>
   <thead>
     <tr>
       <th>Name</th>
@@ -19,19 +19,19 @@
   </thead>
 
   <tbody>
-    <%# @categories.each do |category| %>
+    <% @categories.each do |category| %>
       <tr>
-        <td><%#= category.name %></td>
-        <td><%#= category.post_type_id %></td>
-        <td><%#= category.description %></td>
-        <td><span><%#= category.created_at.mday %>.<%#= category.created_at.month %>.<%#= category.created_at.year %></span></td>
-        <td><%#= category.display_in_navbar %></td>
-        <td><%#= link_to 'Show', category %></td>
-        <%# if user_signed_in? && current_user.isadmin == true%>
-          <td><%#= link_to 'Edit', edit_category_path(category) %></td>
-          <td><%#= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <%# end %>
+        <td><%= category.name %></td>
+        <td><%= category.post_type_id %></td>
+        <td><%= category.description %></td>
+        <td><span><%= category.created_at.mday %>.<%= category.created_at.month %>.<%= category.created_at.year %></span></td>
+        <td><%= category.display_in_navbar %></td>
+        <td><%= link_to 'Show', category %></td>
+        <% if user_signed_in? && current_user.isadmin == true%>
+          <td><%= link_to 'Edit', edit_category_path(category) %></td>
+          <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
-    <%# end %>
+    <% end %>
   </tbody>
-</table> -->
+</table>

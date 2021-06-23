@@ -15,7 +15,6 @@ class O_AdminCats extends React.Component {
   render () {
     return (
       <div className="admin-view">
-        <M_AdminNavbar/>
         <div className="admin-content">
           <div className="admin-top-line">
           <A_H3 className = 'heading--black'
