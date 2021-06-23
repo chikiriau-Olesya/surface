@@ -4,70 +4,70 @@
 # puts "Destroyed everything you touch"
 
 #-----USERS-----USERS-----USERS-----USERS-----USERS-----USERS
-users = [
-  {
-    email: "shevoles@list.ru",
-    username: "Олеся Шевченко",
-    isadmin: true,
-    password: "123456789",
-  },
-]
-users.each do |us|
-  r=User.create(us)
-  puts "Some magic just craete a #{ r.username } with id #{ r.id }!"
-end
+# users = [
+#   {
+#     email: "shevoles@list.ru",
+#     username: "Олеся Шевченко",
+#     isadmin: true,
+#     password: "123456789",
+#   },
+# ]
+# users.each do |us|
+#   r=User.create(us)
+#   puts "Some magic just craete a #{ r.username } with id #{ r.id }!"
+# end
 
 
 # ---MEDIA------MEDIA------MEDIA------MEDIA------MEDIA------MEDIA------
 
-# post_types = [
-#   {
-#     name: "magazine",
-#   }
-# ]
-# post_types.each do |pt|
-#   p=PostType.create(pt)
-#   puts "Some magic just craete a #{ p.name } with id #{ p.id }!"
-# end
+post_types = [
+  {
+    name: "magazine",
+  }
+]
+post_types.each do |pt|
+  p=PostType.create(pt)
+  puts "Some magic just craete a #{ p.name } with id #{ p.id }!"
+end
 
 
-# categories = [
-#   {
-#     name: "Люди",
-#     description: "",
-#     post_type_id: "1",
-#   },
-#   {
-#     name: "История",
-#     description: "",
-#     post_type_id: "1",
-#   },
-#   {
-#     name: "Атмосфера",
-#     description: "",
-#     post_type_id: "1",
-#   },
-#   {
-#     name: "Полезное",
-#     description: "",
-#     post_type_id: "1",
-#   },
-#   {
-#     name: "Путешествия",
-#     description: "",
-#     post_type_id: "1",
-#   },
-#   {
-#     name: "Шорт-ы",
-#     description: "",
-#     post_type_id: "1",
-#   },
-#
-# ]
-# categories.each do |cat|
-#   c=Category.create(cat)
-#   puts "Some magic just craete a #{ c.name } with id #{ c.id }!"
-# end
+categories = [
+  {
+    name: "Люди",
+    description: "",
+    post_type_id: "1",
+  },
+  {
+    name: "История",
+    description: "",
+    post_type_id: "1",
+  },
+  {
+    name: "Атмосфера",
+    description: "",
+    post_type_id: "1",
+  },
+  {
+    name: "Полезное",
+    description: "",
+    post_type_id: "1",
+  },
+  {
+    name: "Путешествия",
+    description: "",
+    post_type_id: "1",
+  },
+  {
+    name: "Шорт-ы",
+    description: "",
+    post_type_id: "1",
+  },
+
+]
+categories.each do |cat|
+  c=Category.create(cat)
+  puts "Some magic just craete a #{ c.name } with id #{ c.id }!"
+end
 
 
 # posts = [
