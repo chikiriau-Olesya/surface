@@ -1,20 +1,21 @@
 # Post.destroy_all
 # Category.destroy_all
+# User.destroy_all
 # puts "Destroyed everything you touch"
 
 #-----USERS-----USERS-----USERS-----USERS-----USERS-----USERS
-# users = [
-#   {
-#     email: "shevoles@list.ru",
-#     username: "Олеся Шевченко",
-#     isadmin: true,
-#     password: "123456789",
-#   },
-# ]
-# users.each do |us|
-#   r=User.create(us)
-#   puts "Some magic just craete a #{ r.username } with id #{ r.id }!"
-# end
+users = [
+  {
+    email: "shevoles@list.ru",
+    username: "Олеся Шевченко",
+    isadmin: true,
+    password: "123456789",
+  },
+]
+users.each do |us|
+  r=User.create(us)
+  puts "Some magic just craete a #{ r.username } with id #{ r.id }!"
+end
 
 
 # ---MEDIA------MEDIA------MEDIA------MEDIA------MEDIA------MEDIA------
