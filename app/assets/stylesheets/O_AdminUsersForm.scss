@@ -1,0 +1,27 @@
+.O_AdminUsersForm {
+  margin: 0 auto;
+  width: 50%;
+  margin-top: 6vw;
+  margin-bottom: 8vw;
+  padding: 4vw;
+  background-color: var(--color-sea-foam);
+  border-radius: 32px;
+}
+
+.O_AdminUsersForm--main {
+  h2 {
+    margin-bottom: 1vw;
+  }
+  span {
+    margin-right: 16px;
+  }
+}
+
+.O_AdminUsersForm--check {
+  display: flex;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  .check {
+    margin-right: 16px;
+  }
+}

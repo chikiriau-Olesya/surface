@@ -1,7 +1,8 @@
 .admin-view{
   display: flex;
   .admin-content{
-    margin-top: 220px;
+    width: 90%;
+    margin: 0 auto;
   }
   .admin-posts{
     margin-top: 40px;
@@ -13,5 +14,8 @@
   .admin-second-line{
     display: flex;
     justify-content: flex-start;
+    p {
+      margin-right: 16px;
+    }
   }
 }

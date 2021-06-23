@@ -1,30 +1,28 @@
 <p id="notice"><%= notice %></p>
+<% if user_signed_in? && current_user.isadmin == true%>
+  <%= react_component 'M_AdminNavbar' %>
+<% end %>
 
-<%= react_component 'O_Questions', { users: @users, question: @question } %>
-
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @questions.each do |question| %>
-      <tr>
-        <td><%= question.content %></td>
-        <td>
+<div class="O_Questions">
+  <% @questions.each do |question| %>
+    <div class="que-preview">
+      <div class="que-preview-user">
+        <div class="A_Avatar">
+          <% if question.user_id %>
+            <%= react_component 'A_Avatar', { user: question.user}, class: 'avatar--default-small' %>
+          <% end %>
+        </div>
+        <div class="A_H4">
           <%= link_to User.find(question.user_id).username, user_path(question.user_id) %>
-        </td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Question', new_question_path %>
+        </div>
+      </div>
+      <div class="text--descript"><%= question.content %></div>
+      <div class="que-preview-btns">
+        <div class="btn btn--main">
+          <%= link_to 'Сделать автором', edit_user_path(question.user_id)%>
+        </div>
+        <div class="btn--secondary"><%= link_to 'Отклонить', question, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+      </div>
+      </div>
+  <% end %>
+</div>

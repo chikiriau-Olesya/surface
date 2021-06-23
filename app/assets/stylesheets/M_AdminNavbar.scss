@@ -4,6 +4,7 @@
   border-radius: 0px 0px 32px 32px;
   padding: 72px 0px 24px;
   margin-bottom: 32px;
+  margin-top: -2vw;
   .admin-topbar-inner {
     width: 90%;
     margin: 0 auto;
@@ -15,9 +16,18 @@
   .admin-links{
     display: flex;
     flex-direction: row;
+    margin-left: -22px;
     a{
       color: var(--color-sea-foam);
       mix-blend-mode: difference;
+      margin-right: 8px;
+      padding: 12px 24px;
+      border-radius: 40px;
+      &:hover {
+        background-color: var(--color-sea-foam);
+        color: var(--color-text);
+        transition: all .2s linear;
+      }
     }
     .admin-list-item{
       display: flex;

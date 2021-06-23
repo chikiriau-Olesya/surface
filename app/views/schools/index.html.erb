@@ -4,26 +4,14 @@
     title: ['Школы']
 }  %>
 
-<div class="">
-	<p><%#= @city.school.count %>
-		<%#= (@city.school.count ) == 1 ? 'Школа' : 'Школ'%>
-	</p>
-</div>
-
-<%#= City.where(id:2).select("city_name") %>
-
-<!-- <div class="">
-  Серфшколы в <%#= @city.name %>
-</div> -->
 
 <div class="school-page">
 	<div class="school-page_item">
-		<%= react_component 'M_SchoolFound', {surftypes: @surftypes, surftype: @surftype, school: @school, schools: @schools, city: @city, cities: @cities} %>
+		<%= react_component 'M_SchoolFound', {school: @school, schools: @schools, city: @city, cities: @cities} %>
 		<div class="school-page_item-left">
 			<div class="surftype__block">
 				<h5 class="A_H5">Выбрать вид серфа</h5>
 				<div class="surftype__block__select">
-					<%#= link_to 'all', schools_path, :class => "surftype--text" %>
 					<% Surftype.all.each do |st| %>
 						<%= link_to st.name, request.params.merge(surftype: st.id), :class => "surftype--text" %>
 					<% end %>
@@ -31,15 +19,15 @@
 			</div>
 			<%= react_component 'M_SchoolPreview', {surftypes: @surftypes, surftype: @surftype, school: @school, schools: @schools } %>
 		</div>
-
+      <%= react_component 'O_FooterSmall' %>
 	</div>
 	<div class="school-page_item school-page_item-map">
-			<%= react_component 'M_MainMap', {school: @school, schools: @schools, cities: @cities,  city: @city } %>
+			<%= react_component 'M_MainMap', {school: @school, schools: @schools} %>
 	</div>
 </div>
 
 
-
+<%= react_component 'M_CityOne' %>
 
 <%#= link_to 'New City', new_city_path %>
 <%#= link_to 'New School', new_school_path %>

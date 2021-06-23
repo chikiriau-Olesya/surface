@@ -7,7 +7,6 @@ class CitiesController < ApplicationController
     @cities = City.all
   end
 
-
   # GET /cities/1
   # GET /cities/1.json
   def show

@@ -1,6 +1,11 @@
 .school-page {
   display: flex;
   overflow: hidden;
+  margin-top: -2vw;
+}
+
+.school-page_item {
+  padding-top: 2vw;
 }
 
 .school-page_item:first-of-type {

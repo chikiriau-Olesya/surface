@@ -1,0 +1,27 @@
+.O_Questions {
+  margin: 0 auto;
+  width: 90%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 32px;
+  grid-row-gap: 32px;
+}
+.que-preview {
+  background-color: var(--color-sea-foam);
+  padding: 2vw;
+  border-radius: 2vw;
+}
+
+.que-preview-user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  img {
+    margin-right: 16px;
+  }
+}
+
+.que-preview-btns {
+  margin-top: 24px;
+}

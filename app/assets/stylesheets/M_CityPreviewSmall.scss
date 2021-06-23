@@ -1,3 +1,11 @@
+.M_CityPreviewSmall-wrapper {
+  background-color: var(--color-black);
+  width: 100%;
+  margin: 0 auto;
+  margin-top: -2.5vw;
+  padding: 4vw 0vw 10vw;
+}
+
 .M_CityPreviewSmall {
   width: 90%;
   margin: 0 auto;
@@ -9,34 +17,40 @@
     display: flex;
   }
   .M_CityPreviewSmall--block--item {
-    margin-right: 32px;
+    margin-right: 16px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: var(--color-black);
+    background-color: var(--color-sunset);
     border-radius: 16px;
 
-    &:first-of-type {
-      background-image: url('.././images/CityPreviewSmall-bc1.svg');
+    &:hover {
+      transform: scale(1.05);
+      transition: all 0.4s linear;
     }
-    &:nth-of-type(2) {
-      background-image: url('.././images/CityPreviewSmall-bc2.svg');
-    }
-    &:nth-of-type(3) {
-      background-image: url('.././images/CityPreviewSmall-bc3.svg');
-    }
-    &:nth-of-type(4) {
-      background-image: url('.././images/CityPreviewSmall-bc4.svg');
-    }
-    &:nth-of-type(5) {
-      background-image: url('.././images/CityPreviewSmall-bc5.svg');
-    }
+
+    // &:first-of-type {
+    //   background-image: url('../../images/CityPreviewSmall-bc2.svg');
+    // }
   }
 
   .M_CityPreviewSmall--block--link {
-    padding-top: 5vw;
+    width: 14vw;
+    height: 8vw;
+    border-radius: 16px;
+    background-color: var(--color-text);
+    color: var(--color-sea-foam);
+    text-align: center;
+    &:hover {
+      transform: scale(1.05);
+      transition: all 0.4s linear;
+    }
+    span {
+      color: var(--color-sea-foam);
+    }
     .M_CityPreviewSmall--block--link--img {
         margin: 0 auto;
+        margin-top: 2vw;
         width: 40px;
         height: 40px;
         background-position: center;

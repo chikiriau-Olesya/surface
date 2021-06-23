@@ -5,7 +5,7 @@
   overflow: scroll;
   position: relative;
   background-color: var(--color-sunset);
-  
+
   .A_SchoolGallery--arrow {
     position: absolute;
     background-color: var(--color-sea-foam);
@@ -32,10 +32,17 @@
 
 @media (max-width: 768px) {
   .A_SchoolGallery {
+    height: 45vw;
     width: 100%;
     margin-bottom: 32px;
     .A_SchoolGallery-img {
       width: 100vw;
     }
+  }
+}
+
+@media (max-width: 428px) {
+  .A_SchoolGallery {
+    height: 120vw;
   }
 }

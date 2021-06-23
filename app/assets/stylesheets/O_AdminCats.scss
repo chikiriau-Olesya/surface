@@ -14,8 +14,6 @@
   .admin-second-line{
     display: flex;
     justify-content: flex-start;
-  }
-  .admin-second-line:nth-child(2){
-    padding-left: 24px;
+    margin-right: 24px;
   }
 }

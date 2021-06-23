@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import A_Heading from "./A_Heading.js"
 import A_Textblock from "./A_Textblock.js"
+import A_Link from "./A_Link.js"
 import M_HashtagsList from "./M_HashtagsList.js"
 import A_Logo from "./A_Logo.js"
 
@@ -37,11 +38,36 @@ class O_Footer extends React.Component {
               {"Пляж"}
             </A_Textblock>
               <ul>
-                <a href = "#">История</a>
-                <a href = "#">Атмосфера</a>
-                <a href = "#">Люди</a>
-                <a href = "#">Полезное</a>
-                <a href = "#">Шорт-ы стори</a>
+              <A_Link
+                linkStyle ='link--white'
+                name = 'Люди'
+                address = {'/posts?category=1'} >
+              </A_Link>
+              <A_Link
+                linkStyle ='link--white'
+                name = 'История'
+                address = {'/posts?category=2'} >
+              </A_Link>
+              <A_Link
+                linkStyle ='link--white'
+                name = 'Атмосфера'
+                address = {'/posts?category=3'} >
+              </A_Link>
+              <A_Link
+                linkStyle ='link--white'
+                name = 'Полезное'
+                address = {'/posts?category=5'} >
+              </A_Link>
+              <A_Link
+                linkStyle ='link--white'
+                name = 'Путешествия'
+                address = {'/posts?category=6'} >
+              </A_Link>
+              <A_Link
+                linkStyle ='link--white'
+                name = 'Путешествия'
+                address = {'/posts?category=7'} >
+              </A_Link>
               </ul>
             </div>
             <div className="footer-section">
@@ -51,8 +77,16 @@ class O_Footer extends React.Component {
               {"Школы"}
             </A_Textblock>
             <ul>
-              <a href = "#">Список городов</a>
-              <a href = "#">Виды серфинга</a>
+              <A_Link
+                linkStyle ='link--white'
+                name = 'Список городов'
+                address = {'/schoolsCities'} >
+              </A_Link>
+              <A_Link
+                linkStyle ='link--white'
+                name = 'Виды серфинга'
+                address = {'/surftypes'} >
+              </A_Link>
             </ul>
             </div>
             <div className="footer-section">
@@ -62,25 +96,56 @@ class O_Footer extends React.Component {
               {"Информация"}
             </A_Textblock>
             <ul>
-              <a href = "#">О проекте</a>
-              <a href = "#">Команда</a>
-              <a href = "#">Авторам</a>
-              <a href = "#">Сотрудничество</a>
-              <a href = "#">Пользовательское соглашение</a>
+            <A_Link
+              linkStyle ='link--white'
+              name = 'О проекте'
+              address = {'#'} >
+            </A_Link>
+            <A_Link
+              linkStyle ='link--white'
+              name = 'Команда'
+              address = {'#'} >
+            </A_Link>
+            <A_Link
+              linkStyle ='link--white'
+              name = 'Авторам'
+              address = {'#'} >
+            </A_Link>
+            <A_Link
+              linkStyle ='link--white'
+              name = 'Сотрудничество'
+              address = {'#'} >
+            </A_Link>
+            <A_Link
+              linkStyle ='link--white'
+              name = 'Пользовательское соглашение'
+              address = {'#'} >
+            </A_Link>
             </ul>
             </div>
           </div>
-          <div className="footer-section">
+          <div className="footer-socials">
             <A_Textblock
               textStyle = 'text--gray'
               textSize = 'text--subbody'>
               {"Соц сети"}
             </A_Textblock>
             <ul>
-              <a href = "#">Instagram</a>
-              <a href = "#">Facebook</a>
-              <a href = "#">Telegram</a>
-              <a href = "#">Youtube</a>
+            <A_Link
+              linkStyle ='link--white'
+              name = 'Instagram'
+              address = {'#'} >
+            </A_Link>
+            <A_Link
+              linkStyle ='link--white'
+              name = 'Facebook'
+              address = {'#'} >
+            </A_Link>
+            <A_Link
+              linkStyle ='link--white'
+              name = 'Youtube'
+              address = {'#'} >
+            </A_Link>
             </ul>
           </div>
         </div>

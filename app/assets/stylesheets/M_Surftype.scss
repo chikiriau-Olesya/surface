@@ -1,0 +1,28 @@
+.M_Surftype {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.M_Surftype--wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 24px;
+  grid-row-gap: 24px;
+  margin: 2vw 0vw;
+}
+
+.M_Surftype--block {
+  &:nth-of-type(2n + 1) {
+    background-color: var(--color-black);
+  }
+  background-color: var(--color-sunset);
+  padding: 1.5vw;
+  border-radius: 16px;
+  height: 20vw;
+
+  p {
+    margin-top: 24px;
+    font-size: 24px;
+    line-height: 100%;
+  }
+}
