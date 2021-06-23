@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import A_H4 from "./A_H4.js"
 import A_Avatar from "./A_Avatar.js"
-import 'stylesheets/M_QuestionPreview.scss'
 
 
 class M_QuestionPreview extends React.Component {
