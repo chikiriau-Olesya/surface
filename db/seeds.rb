@@ -262,7 +262,7 @@ surftypes = [
 ]
 
 surftypes.each do |surftype|
-  sur = Surftypes.create(surftype)
+  sur = Surftype.create(surftype)
   puts "Some magic just craete a #{ sur.name } with id #{ sur.id }!"
 end
 
@@ -354,6 +354,6 @@ end
 #   },
 # ]
 # schools.each do |school|
-#   scho = Surftypes.create(school)
+#   scho = School.create(school)
 #   puts "Some magic just craete a #{ scho.name } with id #{ scho.id }!"
 # end
