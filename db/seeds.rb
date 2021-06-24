@@ -166,105 +166,105 @@
 
 # ---SHOOLL------SHOOLL--------SHOOLL----------SHOOLL-------------
 
-cities = [
-  {
-    name: "Москва",
-    description: "0 школ",
-    image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
-  },
-  {
-    name: "Петербург",
-    description: "0 школ",
-    image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
-  },
-  {
-    name: "Камчатка",
-    description: "0 школ",
-    image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
-  },
-  {
-    name: "Хабаровск",
-    description: "0 школ",
-    longitude: "135.10117",
-    latitude: "48.51578",
-    image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
-  },
-  {
-    name: "Сочи",
-    description: "0 школ",
-    image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
-  },
-  {
-    name: "Владивосток",
-    description: "0 школ",
-    image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
-  },
-  {
-    name: "Анапа",
-    description: "0 школ",
-    image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
-  },
-  {
-    name: "Крым",
-    description: "0 школ",
-    image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
-  },
-  {
-    name: "Сахалин",
-    description: "0 школ",
-    image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
-  },
-  {
-    name: "Калининград",
-    description: "0 школ",
-    image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
-  },
-  {
-    name: "Мурманск",
-    description: "0 школ",
-    image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
-  },
-  {
-    name: "Курилы",
-    description: "0 школ",
-    image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
-  },
-
-]
-cities.each do |cit|
-  city=City.create(cit)
-  puts "Some magic just craete a #{ city.name } with id #{ city.id }!"
-end
-
-
-# surftypes = [
+# cities = [
 #   {
-#     name: "классика"
+#     name: "Москва",
+#     description: "0 школ",
+#     image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
 #   },
 #   {
-#     name: "сап"
+#     name: "Петербург",
+#     description: "0 школ",
+#     image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
 #   },
 #   {
-#     name: "вейк"
+#     name: "Камчатка",
+#     description: "0 школ",
+#     image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
 #   },
 #   {
-#     name: "кайт"
+#     name: "Хабаровск",
+#     description: "0 школ",
+#     longitude: "135.10117",
+#     latitude: "48.51578",
+#     image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
 #   },
 #   {
-#     name: "винд"
+#     name: "Сочи",
+#     description: "0 школ",
+#     image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
 #   },
 #   {
-#     name: "скейт"
+#     name: "Владивосток",
+#     description: "0 школ",
+#     image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
 #   },
 #   {
-#     name: "искусственная волна"
+#     name: "Анапа",
+#     description: "0 школ",
+#     image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
 #   },
-# ]
+#   {
+#     name: "Крым",
+#     description: "0 школ",
+#     image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
+#   },
+#   {
+#     name: "Сахалин",
+#     description: "0 школ",
+#     image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
+#   },
+#   {
+#     name: "Калининград",
+#     description: "0 школ",
+#     image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
+#   },
+#   {
+#     name: "Мурманск",
+#     description: "0 школ",
+#     image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
+#   },
+#   {
+#     name: "Курилы",
+#     description: "0 школ",
+#     image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
+#   },
 #
-# surftypes.each do |surftype|
-#   sur = Surftypes.create(surftype)
-#   puts "Some magic just craete a #{ sur.name } with id #{ sur.id }!"
+# ]
+# cities.each do |cit|
+#   city=City.create(cit)
+#   puts "Some magic just craete a #{ city.name } with id #{ city.id }!"
 # end
+
+
+surftypes = [
+  {
+    name: "классика"
+  },
+  {
+    name: "сап"
+  },
+  {
+    name: "вейк"
+  },
+  {
+    name: "кайт"
+  },
+  {
+    name: "винд"
+  },
+  {
+    name: "скейт"
+  },
+  {
+    name: "искусственная волна"
+  },
+]
+
+surftypes.each do |surftype|
+  sur = Surftypes.create(surftype)
+  puts "Some magic just craete a #{ sur.name } with id #{ sur.id }!"
+end
 
 
 # schools = [
