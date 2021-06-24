@@ -237,123 +237,102 @@
 # end
 
 
-surftypes = [
-  {
-    name: "классика"
-  },
-  {
-    name: "сап"
-  },
-  {
-    name: "вейк"
-  },
-  {
-    name: "кайт"
-  },
-  {
-    name: "винд"
-  },
-  {
-    name: "скейт"
-  },
-  {
-    name: "искусственная волна"
-  },
-]
-
-surftypes.each do |surftype|
-  sur = Surftype.create(surftype)
-  puts "Some magic just craete a #{ sur.name } with id #{ sur.id }!"
-end
-
-
-# schools = [
+# surftypes = [
 #   {
-#     name: "QUIKSILVER SURF CAMP&SCHOOL",
-#     description: "Камчатка - единственное место в России, берега которого омываются водами Тихого Океана. Именно здесь вы найдете самые стабильные условия для занятия серфингом в нашей стране.Пустые лайнапы тихого океана, вулканические пески халактырского бичбрейка, фантастические рассветы.Мы приглашаем вас в незабываемое путешествие по Камчатке.",
-#     longitude: "классика",
-#     latitude: "классика",
-#     city_id: "1",
-#     surftype_id: "1",
-#     image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
-#     inst: "kamchatka.surf",
-#     tg: "kamchatka_surf",
-#     fb: "классика",
-#     website: "https://kamchatkasurf.ru/",
-#     email: "классика",
-#     tel: "+79147871116",
-#     service: "everything",
-#     price: "от 4200руб",
-#     season: "Август - Сентябрь",
-#     wind: "19°С",
-#     water: "16°С",
-#     wetsuit: "1.5 –2.3 м",
-#     cafe: "true",
-#     shower: "true",
-#     room: "true",
-#     shop: "true",
-#     equip: "true",
-#     car: "true",
-#     gallery: "",
+#     name: "классика"
 #   },
 #   {
-#     name: "QUIKSILVER SURF CAMP&SCHOOL",
-#     description: "Камчатка - единственное место в России, берега которого омываются водами Тихого Океана. Именно здесь вы найдете самые стабильные условия для занятия серфингом в нашей стране.Пустые лайнапы тихого океана, вулканические пески халактырского бичбрейка, фантастические рассветы.Мы приглашаем вас в незабываемое путешествие по Камчатке.",
-#     longitude: "классика",
-#     latitude: "классика",
-#     city_id: "2",
-#     surftype_id: "3",
-#     image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
-#     inst: "kamchatka.surf",
-#     tg: "kamchatka_surf",
-#     fb: "классика",
-#     website: "https://kamchatkasurf.ru/",
-#     email: "классика",
-#     tel: "+79147871116",
-#     service: "everything",
-#     price: "от 4200руб",
-#     season: "Август - Сентябрь",
-#     wind: "19°С",
-#     water: "16°С",
-#     wetsuit: "1.5 –2.3 м",
-#     cafe: "true",
-#     shower: "true",
-#     room: "true",
-#     shop: "true",
-#     equip: "true",
-#     car: "true",
-#     gallery: "",
+#     name: "сап"
 #   },
 #   {
-#     name: "QUIKSILVER SURF CAMP&SCHOOL",
-#     description: "Камчатка - единственное место в России, берега которого омываются водами Тихого Океана. Именно здесь вы найдете самые стабильные условия для занятия серфингом в нашей стране.Пустые лайнапы тихого океана, вулканические пески халактырского бичбрейка, фантастические рассветы.Мы приглашаем вас в незабываемое путешествие по Камчатке.",
-#     longitude: "классика",
-#     latitude: "классика",
-#     city_id: "3",
-#     surftype_id: "4",
-#     image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
-#     inst: "kamchatka.surf",
-#     tg: "kamchatka_surf",
-#     fb: "классика",
-#     website: "https://kamchatkasurf.ru/",
-#     email: "классика",
-#     tel: "+79147871116",
-#     service: "everything",
-#     price: "от 4200руб",
-#     season: "Август - Сентябрь",
-#     wind: "19°С",
-#     water: "16°С",
-#     wetsuit: "1.5 –2.3 м",
-#     cafe: "true",
-#     shower: "true",
-#     room: "true",
-#     shop: "true",
-#     equip: "true",
-#     car: "true",
-#     gallery: "",
+#     name: "вейк"
+#   },
+#   {
+#     name: "кайт"
+#   },
+#   {
+#     name: "винд"
+#   },
+#   {
+#     name: "скейт"
+#   },
+#   {
+#     name: "искусственная волна"
 #   },
 # ]
-# schools.each do |school|
-#   scho = School.create(school)
-#   puts "Some magic just craete a #{ scho.name } with id #{ scho.id }!"
+#
+# surftypes.each do |surftype|
+#   sur = Surftype.create(surftype)
+#   puts "Some magic just craete a #{ sur.name } with id #{ sur.id }!"
 # end
+
+
+schools = [
+  {
+    name: "QUIKSILVER SURF CAMP&SCHOOL",
+    description: "Камчатка - единственное место в России, берега которого омываются водами Тихого Океана. Именно здесь вы найдете самые стабильные условия для занятия серфингом в нашей стране.Пустые лайнапы тихого океана, вулканические пески халактырского бичбрейка, фантастические рассветы.Мы приглашаем вас в незабываемое путешествие по Камчатке.",
+    longitude: "37.558454",
+    latitude: "55.713065",
+    city_id: "1",
+    surftype_id: "1",
+    image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
+    inst: "kamchatka.surf",
+    tg: "kamchatka_surf",
+    fb: "классика",
+    website: "https://kamchatkasurf.ru/",
+    email: "классика",
+    tel: "+79147871116",
+    service: "everything",
+    price: "от 4200руб",
+    season: "Август - Сентябрь",
+    wind: "19°С",
+    water: "16°С",
+    wetsuit: "1.5 –2.3 м",
+  },
+  {
+    name: "QUIKSILVER SURF CAMP&SCHOOL",
+    description: "Камчатка - единственное место в России, берега которого омываются водами Тихого Океана. Именно здесь вы найдете самые стабильные условия для занятия серфингом в нашей стране.Пустые лайнапы тихого океана, вулканические пески халактырского бичбрейка, фантастические рассветы.Мы приглашаем вас в незабываемое путешествие по Камчатке.",
+    longitude: " 30.19",
+    latitude: "59.57",
+    city_id: "2",
+    surftype_id: "3",
+    image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
+    inst: "kamchatka.surf",
+    tg: "kamchatka_surf",
+    fb: "классика",
+    website: "https://kamchatkasurf.ru/",
+    email: "классика",
+    tel: "+79147871116",
+    service: "everything",
+    price: "от 4200руб",
+    season: "Август - Сентябрь",
+    wind: "19°С",
+    water: "16°С",
+    wetsuit: "1.5 –2.3 м",
+  },
+  {
+    name: "QUIKSILVER SURF CAMP&SCHOOL",
+    description: "Камчатка - единственное место в России, берега которого омываются водами Тихого Океана. Именно здесь вы найдете самые стабильные условия для занятия серфингом в нашей стране.Пустые лайнапы тихого океана, вулканические пески халактырского бичбрейка, фантастические рассветы.Мы приглашаем вас в незабываемое путешествие по Камчатке.",
+    longitude: "158.39",
+    latitude: "53.2",
+    city_id: "3",
+    surftype_id: "4",
+    image: File.open(Rails.root.join('public', 'images', 'pic-seed.jpg')),
+    inst: "kamchatka.surf",
+    tg: "kamchatka_surf",
+    fb: "классика",
+    website: "https://kamchatkasurf.ru/",
+    email: "классика",
+    tel: "+79147871116",
+    service: "everything",
+    price: "от 4200руб",
+    season: "Август - Сентябрь",
+    wind: "19°С",
+    water: "16°С",
+    wetsuit: "1.5 –2.3 м",
+  },
+]
+schools.each do |school|
+  scho = School.create(school)
+  puts "Some magic just craete a #{ scho.name } with id #{ scho.id }!"
+end
