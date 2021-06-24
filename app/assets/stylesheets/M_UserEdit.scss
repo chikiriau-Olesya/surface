@@ -1,3 +1,4 @@
+
 .edit_user {
   width: 60%;
 }
@@ -12,6 +13,17 @@
   border-radius: 32px;
   padding: 48px 116px 48px 116px;
   margin: 20px 64px 90px 64px;
+
+  textarea {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+    border-radius: 8px;
+    background-color: #fff;
+    border: solid 1px var(--color-system-grey);
+    padding-left: 16px;
+    color: var(--color-text);
+    width: 20vw;
+  }
 
   .head-text{
     display: flex;

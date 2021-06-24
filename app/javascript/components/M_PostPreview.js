@@ -8,6 +8,7 @@ import A_PlayBtn from "./A_PlayBtn.js"
 import A_H4 from "./A_H4.js"
 import Play from "images/playBtn.svg"
 import 'stylesheets/M_PostPreview.scss'
+import Icon from "images/card-icon.svg"
 
 
 class M_PostPreview extends React.Component {
@@ -25,21 +26,20 @@ class M_PostPreview extends React.Component {
       backgroundImage: `url(${imgsrc})`
     };
 
-
     return (
       <div className="post-item">
         <a href={"/posts/" + `${this.props.post.id}`} className="post-preview">
-          <div style={postStyle} className="post-preview__banner">
-            <div className = "post-preview-cat">
-              <A_CategoryPreview
-                category = {this.props.post.category}
-                categoryStyles = "default"/>
+          <div className="post-preview__card">
+            <div style={postStyle} className="post-preview__banner">
+              <div  className = "post-preview-cat">
+                <img src = {Icon}></img>
+              </div>
             </div>
-          </div>
-          <div className="post-preview__banner__text">
-                <A_H4 color="A_H4--black"
-                  content = {this.props.post.title}>
-                </A_H4>
+            <div className="post-preview__banner__text">
+                  <A_H4 color="A_H4--black"
+                    content = {this.props.post.title}>
+                  </A_H4>
+            </div>
           </div>
         </a>
 

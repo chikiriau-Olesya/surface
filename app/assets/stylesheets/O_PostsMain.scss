@@ -74,13 +74,18 @@
 
 @media (max-width: 428px) {
   .O_PostsMain {
-
+    padding-bottom: 20vw;
+    margin: -16vw 0vw 4vw;
     .main--title,
     .all-posts {
       width: 90%;
     }
+    .main--title {
+      margin-top: 8vw;
+    }
 
     .O_PostsMain-link {
+          margin-top: 48px;
       a {
         padding: 32px 22vw;
       }

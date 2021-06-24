@@ -3,9 +3,13 @@
 <% set_meta_tags title: @school.name, description: @school.city.name %>
 
 <%= react_component 'O_SchoolView', { school: @school} %>
+
+<div class="final-admin-actions final-admin-actions-school">
+  <% if user_signed_in? && current_user.isadmin == true %>
+    <td><%= link_to 'Редактировать', edit_school_path(@school), class: 'btn btn--secondary' %></td>
+    <td><%= link_to 'Удалить', @school, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn--secondary'  %></td>
+  <% end %>
+</div>
+
 <%= react_component 'M_SchoolPreviewSmall', {surftypes: @surftypes, surftype: @surftype, school: @school, schools: @schools } %>
 <%= react_component 'O_PostsEnding', { posts: @posts, post: @post, categories: @categories, category: @category } %>
-
-
-<%= link_to 'Edit', edit_school_path(@school) %> |
-<%= link_to 'Back', schools_path %>

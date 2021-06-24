@@ -19,7 +19,7 @@ class M_AdminNavbar extends React.Component {
             <A_Link
               linkStyle ='link--white'
               name = 'Школы'
-              address = {'/schoolsMain'} >
+              address = {'/adminSchools'} >
             </A_Link>
             <A_Link
               linkStyle ='link--white'

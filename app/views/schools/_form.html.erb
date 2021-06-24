@@ -52,14 +52,14 @@
     </div>
   <div class="form--items-line">
     <div class="form--item">
-      <%= form.label "Долгота", class: 'input--label' %>
-      <%= form.text_field :longitude,
+      <%= form.label "Широта", class: 'input--label' %>
+      <%= form.text_field :latitude,
       placeholder: 'Координаты',
       class: 'input' %>
     </div>
     <div class="form--item">
-      <%= form.label "Широта", class: 'input--label' %>
-      <%= form.text_field :latitude,
+      <%= form.label "Долгота", class: 'input--label' %>
+      <%= form.text_field :longitude,
       placeholder: 'Координаты',
       class: 'input' %>
     </div>
@@ -201,10 +201,8 @@
     </div>
   </div>
 
-
-
     <div class="form-submit">
-      <%= form.submit 'Создать школу', class: 'btn btn--main'%>
+      <%= form.submit 'Опубликовать', class: 'btn btn--main'%>
     </div>
   </div>
 </div>

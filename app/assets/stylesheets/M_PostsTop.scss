@@ -1,0 +1,11 @@
+.M_PostsTop {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 2vw;
+}
+
+@media (max-width: 428px) {
+  .M_PostsTop  {
+    padding-top: 6vw;
+  }
+}

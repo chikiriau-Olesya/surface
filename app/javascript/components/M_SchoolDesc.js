@@ -25,13 +25,7 @@ class M_SchoolDesc extends React.Component {
           textSize = 'text--body'>
             {`${this.props.school.description}`}
           </A_Textblock>
-
           <div>
-          <A_SchoolCity
-            city = {this.props.school.city_id}
-            textpart = {this.props.school.city_id}
-          />
-
           </div>
         </div>
       </div>

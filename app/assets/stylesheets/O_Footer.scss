@@ -4,11 +4,6 @@
   padding: 96px 40px 48px 40px;
   z-index: 1000;
 
-  a {
-    color: var(--color-sea-foam);
-    text-decoration: none;
-  }
-
   a:hover {
     text-decoration: underline;
   }
@@ -50,6 +45,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    a {
+      color: var(--color-sea-foam);
+      text-decoration: none;
+    }
     .footer-third {
       display: flex;
       flex-direction: row;

@@ -1,0 +1,5 @@
+
+  <% if user_signed_in? && current_user.isadmin == true%>
+    <%= react_component 'M_AdminNavbar' %>
+    	<%= react_component 'O_AdminSchools', {surftypes: @surftypes, surftype: @surftype, school: @school, schools: @schools } %>
+  <% end %>

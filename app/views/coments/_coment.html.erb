@@ -3,7 +3,7 @@
     <div class="all-coments">
         <div class="coment-line">
           <% if coment.user_id %>
-            <%= react_component 'A_Avatar', { user: current_user }, class: 'avatar--default-small' if coment.user.image? %>
+            <%= react_component 'A_Avatar', { user: coment.user }, class: 'avatar--default-small'%>
             <%#= image_tag(coment.user.image.small_thumb.url, alt: 'Image') if coment.user.image? %>
           <% end %>
 
@@ -13,7 +13,7 @@
           <!-- <h5 class="A_H5 A_H5--black">
             <%#= coment.created_at %>
           </h5> -->
-          
+
         </div>
 
     <div class="coment-body">

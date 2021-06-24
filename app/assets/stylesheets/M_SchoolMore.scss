@@ -1,0 +1,21 @@
+.M_SchoolMore {
+  width: 36.48vw;
+  border-radius: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 6vw 0vw;
+}
+
+.M_SchoolMore-block {
+  padding: 5vw;
+  text-align: center;
+  .M_SchoolMore--text {
+    margin-bottom: 4vw;
+  }
+  a {
+    background-color: var(--color-sunset);
+    padding: 16px 24px;
+    border-radius: 32px;
+  }
+}

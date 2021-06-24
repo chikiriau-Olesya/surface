@@ -1,6 +1,7 @@
 .enter {
   background-image: url(image_path('reg-bc.png'));
-  padding-top: 2vw;
+  padding-top: 12vw;
+  margin-top: -5vw;
 }
 
 .enter--wrapper {
@@ -9,7 +10,7 @@
   width: 40%;
   margin: 0 auto;
   border-radius: 72px;
-  margin-bottom: 2vw;
+  margin-bottom: 6vw;
 
   .enter--wrapper--block {
     width: 60%;
@@ -43,13 +44,50 @@
 .form--links {
   display: flex;
   flex-direction: column;
-  margin-top: 32px;
+  margin-top: 24px;
   a {
     margin-bottom: 4px;
+  }
+  span {
+    margin-top: 2vw;
   }
 }
 
 .input--text--desc {
   font-size: 12px;
   color: var(--color-light-grey);
+}
+
+@media (max-width: 1024px) {
+  .enter--wrapper {
+    width: 60%;
+    .enter--wrapper--block {
+      width: 70%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .enter--wrapper {
+    width: 70%;
+    .enter--wrapper--block {
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 428px) {
+  .enter {
+    padding-top: 24vw;
+  }
+  .enter--wrapper {
+    margin-bottom: 21vw;
+    border-radius: 24px;
+    padding: 8vw 5vw;
+    width: 80%;
+
+    .enter--wrapper--block {
+      width: 80%;
+    }
+  }
 }

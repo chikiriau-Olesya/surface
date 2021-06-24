@@ -30,7 +30,7 @@ class M_CityPreview extends React.Component {
             <A_Textblock className="cat-text"
             textStyle = 'text--white'
             textSize = 'text--s-descript'>
-              {this.props.city.name}
+              {this.props.city.description}
             </A_Textblock>
         </div>
 

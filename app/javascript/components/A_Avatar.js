@@ -16,25 +16,24 @@ const STYLES = [
 
 class A_Avatar extends React.Component {
   render () {
+    let imgsrc = '';
+
+    if (!this.props.user.image.url) {
+      imgsrc = '';
+    }  else {
+      imgsrc = this.props.user.image.url;
+    }
+
+    let avatarStyle = {
+      backgroundImage: `url(${imgsrc})`
+    };
 
     const checkAvatarStyle = STYLES.includes(this.props.avatarStyle)
     ? this.props.avatarStyle : STYLES[0]
 
     return (
       <div className = {`avatar ${checkAvatarStyle}`}>
-        <img className="avatar-pic"
-          src={this.props.user.image.small_thumb.url}
-          alt={this.props.user.name}
-        />
-        <img className="avatar-pic"
-          src={Unknown}
-        />
-        <img className="avatar-pic"
-          src={Add}
-        />
-        <img className="avatar-pic"
-          src={Blank}
-        />
+        <div style={avatarStyle}></div>
       </div>
     );
   }

@@ -2,7 +2,7 @@
   <div class="coment-reply">
       <div class="coment-line">
         <% if reply.user_id %>
-          <%= react_component 'A_Avatar', { user: current_user }, class: 'avatar--default-small' if reply.user.image? %>
+          <%= react_component 'A_Avatar', { user: reply.user }, class: 'avatar--default-small' %>
         <% end %>
         <h3 class="A_H5 A_H5--black">
           <%= User.find(reply.user_id).username %>

@@ -3,6 +3,13 @@
 
   <%= react_component 'O_PostView', {category: @category, post: @post, posts: @posts} %>
 
+  <div class="final-admin-actions">
+    <% if user_signed_in? && current_user.isadmin == true %>
+      <td><%= link_to 'Редактировать', edit_post_path(@post), class: 'btn btn--secondary' %></td>
+      <td><%= link_to 'Удалить', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn--secondary'  %></td>
+    <% end %>
+  </div>
+
   <div class="post-final">
     <div class="post-final-items">
     <% if user_signed_in? %>
@@ -30,7 +37,7 @@
 
     <div class="comments-topic-block">
       <div class="">
-        <%= react_component 'A_Avatar', { user: current_user }, class: 'avatar--default-medium' %>
+        <%= react_component 'A_Avatar', { user: @post.user }, class: 'avatar--default-medium' %>
       </div>
 
       <div class="comments-author-topic">
@@ -40,11 +47,13 @@
     </div>
   </div>
   <div class="post-coments">
-
     <% if user_signed_in? %>
       <%= render "coments/form" %>
     <% else %>
-    <p>Please <%= link_to 'login', new_user_session_path %> or <%= link_to 'register', new_user_registration_path %> to comment.</p>
+      <div>
+        <span>Хотите поделиться мнением? Станьте членом нашего комьюнити.</span>
+         <%= link_to 'Войти', new_user_session_path %> or <%= link_to 'Зарегистироваться', new_user_registration_path %>
+      </div>
     <% end %>
 
     <div class="show-all-coments">
@@ -53,13 +62,6 @@
   </div>
 </div>
 
-    <%= react_component 'M_AuthorQuestion' %>
-    <%= react_component 'O_PostsEnding', { posts: @posts, post: @post, categories: @categories, category: @category } %>
+<%= react_component 'O_PostsEnding', { posts: @posts, post: @post, categories: @categories, category: @category } %>
 
-
-<div class="final-admin-actions">
-  <% if user_signed_in? && current_user.isadmin == true %>
-    <td><%= link_to 'Редактировать', edit_post_path(@post), class: 'btn btn--secondary' %></td>
-    <td><%= link_to 'Удалить', @post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn--secondary'  %></td>
-  <% end %>
-</div>
+<%= react_component 'M_SchoolPreviewSmall', {surftypes: @surftypes, surftype: @surftype, school: @school, schools: @schools } %>

@@ -116,6 +116,12 @@
 }
 
 @media (max-width: 560px) {
+  .M_CityPreviewSmall-wrapper {
+    padding: 4vw 0vw 30vw;
+  }
+  .M_CityPreviewSmall--block {
+    margin-top: 4vw;
+  }
   .M_CityPreviewSmall {
     .main--title {
       width: 90%;

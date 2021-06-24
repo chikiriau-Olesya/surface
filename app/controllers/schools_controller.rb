@@ -62,6 +62,13 @@ class SchoolsController < ApplicationController
     @schools = School.all
   end
 
+  def adminSchools
+    @cities = City.all
+    @city = City.find_by_name(params[:city])
+    @school = School.find_by_name(params[:school])
+    @schools = School.all
+  end
+
   # GET /schools/1
   # GET /schools/1.json
   def show
@@ -109,7 +116,7 @@ class SchoolsController < ApplicationController
 
     respond_to do |format|
       if @school.save
-        format.html { redirect_to @school, notice: 'School was successfully created.' }
+        format.html { redirect_to @school, notice: 'Школа успешно создана' }
         format.json { render :show, status: :created, location: @school }
       else
         format.html { render :new }
@@ -123,7 +130,7 @@ class SchoolsController < ApplicationController
   def update
     respond_to do |format|
       if @school.update(school_params)
-        format.html { redirect_to @school, notice: 'School was successfully updated.' }
+        format.html { redirect_to @school, notice: 'Школа была обновлена' }
         format.json { render :show, status: :ok, location: @school }
       else
         format.html { render :edit }
@@ -137,7 +144,7 @@ class SchoolsController < ApplicationController
   def destroy
     @school.destroy
     respond_to do |format|
-      format.html { redirect_to schools_url, notice: 'School was successfully destroyed.' }
+      format.html { redirect_to schools_url, notice: 'Школа была удалена' }
       format.json { head :no_content }
     end
   end

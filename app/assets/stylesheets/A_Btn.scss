@@ -5,7 +5,7 @@
   --disabled: #9F9F9F;
 }
 
-.btn{
+.btn {
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -18,14 +18,15 @@
 }
 
 /* Button styles */
-.btn--main{
+.btn--main {
   background-color: var(--sunset);
   color: #fff;
   img{
     display: none;
   }
 }
-.btn--secondary{
+
+.btn--secondary {
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -36,7 +37,8 @@
     display: none;
   }
 }
-.btn--secondary:hover{
+
+.btn--secondary:hover {
   background-color: transparent;
   color: var(--color-light-sunset);
 }
@@ -50,6 +52,7 @@
     display: none;
   }
 }
+
 .btn--admin--transp{
   background-color: transparent;
   color: var(--color-sea-foam);
@@ -75,6 +78,7 @@
 }
 .btn:hover{
   background-color: var(--hover);
+  color: var(--color-sea-foam);
 }
 .btn:visited{
   background-color: var(--pressed);

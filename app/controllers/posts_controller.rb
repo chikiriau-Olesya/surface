@@ -34,6 +34,7 @@ class PostsController < ApplicationController
     @posts = @posts.public_send("filter_by_#{key}", value).includes(:category, :likes, :favorites)
     end
 
+    @posts = Post.all.order(created_at: :desc)
 
 end
 
@@ -61,6 +62,8 @@ end
     @posts = @posts.public_send("filter_by_#{key}", value).includes(:category, :likes, :favorites)
     end
 
+    @posts = Post.all.order(created_at: :desc)
+
   end
 
   # GET /posts/1
@@ -74,6 +77,19 @@ end
       @posts = Post.where(category: @category)
     else
       @posts = Post.all
+    end
+
+    if params.has_key?(:surftype)
+      @surftype = Surftype.find_by_name(params[:surftype])
+      @schools = School.where(surftype: @surftype)
+    else
+      @schools = School.all
+    end
+    if params.has_key?(:city)
+      @city = City.find_by_name(params[:city])
+      @schools = School.where(city: @city)
+    else
+      @schools = School.all
     end
   end
 
@@ -119,6 +135,8 @@ end
   def hashtags
     tag = Tag.find_by(name: params[:name])
     @posts = tag.posts
+
+    @posts = Post.all.order(created_at: :desc)
   end
 
 
@@ -134,7 +152,7 @@ end
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to @post, notice: 'Пост был опубликован' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }
@@ -148,7 +166,7 @@ end
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to @post, notice: 'Пост был обновлен' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -162,7 +180,7 @@ end
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to posts_url, notice: 'Пост был удален' }
       format.json { head :no_content }
     end
   end

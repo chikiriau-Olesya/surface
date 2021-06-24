@@ -19,14 +19,9 @@ class O_AdminPosts extends React.Component {
     return (
       <div className="admin-container">
         <div className="admin-top-line">
-          <A_Select
-            title={"Категория"}
-            name="post[category_id]"
-            value={this.props.category}
-            placeholder={"Категория"}
-            handleChange={this.handleCategoryChange}
-            options={this.props.categories}
-          />
+          <A_H3 className = 'heading--black'
+            content = "Публикации Пляжа">
+          </A_H3>
           <a href="/posts/newmagazine">
             <A_Btn
             buttonStyle = 'btn--main'

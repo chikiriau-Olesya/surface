@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.order(created_at: :desc)
+    @posts = @user.posts.order("created_at DESC")
     if @user
       @posts = @user.favorited_posts
       render actions: :show
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     # redirect_to current_user
     respond_to do |format|
       if @user.update(user_params)
-         format.html { redirect_to @user, notice: 'The user info was successfully updated' }
+         format.html { redirect_to @user, notice: 'Информация была обновлена' }
          format.json { render :show, status: :ok, location: @user }
       else
          format.html { render :edit }
@@ -52,7 +52,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to users_path, notice: 'User deleted.'
+    redirect_to users_path, notice: 'Пользователь удален'
   end
 
   def follow

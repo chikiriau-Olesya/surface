@@ -4,7 +4,11 @@
     <% if user_signed_in? && @user.id == current_user.id %>
       <div class="user-edit-form-inner">
         <div class="user-edit-sidebar">
-          <%= react_component 'M_SideProfileMenu', {user: @user} %>
+          <%#= react_component 'M_SideProfileMenu', {user: @user} %>
+          <div class="profile-sidebar">
+            <%= link_to 'Настройки аккаунта', edit_user_registration_path %>
+            <a class="nav-link" data-toggle="pill">Политика конфиденциальности</a>
+          </div>
         </div>
         <%= form_for @user, method: :put do |f|%>
             <div class="user-edit-avatar">
@@ -15,10 +19,6 @@
               </div>
             </div>
             <%= react_component 'M_UserEdit', {user: @user} %>
-            <div class="user-edit-second-btn">
-              <%= f.submit "Сохранить", class: 'btn btn--main' %>
-              <%= link_to 'Назад', @user %>
-            </div>
         <% end %>
       </div>
     <% end %>

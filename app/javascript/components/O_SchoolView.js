@@ -35,7 +35,6 @@ class O_SchoolView extends React.Component {
         <div className="O_SchoolView-block">
           <M_SchoolDesc
             school = {this.props.school}
-            city = {this.props.city}
             />
         </div>
         <div className="O_SchoolView-block">

@@ -24,15 +24,11 @@ class O_PostsPreview extends React.Component {
       <div className = "all-posts">
          <div className='post--list'>
            {this.props.posts.map(post => (
-             <div
-             key={post.id}
-             >
                <M_PostPreview
                key = {post.id}
                post = {post}
                category = {post.category}
                />
-             </div>
            ))}
          </div>
       </div>

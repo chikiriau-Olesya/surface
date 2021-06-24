@@ -71,12 +71,6 @@ import M_SideProfileMenu from './M_SideProfileMenu.js'
         value={this.state.bio}
         onChange={this.handleBioChange}
         />
-        
-        <textarea
-        type = 'hidden'
-        name="user[user]"
-        value={this.state.user}
-        />
 
         <div className="head-text">
           <A_Heading

@@ -24,7 +24,6 @@
   display: flex;
   justify-content: space-between;
 
-
   a {
     font-family: "Raleway", helvetica, sans-serif;
     font-weight: 600;
@@ -32,6 +31,7 @@
     margin-left: 24px;
     text-decoration: none;
     text-transform: uppercase;
+    color: var(--color-text);
   }
 
   .header--left{
@@ -75,7 +75,7 @@
     padding: 0  56px 0 0;
     .header-burger{
       position: absolute;
-      padding-left: 90vw;
+      right: 24px;
     }
   }
 .header{
