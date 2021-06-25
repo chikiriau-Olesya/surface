@@ -42,7 +42,7 @@ class O_PostsMain extends React.Component {
             <A_Link
               address = "/posts"
               linkStyle= 'link--white'
-              name = "Больше волн⠀⟶">
+              name = "Больше волн ⟶">
             </A_Link>
           </div>
         </div>

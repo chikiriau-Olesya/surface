@@ -34,7 +34,7 @@ class PostsController < ApplicationController
     @posts = @posts.public_send("filter_by_#{key}", value).includes(:category, :likes, :favorites)
     end
 
-    @posts = Post.all.order(created_at: :desc)
+    # @posts = Post.all.order(created_at: :desc)
 
 end
 
@@ -136,7 +136,7 @@ end
     tag = Tag.find_by(name: params[:name])
     @posts = tag.posts
 
-    @posts = Post.all.order(created_at: :desc)
+    # @posts = Post.all.order(created_at: :desc)
   end
 
 

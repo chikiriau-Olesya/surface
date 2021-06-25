@@ -6,11 +6,15 @@ import A_Textblock from './A_Textblock.js'
 import A_CityCategory from "./A_CityCategory.js"
 import 'stylesheets/M_CityPreviewSmall.scss'
 import Bc1 from "images/CityPreviewSmall-bc1.svg"
+import Arrow from "images/arrow-round.svg"
 
 class M_CityPreviewSmall extends React.Component {
   render() {
     var sectionStyle = {
       backgroundImage: `url(${Bc1})`
+    };
+    var arrowStyle = {
+      backgroundImage: `url(${Arrow})`
     };
         return (
           <div className = "M_CityPreviewSmall-wrapper">
@@ -32,7 +36,7 @@ class M_CityPreviewSmall extends React.Component {
                  ))}
                  <div className="M_CityPreviewSmall--block--link">
                    <a href ={'/schoolsCities'}>
-                     <div className="M_CityPreviewSmall--block--link--img"></div>
+                     <div style={arrowStyle} className="M_CityPreviewSmall--block--link--img"></div>
                      <span> есть еще</span>
                    </a>
                  </div>
